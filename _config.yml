@@ -1,0 +1,9 @@
+name: OpenCADC
+tagline: Astronomy like mum used to make, only better.
+permalink: /news/:year/:month/:day/:title/
+relative_permalinks: false
+markdown: kramdown
+organization:
+  name: opencadc
+  repository: https://github.com/opencadc
+  site_repository: https://github.com/opencadc/opencadc.github.io
