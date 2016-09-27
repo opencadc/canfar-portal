@@ -1,0 +1,12 @@
+home_link: 'Home'
+about:
+  link: 'About'
+  _governance_link: 'Governance'
+  _processing_link: 'Processing'
+  _storage_link: 'User Storage'
+  _access_management_link: 'Access Management'
+  _api_link: 'API'
+  _main_link: 'Main'
+portal_link: 'Portal'
+services_link: 'Services'
+resources_link: 'Resources'

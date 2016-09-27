@@ -5,21 +5,41 @@
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#canfar_navbar_collapse" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
       </button>
-      <a class="navbar-brand" href="/"><img src="css/images/logo.png"></a>
+      <a class="navbar-brand" href="/"><img src="{{ '/css/images/logo.png' | prepend: site.baseurl_root }}"></a>
     </div>
 
     <div id="canfar_navbar_collapse" class="collapse navbar-collapse">
       <ul id="navbar_list" class="nav navbar-nav pull-right">
-        <li><a href="/">Home <span class="sr-only">(current)</span></a></li>
         <li class="dropdown">
-          <a href="/about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ page.lang }} <span class="caret"></span></a>
           <ul class="dropdown-menu list-unstyled">
-            <li><a href="#">Processing</a></li>
-            <li><a href="#">User Storage</a></li>
-            <li><a href="#">Access Management</a></li>
-            <li><a href="#">API</a></li>
-            <li><a href="/governance">Governance</a></li>
+            {% for lang in site.languages %}
+            {% if lang != page.lang %}
+            <li><a href="/{{ lang }}" lang="{{ lang }}">{{ lang }}</a></li>
+            {% endif %}
+            {% endfor %}
           </ul>
+        </li>
+        <li><a href="{% tl home %}">{% t home_link %}</a></li>
+        <li><a href="http://www.canfar.phys.uvic.ca/" rel="external">{% t portal_link %} </a></li>
+        <li class="dropdown">
+          <a href="{% tl about %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% t about.link %} <span class="caret"></span></a>
+          <ul class="dropdown-menu list-unstyled">
+            <li><a href="{% tl governance %}">{% t about._governance_link %}</a></li>
+            <li><a href="{% tl processing %}">{% t about._processing_link %}</a></li>
+            <li><a href="{% tl about %}">{% t about._storage_link %}</a></li>
+            <li><a href="{% tl about %}">{% t about._access_management_link %}</a></li>
+            <li><a href="{% tl about %}">{% t about._api_link %}</a></li>
+            <li><a href="{% tl about %}">{% t about._main_link %}</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="{% tl services %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% t services_link %} <span class="caret"></span></a>
+          <ul class="dropdown-menu list-unstyled"></ul>
+        </li>
+        <li class="dropdown">
+          <a href="{% tl resources %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% t resources_link %} <span class="caret"></span></a>
+          <ul class="dropdown-menu list-unstyled"></ul>
         </li>
       </ul>
     </div> <!-- end .navbar-collapse -->

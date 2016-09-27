@@ -1,0 +1,12 @@
+home_link: 'Acceuil'
+about:
+  link: 'À propos'
+  _governance_link: 'Gouvernance'
+  _processing_link: 'Traitement'
+  _storage_link: 'Stockage d''utilisateur'
+  _access_management_link: 'Gestion d''accès'
+  _api_link: 'L''IPA'
+  _main_link: 'Principal'
+portal_link: 'Portail'
+services_link: 'Services'
+resources_link: 'Ressources'

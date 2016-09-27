@@ -301,6 +301,7 @@ dl dt {
 footer {
   padding-top: 20px;
   padding-bottom: 30px;
+  padding-left: 15px;
   margin-top: 40px;
   font-size: 13px;
   color: #aaa;
@@ -412,6 +413,10 @@ footer a:hover {
     margin-left: -0.1rem;
     border-radius: 0;
   }
+}
+
+div.carousel-caption {
+  background: rgba(0, 0, 0, 0.7);
 }
 
 #top_nav.navbar {
