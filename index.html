@@ -2,35 +2,49 @@
 layout: splash
 ---
 
-<div id="container" class="container">
-  <div class="inner">
+<div id="container" class="container-fluid">
+  <div class="row">
 
     {% include _page_header.html %}
 
     <section id="main_content">
-      <h3><a id="canfar-beta" class="anchor" href="#canfar-beta" aria-hidden="true">
-        <span aria-hidden="true" class="octicon octicon-link"></span></a>Astronomy</h3>
+      <div id="canfar-carousel" class="carousel slide"
+           data-ride="carousel" data-keyboard="true">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#canfar-carousel" data-slide-to="0"
+              class="active"></li>
+          <li data-target="#canfar-carousel" data-slide-to="1"></li>
+          <li data-target="#canfar-carousel" data-slide-to="2"></li>
+        </ol>
 
-      <div class="row">
-        <div class="col-md-4 showcase_section">
-          <div class="inner-topic">
-            <h4>About</h4>
-            <p>Using a cloud based framework, CANFAR aims to provide its users with easy access to very large resources for both storage and processing.</p>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          {% for showcase in site.data.showcases %}
+          <div class="item {% if forloop.index == 1 %}active{% endif %}" style="background-image: url('{{ showcase.img }}');">
+            <div class="carousel-caption">
+              <h3>{{ showcase.title }}</h3>
+              <p>{{ showcase.tagline }}</p>
+            </div>
           </div>
+          {% endfor %}
         </div>
-        <div class="col-md-4 showcase_section">
-          <div class="inner-topic">
-            <h4>Projects</h4>
-            <p>CANFAR's international footprint extends into Astronomical Storage with cutout capabilities, to processing on demand on the Cloud.</p>
-          </div>
-        </div>
-        <div class="col-md-4 showcase_section">
-          <div class="inner-topic">
-            <h4>Future</h4>
-            <p>Better access to more resources, world wide collaborations, and a vast toolkit from OpenCADC.</p>
-          </div>
-        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#canfar-carousel"
+           role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"
+                aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#canfar-carousel"
+           role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"
+                aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
+
     </section>
 
     {% include _page_footer.html %}

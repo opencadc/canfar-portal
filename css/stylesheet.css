@@ -334,7 +334,16 @@ footer a:hover {
 @media only screen and (max-width: 959px) { }
 
 /* Tablet Portrait size to standard 960 (devices and browsers) */
-@media only screen and (min-width: 768px) and (max-width: 959px) { }
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  #canfar-carousel > .carousel-inner > .item {
+    height: 300px;
+  }
+
+  #top_nav.navbar > .container .navbar-brand {
+    height: 30%;
+    width: 60%;
+  }
+}
 
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 767px) {
@@ -352,10 +361,75 @@ footer a:hover {
     width: 94%;
     margin: 0 auto;
   }
+
+  #top_nav.navbar > .container .navbar-brand {
+    height: 30%;
+    width: 60%;
+  }
+
+  #canfar-carousel > .carousel-inner > .item {
+    height: 250px;
+  }
 }
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-@media only screen and (min-width: 480px) and (max-width: 767px) { }
+@media only screen and (min-width: 480px) and (max-width: 767px) {  }
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) { }
+
+@media only screen and (min-width: 959px) {
+  #top_nav.navbar {
+    height: 100px;  }
+
+  #top_nav.navbar > .container .navbar-brand {
+    height: 100px;
+    line-height: 7.0rem;  }
+
+  #canfar-carousel > .carousel-inner > .item {
+    height: 450px;  }
+
+  #navbar_list.navbar-nav {
+    height: 100px;
+  }
+
+  #navbar_list.navbar-nav li {
+    height: 100%;
+  }
+
+  .dropdown-menu>li>a {
+    line-height: 1.4rem;
+  }
+
+  #navbar_list.navbar-nav > li > a {
+    line-height: 7.0rem;
+    height: 100%;
+  }
+
+  #navbar_list.navbar-nav > li > .dropdown-menu {
+    border-top: 0;
+    margin-top: -0.1rem;
+    margin-left: -0.1rem;
+    border-radius: 0;
+  }
+}
+
+#top_nav.navbar {
+  margin-bottom: 0;
+  color: #fff;  }
+
+#top_nav.navbar > div > ul li {
+  color: #fff;
+}
+
+#canfar-carousel {
+  width: 100%;
+}
+
+#canfar-carousel > .carousel-inner > .item {
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
