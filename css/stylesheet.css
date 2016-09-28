@@ -2,31 +2,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	padding: 0;
-	margin: 0;
-	font: inherit;
-	font-size: 100%;
-	vertical-align: baseline;
-	border: 0;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
 body {
 	line-height: 1;
 }
@@ -52,7 +27,6 @@ body {
   font-size: 1em;
   line-height: 1.5;
   color: #6d6d6d;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
   background: #e7e7e7 url(../images/body-bg.png) 0 0 repeat;
 }
 
@@ -337,7 +311,7 @@ footer a:hover {
 /* Tablet Portrait size to standard 960 (devices and browsers) */
 @media only screen and (min-width: 768px) and (max-width: 959px) {
   #canfar-carousel > .carousel-inner > .item {
-    height: 300px;
+    height: 250px;
   }
 
   #top_nav.navbar > .container .navbar-brand {
@@ -369,7 +343,7 @@ footer a:hover {
   }
 
   #canfar-carousel > .carousel-inner > .item {
-    height: 250px;
+    height: 200px;
   }
 }
 
@@ -388,14 +362,10 @@ footer a:hover {
     line-height: 7.0rem;  }
 
   #canfar-carousel > .carousel-inner > .item {
-    height: 450px;  }
+    height: 350px;  }
 
   #navbar_list.navbar-nav {
     height: 100px;
-  }
-
-  #navbar_list.navbar-nav li {
-    height: 100%;
   }
 
   .dropdown-menu>li>a {
@@ -437,4 +407,8 @@ div.carousel-caption {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+#information_content {
+  margin-top: 25px;
 }

@@ -31,6 +31,21 @@ en:
     link: '/resources'
   footer_github: 'on GitHub'
   toggle_navigation: 'Toggle navigation'
+  showcase_taglines:
+    - 'Massive NGVS data processing'
+    - 'Amazing discoveries from OSSOS'
+    - 'NUGRID Stellar Evolution Tracks'
+  next: 'Next'
+  previous: 'Previous'
+  events:
+    name: 'Events and Seminars'
+    link: '/events-and-seminars'
+  news:
+    name: 'News'
+    link: '/news'
+  featured:
+    name: 'Featured Publication'
+    link: '/featured-publication'
 fr:
   home:
     name: 'Acceuil'
@@ -43,7 +58,7 @@ fr:
     link: '/organisation'
   terms_of_reference:
     name: 'Termes de référence'
-    link: '/termes_de_reference'
+    link: '/termes-de-reference'
   our_people:
     name: 'Notre peuple'
     link: '/notre-peuple'
@@ -64,3 +79,18 @@ fr:
     link: '/ressources'
   footer_github: 'sur GitHub'
   toggle_navigation: 'Verser la navigation'
+  showcase_taglines:
+    - 'Traitements de données massives du NGVS'
+    - 'Les découvertes fantastiques du OSSOS'
+    - 'Les pistes d''évolution stéllaire de NUGRID'
+  next: 'Prochain'
+  previous: 'Précédent'
+  events:
+    name: 'Évenements et séminaires'
+    link: '/evenements-et-seminaires'
+  news:
+    name: 'Nouvelles'
+    link: '/nouvelles'
+  featured:
+    name: 'Publication en vedette'
+    link: '/publication-en-vedette'
