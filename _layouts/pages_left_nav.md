@@ -13,12 +13,12 @@ layout: default
         {% for menudataitem in site.data.menudata[page.namespace] %}
         {% assign parent_item = t[page.namespace] %}
         {% assign item = parent_item[menudataitem] %}
-        <li><a href="/{{ page.lang | prepend: site.baseurl }}{{ parent_item.link }}{{ item.link }}">{{ item.name }} </a></li>
+        <li><a href="{{ page.lang | prepend: site.baseurl }}{{ parent_item.link }}{{ item.link }}">{{ item.name }} </a></li>
         {% endfor %}
 
         <li role="separator" class="divider"></li>
         {% assign mainitem = t[page.namespace] %}
-        <li><a href="/{{ page.lang | prepend: site.baseurl }}{{ mainitem.link }}">{{ mainitem.name }} </a></li>
+        <li><a href="{{ page.lang | prepend: site.baseurl }}{{ mainitem.link }}">{{ mainitem.name }} </a></li>
       </ul>
     </div>
     <div role="main" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
