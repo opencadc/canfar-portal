@@ -17,7 +17,8 @@
             {% for lang in site.data.translations %}
             {% assign this_lang = lang[0] %}
             {% if this_lang != page.lang %}
-            <li><a href="/{{ this_lang }}{{ site.data.translations[this_lang][page.namespace].link | prepend: site.baseurl }}" lang="{{ this_lang }}">{{ this_lang }}</a></li>
+            {% assign link = '/{{ this_lang }}{{ site.data.translations[this_lang][page.namespace].link' %}
+            <li><a href="{{ link | prepend: site.baseurl }}" lang="{{ this_lang }}">{{ this_lang }}</a></li>
             {% endif %}
             {% endfor %}
           </ul>
