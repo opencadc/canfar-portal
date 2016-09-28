@@ -3,12 +3,8 @@ tagline: Processing and Storage on the cloud
 permalink: /news/:year/:month/:day/:title/
 relative_permalinks: false
 markdown: kramdown
-gems:
-  - jekyll-multiple-languages-plugin
 organizations:
   - name: CANFAR
     repository: https://github.com/canfar
   - name: OpenCADC
     repository: https://github.com/opencadc
-languages: ['en', 'fr']
-exclude_from_localizations: ["js", "images", "css"]

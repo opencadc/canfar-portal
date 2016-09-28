@@ -1,0 +1,66 @@
+en:
+  home:
+    name: 'Home'
+    link: '/'
+  about:
+    name: 'About'
+    link: '/about'
+  organization:
+    name: 'Organization'
+    link: '/organization'
+  terms_of_reference:
+    name: 'Terms of Reference'
+    link: '/terms_of_reference'
+  our_people:
+    name: 'Our people'
+    link: '/our-people'
+  governance:
+    name: 'Governance'
+    link: '/governance'
+  nodes:
+    name: 'Nodes'
+    link: '/nodes'
+  portal:
+    name: 'Portal'
+    link: '/portal'
+  services:
+    name: 'Services'
+    link: '/services'
+  resources:
+    name: 'Resources'
+    link: '/resources'
+  footer_github: 'on GitHub'
+  toggle_navigation: 'Toggle navigation'
+fr:
+  home:
+    name: 'Acceuil'
+    link: '/'
+  about:
+    name: 'À propos'
+    link: '/a-propos'
+  organization:
+    name: 'Organisation'
+    link: '/organisation'
+  terms_of_reference:
+    name: 'Termes de référence'
+    link: '/termes_de_reference'
+  our_people:
+    name: 'Notre peuple'
+    link: '/notre-peuple'
+  governance:
+    name: 'Gouvernance'
+    link: '/gouvernance'
+  nodes:
+    name: 'Nodes'
+    link: '/nodes'
+  portal:
+    name: 'Portail'
+    link: '/portail'
+  services:
+    name: 'Services'
+    link: '/services'
+  resources:
+    name: 'Ressources'
+    link: '/ressources'
+  footer_github: 'sur GitHub'
+  toggle_navigation: 'Verser la navigation'
