@@ -22,10 +22,10 @@
             {% endfor %}
           </ul>
         </li>
-        <li><a href="/{{ page.lang | prepend: site.baseurl }}{{ t.home.link }}">{{ t.home.name }}</a></li>
+        <li><a href="{{ page.lang | prepend: site.baseurl }}{{ t.home.link }}">{{ t.home.name }}</a></li>
         <li><a href="http://www.canfar.phys.uvic.ca/" rel="external">{{ t.portal.name }} </a></li>
         <li class="dropdown">
-          <a href="/{{ page.lang | prepend: site.baseurl }}{{ t.about.link }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ t.about.name }} <span class="caret"></span></a>
+          <a href="{{ page.lang | prepend: site.baseurl }}{{ t.about.link }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ t.about.name }} <span class="caret"></span></a>
           <ul class="dropdown-menu list-unstyled">
             {% for menudataitem in site.data.menudata['about'] %}
             {% assign parent_item = t['about' %}
