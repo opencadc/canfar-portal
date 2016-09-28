@@ -28,8 +28,9 @@
           <a href="/{{ page.lang | prepend: site.baseurl }}{{ t.about.link }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ t.about.name }} <span class="caret"></span></a>
           <ul class="dropdown-menu list-unstyled">
             {% for menudataitem in site.data.menudata['about'] %}
-            {% assign item = t[menudataitem] %}
-            <li><a href="/{{ page.lang | prepend: site.baseurl }}{{ item.link }}">{{ item.name }} </a></li>
+            {% assign parent_item = t['about' %}
+            {% assign item = parent_item[menudataitem] %}
+            <li><a href="/{{ page.lang | prepend: site.baseurl }}{{ parent_item.link }}{{ item.link }}">{{ item.name }} </a></li>
             {% endfor %}
 
             <li role="separator" class="divider"></li>

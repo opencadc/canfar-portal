@@ -5,21 +5,21 @@ en:
   about:
     name: 'About'
     link: '/about'
-  organization:
-    name: 'Organization'
-    link: '/organization'
-  terms_of_reference:
-    name: 'Terms of Reference'
-    link: '/terms_of_reference'
-  our_people:
-    name: 'Our people'
-    link: '/our-people'
-  governance:
-    name: 'Governance'
-    link: '/governance'
-  nodes:
-    name: 'Nodes'
-    link: '/nodes'
+    organization:
+      name: 'Organization'
+      link: '/organization'
+    terms_of_reference:
+      name: 'Terms of Reference'
+      link: '/terms-of-reference'
+    our_people:
+      name: 'Our people'
+      link: '/our-people'
+    governance:
+      name: 'Governance'
+      link: '/governance'
+    nodes:
+      name: 'Nodes'
+      link: '/nodes'
   portal:
     name: 'Portal'
     link: '/portal'
@@ -53,21 +53,21 @@ fr:
   about:
     name: 'À propos'
     link: '/a-propos'
-  organization:
-    name: 'Organisation'
-    link: '/organisation'
-  terms_of_reference:
-    name: 'Termes de référence'
-    link: '/termes-de-reference'
-  our_people:
-    name: 'Notre peuple'
-    link: '/notre-peuple'
-  governance:
-    name: 'Gouvernance'
-    link: '/gouvernance'
-  nodes:
-    name: 'Nodes'
-    link: '/nodes'
+    organization:
+      name: 'Organisation'
+      link: '/organisation'
+    terms_of_reference:
+      name: 'Termes de référence'
+      link: '/termes-de-reference'
+    our_people:
+      name: 'Notre peuple'
+      link: '/notre-peuple'
+    governance:
+      name: 'Gouvernance'
+      link: '/gouvernance'
+    nodes:
+      name: 'Nodes'
+      link: '/nodes'
   portal:
     name: 'Portail'
     link: '/portail'
