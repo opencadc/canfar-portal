@@ -8,4 +8,4 @@ organizations:
     repository: https://github.com/canfar
   - name: OpenCADC
     repository: https://github.com/opencadc
-baseurl: 'beta-canfar.github.io'
+baseurl: '/beta-canfar.github.io'
