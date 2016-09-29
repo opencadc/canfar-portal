@@ -102,7 +102,7 @@ info_panels:
                       <a href="#"></a>
                     </div>
                     <div class="media-body">
-                      <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span>{% if info_panel_name == 'featured' %} {{ post.title }} {% else %} {{ post.date | date: '%B %d, %Y' }} {% endif %} </h4>
+                      <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span>{% if info_panel_name == 'featured' %} {{ post.title }}{% if post.author %} by {{ post.author }}{% endif %} {% else %} {{ post.date | date: '%B %d, %Y' }} {% endif %} </h4>
                       {{ post.excerpt }}
                     </div>
                   </li>

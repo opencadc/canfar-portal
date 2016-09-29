@@ -1,5 +1,7 @@
 ---
 category: featured
+title: SSOS Discoveries
+author: Stephen Gwyn
 ---
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus nulla

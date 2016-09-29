@@ -9,7 +9,7 @@ layout: default
     <div class="inner">
       <section id="main_content">
         <h3><a id="canfar-beta" class="anchor" href="#canfar-beta" aria-hidden="true">
-          <span aria-hidden="true" class="octicon octicon-link"></span></a>{{ site.data.translations[page.lang][page.namespace].name }}</h3>
+          <span aria-hidden="true" class="octicon octicon-link"></span></a>{{ t[page.namespace].name }}</h3>
 
         {{ content }}
 

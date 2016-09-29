@@ -3,6 +3,7 @@ tagline: Processing and Storage on the cloud
 permalink: /news/:year/:month/:day/:title/
 relative_permalinks: false
 markdown: kramdown
+future: true
 organizations:
   - name: CANFAR
     repository: https://github.com/canfar
@@ -10,4 +11,4 @@ organizations:
     repository: https://github.com/opencadc
 
 # For development only!
-baseurl: '/beta-canfar.github.io/'
+#baseurl: 'beta-canfar.github.io/'
