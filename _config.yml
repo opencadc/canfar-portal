@@ -11,4 +11,4 @@ organizations:
     repository: https://github.com/opencadc
 
 # For development only!
-#baseurl: 'beta-canfar.github.io/'
+baseurl: 'beta-canfar.github.io/'
