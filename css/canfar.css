@@ -1,0 +1,388 @@
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #6d6d6d;
+  background: #e7e7e7 url(../images/body-bg.png) 0 0 repeat;
+}
+
+a {
+  color: #d5000d;
+}
+a:hover {
+  color: #c5000c;
+}
+
+header {
+  padding-top: 35px;
+  padding-bottom: 25px;
+}
+
+header h1 {
+  font-family: 'Chivo', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-size: 48px; font-weight: 900;
+  line-height: 1.2;
+  color: #303030;
+  letter-spacing: -1px;
+}
+
+header h2 {
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 1.3;
+  color: #aaa;
+  letter-spacing: -1px;
+}
+
+#information_content h3 {
+  text-transform: uppercase;
+  font-size: 160%;
+  font-family: Futura, sans-serif;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+
+.navbar.navbar-default {
+  margin-bottom: -5px;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  cursor: auto;
+}
+
+/*
+ * End Sidebar
+ */
+
+/*
+ * Navbar styles.
+ */
+
+span.select-info,
+ul > li.divider-vertical {
+  border-left: 1px solid #ccc;
+}
+
+.navbar-nav > li.alert {
+  margin-bottom: inherit;
+  padding: inherit;
+}
+
+.navbar-nav > li.alert > a {
+  color: #fff;
+}
+
+div.progress
+{
+  height: 7px;
+}
+
+div.beacon-progress
+{
+  padding-top: 0;
+  min-width: 2.0em;
+  width: 2px;
+}
+
+/*
+  Give enough height so that when the Delete button is enabled the table won't
+  jump down.
+  jenkinsd 2016.08.10
+*/
+div.beacon-info-row
+{
+  height: 55px;
+}
+
+/*
+ * End navbar.
+ */
+
+a.github-link {
+  background: url("images/GitHub-Mark-32px.png") 24px 50% no-repeat;
+}
+
+a.docker-link {
+  background: url("images/logo_docker.png") 20px 50% no-repeat;
+}
+
+a.social-link > span {
+  padding-left: 46px;
+}
+
+label {
+  font-weight: 700;
+}
+
+.dropdown-menu > li > a {
+  cursor: pointer;
+}
+
+.public_link {
+  font-style: italic;
+}
+
+button#more_details {
+  margin-top: 0;
+  margin-bottom: 5px;
+  padding: 0 4px;
+}
+
+#fileinfo {
+  cursor: auto;
+}
+
+#uploader {
+  display: block;
+  text-align: right;
+  height: auto;
+  min-height: 30px;
+  overflow: hidden;
+}
+
+.glyphicon.fast-right-spinner {
+  -webkit-animation: glyphicon-spin-r 1s infinite linear;
+  animation: glyphicon-spin-r 1s infinite linear;
+}
+
+@-webkit-keyframes glyphicon-spin-r {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes glyphicon-spin-r {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+main.container {
+  background: transparent !important;
+}
+
+input[type=url] {
+  width: 100%;
+}
+
+/*
+ *  DataTables
+ */
+div.dataTables_wrapper div.dataTables_info {
+  padding-left: 20px;
+  white-space: nowrap;
+  cursor: auto;
+}
+
+.popover {
+  max-width: 500px;
+}
+
+
+/* #Media Queries
+================================================== */
+
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px) { }
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  #canfar-carousel > .carousel-inner > .item {
+    height: 250px;
+  }
+
+  #top_nav.navbar > .container .navbar-brand {
+    height: 30%;
+    width: 60%;
+  }
+}
+
+@media (min-width: 768px) {
+  #sidebar_nav {
+    position: fixed;
+    top: 101px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+  header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  #downloads {
+    margin-bottom: 25px;
+  }
+  #download-zip, #download-tar-gz {
+    display: none;
+  }
+  .inner {
+    width: 94%;
+    margin: 0 auto;
+  }
+
+  #top_nav.navbar > .container .navbar-brand {
+    height: 30%;
+    width: 60%;
+  }
+
+  #canfar-carousel > .carousel-inner > .item {
+    height: 200px;
+  }
+
+  #information_section {
+    margin-top: 25px;
+  }
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {  }
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) { }
+
+@media only screen and (min-width: 959px) {
+  #top_nav.navbar {
+    height: 100px;  }
+
+  #top_nav.navbar > .container .navbar-brand {
+    height: 100px;
+    line-height: 7.0rem;  }
+
+  #canfar-carousel > .carousel-inner > .item {
+    height: 350px;  }
+
+  #navbar_list.navbar-nav {
+    height: 100px;
+  }
+
+  .dropdown-menu>li>a {
+    line-height: 1.4rem;
+  }
+
+  #navbar_list.navbar-nav > li > a {
+    line-height: 7.0rem;
+    height: 100%;
+  }
+
+  #navbar_list.navbar-nav > li > .dropdown-menu {
+    border-top: 0;
+    margin-top: -0.1rem;
+    margin-left: -0.1rem;
+    border-radius: 0;
+  }
+
+  #information_section {
+    margin-top: 25px;
+  }
+
+  .panel-heading {
+    height: 70px;
+  }
+}
+
+div.carousel-caption {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+#top_nav.navbar {
+  margin-bottom: 0;
+  color: #fff;  }
+
+#top_nav.navbar > div > ul li {
+  color: #fff;
+}
+
+#canfar-carousel {
+  width: 100%;
+}
+
+#canfar-carousel > .carousel-inner > .item {
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#information_section {
+  font-size: 90%;
+}
+
+#information_content > div .panel {
+  height: 400px;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+  border-radius: 1.5rem;
+}
+
+h4.media-heading {
+  font-size: 130%;
+}
+
+h3.information_section_capture {
+  margin-top: 0;
+}

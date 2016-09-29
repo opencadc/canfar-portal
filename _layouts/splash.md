@@ -10,10 +10,10 @@ info_panels:
     max: 1
 ---
 
-<div id="container" class="container">
-  <div class="row">
+{% include _page_header.html %}
 
-    {% include _page_header.html %}
+<div class="container">
+  <div class="row">
 
     <section id="main_content">
       <div id="canfar-carousel" class="carousel slide"
@@ -56,21 +56,45 @@ info_panels:
 
     </section>
 
-    <section id="information_content">
+    <section id="information_section">
       <div class="row">
-        <div class="col-md-9 col-md-offset-3">
+        <div class="col-md-4">
+          <h3 class="text-primary information_section_capture">Providing research cyberinfrastructure services
+            to the Canadian astronomical community</h3>
+
+          <p>The Canadian Advanced Network for Astronomy Research is a national platform
+            for data-intensive scientific computing.</p>
+
+          <p>CANFAR is a consortium of Canadian university astronomers, Compute Canada,
+            and the National Research Council Canada’s Canadian Astronomy Data Centre
+            with
+            support from CANARIE and the Canadian Space Agency.</p>
+
+          <p>CANFAR services include:</p>
+          <ul>
+            <li>Archival data storage for major Canadian and international observatories
+              and projects
+            </li>
+            <li>Cloud processing</li>
+            <li>Infrastructure for visualization and analytics on massive datasets</li>
+            <li>User-managed storage for research teams</li>
+            <li>Innovative development to keep Canadian science at the leading edge</li>
+          </ul>
+
+        </div>
+        <div id="information_content" class="col-md-8">
 
           {% for info_panel in layout.info_panels %}
           {% assign info_panel_name = info_panel.name %}
           <div class="col-md-4">
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h3 class="text-primary panel-title"><a href="/{{ page.lang | prepend: site.baseurl }}{{ t[info_panel_name].link }}">{{ t[info_panel_name].name }} </a></h3>
+                <h3 class="panel-title"><a href="/{{ page.lang | prepend: site.baseurl }}{{ t[info_panel_name].link }}">{{ t[info_panel_name].name }} </a></h3>
               </div>
               <div class="panel-body">
                 <ul class="media-list">
-                {% assign count = 0 %}
-                {% for post in site.posts %}
+                  {% assign count = 0 %}
+                  {% for post in site.posts %}
                   {% if post.category == info_panel_name and count < info_panel.max %}
                   {% assign count = count | plus: 1 %}
                   <li class="media">
@@ -78,12 +102,12 @@ info_panels:
                       <a href="#"></a>
                     </div>
                     <div class="media-body">
-                      <h4 class="media-heading">{{ post.title }} </h4>
+                      <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span>{% if info_panel_name == 'featured' %} {{ post.title }} {% else %} {{ post.date | date: '%B %d, %Y' }} {% endif %} </h4>
                       {{ post.excerpt }}
                     </div>
                   </li>
                   {% endif %}
-                {% endfor %}
+                  {% endfor %}
                 </ul>
               </div>
             </div>
