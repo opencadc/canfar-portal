@@ -1,13 +1,5 @@
 ---
 layout: default
-
-info_panels:
-  - name: news
-    max: 3
-  - name: events
-    max: 3
-  - name: featured
-    max: 1
 ---
 
 {% include _page_header.html %}
@@ -59,7 +51,7 @@ info_panels:
     <section id="information_section">
       <div class="row">
         <div class="col-md-4">
-          <h3 class="text-primary information_section_capture">Providing research cyberinfrastructure services
+          <h3 class="text-info information_section_capture">Providing research cyberinfrastructure services
             to the Canadian astronomical community</h3>
 
           <p>The Canadian Advanced Network for Astronomy Research is a national platform
@@ -67,8 +59,7 @@ info_panels:
 
           <p>CANFAR is a consortium of Canadian university astronomers, Compute Canada,
             and the National Research Council Canada’s Canadian Astronomy Data Centre
-            with
-            support from CANARIE and the Canadian Space Agency.</p>
+            with support from CANARIE and the Canadian Space Agency.</p>
 
           <p>CANFAR services include:</p>
           <ul>
@@ -83,36 +74,60 @@ info_panels:
 
         </div>
         <div id="information_content" class="col-md-8">
-
-          {% for info_panel in layout.info_panels %}
-          {% assign info_panel_name = info_panel.name %}
           <div class="col-md-4">
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h3 class="panel-title"><a href="/{{ page.lang | prepend: site.baseurl }}{{ t[info_panel_name].link }}">{{ t[info_panel_name].name }} </a></h3>
+                <h3 class="panel-title">{{ t['news'].name }} </h3>
               </div>
               <div class="panel-body">
-                <ul class="media-list">
-                  {% assign count = 0 %}
-                  {% for post in site.posts %}
-                  {% if post.category == info_panel_name and count < info_panel.max %}
-                  {% assign count = count | plus: 1 %}
-                  <li class="media">
-                    <div class="media-left">
-                      <a href="#"></a>
-                    </div>
-                    <div class="media-body">
-                      <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span>{% if info_panel_name == 'featured' %} {{ post.title }}{% if post.author %} by {{ post.author }}{% endif %} {% else %} {{ post.date | date: '%B %d, %Y' }} {% endif %} </h4>
-                      {{ post.excerpt }}
-                    </div>
-                  </li>
-                  {% endif %}
-                  {% endfor %}
-                </ul>
+                {% assign news_posts = (site.posts | where: 'category', 'news') %}
+                {% for post in news_posts %}
+                <div class="media">
+                  <div class="media-body">
+                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ post.url }}">{{ post.date | date: '%B %d, %Y' }}</a></h4>
+                    {{ post.excerpt | strip_html | truncatewords:10 }}
+                  </div>
+                </div>
+                {% endfor %}
               </div>
             </div>
           </div>
-          {% endfor %}
+          <div class="col-md-4">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">{{ t['events'].name }} </h3>
+              </div>
+              <div class="panel-body">
+                {% assign events_posts = (site.posts | where: 'category', 'events') %}
+                {% for post in events_posts %}
+                <div class="media">
+                  <div class="media-body">
+                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ post.url }}">{{ post.date | date: '%B %d, %Y' }}</a></h4>
+                    {{ post.excerpt | strip_html | truncatewords:10 }}
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">{{ t['featured'].name }} </h3>
+              </div>
+              <div class="panel-body">
+                {% assign featured_posts = (site.posts | where: 'category', 'featured') %}
+                {% for post in featured_posts | limit: 1 %}
+                <div class="media">
+                  <div class="media-body">
+                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ post.url }}">{{ post.title }}{% if post.author %} by {{ post.author }}{% endif %}</a> </h4>
+                    {{ post.excerpt | strip_html | truncatewords:50 }}
+                  </div>
+                </div>
+              {% endfor %}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

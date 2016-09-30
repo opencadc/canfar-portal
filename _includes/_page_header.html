@@ -17,6 +17,7 @@
 {% endif %}
 
 {% capture page_lang_link %}/{{ page.lang }}{% endcapture %}
+{% capture page_lang_link %}{{ page_lang_link | prepend: site.baseurl }}{% endcapture %}
 
 <nav id="top_nav" class="navbar navbar-default navbar-fixed-top">
   <div class="container">
@@ -25,13 +26,13 @@
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#canfar_navbar_collapse" aria-expanded="false">
         <span class="sr-only">{{ t.toggle_navigation }}</span>
       </button>
-      <a class="navbar-brand" href="{{ page_lang_link | prepend: site.baseurl }}"><img src="{{ '/css/images/logo.png' | prepend: site.baseurl }}"></a>
+      <a class="navbar-brand" href="{{ page_lang_link }}"><img src="{{ '/css/images/logo.png' | prepend: site.baseurl }}"></a>
     </div>
 
     <div id="canfar_navbar_collapse" class="collapse navbar-collapse">
       <ul id="navbar_list" class="nav navbar-nav pull-right">
         <li class="dropdown">
-          <a href="{{ page_lang_link | prepend: site.baseurl }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="text-success">{{ page.lang }}</span> <span class="caret"></span></a>
+          <a href="{{ page_lang_link }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="text-success">{{ page.lang }}</span> <span class="caret"></span></a>
           <ul class="dropdown-menu list-unstyled">
             {% for lang in site.data.translations %}
             {% assign this_lang = lang[0] %}
@@ -54,28 +55,28 @@
             {% endfor %}
           </ul>
         </li>
-        <li><a href="{{ page_lang_link | prepend: site.baseurl }}{{ t.home.link }}">{{ t.home.name }}</a></li>
+        <li><a href="{{ page_lang_link }}{{ t.home.link }}">{{ t.home.name }}</a></li>
         <li><a href="http://www.canfar.phys.uvic.ca/" rel="external">{{ t.portal.name }} </a></li>
         <li class="dropdown{% if parent_namespace == 'about' %} active{% endif %}">
-          <a href="{{ page_lang_link | prepend: site.baseurl }}{{ t.about.link }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ t.about.name }} <span class="caret"></span></a>
+          <a href="{{ page_lang_link }}{{ t.about.link }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ t.about.name }} <span class="caret"></span></a>
           <ul class="dropdown-menu list-unstyled">
             {% for menudataitem in site.data.menudata['about'] %}
             {% assign parent_item = t['about'] %}
             {% assign item = parent_item[menudataitem] %}
-            <li><a href="{{ page_lang_link | prepend: site.baseurl }}{{ parent_item.link }}{{ item.link }}">{{ item.name }} </a></li>
+            <li><a href="{{ page_lang_link }}{{ parent_item.link }}{{ item.link }}">{{ item.name }} </a></li>
             {% endfor %}
 
             <li role="separator" class="divider"></li>
             {% assign mainitem = t.about %}
-            <li><a href="{{ page_lang_link | prepend: site.baseurl }}{{ mainitem.link }}">{{ mainitem.name }} </a></li>
+            <li><a href="{{ page_lang_link }}{{ mainitem.link }}">{{ mainitem.name }} </a></li>
           </ul>
         </li>
         <li class="dropdown{% if parent_namespace == 'services' %} active{% endif %}">
-          <a href="{{ page_lang_link | prepend: site.baseurl }}{{ t.services.link }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ t.services.name }} <span class="caret"></span></a>
+          <a href="{{ page_lang_link }}{{ t.services.link }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ t.services.name }} <span class="caret"></span></a>
           <ul class="dropdown-menu list-unstyled"></ul>
         </li>
         <li class="dropdown{% if parent_namespace == 'resources' %} active{% endif %}">
-          <a href="{{ page_lang_link | prepend: site.baseurl }}{{ t.resources.link }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ t.resources.name }} <span class="caret"></span></a>
+          <a href="{{ page_lang_link }}{{ t.resources.link }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ t.resources.name }} <span class="caret"></span></a>
           <ul class="dropdown-menu list-unstyled"></ul>
         </li>
       </ul>
