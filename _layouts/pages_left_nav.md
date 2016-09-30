@@ -26,12 +26,12 @@ layout: default
           {% else %}
             {% assign menu_item_url = parent_item.link %}
           {% endif %}
-        
-        <li><a href="/{{ page.lang | prepend: site.baseurl }}{{ menu_item_url }}">{{ child_menu_item.name }} </a></li>
+
+        <li><a href="{{ page_lang_link | prepend: site.baseurl }}{{ menu_item_url }}">{{ child_menu_item.name }} </a></li>
         {% endfor %}
 
         <li role="separator" class="divider"></li>
-        <li><a href="/{{ page.lang | prepend: site.baseurl }}{{ parent_item.link }}">{{ parent_item.name }} </a></li>
+        <li><a href="{{ page_lang_link | prepend: site.baseurl }}{{ parent_item.link }}">{{ parent_item.name }} </a></li>
       </ul>
     </div>
     <div role="main" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
