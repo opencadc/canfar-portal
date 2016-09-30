@@ -27,7 +27,7 @@ layout: default
             {% assign menu_item_url = parent_item.link %}
           {% endif %}
 
-        {% capture link_url %}{{ page_lang_link | prepend: site.baseurl }}{{ menu_item_url }}/{% endcapture %}
+        {% capture link_url %}{{ page_lang_link }}{{ menu_item_url }}/{% endcapture %}
         <li{% if page.url == link_url %} class="active"{% endif %}><a href="{{ link_url }}">{{ child_menu_item.name }} </a></li>
         {% endfor %}
 
