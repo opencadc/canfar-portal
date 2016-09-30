@@ -18,7 +18,7 @@
 
 {% capture page_lang_link %}/{{ page.lang }}{% endcapture %}
 
-<nav id="top_nav" class="navbar navbar-default">
+<nav id="top_nav" class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -56,7 +56,7 @@
         </li>
         <li><a href="{{ page_lang_link | prepend: site.baseurl }}{{ t.home.link }}">{{ t.home.name }}</a></li>
         <li><a href="http://www.canfar.phys.uvic.ca/" rel="external">{{ t.portal.name }} </a></li>
-        <li class="dropdown">
+        <li class="dropdown{% if parent_namespace == 'about' %} active{% endif %}">
           <a href="{{ page_lang_link | prepend: site.baseurl }}{{ t.about.link }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ t.about.name }} <span class="caret"></span></a>
           <ul class="dropdown-menu list-unstyled">
             {% for menudataitem in site.data.menudata['about'] %}
@@ -70,11 +70,11 @@
             <li><a href="{{ page_lang_link | prepend: site.baseurl }}{{ mainitem.link }}">{{ mainitem.name }} </a></li>
           </ul>
         </li>
-        <li class="dropdown">
+        <li class="dropdown{% if parent_namespace == 'services' %} active{% endif %}">
           <a href="{{ page_lang_link | prepend: site.baseurl }}{{ t.services.link }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ t.services.name }} <span class="caret"></span></a>
           <ul class="dropdown-menu list-unstyled"></ul>
         </li>
-        <li class="dropdown">
+        <li class="dropdown{% if parent_namespace == 'resources' %} active{% endif %}">
           <a href="{{ page_lang_link | prepend: site.baseurl }}{{ t.resources.link }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ t.resources.name }} <span class="caret"></span></a>
           <ul class="dropdown-menu list-unstyled"></ul>
         </li>

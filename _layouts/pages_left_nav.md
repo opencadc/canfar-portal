@@ -27,11 +27,13 @@ layout: default
             {% assign menu_item_url = parent_item.link %}
           {% endif %}
 
-        <li><a href="{{ page_lang_link | prepend: site.baseurl }}{{ menu_item_url }}">{{ child_menu_item.name }} </a></li>
+        {% capture link_url %}{{ page_lang_link | prepend: site.baseurl }}{{ menu_item_url }}/{% endcapture %}
+        <li{% if page.url == link_url %} class="active"{% endif %}><a href="{{ link_url }}">{{ child_menu_item.name }} </a></li>
         {% endfor %}
 
         <li role="separator" class="divider"></li>
-        <li><a href="{{ page_lang_link | prepend: site.baseurl }}{{ parent_item.link }}">{{ parent_item.name }} </a></li>
+        {% capture main_link_url %}{{ page_lang_link | prepend: site.baseurl }}{{ parent_item.link }}/{% endcapture %}
+        <li{% if page.url == main_link_url %} class="active"{% endif %}><a href="{{main_link_url}}">{{ parent_item.name }} </a></li>
       </ul>
     </div>
     <div role="main" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
