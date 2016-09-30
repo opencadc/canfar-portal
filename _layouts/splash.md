@@ -84,7 +84,8 @@ layout: default
                 {% for post in news_posts %}
                 <div class="media">
                   <div class="media-body">
-                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ post.url }}">{{ post.date | date: '%B %d, %Y' }}</a></h4>
+                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ post.url }}">{{ post.title }}</a></h4>
+                    <time datetime="{{ post.date }}">{{ post.date | date: '%B %d, %Y' }}</time>
                     {{ post.excerpt | strip_html | truncatewords:10 }}
                   </div>
                 </div>
@@ -102,7 +103,8 @@ layout: default
                 {% for post in events_posts %}
                 <div class="media">
                   <div class="media-body">
-                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ post.url }}">{{ post.date | date: '%B %d, %Y' }}</a></h4>
+                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ post.url }}">{{ post.title }}</a></h4>
+                    <time datetime="{{ post.date }}">{{ post.date | date: '%B %d, %Y' }}</time>
                     {{ post.excerpt | strip_html | truncatewords:10 }}
                   </div>
                 </div>
@@ -124,7 +126,11 @@ layout: default
                 <div class="media">
                   <div class="media-body">
                     <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ featured_post_url }}">{{ post.title }}{% if post.author %} by {{ post.author }}{% endif %}</a> </h4>
-                    {{ post.excerpt | strip_html | truncatewords:10 }}
+                    {% if post.external_url %}
+                      <time datetime="{{ post.date }}">{{ post.date | date: '%B %d, %Y' }}</time>
+                    {% else %}
+                      {{ post.excerpt | strip_html | truncatewords:10 }}
+                    {% endif %}
                   </div>
                 </div>
               {% endfor %}

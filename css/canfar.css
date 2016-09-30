@@ -391,3 +391,10 @@ h3.information_section_capture {
 dl.dl-horizontal {
   margin-bottom: 5px;
 }
+
+.media-body time {
+  clear: both;
+  display: block;
+  font-size: 110%;
+  font-weight: bolder;
+}
