@@ -49,7 +49,7 @@
               {% endif %}
 
               {% capture this_lang_link %}/{{this_lang}}{% endcapture %}
-            <li><a href="/{{ this_lang_link | prepend: site.baseurl }}{{ child_url_x }}" lang="{{ this_lang }}">{{ this_lang }}</a></li>
+            <li><a href="{{ this_lang_link | prepend: site.baseurl }}{{ child_url_x }}" lang="{{ this_lang }}">{{ this_lang }}</a></li>
             {% endif %}
             {% endfor %}
           </ul>
