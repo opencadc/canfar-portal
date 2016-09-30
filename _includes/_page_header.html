@@ -31,30 +31,32 @@
 
     <div id="canfar_navbar_collapse" class="collapse navbar-collapse">
       <ul id="navbar_list" class="nav navbar-nav pull-right">
-        <li class="dropdown">
-          <a href="{{ page_lang_link }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="text-success">{{ page.lang }}</span> <span class="caret"></span></a>
-          <ul class="dropdown-menu list-unstyled">
-            {% for lang in site.data.translations %}
-            {% assign this_lang = lang[0] %}
-            {% if this_lang != page.lang %}
-              {% assign tx = site.data.translations[this_lang] %}
-              {% assign child_item_x = tx %}
+        <!--<li class="dropdown">-->
+          <!--<a href="{{ page_lang_link }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="text-success">{{ page.lang }}</span> <span class="caret"></span></a>-->
+          <!--<ul class="dropdown-menu list-unstyled">-->
+            <!--{% comment %}-->
+            <!--{% for lang in site.data.translations %}-->
+            <!--{% assign this_lang = lang[0] %}-->
+            <!--{% if this_lang != page.lang %}-->
+              <!--{% assign tx = site.data.translations[this_lang] %}-->
+              <!--{% assign child_item_x = tx %}-->
 
-              {% if page_namespace_items.size > 0 %}
-                {% for hier_item in page_namespace_items %}
-                  {% assign child_item_x = child_item_x[hier_item] %}
-                  {% capture child_url_x %}{{child_url_x}}{{child_item_x.link}}{% endcapture %}
-                {% endfor %}
-              {% else %}
-                {% assign child_item_x = tx[parent_namespace] %}
-              {% endif %}
+              <!--{% if page_namespace_items.size > 0 %}-->
+                <!--{% for hier_item in page_namespace_items %}-->
+                  <!--{% assign child_item_x = child_item_x[hier_item] %}-->
+                  <!--{% capture child_url_x %}{{child_url_x}}{{child_item_x.link}}{% endcapture %}-->
+                <!--{% endfor %}-->
+              <!--{% else %}-->
+                <!--{% assign child_item_x = tx[parent_namespace] %}-->
+              <!--{% endif %}-->
 
-              {% capture this_lang_link %}/{{this_lang}}{% endcapture %}
-            <li><a href="{{ this_lang_link | prepend: site.baseurl }}{{ child_url_x }}" lang="{{ this_lang }}">{{ this_lang }}</a></li>
-            {% endif %}
-            {% endfor %}
-          </ul>
-        </li>
+              <!--{% capture this_lang_link %}/{{this_lang}}{% endcapture %}-->
+            <!--<li><a href="{{ this_lang_link | prepend: site.baseurl }}{{ child_url_x }}" lang="{{ this_lang }}">{{ this_lang }}</a></li>-->
+            <!--{% endif %}-->
+            <!--{% endfor %}-->
+            <!--{% endcomment %}-->
+          <!--</ul>-->
+        <!--</li>-->
         <li><a href="{{ page_lang_link }}{{ t.home.link }}">{{ t.home.name }}</a></li>
         <li><a href="http://www.canfar.phys.uvic.ca/" rel="external">{{ t.portal.name }} </a></li>
         {% include __top_menu_pulldown.md name='about' %}

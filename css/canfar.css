@@ -324,8 +324,11 @@ div.dataTables_wrapper div.dataTables_info {
     line-height: 1.4rem;
   }
 
+  #navbar_list.navbar-nav > li {
+    margin-top: 25px;
+  }
+
   #navbar_list.navbar-nav > li > a {
-    line-height: 7.0rem;
     height: 100%;
   }
 
