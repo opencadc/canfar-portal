@@ -121,7 +121,7 @@ layout: default
                 {% assign featured_posts = (site.posts | where: 'category', 'featured') %}
 
                 {% comment %}Only the first three featured post (latest) is used.{% endcomment %}
-                {% for post in featured_posts limit: 3 %}
+                {% for post in featured_posts limit: 4 %}
                 {% capture featured_post_url %}{% if post.external_url %}{{ post.external_url }}{% else %}{{ post.url }}{% endif %}{% endcapture %}
                 <div class="media">
                   <div class="media-body">
