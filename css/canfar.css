@@ -386,3 +386,7 @@ h4.media-heading {
 h3.information_section_capture {
   margin-top: 0;
 }
+
+dl.dl-horizontal {
+  margin-bottom: 5px;
+}
