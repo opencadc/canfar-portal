@@ -117,11 +117,14 @@ layout: default
               </div>
               <div class="panel-body">
                 {% assign featured_posts = (site.posts | where: 'category', 'featured') %}
-                {% for post in featured_posts | limit: 1 %}
+
+                {% comment %}Only the first three featured post (latest) is used.{% endcomment %}
+                {% for post in featured_posts limit: 3 %}
+                {% capture featured_post_url %}{% if post.external_url %}{{ post.external_url }}{% else %}{{ post.url }}{% endif %}{% endcapture %}
                 <div class="media">
                   <div class="media-body">
-                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ post.url }}">{{ post.title }}{% if post.author %} by {{ post.author }}{% endif %}</a> </h4>
-                    {{ post.excerpt | strip_html | truncatewords:50 }}
+                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ featured_post_url }}">{{ post.title }}{% if post.author %} by {{ post.author }}{% endif %}</a> </h4>
+                    {{ post.excerpt | strip_html | truncatewords:10 }}
                   </div>
                 </div>
               {% endfor %}

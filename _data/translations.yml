@@ -26,9 +26,24 @@ en:
   services:
     name: 'Services'
     link: '/services'
+    digital_object_identifiers:
+      name: 'Digital Object Identifiers'
+      link: '/digital-object-identifiers'
   resources:
     name: 'Resources'
     link: '/resources'
+    digital_object_identifiers:
+      name: 'Digital Object Identifiers'
+      link: '/digital-object-identifiers'
+    support:
+      name: 'User Support'
+      link: '/support'
+    ivoa:
+      name: 'IVOA'
+      link: '/ivoa'
+    data_management:
+      name: 'Data Management Links'
+      link: '/data-management'
   footer_github: 'on GitHub'
   toggle_navigation: 'Toggle navigation'
   showcase_taglines:
@@ -44,8 +59,8 @@ en:
     name: 'News'
     link: '/news'
   featured:
-    name: 'Featured Publication'
-    link: '/featured-publication'
+    name: 'Featured Publications'
+    link: '/featured-publications'
 fr:
   home:
     name: 'Acceuil'
@@ -74,9 +89,24 @@ fr:
   services:
     name: 'Services'
     link: '/services'
+    digital_object_identifiers:
+      name: 'Digital Object Identifiers'
+      link: '/identificateurs-objets-digitale'
   resources:
     name: 'Ressources'
     link: '/ressources'
+    digital_object_identifiers:
+      name: 'Digital Object Identifiers'
+      link: '/identificateurs-objets-digitale'
+    support:
+      name: 'Aide'
+      link: '/aide'
+    ivoa:
+      name: 'IVOA'
+      link: '/ivoa'
+    data_management:
+      name: 'Gestion de données'
+      link: '/gestion-de-donnees'
   footer_github: 'sur GitHub'
   toggle_navigation: 'Verser la navigation'
   showcase_taglines:
@@ -92,5 +122,5 @@ fr:
     name: 'Nouvelles'
     link: '/nouvelles'
   featured:
-    name: 'Publication en vedette'
-    link: '/publication-en-vedette'
+    name: 'Publications en vedette'
+    link: '/publications-en-vedette'
