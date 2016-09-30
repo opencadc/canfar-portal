@@ -32,7 +32,7 @@ layout: default
         {% endfor %}
 
         <li role="separator" class="divider"></li>
-        {% capture main_link_url %}{{ page_lang_link | prepend: site.baseurl }}{{ parent_item.link }}/{% endcapture %}
+        {% capture main_link_url %}{{ page_lang_link }}{{ parent_item.link }}/{% endcapture %}
         <li{% if page.url == main_link_url %} class="active"{% endif %}><a href="{{main_link_url}}">{{ parent_item.name }} </a></li>
       </ul>
     </div>
