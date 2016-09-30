@@ -4,7 +4,9 @@
     {% for menudataitem in site.data.menudata[include.name] %}
       {% assign menu_pulldown_parent_item = t[include.name] %}
       {% assign menu_pulldown_item = menu_pulldown_parent_item[menudataitem] %}
-    <li><a href="{{ page_lang_link }}{{ menu_pulldown_parent_item.link }}{{ menu_pulldown_item.link }}">{{ menu_pulldown_item.name }} </a></li>
+      {% capture menu_beginning_portion %}{{ menu_pulldown_item.link | slice: 0, 4 }}{% endcapture %}
+      {% capture menu_pulldown_link %}{% if menu_beginning_portion == "http" %}{{ menu_pulldown_item.link }}{% else %}{{ page_lang_link }}{{ menu_pulldown_parent_item.link }}{{ menu_pulldown_item.link }}{% endif %}{% endcapture%}
+    <li><a href="{{ menu_pulldown_link }}">{{ menu_pulldown_item.name }} </a></li>
     {% endfor %}
 
     <li role="separator" class="divider"></li>

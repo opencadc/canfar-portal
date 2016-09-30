@@ -71,7 +71,6 @@ layout: default
             <li>User-managed storage for research teams</li>
             <li>Innovative development to keep Canadian science at the leading edge</li>
           </ul>
-
         </div>
         <div id="information_content" class="col-md-8">
           <div class="col-md-4">

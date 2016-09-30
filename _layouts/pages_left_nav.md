@@ -28,7 +28,9 @@ layout: default
           {% endif %}
 
         {% capture link_url %}{{ page_lang_link }}{{ menu_item_url }}/{% endcapture %}
-        <li{% if page.url == link_url %} class="active"{% endif %}><a href="{{ link_url }}">{{ child_menu_item.name }} </a></li>
+        {% capture child_menu_item_beginning %}{{child_menu_item.link | slice: 0, 4}}{% endcapture %}
+        {% capture menu_link_url_side %}{% if child_menu_item_beginning == "http" %}{{ child_menu_item.link }}{% else %}{{ link_url }}{% endif %}{% endcapture %}
+        <li{% if page.url == link_url %} class="active"{% endif %}><a href="{{ menu_link_url_side }}">{{ child_menu_item.name }} </a></li>
         {% endfor %}
 
         <li role="separator" class="divider"></li>

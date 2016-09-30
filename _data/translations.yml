@@ -44,6 +44,12 @@ en:
     data_management:
       name: 'Data Management Links'
       link: '/data-management'
+    github_canfar:
+      name: 'CANFAR sur GitHub'
+      link: 'https://github.com/canfar'
+    github_opencadc:
+      name: 'OpenCADC sur GitHub'
+      link: 'https://github.com/opencadc'
   footer_github: 'on GitHub'
   toggle_navigation: 'Toggle navigation'
   showcase_taglines:
@@ -107,6 +113,12 @@ fr:
     data_management:
       name: 'Gestion de données'
       link: '/gestion-de-donnees'
+    github_canfar:
+      name: 'CANFAR sur GitHub'
+      link: 'https://github.com/canfar'
+    github_opencadc:
+      name: 'OpenCADC sur GitHub'
+      link: 'https://github.com/opencadc'
   footer_github: 'sur GitHub'
   toggle_navigation: 'Verser la navigation'
   showcase_taglines:
