@@ -83,7 +83,7 @@ layout: default
                 {% for post in news_posts %}
                 <div class="media">
                   <div class="media-body">
-                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ post.url }}">{{ post.title }}</a></h4>
+                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h4>
                     <time datetime="{{ post.date }}">{{ post.date | date: '%B %d, %Y' }}</time>
                     {{ post.excerpt | strip_html | truncatewords:10 }}
                   </div>
@@ -102,7 +102,7 @@ layout: default
                 {% for post in events_posts %}
                 <div class="media">
                   <div class="media-body">
-                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ post.url }}">{{ post.title }}</a></h4>
+                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h4>
                     <time datetime="{{ post.date }}">{{ post.date | date: '%B %d, %Y' }}</time>
                     {{ post.excerpt | strip_html | truncatewords:10 }}
                   </div>
@@ -121,7 +121,7 @@ layout: default
 
                 {% comment %}Only the first three featured post (latest) is used.{% endcomment %}
                 {% for post in featured_posts limit: 4 %}
-                {% capture featured_post_url %}{% if post.external_url %}{{ post.external_url }}{% else %}{{ post.url }}{% endif %}{% endcapture %}
+                {% capture featured_post_url %}{% if post.external_url %}{{ post.external_url }}{% else %}{{ post.url | prepend: site.baseurl }}{% endif %}{% endcapture %}
                 <div class="media">
                   <div class="media-body">
                     <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ featured_post_url }}">{{ post.title }}{% if post.author %} by {{ post.author }}{% endif %}</a> </h4>
