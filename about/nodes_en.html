@@ -7,15 +7,5 @@ permalink: /en/about/nodes/
 ---
 
 <!-- Content start -->
-{% assign path_items = page.path | split: "/" %}
-<div>{{ page.path }}</div>
-
-{% capture html_check %}index_{{ page.lang }}.html{% endcapture %}
-
-{% for ite in path_items %}
-  {% if ite != html_check %}
-  <div>{{ ite }}</div>
-  {% endif %}
-{% endfor %}
 
 <!-- Content end -->
