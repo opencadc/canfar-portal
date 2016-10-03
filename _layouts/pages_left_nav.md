@@ -9,29 +9,7 @@ layout: default
     <div id="sidebar_nav" role="navigation" class="col-sm-3 col-md-2 sidebar">
       <h3>{{ parent_item.name }}</h3>
       <ul class="nav nav-sidebar">
-        {% capture html_check %}index_{{ page.lang }}.html{% endcapture %}
-        {% assign path_items = page.path | split: html_check %}
-
-        {% for menu_item_namespace in site.data.menudata[parent_namespace] %}
-          {% assign menu_item_namespace_items = menu_item_namespace | split: "." %}
-
-          {% assign child_menu_item = parent_item %}
-          {% assign menu_item_url = parent_item.link %}
-
-          {% if menu_item_namespace_items.size > 0 %}
-            {% for hier_menu_item in menu_item_namespace_items %}
-              {% assign child_menu_item = child_menu_item[hier_menu_item] %}
-              {% capture menu_item_url %}{{menu_item_url}}{{child_menu_item.link}}{% endcapture %}
-            {% endfor %}
-          {% else %}
-            {% assign menu_item_url = parent_item.link %}
-          {% endif %}
-
-        {% capture link_url %}{{ page_lang_link }}{{ menu_item_url }}/{% endcapture %}
-        {% capture child_menu_item_beginning %}{{child_menu_item.link | slice: 0, 4}}{% endcapture %}
-        {% capture menu_link_url_side %}{% if child_menu_item_beginning == "http" %}{{ child_menu_item.link }}{% else %}{{ link_url }}{% endif %}{% endcapture %}
-        <li{% if page.url == link_url %} class="active"{% endif %}><a href="{{ menu_link_url_side }}">{{ child_menu_item.name }} </a></li>
-        {% endfor %}
+        {% include _menudata_list.md namespace=parent_namespace %}
 
         <li role="separator" class="divider"></li>
         {% capture main_link_url %}{{ page_lang_link }}{{ parent_item.link }}/{% endcapture %}
