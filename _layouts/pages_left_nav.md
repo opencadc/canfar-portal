@@ -20,7 +20,7 @@ layout: default
       <div class="inner">
         <section id="main_content">
           <h2><a id="canfar-beta" class="anchor" href="#canfar-beta" aria-hidden="true">
-            <span aria-hidden="true" class="octicon octicon-link"></span></a>{{ child_item.name }}</h2>
+            <span aria-hidden="true" class="octicon octicon-link"></span></a>{{ child_item.name }} <a class="btn btn-sm btn-warning" href="{{site.github.repository_url}}/blob/gh-pages/{{page.path}}">Edit this page</a></h2>
 
           {{ content }}
 
