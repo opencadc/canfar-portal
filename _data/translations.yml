@@ -45,10 +45,10 @@ en:
       name: 'Data Management Links'
       link: '/data-management'
     github_canfar:
-      name: 'CANFAR sur GitHub'
+      name: 'CANFAR on GitHub'
       link: 'https://github.com/canfar'
     github_opencadc:
-      name: 'OpenCADC sur GitHub'
+      name: 'OpenCADC on GitHub'
       link: 'https://github.com/opencadc'
   footer_github: 'on GitHub'
   toggle_navigation: 'Toggle navigation'
