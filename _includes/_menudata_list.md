@@ -15,10 +15,11 @@
   {% endif %}
 
   {% capture link_url %}{{ page_lang_link }}{{ menu_item_url }}/{% endcapture %}
+  {% capture page_url %}{{ page.url | prepend: site.baseurl }}{% endcapture %}
 
-  <li>{{ page.url }} == {{ link_url }}</li>
+  <li>{{ page_url }} == {{ link_url }}</li>
 
   {% capture child_menu_item_beginning %}{{child_menu_item.link | slice: 0, 4}}{% endcapture %}
   {% capture menu_link_url_side %}{% if child_menu_item_beginning == "http" %}{{ child_menu_item.link }}{% else %}{{ link_url }}{% endif %}{% endcapture %}
-<li{% if page.url == link_url %} class="active"{% endif %}><a href="{{ menu_link_url_side }}">{{ child_menu_item.name }} </a></li>
+<li{% if page_url %} class="active"{% endif %}><a href="{{ menu_link_url_side }}">{{ child_menu_item.name }} </a></li>
 {% endfor %}
