@@ -1,3 +1,4 @@
 about: ['organization', 'terms_of_reference', 'our_people', 'governance', 'nodes']
-services: ['digital_object_identifiers']
+services: ['uvic', 'cadc']
 resources: ['digital_object_identifiers', 'support', 'ivoa', 'data_management', 'github_canfar', 'github_opencadc']
+nodes: ['nugrid', 'ngvs', 'cadc']

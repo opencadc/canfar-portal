@@ -1,5 +1,5 @@
 ---
-category: events
+category: services
 title: CAOM-2 Workshop
 ---
 

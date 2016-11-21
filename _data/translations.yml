@@ -1,4 +1,9 @@
 en:
+  login:
+    name: 'Login'
+    link: '/ac/login'
+  science:
+    name: 'Science'
   home:
     name: 'Home'
     link: '/'
@@ -17,15 +22,30 @@ en:
     governance:
       name: 'Governance'
       link: '/governance'
-    nodes:
-      name: 'Nodes'
-      link: '/nodes'
-  portal:
-    name: 'Portal'
-    link: '/portal'
+  nodes:
+    name: 'Nodes'
+    link: '/nodes'
+    nugrid:
+      name: 'NuGrid'
+      link: '/nugrid'
+    ngvs:
+      name: 'NGVS'
+      link: '/ngvs'
+    cadc:
+      name: 'CADC'
+      link: '/cadc'
   services:
     name: 'Services'
     link: '/services'
+    uvic:
+      name: '@UVic'
+      link: '/uvic'
+      cloud_portal:
+        name: 'Cloud Portal'
+        link: '/cloud-portal'
+    cadc:
+      name: '@CADC'
+      link: '/cadc'
     digital_object_identifiers:
       name: 'Digital Object Identifiers'
       link: '/digital-object-identifiers'
@@ -68,6 +88,11 @@ en:
     name: 'Featured Publications'
     link: '/featured-publications'
 fr:
+  login:
+    name: 'Connexion'
+    link: '/ac/login'
+  science:
+    name: 'Science'
   home:
     name: 'Acceuil'
     link: '/'
@@ -86,15 +111,30 @@ fr:
     governance:
       name: 'Gouvernance'
       link: '/gouvernance'
-    nodes:
-      name: 'Nodes'
-      link: '/nodes'
-  portal:
-    name: 'Portail'
-    link: '/portail'
+  nodes:
+    name: 'Nodes'
+    link: '/nodes'
+    nugrid:
+      name: 'NuGrid'
+      link: '/nugrid'
+    ngvs:
+      name: 'NGVS'
+      link: '/ngvs'
+    cadc:
+      name: 'CCDA'
+      link: '/ccda'
   services:
     name: 'Services'
     link: '/services'
+    uvic:
+      name: '@UVic'
+      link: '/uvic'
+      cloud_portal:
+        name: 'Portail de cloud'
+        link: '/portail-de-cloud'
+    cadc:
+      name: '@CCDA'
+      link: '/ccda'
     digital_object_identifiers:
       name: 'Digital Object Identifiers'
       link: '/identificateurs-objets-digitale'

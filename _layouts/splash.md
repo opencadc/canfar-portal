@@ -76,11 +76,11 @@ layout: default
           <div class="col-md-4">
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h3 class="panel-title">{{ t['news'].name }} </h3>
+                <h3 class="panel-title">{{ t['nodes'].name }} </h3>
               </div>
               <div class="panel-body">
-                {% assign news_posts = (site.posts | where: 'category', 'news') %}
-                {% for post in news_posts %}
+                {% assign nodes_posts = (site.posts | where: 'category', 'nodes') %}
+                {% for post in nodes_posts %}
                 <div class="media">
                   <div class="media-body">
                     <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h4>
@@ -95,11 +95,11 @@ layout: default
           <div class="col-md-4">
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h3 class="panel-title">{{ t['events'].name }} </h3>
+                <h3 class="panel-title">{{ t['science'].name }} </h3>
               </div>
               <div class="panel-body">
-                {% assign events_posts = (site.posts | where: 'category', 'events') %}
-                {% for post in events_posts %}
+                {% assign science_posts = (site.posts | where: 'category', 'science') %}
+                {% for post in science_posts %}
                 <div class="media">
                   <div class="media-body">
                     <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h4>
@@ -114,13 +114,13 @@ layout: default
           <div class="col-md-4">
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h3 class="panel-title">{{ t['featured'].name }} </h3>
+                <h3 class="panel-title">{{ t['services'].name }} </h3>
               </div>
               <div class="panel-body">
-                {% assign featured_posts = (site.posts | where: 'category', 'featured') %}
+                {% assign services_posts = (site.posts | where: 'category', 'services') %}
 
                 {% comment %}Only the first three featured post (latest) is used.{% endcomment %}
-                {% for post in featured_posts limit: 4 %}
+                {% for post in services_posts limit: 4 %}
                 {% capture featured_post_url %}{% if post.external_url %}{{ post.external_url }}{% else %}{{ post.url | prepend: site.baseurl }}{% endif %}{% endcapture %}
                 <div class="media">
                   <div class="media-body">
