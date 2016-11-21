@@ -320,8 +320,10 @@ div.dataTables_wrapper div.dataTables_info {
     height: 100px;
   }
 
-  .dropdown-menu>li>a {
-    line-height: 1.4rem;
+  .nav > li > a.menu-item-indent-2,
+  a.menu-item-indent-2,
+  .dropdown-menu>li>a.menu-item-indent-2 {
+    padding-left: 40px;
   }
 
   #navbar_list.navbar-nav > li {

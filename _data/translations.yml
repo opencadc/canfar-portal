@@ -42,34 +42,46 @@ en:
       link: '/uvic'
       cloud_portal:
         name: 'Cloud Portal'
-        link: '/cloud-portal'
+        link: 'http://www.canfar.phys.uvic.ca/processing/vmod/'
     cadc:
       name: '@CADC'
       link: '/cadc'
-    digital_object_identifiers:
-      name: 'Digital Object Identifiers'
-      link: '/digital-object-identifiers'
+      digital_object_identifiers:
+        name: 'Digital Object Identifiers'
+        link: '/digital-object-identifiers'
+      storage:
+        name: 'Storage'
+        link: 'http://www.canfar.phys.uvic.ca/vosui'
+      batch_processing:
+        name: 'Batch Processing'
+        link: 'http://www.canfar.phys.uvic.ca/processing/batchjobs'
+      group_management:
+        name: 'Group Management'
+        link: 'http://www.canfar.phys.uvic.ca/canfar/groups'
   resources:
     name: 'Resources'
     link: '/resources'
-    digital_object_identifiers:
-      name: 'Digital Object Identifiers'
-      link: '/digital-object-identifiers'
-    support:
-      name: 'User Support'
-      link: '/support'
-    ivoa:
-      name: 'IVOA'
-      link: '/ivoa'
-    data_management:
-      name: 'Data Management Links'
-      link: '/data-management'
-    github_canfar:
-      name: 'CANFAR on GitHub'
-      link: 'https://github.com/canfar'
-    github_opencadc:
-      name: 'OpenCADC on GitHub'
-      link: 'https://github.com/opencadc'
+    expertise:
+      name: 'Expertise'
+      link: '/expertise'
+      cadc:
+        name: '@CADC'
+        link: '/cadc'
+      uvic:
+        name: '@UVic'
+        link: '/uvic'
+    documentation:
+      name: 'Documentation'
+      link: '/documentation'
+    hardware:
+      name: 'Hardware'
+      link: '/hardware'
+      cores:
+        name: 'Cores'
+        link: '/cores'
+      disk_space:
+        name: 'Disk Space'
+        link: '/disk-space'
   footer_github: 'on GitHub'
   toggle_navigation: 'Toggle navigation'
   showcase_taglines:
@@ -131,34 +143,46 @@ fr:
       link: '/uvic'
       cloud_portal:
         name: 'Portail de cloud'
-        link: '/portail-de-cloud'
+        link: 'http://www.canfar.phys.uvic.ca/processing/vmod/'
     cadc:
       name: '@CCDA'
       link: '/ccda'
-    digital_object_identifiers:
-      name: 'Digital Object Identifiers'
-      link: '/identificateurs-objets-digitale'
+      digital_object_identifiers:
+        name: 'Identificateurs d''objects digitale'
+        link: '/identificateurs-objets-digitale'
+      storage:
+        name: 'Stockage'
+        link: 'http://www.canfar.phys.uvic.ca/vosui'
+      batch_processing:
+        name: 'Le traitement par lots'
+        link: 'http://www.canfar.phys.uvic.ca/processing/batchjobs'
+      group_management:
+        name: 'Gestion de groupes'
+        link: 'http://www.canfar.phys.uvic.ca/canfar/groups'
   resources:
     name: 'Ressources'
     link: '/ressources'
-    digital_object_identifiers:
-      name: 'Digital Object Identifiers'
-      link: '/identificateurs-objets-digitale'
-    support:
-      name: 'Aide'
-      link: '/aide'
-    ivoa:
-      name: 'IVOA'
-      link: '/ivoa'
-    data_management:
-      name: 'Gestion de données'
-      link: '/gestion-de-donnees'
-    github_canfar:
-      name: 'CANFAR sur GitHub'
-      link: 'https://github.com/canfar'
-    github_opencadc:
-      name: 'OpenCADC sur GitHub'
-      link: 'https://github.com/opencadc'
+    expertise:
+      name: 'Compétence'
+      link: '/competence'
+      cadc:
+        name: 'CCDA'
+        link: '/ccda'
+      uvic:
+        name: '@UVic'
+        link: '/uvic'
+    documentation:
+      name: 'Documentation'
+      link: '/documentation'
+    hardware:
+      name: 'Matériel'
+      link: '/materiel'
+      cores:
+        name: 'Noyaux'
+        link: '/noyaux'
+      disk_space:
+        name: 'Espace de disque'
+        link: '/espace-de-disque'
   footer_github: 'sur GitHub'
   toggle_navigation: 'Verser la navigation'
   showcase_taglines:

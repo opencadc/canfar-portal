@@ -19,5 +19,5 @@
 
   {% capture child_menu_item_beginning %}{{child_menu_item.link | slice: 0, 4}}{% endcapture %}
   {% capture menu_link_url_side %}{% if child_menu_item_beginning == "http" %}{{ child_menu_item.link }}{% else %}{{ link_url }}{% endif %}{% endcapture %}
-<li{% if page_url == link_url %} class="active"{% endif %}><a href="{{ menu_link_url_side }}">{{ child_menu_item.name }} </a></li>
+<li{% if page_url == link_url %} class="active"{% endif %}><a href="{{ menu_link_url_side }}" {% if child_menu_item_beginning == "http" %}rel="external"{% endif %} class="menu-item-indent-{{ menu_item_namespace_items.size }}">{{ child_menu_item.name }} </a></li>
 {% endfor %}

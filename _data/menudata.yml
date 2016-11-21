@@ -1,4 +1,4 @@
 about: ['organization', 'terms_of_reference', 'our_people', 'governance', 'nodes']
-services: ['uvic', 'cadc']
-resources: ['digital_object_identifiers', 'support', 'ivoa', 'data_management', 'github_canfar', 'github_opencadc']
+services: ['uvic', 'uvic.cloud_portal', 'cadc', 'cadc.digital_object_identifiers', 'cadc.storage', 'cadc.batch_processing', 'cadc.group_management']
+resources: ['expertise', 'expertise.cadc', 'expertise.uvic', 'documentation', 'hardware', 'hardware.cores', 'hardware.disk_space']
 nodes: ['nugrid', 'ngvs', 'cadc']
