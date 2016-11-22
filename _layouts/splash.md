@@ -81,7 +81,7 @@ layout: default
                 {% capture node_post_url %}{{ t[post.namespace].link | prepend: site.baseurl }}{% endcapture %}
                 <div class="media">
                   <div class="media-body">
-                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ post.namespace }}">{{ post.title }}</a></h4>
+                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span>{% include _link_item.md namespace=post.namespace link_only=true %}</h4>
                     <time datetime="{{ post.date }}">{{ post.date | date: '%B %d, %Y' }}</time>
                     {{ post.excerpt | strip_html | truncatewords:10 }}
                   </div>
