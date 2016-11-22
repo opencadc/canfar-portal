@@ -73,6 +73,30 @@ en:
     documentation:
       name: 'Documentation'
       link: '/documentation'
+      main:
+        name: 'Main'
+        link: 'http://www.canfar.net/docs/home/'
+      storage:
+        name: 'Storage'
+        link: 'http://www.canfar.net/docs/vospace/'
+      computing:
+        name: 'Computing'
+        link: 'http://www.canfar.net/docs/compute/'
+      virtual_machine_management:
+        name: 'Virtual Machine Management'
+        link: 'http://www.canfar.net/docs/vms/'
+      batch_processing:
+        name: 'Batch Processing'
+        link: 'http://www.canfar.net/docs/batch/'
+      tutorial:
+        name: 'Tutorial'
+        link: 'http://www.canfar.net/docs/tutorial/'
+      api:
+        name: 'API'
+        link: 'http://www.canfar.net/docs/api/'
+      registration:
+        name: 'Registration'
+        link: 'http://www.canfar.net/docs/register/'
     hardware:
       name: 'Hardware'
       link: '/hardware'
@@ -174,6 +198,30 @@ fr:
     documentation:
       name: 'Documentation'
       link: '/documentation'
+      main:
+        name: 'Main'
+        link: 'http://www.canfar.net/docs/home/'
+      storage:
+        name: 'Stockage'
+        link: 'http://www.canfar.net/docs/vospace/'
+      computing:
+        name: 'Calcule'
+        link: 'http://www.canfar.net/docs/compute/'
+      virtual_machine_management:
+        name: 'Gestation des machines virtuelles'
+        link: 'http://www.canfar.net/docs/vms/'
+      batch_processing:
+        name: 'Le traitement par lots'
+        link: 'http://www.canfar.net/docs/batch/'
+      tutorial:
+        name: 'Tutoriel'
+        link: 'http://www.canfar.net/docs/tutorial/'
+      api:
+        name: 'API'
+        link: 'http://www.canfar.net/docs/api/'
+      registration:
+        name: 'Enregistrer'
+        link: 'http://www.canfar.net/docs/register/'
     hardware:
       name: 'Matériel'
       link: '/materiel'
