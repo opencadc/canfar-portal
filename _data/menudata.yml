@@ -1,4 +1,4 @@
-about: ['organization', 'terms_of_reference', 'our_people', 'governance', 'nodes']
+about: ['organization', 'terms_of_reference', 'our_people', 'governance']
+nodes: ['nugrid', 'ngvs', 'cadc']
 services: ['uvic', 'uvic.cloud_portal', 'cadc', 'cadc.digital_object_identifiers', 'cadc.storage', 'cadc.batch_processing', 'cadc.group_management']
 resources: ['expertise', 'expertise.cadc', 'expertise.uvic', 'documentation', 'documentation.main', 'documentation.storage', 'documentation.computing', 'documentation.virtual_machine_management', 'documentation.batch_processing', 'documentation.tutorial', 'documentation.api', 'documentation.registration', 'hardware', 'hardware.cores', 'hardware.disk_space']
-nodes: ['nugrid', 'ngvs', 'cadc']

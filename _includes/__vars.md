@@ -13,5 +13,5 @@
     {% assign child_item = child_item[hier_item] %}
   {% endfor %}
 {% else %}
-  {% assign child_item = t[parent_namespace] %}
+  {% assign child_item = parent_item %}
 {% endif %}
