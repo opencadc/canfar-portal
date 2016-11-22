@@ -1,12 +1,13 @@
 ---
+
 layout: default
+
 ---
 
 {% include _page_header.html %}
 
 <div class="container">
   <div class="row">
-
     <section id="main_content">
       <div id="canfar-carousel" class="carousel slide"
            data-ride="carousel" data-keyboard="true">
@@ -17,7 +18,6 @@ layout: default
           <li data-target="#canfar-carousel" data-slide-to="{{ idx }}" {% if idx == 0 %}class="active"{% endif %}></li>
           {% endfor %}
         </ol>
-
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
           {% for showcase in site.data.showcases %}
@@ -30,7 +30,6 @@ layout: default
           </div>
           {% endfor %}
         </div>
-
         <!-- Controls -->
         <a class="left carousel-control" href="#canfar-carousel"
            role="button" data-slide="prev">
@@ -45,22 +44,17 @@ layout: default
           <span class="sr-only">{{ t.next }}</span>
         </a>
       </div>
-
     </section>
-
     <section id="information_section">
       <div class="row">
         <div class="col-md-4">
           <h3 class="text-info information_section_capture">Providing research cyberinfrastructure services
             to the Canadian astronomical community</h3>
-
           <p>The Canadian Advanced Network for Astronomy Research is a national platform
             for data-intensive scientific computing.</p>
-
           <p>CANFAR is a consortium of Canadian university astronomers, Compute Canada,
             and the National Research Council Canada’s Canadian Astronomy Data Centre
             with support from CANARIE and the Canadian Space Agency.</p>
-
           <p>CANFAR services include:</p>
           <ul>
             <li>Archival data storage for major Canadian and international observatories
@@ -72,6 +66,9 @@ layout: default
             <li>Innovative development to keep Canadian science at the leading edge</li>
           </ul>
         </div>
+        <!-- 
+          Information modules 
+        -->
         <div id="information_content" class="col-md-8">
           <div class="col-md-4">
             <div class="panel panel-default">
@@ -80,10 +77,11 @@ layout: default
               </div>
               <div class="panel-body">
                 {% assign nodes_posts = (site.posts | where: 'category', 'nodes') %}
-                {% for post in nodes_posts %}
+                {% for post in nodes_posts limit: 3 %}
+                {% capture node_post_url %}{{ t[post.namespace].link | prepend: site.baseurl }}{% endcapture %}
                 <div class="media">
                   <div class="media-body">
-                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h4>
+                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ post.namespace }}">{{ post.title }}</a></h4>
                     <time datetime="{{ post.date }}">{{ post.date | date: '%B %d, %Y' }}</time>
                     {{ post.excerpt | strip_html | truncatewords:10 }}
                   </div>
@@ -102,7 +100,7 @@ layout: default
                 {% for post in science_posts %}
                 <div class="media">
                   <div class="media-body">
-                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h4>
+                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}{% if post.author %} by {{ post.author }}{% endif %}</a></h4>
                     <time datetime="{{ post.date }}">{{ post.date | date: '%B %d, %Y' }}</time>
                     {{ post.excerpt | strip_html | truncatewords:10 }}
                   </div>
@@ -113,23 +111,21 @@ layout: default
           </div>
           <div class="col-md-4">
             <div class="panel panel-default">
+              {% assign translated_services = t['services'] %}
               <div class="panel-heading">
-                <h3 class="panel-title">{{ t['services'].name }} </h3>
+                <h3 class="panel-title">{{ translated_services.name }} </h3>
               </div>
               <div class="panel-body">
                 {% assign services_posts = (site.posts | where: 'category', 'services') %}
-
-                {% comment %}Only the first three featured post (latest) is used.{% endcomment %}
+                {% comment %}Only the first four service posts (latest) are used.{% endcomment %}
                 {% for post in services_posts limit: 4 %}
-                {% capture featured_post_url %}{% if post.external_url %}{{ post.external_url }}{% else %}{{ post.url | prepend: site.baseurl }}{% endif %}{% endcapture %}
+                {% assign translated_item = translated_services[post.local_name] %}
+                {% capture service_post_url %}{{ translated_item.link | prepend: site.baseurl }}{% endcapture %}
                 <div class="media">
                   <div class="media-body">
-                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ featured_post_url }}">{{ post.title }}{% if post.author %} by {{ post.author }}{% endif %}</a> </h4>
-                    {% if post.external_url %}
-                      <time datetime="{{ post.date }}">{{ post.date | date: '%B %d, %Y' }}</time>
-                    {% else %}
-                      {{ post.excerpt | strip_html | truncatewords:10 }}
-                    {% endif %}
+                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span>{% include _link_item.md namespace=post.namespace link_only=true %}</h4>
+                    <time datetime="{{ post.date }}">{{ post.date | date: '%B %d, %Y' }}</time>
+                    {{ post.excerpt | strip_html | truncatewords:10 }}
                   </div>
                 </div>
               {% endfor %}
@@ -137,10 +133,11 @@ layout: default
             </div>
           </div>
         </div>
+        <!-- 
+          End information modules 
+        -->        
       </div>
     </section>
-
     {% include _page_footer.html %}
-
   </div>
 </div>
