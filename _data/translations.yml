@@ -34,9 +34,17 @@ en:
     cadc:
       name: 'CADC'
       link: '/cadc'
-    our_people:
-      name: 'Our people'
-      link: '/our-people'
+    uvic:
+      name: 'UVic'
+      link: '/uvic'
+      falkh:
+        name: 'Falk Herwig'
+      stephensony:
+        name: 'Stephenson Yang'
+      christianr:
+        name: 'Christian Ritter'
+      roberta:
+        name: 'Robert Andrassy'
   services:
     name: 'Services'
     link: '/services'
@@ -162,9 +170,17 @@ fr:
     cadc:
       name: 'CCDA'
       link: '/ccda'
-    our_people:
-      name: 'Notre peuple'
-      link: '/notre-peuple'
+    uvic:
+      name: 'UVic'
+      link: '/uvic'
+      falkh:
+        name: 'Falk Herwig'
+      stephensony:
+        name: 'Stephenson Yang'
+      christianr:
+        name: 'Christian Ritter'
+      roberta:
+        name: 'Robert Andrassy'
   services:
     name: 'Services'
     link: '/services'

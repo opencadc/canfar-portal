@@ -25,6 +25,6 @@ The consortium has an advisory committee that has both scientific and
 computational and data expertise representation. Agreements between members
 may formalize relations as needed.
 
-![Organization breakdown]({{ site.url | prepend: site.baseurl }}/images/organization.jpg)
+![Organization breakdown]({{ site.baseurl }}/images/organization.jpg)
 
 <!-- Content end -->
