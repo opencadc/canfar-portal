@@ -1,9 +1,9 @@
 ---
 layout: pages_left_nav
 
-namespace: about.our_people
+namespace: nodes.our_people
 lang: en
-permalink: /en/about/our-people/
+permalink: /en/nodes/our-people/
 ---
 
 <!-- Content start -->

@@ -8,21 +8,23 @@ permalink: /en/about/organization/
 
 <!-- Content start -->
 
-<p>The CANFAR consortium is organized as a network of university nodes that
-  participate in determining directions and emphasis of the consortium through
-  membership in the executive committee.</p>
-<p>The day-to-day operation of the consortium is coordinated by the management
-  team which consists of:</p>
-<ul>
-  <li>Principle investigator (from CANFAR lead institutions)</li>
-  <li>Science coordinator observations</li>
-  <li>Science coordinator simulations</li>
-  <li>Computing &amp; data coordinator</li>
-  <li>Consortium management coordinator</li>
-</ul>
+The CANFAR consortium is organized as a network of university nodes that
+participate in determining directions and emphasis of the consortium through
+membership in the executive committee.
 
-<p>The consortium has an advisory committee that has both scientific and
-  computational and data expertise representation. Agreements between members
-  may formalize relations as needed.</p>
+The day-to-day operation of the consortium is coordinated by the management team 
+which consists of:
+
+  - Principle investigator (from CANFAR lead institutions)
+  - Science coordinator observations
+  - Science coordinator simulations
+  - Computing &amp; data coordinator
+  - Consortium management coordinator
+
+The consortium has an advisory committee that has both scientific and
+computational and data expertise representation. Agreements between members
+may formalize relations as needed.
+
+![Organization breakdown]({{ site.url | prepend: site.baseurl }}/images/organization.jpg)
 
 <!-- Content end -->

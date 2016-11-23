@@ -16,12 +16,12 @@ en:
     terms_of_reference:
       name: 'Terms of Reference'
       link: '/terms-of-reference'
-    our_people:
-      name: 'Our people'
-      link: '/our-people'
     governance:
       name: 'Governance'
       link: '/governance'
+    contact:
+      name: 'Contact'
+      link: '/contact'
   nodes:
     name: 'Nodes'
     link: '/nodes'
@@ -34,6 +34,9 @@ en:
     cadc:
       name: 'CADC'
       link: '/cadc'
+    our_people:
+      name: 'Our people'
+      link: '/our-people'
   services:
     name: 'Services'
     link: '/services'
@@ -141,12 +144,12 @@ fr:
     terms_of_reference:
       name: 'Termes de référence'
       link: '/termes-de-reference'
-    our_people:
-      name: 'Notre peuple'
-      link: '/notre-peuple'
     governance:
       name: 'Gouvernance'
       link: '/gouvernance'
+    contact:
+      name: 'Contact'
+      link: '/contact'
   nodes:
     name: 'Nodes'
     link: '/nodes'
@@ -159,6 +162,9 @@ fr:
     cadc:
       name: 'CCDA'
       link: '/ccda'
+    our_people:
+      name: 'Notre peuple'
+      link: '/notre-peuple'
   services:
     name: 'Services'
     link: '/services'
