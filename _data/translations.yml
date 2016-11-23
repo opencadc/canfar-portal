@@ -37,14 +37,6 @@ en:
     uvic:
       name: 'UVic'
       link: '/uvic'
-      falkh:
-        name: 'Falk Herwig'
-      stephensony:
-        name: 'Stephenson Yang'
-      christianr:
-        name: 'Christian Ritter'
-      roberta:
-        name: 'Robert Andrassy'
   services:
     name: 'Services'
     link: '/services'
@@ -173,14 +165,6 @@ fr:
     uvic:
       name: 'UVic'
       link: '/uvic'
-      falkh:
-        name: 'Falk Herwig'
-      stephensony:
-        name: 'Stephenson Yang'
-      christianr:
-        name: 'Christian Ritter'
-      roberta:
-        name: 'Robert Andrassy'
   services:
     name: 'Services'
     link: '/services'
