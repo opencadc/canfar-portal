@@ -13,7 +13,7 @@
   {% assign item_url = link_parent_item.link %}
 {% endif %}
 
-{% capture link_url %}{{ page_lang_link }}{{ item_url }}/{% endcapture %}
+{% capture link_url %}{{ page_lang_link }}{{ item_url }}{% endcapture %}
 {% capture page_url %}{{ page.url | prepend: site.baseurl }}{% endcapture %}
 {% capture link_child_item_beginning %}{{link_child_item.link | slice: 0, 4}}{% endcapture %}
 {% capture link_url_side %}{% if link_child_item_beginning == "http" %}{{ link_child_item.link }}{% else %}{{ link_url }}{% endif %}{% endcapture %}

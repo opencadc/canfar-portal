@@ -3,7 +3,8 @@ layout: pages_left_nav
 
 namespace: resources.expertise.cadc
 lang: fr
-permalink: /fr/ressources/competence/ccda/
+label: '@CCDA'
+permalink: /fr/ressources/competence/ccda
 ---
 
 {% include __vars.md %}

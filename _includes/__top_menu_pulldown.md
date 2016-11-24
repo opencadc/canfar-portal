@@ -5,6 +5,6 @@
 
     <li role="separator" class="divider"></li>
     {% assign mainitem = t[include.name] %}
-    <li><a href="{{ page_lang_link }}{{ mainitem.link }}">{{ mainitem.name }} </a></li>
+    <li><a href="{{ page_lang_link }}{{ mainitem.link }}/">{{ mainitem.name }} </a></li>
   </ul>
 </li>

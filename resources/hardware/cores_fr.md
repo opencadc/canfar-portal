@@ -3,7 +3,8 @@ layout: pages_left_nav
 
 namespace: resources.hardware.cores
 lang: fr
-permalink: /fr/ressources/competence/noyaux/
+label: 'Noyaux'
+permalink: /fr/ressources/competence/noyaux
 ---
 
 {% include __vars.md %}

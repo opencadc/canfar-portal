@@ -3,7 +3,7 @@ layout: pages_left_nav
 
 namespace: about.governance
 lang: en
-permalink: /en/about/governance/
+permalink: /en/about/governance
 ---
 
 <!-- Content start -->

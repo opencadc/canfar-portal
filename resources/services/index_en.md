@@ -1,9 +1,9 @@
 ---
 layout: pages_left_nav
 
-namespace: services.uvic
-lang: fr
-permalink: /fr/services/uvic/
+namespace: resources.services
+lang: en
+permalink: /en/resources/services/
 ---
 
 {% include __vars.md %}

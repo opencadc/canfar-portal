@@ -3,7 +3,8 @@ layout: pages_left_nav
 
 namespace: resources.hardware.disk_space
 lang: fr
-permalink: /fr/ressources/competence/espace-disque/
+label: 'Espace de disque'
+permalink: /fr/ressources/competence/espace-disque
 ---
 
 {% include __vars.md %}

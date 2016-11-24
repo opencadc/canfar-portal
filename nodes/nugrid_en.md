@@ -3,7 +3,7 @@ layout: pages_left_nav
 
 lang: en
 namespace: nodes.nugrid
-permalink: /en/nodes/nugrid/
+permalink: /en/nodes/nugrid
 ---
 
 <!-- Content start -->

@@ -3,7 +3,7 @@ layout: pages_left_nav
 
 namespace: resources.expertise
 lang: fr
-permalink: /fr/ressources/competence/
+permalink: /fr/ressources/competence
 ---
 
 {% include __vars.md %}

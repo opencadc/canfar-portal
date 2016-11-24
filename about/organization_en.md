@@ -3,7 +3,7 @@ layout: pages_left_nav
 
 namespace: about.organization
 lang: en
-permalink: /en/about/organization/
+permalink: /en/about/organization
 ---
 
 <!-- Content start -->

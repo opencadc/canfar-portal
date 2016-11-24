@@ -3,7 +3,7 @@ layout: pages_left_nav
 
 namespace: nodes.uvic
 lang: fr
-permalink: /fr/nodes/uvic/
+permalink: /fr/nodes/uvic
 ---
 
 <!-- Content start -->

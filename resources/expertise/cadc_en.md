@@ -3,7 +3,8 @@ layout: pages_left_nav
 
 namespace: resources.expertise.cadc
 lang: en
-permalink: /en/resources/expertise/cadc/
+label: '@CADC'
+permalink: /en/resources/expertise/cadc
 ---
 
 {% include __vars.md %}

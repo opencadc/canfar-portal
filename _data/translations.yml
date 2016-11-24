@@ -14,14 +14,14 @@ en:
       name: 'Organization'
       link: '/organization'
     terms_of_reference:
-      name: 'Terms of Reference'
-      link: '/terms-of-reference'
+       name: 'Terms of Reference'
+       link: '/terms-of-reference'
     governance:
-      name: 'Governance'
-      link: '/governance'
+       name: 'Governance'
+       link: '/governance'
     contact:
-      name: 'Contact'
-      link: '/contact'
+       name: 'Contact'
+       link: '/contact'
   nodes:
     name: 'Nodes'
     link: '/nodes'
@@ -37,30 +37,6 @@ en:
     uvic:
       name: 'UVic'
       link: '/uvic'
-  services:
-    name: 'Services'
-    link: '/services'
-    uvic:
-      name: '@UVic'
-      link: '/uvic'
-      cloud_portal:
-        name: 'Cloud Portal'
-        link: 'http://www.canfar.phys.uvic.ca/processing/vmod/'
-    cadc:
-      name: '@CADC'
-      link: '/cadc'
-      digital_object_identifiers:
-        name: 'Digital Object Identifiers'
-        link: '/digital-object-identifiers'
-      storage:
-        name: 'Storage'
-        link: 'http://www.canfar.phys.uvic.ca/vosui'
-      batch_processing:
-        name: 'Batch Processing'
-        link: 'http://www.canfar.phys.uvic.ca/processing/batchjobs'
-      group_management:
-        name: 'Group Management'
-        link: 'http://www.canfar.phys.uvic.ca/canfar/groups'
   resources:
     name: 'Resources'
     link: '/resources'
@@ -73,12 +49,27 @@ en:
       uvic:
         name: '@UVic'
         link: '/uvic'
+    services:
+      name: 'Services'
+      link: '/services'
+      cloud_portal:
+        name: 'Cloud Portal'
+        link: 'http://www.canfar.phys.uvic.ca/processing/vmod/'
+      digital_object_identifiers:
+        name: 'Digital Object Identifiers'
+        link: '/digital-object-identifiers'
+      storage:
+        name: 'Storage'
+        link: 'http://www.canfar.phys.uvic.ca/vosui'
+      batch_processing:
+        name: 'Batch Processing'
+        link: 'http://www.canfar.phys.uvic.ca/processing/batchjobs'
+      group_management:
+        name: 'Group Management'
+        link: 'http://www.canfar.phys.uvic.ca/canfar/groups'
     documentation:
       name: 'Documentation'
-      link: '/documentation'
-      main:
-        name: 'Main'
-        link: 'http://www.canfar.net/docs/home/'
+      link: 'http://www.canfar.net/docs/home/'
       storage:
         name: 'Storage'
         link: 'http://www.canfar.net/docs/vospace/'
@@ -165,30 +156,6 @@ fr:
     uvic:
       name: 'UVic'
       link: '/uvic'
-  services:
-    name: 'Services'
-    link: '/services'
-    uvic:
-      name: '@UVic'
-      link: '/uvic'
-      cloud_portal:
-        name: 'Portail de cloud'
-        link: 'http://www.canfar.phys.uvic.ca/processing/vmod/'
-    cadc:
-      name: '@CCDA'
-      link: '/ccda'
-      digital_object_identifiers:
-        name: 'Identificateurs d''objects digitale'
-        link: '/identificateurs-objets-digitale'
-      storage:
-        name: 'Stockage'
-        link: 'http://www.canfar.phys.uvic.ca/vosui'
-      batch_processing:
-        name: 'Le traitement par lots'
-        link: 'http://www.canfar.phys.uvic.ca/processing/batchjobs'
-      group_management:
-        name: 'Gestion de groupes'
-        link: 'http://www.canfar.phys.uvic.ca/canfar/groups'
   resources:
     name: 'Ressources'
     link: '/ressources'
@@ -201,12 +168,27 @@ fr:
       uvic:
         name: '@UVic'
         link: '/uvic'
+    services:
+      name: 'Services'
+      link: '/services'
+      cloud_portal:
+        name: 'Portail de cloud'
+        link: 'http://www.canfar.phys.uvic.ca/processing/vmod/'
+      digital_object_identifiers:
+        name: 'Identificateurs d''objects digitale'
+        link: '/identificateurs-objets-digitale'
+      storage:
+        name: 'Stockage'
+        link: 'http://www.canfar.phys.uvic.ca/vosui'
+      batch_processing:
+        name: 'Le traitement par lots'
+        link: 'http://www.canfar.phys.uvic.ca/processing/batchjobs'
+      group_management:
+        name: 'Gestion de groupes'
+        link: 'http://www.canfar.phys.uvic.ca/canfar/groups'
     documentation:
       name: 'Documentation'
-      link: '/documentation'
-      main:
-        name: 'Main'
-        link: 'http://www.canfar.net/docs/home/'
+      link: 'http://www.canfar.net/docs/home/'
       storage:
         name: 'Stockage'
         link: 'http://www.canfar.net/docs/vospace/'

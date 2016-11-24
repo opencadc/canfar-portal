@@ -100,7 +100,12 @@ layout: default
                 {% for post in science_posts %}
                 <div class="media">
                   <div class="media-body">
-                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}{% if post.author %} by {{ post.author }}{% endif %}</a></h4>
+                    {% if post.external_url %}
+                      {% assign post_url = post.external_url %}
+                    {% else %}
+                      {% assign post_url = post.url | prepend: site.baseurl %}
+                    {% endif %}
+                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ post_url }}">{{ post.title }}{% if post.author %} by {{ post.author }}{% endif %}</a></h4>
                     <time datetime="{{ post.date }}">{{ post.date | date: '%B %d, %Y' }}</time>
                     {{ post.excerpt | strip_html | truncatewords:10 }}
                   </div>
@@ -111,7 +116,7 @@ layout: default
           </div>
           <div class="col-md-4">
             <div class="panel panel-default">
-              {% assign translated_services = t['services'] %}
+              {% assign translated_services = t['resources']['services'] %}
               <div class="panel-heading">
                 <h3 class="panel-title">{{ translated_services.name }} </h3>
               </div>

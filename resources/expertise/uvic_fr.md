@@ -3,7 +3,8 @@ layout: pages_left_nav
 
 namespace: resources.expertise.uvic
 lang: fr
-permalink: /fr/ressources/competence/uvic/
+label: '@UVic'
+permalink: /fr/ressources/competence/uvic
 ---
 
 {% include __vars.md %}
