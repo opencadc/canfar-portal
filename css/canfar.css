@@ -122,6 +122,8 @@ ul > li.divider-vertical {
   color: #fff;
 }
 
+
+
 div.progress
 {
   height: 7px;
@@ -166,6 +168,11 @@ label {
 
 .dropdown-menu > li > a {
   cursor: pointer;
+}
+
+li.dropdown {
+  padding-left: 1px;
+  padding-right: 1px;
 }
 
 .public_link {
@@ -303,6 +310,10 @@ div.dataTables_wrapper div.dataTables_info {
 
   #information_section {
     margin-top: 25px;
+  }
+
+  .navbar-nav .open .dropdown-menu>li>a.menu-item-indent-2 {
+    padding-left: 30px;
   }
 }
 
