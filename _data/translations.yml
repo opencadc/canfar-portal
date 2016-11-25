@@ -35,7 +35,7 @@ en:
       name: 'CADC'
       link: '/cadc'
     uvic:
-      name: 'UVic'
+      name: 'UVIC ARC'
       link: '/uvic'
   resources:
     name: 'Resources'
@@ -154,7 +154,7 @@ fr:
       name: 'CCDA'
       link: '/ccda'
     uvic:
-      name: 'UVic'
+      name: 'UVIC ARC'
       link: '/uvic'
   resources:
     name: 'Ressources'
