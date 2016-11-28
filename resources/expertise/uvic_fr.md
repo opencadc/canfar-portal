@@ -7,12 +7,9 @@ label: '@UVic'
 permalink: /fr/ressources/competence/uvic
 ---
 
-{% include __vars.md %}
-
 <!-- Content starts -->
 
-<ul class="list-unstyled">
-  {% include _menudata_list.md namespace=page.namespace %}
-</ul>
+  - Postes de travail virtuels dans le cloud de CANFAR
+  - [jupyterhub ipython](http://ipython.org) carnet portables dans le cloud
 
 <!-- Content ends -->
