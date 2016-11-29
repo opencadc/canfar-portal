@@ -17,7 +17,7 @@
 {% capture page_url %}{{ page.url | prepend: site.baseurl }}{% endcapture %}
 {% capture link_child_item_beginning %}{{link_child_item.link | slice: 0, 4}}{% endcapture %}
 {% capture link_url_side %}{% if link_child_item_beginning == "http" %}{{ link_child_item.link }}{% else %}{{ link_url }}{% endif %}{% endcapture %}
-{% capture link_html %}<a href="{{ link_url_side }}" {% if link_child_item_beginning == "http" %}rel="external"{% endif %} class="{{include.namespace}} menu-item-indent-{{ namespace_items.size | minus: 1 }}">{{ link_child_item.name }} </a>{% endcapture %}
+{% capture link_html %}<a href="{{ link_url_side }}" {% if link_child_item_beginning == "http" %}rel="external"{% endif %} class="{{include.namespace}} menu-item-indent-{{ namespace_items.size | minus: 1 }} {{ include.link_css }}">{{ link_child_item.name }} </a>{% endcapture %}
 
 {% if include.link_only %}
   {{ link_html }}

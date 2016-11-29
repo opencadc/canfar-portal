@@ -53,20 +53,25 @@ en:
       name: 'Services'
       link: '/services'
       cloud_portal:
-        name: 'Cloud Portal'
-        link: 'http://www.canfar.phys.uvic.ca/processing/vmod/'
+        name: Cloud Portal
+        link: http://www.canfar.phys.uvic.ca/processing/vmod/
+        doclink: http://www.canfar.net/docs/compute/
       digital_object_identifiers:
-        name: 'Digital Object Identifiers'
-        link: '/digital-object-identifiers'
+        name: Digital Object Identifiers
+        link: /digital-object-identifiers
+        doclink:
       storage:
-        name: 'Storage'
-        link: 'http://www.canfar.phys.uvic.ca/vosui'
+        name: Storage
+        link: http://www.canfar.phys.uvic.ca/vosui
+        doclink: http://www.canfar.net/docs/vospace/
       batch_processing:
-        name: 'Batch Processing'
-        link: 'http://www.canfar.phys.uvic.ca/processing/batchjobs'
+        name: Batch Processing
+        link: http://www.canfar.phys.uvic.ca/processing/batchjobs
+        doclink: http://www.canfar.net/docs/batch/
       group_management:
-        name: 'Group Management'
-        link: 'http://www.canfar.phys.uvic.ca/canfar/groups'
+        name: Group Management
+        link: http://www.canfar.phys.uvic.ca/canfar/groups
+        doclink: http://www.canfar.phys.uvic.ca/ac/
     documentation:
       name: 'Documentation'
       link: 'http://www.canfar.net/docs/home/'
