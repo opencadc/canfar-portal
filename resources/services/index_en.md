@@ -11,7 +11,10 @@ permalink: /en/resources/services/
 <!-- Content starts -->
 
 <ul class="list-unstyled">
-  {% include _menudata_list.md namespace=page.namespace %}
+  {% for service in t['resources']['services'] %}
+    {% capture service_name %}{{ page.namespace }}.{{ service }}{% endcapture %}
+    {% include _link_item namespace=service_name %}
+  {% endfor %}
 </ul>
 
 <!-- Content ends -->
