@@ -56,40 +56,30 @@ en:
         name: Cloud Portal
         link: http://www.canfar.phys.uvic.ca/processing/vmod/
         doclink: http://www.canfar.net/docs/compute/
+        description: Cloud Portal description
       digital_object_identifiers:
         name: Digital Object Identifiers
         link: /digital-object-identifiers
         doclink:
+        description: DOI description
       storage:
         name: Storage
         link: http://www.canfar.phys.uvic.ca/vosui
         doclink: http://www.canfar.net/docs/vospace/
+        description: Storage description
       batch_processing:
         name: Batch Processing
         link: http://www.canfar.phys.uvic.ca/processing/batchjobs
         doclink: http://www.canfar.net/docs/batch/
+        description: 'Batch Processing description'
       group_management:
         name: Group Management
         link: http://www.canfar.phys.uvic.ca/canfar/groups
         doclink: http://www.canfar.phys.uvic.ca/ac/
+        description: Group Management description
     documentation:
       name: 'Documentation'
       link: 'http://www.canfar.net/docs/home/'
-      storage:
-        name: 'Storage'
-        link: 'http://www.canfar.net/docs/vospace/'
-      computing:
-        name: 'Computing'
-        link: 'http://www.canfar.net/docs/compute/'
-      virtual_machine_management:
-        name: 'Virtual Machine Management'
-        link: 'http://www.canfar.net/docs/vms/'
-      batch_processing:
-        name: 'Batch Processing'
-        link: 'http://www.canfar.net/docs/batch/'
-      tutorial:
-        name: 'Tutorial'
-        link: 'http://www.canfar.net/docs/tutorial/'
       api:
         name: 'API'
         link: 'http://www.canfar.net/docs/api/'
@@ -113,15 +103,6 @@ en:
     - 'NUGRID Stellar Evolution Tracks'
   next: 'Next'
   previous: 'Previous'
-  events:
-    name: 'Events and Seminars'
-    link: '/events-and-seminars'
-  news:
-    name: 'News'
-    link: '/news'
-  featured:
-    name: 'Featured Publications'
-    link: '/featured-publications'
 fr:
   login:
     name: 'Connexion'
@@ -179,42 +160,37 @@ fr:
       cloud_portal:
         name: 'Portail de cloud'
         link: 'http://www.canfar.phys.uvic.ca/processing/vmod/'
+        doclink: http://www.canfar.net/docs/compute/
+        description: La description de Partail de cloud
       digital_object_identifiers:
         name: 'Identificateurs d''objects digitale'
         link: '/identificateurs-objets-digitale'
+        doclink: ''
+        description: 'La description d''Identificateurs d''objects digitale'
       storage:
         name: 'Stockage'
         link: 'http://www.canfar.phys.uvic.ca/vosui'
+        doclink: http://www.canfar.net/docs/vospace/
+        description: 'La description de Stockage'
       batch_processing:
         name: 'Le traitement par lots'
         link: 'http://www.canfar.phys.uvic.ca/processing/batchjobs'
+        doclink: http://www.canfar.net/docs/batch/''
+        description: 'La description du traitement par lots'
       group_management:
         name: 'Gestion de groupes'
         link: 'http://www.canfar.phys.uvic.ca/canfar/groups'
+        doclink: 'http://www.canfar.phys.uvic.ca/ac/'
+        description: 'La description de Gestion de groupes'
     documentation:
       name: 'Documentation'
       link: 'http://www.canfar.net/docs/home/'
-      storage:
-        name: 'Stockage'
-        link: 'http://www.canfar.net/docs/vospace/'
-      computing:
-        name: 'Calcule'
-        link: 'http://www.canfar.net/docs/compute/'
-      virtual_machine_management:
-        name: 'Gestation des machines virtuelles'
-        link: 'http://www.canfar.net/docs/vms/'
-      batch_processing:
-        name: 'Le traitement par lots'
-        link: 'http://www.canfar.net/docs/batch/'
       tutorial:
         name: 'Tutoriel'
         link: 'http://www.canfar.net/docs/tutorial/'
       api:
         name: 'API'
         link: 'http://www.canfar.net/docs/api/'
-      registration:
-        name: 'Enregistrer'
-        link: 'http://www.canfar.net/docs/register/'
     hardware:
       name: 'Matériel'
       link: '/materiel'

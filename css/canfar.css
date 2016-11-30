@@ -421,3 +421,12 @@ dl.dl-horizontal {
   font-size: 110%;
   font-weight: bolder;
 }
+
+div.list-group-services > .list-group-item {
+  background-color: #f5f5f5;
+  margin-bottom: 5px;
+}
+
+div.list-group-services > .list-group-item:hover {
+  background-color: #fff;
+}
