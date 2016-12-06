@@ -7,5 +7,6 @@ permalink: /en/resources/services/digital-object-identifiers
 ---
 
 <!-- Content start -->
+Test David Schade
 
 <!-- Content end -->
