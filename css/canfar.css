@@ -190,18 +190,6 @@ button#more_details {
   padding: 0 4px;
 }
 
-#fileinfo {
-  cursor: auto;
-}
-
-#uploader {
-  display: block;
-  text-align: right;
-  height: auto;
-  min-height: 30px;
-  overflow: hidden;
-}
-
 .glyphicon.fast-right-spinner {
   -webkit-animation: glyphicon-spin-r 1s infinite linear;
   animation: glyphicon-spin-r 1s infinite linear;
@@ -330,17 +318,17 @@ div.dataTables_wrapper div.dataTables_info {
 
 @media only screen and (min-width: 959px) {
   #top_nav.navbar {
-    height: 100px;  }
+    height: 90px;  }
 
   #top_nav.navbar > .container .navbar-brand {
-    height: 100px;
+    height: 90px;
     line-height: 7.0rem;  }
 
   #canfar-carousel > .carousel-inner > .item {
     height: 350px;  }
 
   #navbar_list.navbar-nav {
-    height: 100px;
+    height: 90px;
   }
 
   .nav > li > a.menu-item-indent-2,
