@@ -338,7 +338,7 @@ div.dataTables_wrapper div.dataTables_info {
 
   .sidebar {
     position: fixed;
-    top: 200px;
+    top: 165px;
     bottom: 0;
     left: 0;
     z-index: 1000;
