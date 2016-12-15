@@ -53,30 +53,30 @@ en:
       name: 'Services'
       link: '/services'
       cloud_portal:
-        name: Cloud Portal
-        link: http://www.canfar.phys.uvic.ca/processing/vmod/
-        doclink: http://www.canfar.net/docs/compute/
-        description: Cloud Portal description
+        name: 'Cloud Portal'
+        link: 'http://www.canfar.phys.uvic.ca/processing/vmod/'
+        doclink: 'http://www.canfar.net/docs/compute/'
+        description: 'Cloud Portal description'
       digital_object_identifiers:
-        name: Digital Object Identifiers
-        link: /digital-object-identifiers
+        name: 'Digital Object Identifiers'
+        link: '/digital-object-identifiers'
         doclink:
-        description: DOI description
+        description: 'DOI description'
       storage:
-        name: Storage
-        link: http://www.canfar.phys.uvic.ca/vosui
-        doclink: http://www.canfar.net/docs/vospace/
-        description: Storage description
+        name: 'Storage'
+        link: 'http://apps.canfar.net/storage-beta/list/'
+        doclink: 'http://www.canfar.net/docs/vospace/'
+        description: 'Storage description'
       batch_processing:
-        name: Batch Processing
-        link: http://www.canfar.phys.uvic.ca/processing/batchjobs
-        doclink: http://www.canfar.net/docs/batch/
+        name: 'Batch Processing'
+        link: 'http://www.canfar.phys.uvic.ca/processing/batchjobs'
+        doclink: 'http://www.canfar.net/docs/batch/'
         description: 'Batch Processing description'
       group_management:
-        name: Group Management
-        link: http://www.canfar.phys.uvic.ca/canfar/groups
-        doclink: http://www.canfar.phys.uvic.ca/ac/
-        description: Group Management description
+        name: 'Group Management'
+        link: 'http://www.canfar.phys.uvic.ca/canfar/groups'
+        doclink: 'http://www.canfar.phys.uvic.ca/ac/'
+        description: 'Group Management description'
     documentation:
       name: 'Documentation'
       link: 'http://www.canfar.net/docs/home/'
@@ -169,7 +169,7 @@ fr:
         description: 'La description d''Identificateurs d''objects digitale'
       storage:
         name: 'Stockage'
-        link: 'http://www.canfar.phys.uvic.ca/vosui'
+        link: 'http://apps.canfar.net/storage-beta/list/'
         doclink: http://www.canfar.net/docs/vospace/
         description: 'La description de Stockage'
       batch_processing:
