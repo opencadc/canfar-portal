@@ -305,6 +305,10 @@ div.dataTables_wrapper div.dataTables_info {
     border: 1px solid #eee;
   }
 
+  ul.login-container > li {
+    text-align: center;
+  }
+
   #sidebar_nav {
     position: fixed;
     top: 90px;
