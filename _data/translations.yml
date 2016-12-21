@@ -51,41 +51,44 @@ en:
         link: '/uvic'
     services:
       name: 'Services'
-      link: '/services'
+      link: '/services/'
       cloud_portal:
         name: 'Cloud Portal'
         link: 'http://www.canfar.phys.uvic.ca/processing/vmod/'
-        doclink: 'http://www.canfar.net/docs/compute/'
+        doclink: '/en/resources/docs/cloud_portal'
         description: 'Cloud Portal description'
       digital_object_identifiers:
         name: 'Digital Object Identifiers'
         link: '/digital-object-identifiers'
-        doclink:
+        doclink: '/en/resources/docs/digital-object-identifiers/'
         description: 'DOI description'
       storage:
         name: 'Storage'
         link: 'http://apps.canfar.net/storage-beta/list/'
-        doclink: 'http://www.canfar.net/docs/vospace/'
+        doclink: '/en/resources/docs/storage/'
         description: 'Storage description'
-      batch_processing:
+      processing:
         name: 'Batch Processing'
         link: 'http://www.canfar.phys.uvic.ca/processing/batchjobs'
-        doclink: 'http://www.canfar.net/docs/batch/'
+        doclink: '/en/resources/docs/processing/'
         description: 'Batch Processing description'
       group_management:
         name: 'Group Management'
         link: 'http://www.canfar.phys.uvic.ca/canfar/groups'
         doclink: 'http://www.canfar.phys.uvic.ca/ac/'
         description: 'Group Management description'
-    documentation:
+    docs:
       name: 'Documentation'
-      link: 'http://www.canfar.net/docs/home/'
+      link: '/docs'
       tutorial:
         name: 'Tutorial'
-        link: 'http://www.canfar.net/docs/tutorial/'
+        link: '/tutorial'
+      vms:
+        name: 'Virtual Machine Management'
+        link: '/vms'
       api:
         name: 'API'
-        link: 'http://www.canfar.net/docs/api/'
+        link: '/api'
     hardware:
       name: 'Hardware'
       link: '/hardware'
@@ -160,37 +163,40 @@ fr:
       cloud_portal:
         name: 'Portail de cloud'
         link: 'http://www.canfar.phys.uvic.ca/processing/vmod/'
-        doclink: http://www.canfar.net/docs/compute/
-        description: La description de Partail de cloud
+        doclink: '/fr/ressources/docs/portail_de_cloud'
+        description: 'La description de Partail de cloud'
       digital_object_identifiers:
         name: 'Identificateurs d''objects digitale'
         link: '/identificateurs-objets-digitale'
-        doclink: ''
+        doclink: '/fr/ressources/docs/identificateurs-objets-digitale/'
         description: 'La description d''Identificateurs d''objects digitale'
       storage:
         name: 'Stockage'
         link: 'http://apps.canfar.net/storage-beta/list/'
-        doclink: http://www.canfar.net/docs/vospace/
+        doclink: '/fr/ressources/docs/stockage/'
         description: 'La description de Stockage'
-      batch_processing:
+      processing:
         name: 'Le traitement par lots'
         link: 'http://www.canfar.phys.uvic.ca/processing/batchjobs'
-        doclink: http://www.canfar.net/docs/batch/''
+        doclink: '/fr/ressources/docs/processing/'
         description: 'La description du traitement par lots'
       group_management:
         name: 'Gestion de groupes'
         link: 'http://www.canfar.phys.uvic.ca/canfar/groups'
         doclink: 'http://www.canfar.phys.uvic.ca/ac/'
         description: 'La description de Gestion de groupes'
-    documentation:
+    docs:
       name: 'Documentation'
-      link: 'http://www.canfar.net/docs/home/'
+      link: '/docs'
       tutorial:
         name: 'Tutoriel'
-        link: 'http://www.canfar.net/docs/tutorial/'
+        link: '/tutoriel'
+      vms:
+        name: 'Virtual Machine Management'
+        link: '/vms'
       api:
         name: 'API'
-        link: 'http://www.canfar.net/docs/api/'
+        link: '/api'
     hardware:
       name: 'Matériel'
       link: '/materiel'

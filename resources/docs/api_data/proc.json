@@ -1,0 +1,308 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "2.1.0",
+        "title": "Batch processing web service",
+        "description": "The batch processing web service.\n\nThis service provides a RESTful web service interface to the CANFAR condor processing system.\n\n\nTo receive access to The CANFAR Processing Web Service, users must request a home directory from CANFAR. Please go to CANFAR (www.canfar.net) to gain access.\n"
+    },
+    "host": "www.canfar.phys.uvic.ca",
+    "paths": {
+        "/proc/job": {
+            "get": {
+                "description": "GETs to /proc/job or /proc/auth/job will result in the download of a VOTable of currently queued condor jobs. If the request parameter RESPONSEFORMAT is set to text/plain, the table will be in ASCII format with tabs separating the columns.\n",
+                "tags": [
+                    "Batch processing"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "title": "The telescope archive file",
+                            "$ref": "#/definitions/JobList"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "If the query parameter 'id' is provided in the HTTP GET call, then details about the job identified by this job ID are returned. This will only return details on jobs that have recently completed execution.",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "description": "If the query parameter 'status' is provided in the HTTP GET call, then information about the current state of the processing scheduler are returned.  The value of the stauts parameter should be set to 'true'",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "RESPONSEFORMAT",
+                        "in": "query",
+                        "description": "If the request parameter RESPONSEFORMAT is set to text/plain, the table will be in ASCII format (rather than VOTable format) with tabs separating the columns.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ]
+            },
+            "post": {
+                "description": "The HTTP POST action is used to submit jobs to condor. The syntax for posting jobs has four required parameters:\n",
+                "tags": [
+                    "Batch processing"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "job",
+                        "in": "query",
+                        "description": "The job submission file.  The value of this parameter is in the format \"name,uri\" where\n- name is the name of the parameter (content will be saved as this name)\n- uri refers to the location of the parameter data. uri can be one of:\n  \n  - vos: for a vospace file\n  \n  - param: inline data on the post\n  \n  - vm: on the vm (applicable to parameter exec only)\n",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "exec",
+                        "in": "query",
+                        "description": "The job executable.  The value of this parameter is in the format \"name,uri\" where\n- name is the name of the parameter (content will be saved as this name)\n- uri refers to the location of the parameter data. uri can be one of:\n  \n  - vos: for a vospace file\n  \n  - param: inline data on the post\n  \n  - vm: on the vm (applicable to parameter exec only)\n",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "image",
+                        "in": "query",
+                        "description": "URI of the virtual machine image.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "flavor",
+                        "in": "query",
+                        "description": "URI of the flavor (describing the processing resources required).",
+                        "required": false,
+                        "type": "string"
+                    }
+                ]
+            },
+            "delete": {
+                "description": "An HTTP DELETE to /proc/job or /proc/auth/job will DELETE all jobs owned by the user executing HTTP DELETE\n",
+                "tags": [
+                    "Batch processing"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/proc/availability": {
+            "get": {
+                "tags": [
+                    "Support Interfaces"
+                ],
+                "summary": "VOSI Availability",
+                "description": "Indicates whether the service is operable and the reliability of the service for extended and scheduled requests.\n",
+                "responses": {
+                    "200": {
+                        "description": "A VOSI availability document in XML.",
+                        "schema": {
+                            "$ref": "#/definitions/availability"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "JobList": {
+            "type": "array",
+            "description": "A list of jobs.",
+            "items": {
+                "$ref": "#/definitions/Job"
+            }
+        },
+        "Job": {
+            "type": "object",
+            "description": "A job object.",
+            "required": [
+                "jobID"
+            ],
+            "properties": {
+                "jobID": {
+                    "type": "string"
+                },
+                "startDate": {
+                    "type": "string"
+                },
+                "command": {
+                    "type": "string"
+                },
+                "args": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "starts": {
+                    "type": "string"
+                },
+                "requirements": {
+                    "type": "string"
+                },
+                "owner": {
+                    "type": "string"
+                },
+                "flavor": {
+                    "type": "string"
+                }
+            }
+        },
+        "availability": {
+            "type": "object",
+            "xml": {
+                "namespace": "http://www.ivoa.net/xml/VOSIAvailability/v1.0",
+                "prefix": "vosi"
+            },
+            "properties": {
+                "available": {
+                    "type": "boolean",
+                    "xml": {
+                        "attribute": true,
+                        "prefix": "vosi"
+                    }
+                },
+                "note": {
+                    "type": "string",
+                    "xml": {
+                        "attribute": true,
+                        "prefix": "vosi"
+                    }
+                }
+            }
+        },
+        "capabilities": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/capability"
+            },
+            "xml": {
+                "namespace": "http://www.ivoa.net/xml/VOSICapabilities/v1.0",
+                "prefix": "vosi",
+                "wrapped": true
+            }
+        },
+        "capability": {
+            "type": "object",
+            "properties": {
+                "standardID": {
+                    "type": "string",
+                    "format": "uri",
+                    "xml": {
+                        "attribute": true
+                    }
+                },
+                "interface": {
+                    "type": "object",
+                    "properties": {
+                        "accessURL": {
+                            "type": "string",
+                            "properties": {
+                                "use": {
+                                    "type": "string",
+                                    "xml": {
+                                        "attribute": true
+                                    }
+                                }
+                            }
+                        },
+                        "securityMethod": {
+                            "type": "string",
+                            "properties": {
+                                "standardID": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "xml": {
+                                        "attribute": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "Error": {
+            "required": [
+                "code",
+                "message"
+            ],
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

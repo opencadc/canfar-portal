@@ -3,7 +3,6 @@ body {
   font-size: 1em;
   line-height: 1.5;
   color: #6d6d6d;
-  /*padding-top: 100px;*/
   background: #e7e7e7 url(../images/body-bg.png) 0 0 repeat;
 }
 
@@ -111,30 +110,6 @@ ul > li.divider-vertical {
   color: #fff;
 }
 
-
-
-div.progress
-{
-  height: 7px;
-}
-
-div.beacon-progress
-{
-  padding-top: 0;
-  min-width: 2.0em;
-  width: 2px;
-}
-
-/*
-  Give enough height so that when the Delete button is enabled the table won't
-  jump down.
-  jenkinsd 2016.08.10
-*/
-div.beacon-info-row
-{
-  height: 55px;
-}
-
 /*
  * End navbar.
  */
@@ -209,19 +184,6 @@ main.container {
 
 input[type=url] {
   width: 100%;
-}
-
-/*
- *  DataTables
- */
-div.dataTables_wrapper div.dataTables_info {
-  padding-left: 20px;
-  white-space: nowrap;
-  cursor: auto;
-}
-
-.popover {
-  max-width: 500px;
 }
 
 

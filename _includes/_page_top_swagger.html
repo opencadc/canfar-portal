@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html lang="en" class="no-js ie7" data-role="canfar"><![endif]-->
+<!--[if IE 8]>
+<html lang="en" class="no-js ie8" data-role="canfar"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js" data-role="canfar">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8"/>
+    <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
+    wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
+    <title>{{ page.title }}</title>
+
+    <meta name="description"
+          content="English description / Description en anglais"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--[if lte IE 8]>
+    <link rel="shortcut icon" href="/wet/theme-canfar/images/favicon.ico"/>
+    <script src="/wet/javascript/jquery-ie.min.js"></script>
+    <script src="/wet/javascript/polyfills/html5shiv-min.js"></script>
+    <link rel="stylesheet" href="/wet/grids/css/util-ie-min.css"/>
+    <link rel="stylesheet" href="/wet/javascript/css/pe-ap-ie-min.css"/>
+    <link rel="stylesheet" href="/wet/theme-canfar/css/theme-ie-min.css"/>
+    <noscript>
+      <link rel="stylesheet" href="/wet/theme-canfar/css/theme-ns-ie-min.css"/>
+    </noscript>
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="icon" type="image/x-icon"
+          href="/wet/theme-canfar/images/favicon.ico"/>
+
+    <link rel="stylesheet" href="/wet/grids/css/util-min.css"/>
+    <link rel="stylesheet" href="/wet/javascript/css/pe-ap-min.css"/>
+    <link rel="stylesheet" href="/wet/theme-canfar/css/theme-min.css"/>
+    <link rel="stylesheet" href="/css/style.css" />
+    <noscript>
+      <link rel="stylesheet" href="/wet/theme-canfar/css/theme-ns-min.css"/>
+    </noscript>
+    <!--<![endif]-->
+
+    <style type="text/css">
+    h2
+    {
+      border-bottom: 1px solid #DDD;
+    }
+    </style>
+
+    {% include swagger.html %}
+
+    <!-- CustomCSSStart -->
+    <!-- CustomCSSEnd -->
+  </head>
+
+  <body>
+    <div id="{{page.body-id}}" class="margin-top-small">
+      <a id="top" name="top" href="#" class="wb-invisible"></a>
+        <div id="wb-skip">
+        <ul id="wb-tphp">
+          <li id="wb-skip1"><a href="#wb-cont">Skip to main content</a></li>
+          <li id="wb-skip2"><a href="#wb-nav">Skip to footer</a></li>
+        </ul>
+      </div>
+
+      {% include theme/page_header.html %}
+
+      <div id="wb-core">
+        <div id="wb-core-in" class="equalize">
+          <div id="wb-main" role="main">
+            <div id="wb-main-in">
+              <!-- MainContentStart -->

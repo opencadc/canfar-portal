@@ -1,0 +1,36 @@
+- title: Catalgoue query Service
+  location: http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/cat/
+  description: Catalogue metadata querying service (IVOA)
+- title: CAOM query Service
+  location: http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/tap/
+  description: CAOM metadata querying service (IVOA)
+- title: DataLink
+  location: /swagger-ui/?url=/docs/api_data/caom2ops-datalink.json
+  description: CAOM2 data discovery service (IVOA)
+- title: Server Side Operations for Data Access (SODA)
+  location: /swagger-ui/?url=/docs/api_data/caom2ops-cutout.json
+  description: CAOM2 extended data operation service (IVOA draft)
+- title: CAOM2 Repository
+  location: /swagger-ui/?url=/docs/api_data/caom2repo.json
+  description: CAOM2 metadata storage and retrieval system
+- title: Simple Image Access Service
+  location: /swagger-ui/?url=/docs/api_data/sia.json
+  description: CAOM2 basic data operation service (IVOA)
+- title: Data
+  location: /swagger-ui/?url=/docs/api_data/data.json
+  description: Telescope data archiving service
+- title: Transfer
+  location: /swagger-ui/?url=/docs/api_data/transfer.json
+  description: Streaming data upload and download service
+- title: VOSpace
+  location: /swagger-ui/?url=/docs/api_data/vospace.json
+  description: Virtual Observatory Space - User managed storage service (IVOA)
+- title: Access Control
+  location: /swagger-ui/?url=/docs/api_data/ac.json
+  description: Authentication and authorization service (Potentially IVOA)
+- title: Credential Delegation
+  location: /swagger-ui/?url=/docs/api_data/cred.json
+  description: Identity delegation system for extended service support (IVOA)
+- title: Processing
+  location: /swagger-ui/?url=/docs/api_data/proc.json
+  description: Batch Processing System

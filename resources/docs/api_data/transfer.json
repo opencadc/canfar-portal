@@ -1,0 +1,203 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "2.1.0",
+        "title": "Transfer service",
+        "description": "The transfer web service.\n\n\nThe transfer web service does all byte streaming to and from storage systems.  The transfer web service cannot be used directly however--requests must be initially performed on either the data web service or the vospace web service to obtain transfer web service URLs.  These URLs are pre-authorized and have an expiry time built in.\n"
+    },
+    "host": "www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca",
+    "paths": {
+        "/transfer/{preauthURL}": {
+            "get": {
+                "description": "Download the file that was negotiated using the data or vospace web services.  The {preauthURL} has the name of this file in the trailing segment.\n",
+                "tags": [
+                    "Data transfer"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "title": "The requested file",
+                            "type": "file"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Upload a file that was negotiated using the data or vospace web services.  The {preauthURL} has the name of this file in the trailing segment.\n",
+                "tags": [
+                    "Data transfer"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "file",
+                        "in": "body",
+                        "description": "The content of the file.",
+                        "required": false,
+                        "type": "file"
+                    }
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "preauthURL",
+                    "in": "path",
+                    "description": "A URL that was obtained by negotiation with either the data or vospace web services.",
+                    "required": true,
+                    "type": "string"
+                }
+            ]
+        },
+        "/transfer/availability": {
+            "get": {
+                "tags": [
+                    "Support Interfaces"
+                ],
+                "summary": "VOSI Availability",
+                "description": "Indicates whether the service is operable and the reliability of the service for extended and scheduled requests.\n",
+                "responses": {
+                    "200": {
+                        "description": "A VOSI availability document in XML.",
+                        "schema": {
+                            "$ref": "#/definitions/availability"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "availability": {
+            "type": "object",
+            "xml": {
+                "namespace": "http://www.ivoa.net/xml/VOSIAvailability/v1.0",
+                "prefix": "vosi"
+            },
+            "properties": {
+                "available": {
+                    "type": "boolean",
+                    "xml": {
+                        "attribute": true,
+                        "prefix": "vosi"
+                    }
+                },
+                "note": {
+                    "type": "string",
+                    "xml": {
+                        "attribute": true,
+                        "prefix": "vosi"
+                    }
+                }
+            }
+        },
+        "capabilities": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/capability"
+            },
+            "xml": {
+                "namespace": "http://www.ivoa.net/xml/VOSICapabilities/v1.0",
+                "prefix": "vosi",
+                "wrapped": true
+            }
+        },
+        "capability": {
+            "type": "object",
+            "properties": {
+                "standardID": {
+                    "type": "string",
+                    "format": "uri",
+                    "xml": {
+                        "attribute": true
+                    }
+                },
+                "interface": {
+                    "type": "object",
+                    "properties": {
+                        "accessURL": {
+                            "type": "string",
+                            "properties": {
+                                "use": {
+                                    "type": "string",
+                                    "xml": {
+                                        "attribute": true
+                                    }
+                                }
+                            }
+                        },
+                        "securityMethod": {
+                            "type": "string",
+                            "properties": {
+                                "standardID": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "xml": {
+                                        "attribute": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "Error": {
+            "required": [
+                "code",
+                "message"
+            ],
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

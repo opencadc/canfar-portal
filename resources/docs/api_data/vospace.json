@@ -1,0 +1,684 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "2.1.0",
+        "title": "VOSpace",
+        "description": "The CANFAR VOSpace web service.\n\nVOSpace is the IVOA (International Virtual Observatory Aliance) standard interface to distributed storage.  This VOSpace web service is an access point for a distributed storage network.  There are three main functions of the VOSpace service:\n1. Add, replace, or delete data objects in a tree data structure.\n2. Manipulate the metadata for the data objects.\n3. Obtain URIs through which the content of the data objects can be accessed.\n\nPlease see the specification for full details: <a href=\"http://ivoa.net/documents/VOSpace\" target=\"_blank\">VOSpace 2.1 Specification</a>\n\nInteraction with the synchronous and asynchronous data object transfer endpoints use the job management patterns defined in the IVOA Universal Worker Service (UWS) specification: <a href=\"http://www.ivoa.net/documents/UWS\" target=\"_blank\">UWS 1.1 Specification</a>\n"
+    },
+    "host": "www.canfar.phys.uvic.ca",
+    "paths": {
+        "/vospace/protocols": {
+            "get": {
+                "description": "Get a list of the transfer Protocols supported by the VOSpace service\n",
+                "tags": [
+                    "Service metadata"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "produces": [
+                    "text/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "title": "Protocols",
+                            "$ref": "#/definitions/Protocols"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/vospace/views": {
+            "get": {
+                "description": "Get a list of the Views and data formats supported by the VOSpace service\n",
+                "tags": [
+                    "Service metadata"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "produces": [
+                    "text/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "title": "Protocols",
+                            "$ref": "#/definitions/Views"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/vospace/properties": {
+            "get": {
+                "description": "Get a list of the Properties supported by the VOSpace service.\n",
+                "tags": [
+                    "Service metadata"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "produces": [
+                    "text/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "title": "Protocols",
+                            "$ref": "#/definitions/Views"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/vospace/nodes/{nodePath}": {
+            "put": {
+                "description": "Create a new node at a specified location\n",
+                "tags": [
+                    "Nodes"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "consumes": [
+                    "text/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "201": {
+                        "description": "Successful response"
+                    },
+                    "403": {
+                        "description": "If the user does not have permission."
+                    },
+                    "404": {
+                        "description": "If the path to the node could not be found."
+                    },
+                    "409": {
+                        "description": "If the node already exits."
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Node",
+                        "in": "body",
+                        "description": "The new Node",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Node"
+                        }
+                    }
+                ]
+            },
+            "delete": {
+                "description": "Delete a node. When the target is a ContainerNode, all its children (the contents of the container) SHALL also be deleted.\n",
+                "tags": [
+                    "Nodes"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "204": {
+                        "description": "Successful response"
+                    },
+                    "403": {
+                        "description": "If the user does not have permission."
+                    },
+                    "404": {
+                        "description": "If the path to the node could not be found."
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "get": {
+                "description": "Get the details for a specific Node.\n",
+                "tags": [
+                    "Nodes"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "title": "Node",
+                            "$ref": "#/definitions/Node"
+                        }
+                    },
+                    "403": {
+                        "description": "If the user does not have permission."
+                    },
+                    "404": {
+                        "description": "If the path to the node could not be found."
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "detail",
+                        "in": "query",
+                        "description": "set the node detail level",
+                        "required": false,
+                        "type": "string",
+                        "enum": [
+                            "min",
+                            "max",
+                            "properties"
+                        ]
+                    },
+                    {
+                        "name": "uri",
+                        "in": "query",
+                        "description": "for container nodes, the uri of a child node of the container on which to start the list of children.",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "for container nodes, the number of children to return.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ]
+            },
+            "post": {
+                "description": "Set the property values for a specific Node\n",
+                "tags": [
+                    "Nodes"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "consumes": [
+                    "text/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "201": {
+                        "description": "Successful response"
+                    },
+                    "403": {
+                        "description": "If the user does not have permission."
+                    },
+                    "404": {
+                        "description": "If the path to the node could not be found."
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Node",
+                        "in": "body",
+                        "description": "The updated Node",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Node"
+                        }
+                    }
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "nodePath",
+                    "in": "path",
+                    "description": "The path for the node",
+                    "required": true,
+                    "type": "string"
+                }
+            ]
+        },
+        "/vospace/transfers": {
+            "post": {
+                "description": "Post a transfer request document to the asynchronous VOSpace UWS Job endpoint.  This is the first step in performing any transfer for data objects:\n\n- uploading a data object\n- downloading a data object\n- moving a data object\n- copying a data object\n",
+                "tags": [
+                    "Transfering data"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "consumes": [
+                    "text/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "201": {
+                        "description": "Successful response"
+                    },
+                    "403": {
+                        "description": "If the user does not have permission."
+                    },
+                    "404": {
+                        "description": "If the source node could not be found."
+                    },
+                    "409": {
+                        "description": "If the destination node already exists."
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Transfer",
+                        "in": "body",
+                        "description": "The transfer negotiation document",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Transfer"
+                        }
+                    }
+                ]
+            }
+        },
+        "/vospace/synctrans": {
+            "post": {
+                "description": "Post a via query parameters a transfer request to the synchronous VOSpace UWS Job endpoint.  This is the first step in performing any transfer for data objects:\n\n- uploading a data object\n- downloading a data object\n- moving a data object\n- copying a data object\n",
+                "tags": [
+                    "Transfering data"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "consumes": [
+                    "text/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "201": {
+                        "description": "Successful response"
+                    },
+                    "403": {
+                        "description": "If the user does not have permission."
+                    },
+                    "404": {
+                        "description": "If the source node could not be found."
+                    },
+                    "409": {
+                        "description": "If the destination node already exists."
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "target",
+                        "in": "query",
+                        "description": "The target parameter",
+                        "required": true,
+                        "type": "uri"
+                    },
+                    {
+                        "name": "direction",
+                        "in": "query",
+                        "description": "The direction of the transfer",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "protocol",
+                        "descrption": "The protocol to use for the transfer",
+                        "required": true,
+                        "type": "uri"
+                    }
+                ]
+            }
+        },
+        "/vospace/availability": {
+            "get": {
+                "tags": [
+                    "Support Interfaces"
+                ],
+                "summary": "VOSI Availability",
+                "description": "Indicates whether the service is operable and the reliability of the service for extended and scheduled requests.\n",
+                "responses": {
+                    "200": {
+                        "description": "A VOSI availability document in XML.",
+                        "schema": {
+                            "$ref": "#/definitions/availability"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/ac/capabilities": {
+            "get": {
+                "summary": "VOSI Capabilities",
+                "tags": [
+                    "Support Interfaces"
+                ],
+                "description": "Provides the service metadata in the form of a list of Capability descriptions.  Each of these descriptions is an \nXML element that:\n<ul>\n<li>states that the service provides a particular, IVOA-standard function;</li>\n<li>lists the interfaces for invoking that function;</li>\n<li>records any details of the implementation of the function that are not defined as default or constant in the standard for that function.</li>\n</ul>\n",
+                "responses": {
+                    "200": {
+                        "description": "A VOSI Capabilities document in XML.",
+                        "schema": {
+                            "$ref": "#/definitions/capabilities"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    },
+                    "503": {
+                        "description": "Service too busy"
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Properties": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Property"
+            }
+        },
+        "Views": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Views"
+            }
+        },
+        "Protocols": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Protocol"
+            }
+        },
+        "Property": {
+            "type": "object",
+            "required": [
+                "uri"
+            ],
+            "description": "The property identifier",
+            "properties": {
+                "uri": {
+                    "type": "uri"
+                }
+            }
+        },
+        "View": {
+            "type": "object",
+            "required": [
+                "uri"
+            ],
+            "description": "The view identifier",
+            "properties": {
+                "uri": {
+                    "type": "uri"
+                }
+            }
+        },
+        "Protocol": {
+            "type": "object",
+            "required": [
+                "uri"
+            ],
+            "description": "The protocol identifier",
+            "properties": {
+                "uri": {
+                    "type": "uri"
+                }
+            }
+        },
+        "Node": {
+            "type": "object",
+            "required": [
+                "uri"
+            ],
+            "description": "The node identifier",
+            "properties": {
+                "uri": {
+                    "type": "uri"
+                }
+            }
+        },
+        "Transfer": {
+            "type": "object",
+            "required": [
+                "target",
+                "direction",
+                "protocol"
+            ],
+            "description": "The transfer negotiation document",
+            "properties": {
+                "target": {
+                    "type": "uri"
+                },
+                "direction": {
+                    "type": "string"
+                },
+                "protocol": {
+                    "type": "uri"
+                }
+            }
+        },
+        "availability": {
+            "type": "object",
+            "xml": {
+                "namespace": "http://www.ivoa.net/xml/VOSIAvailability/v1.0",
+                "prefix": "vosi"
+            },
+            "properties": {
+                "available": {
+                    "type": "boolean",
+                    "xml": {
+                        "attribute": true,
+                        "prefix": "vosi"
+                    }
+                },
+                "note": {
+                    "type": "string",
+                    "xml": {
+                        "attribute": true,
+                        "prefix": "vosi"
+                    }
+                }
+            }
+        },
+        "capabilities": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/capability"
+            },
+            "xml": {
+                "namespace": "http://www.ivoa.net/xml/VOSICapabilities/v1.0",
+                "prefix": "vosi",
+                "wrapped": true
+            }
+        },
+        "capability": {
+            "type": "object",
+            "properties": {
+                "standardID": {
+                    "type": "string",
+                    "format": "uri",
+                    "xml": {
+                        "attribute": true
+                    }
+                },
+                "interface": {
+                    "type": "object",
+                    "properties": {
+                        "accessURL": {
+                            "type": "string",
+                            "properties": {
+                                "use": {
+                                    "type": "string",
+                                    "xml": {
+                                        "attribute": true
+                                    }
+                                }
+                            }
+                        },
+                        "securityMethod": {
+                            "type": "string",
+                            "properties": {
+                                "standardID": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "xml": {
+                                        "attribute": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "Error": {
+            "required": [
+                "code",
+                "message"
+            ],
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

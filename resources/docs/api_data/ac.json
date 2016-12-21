@@ -1,0 +1,1005 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Access Control",
+        "description": "The CANFAR access control web service.\n\n\nThe following operations are available in the Access Control (AC) web service:\n\n\n- Group Management\n- Group Searching\n- User Management\n- User Login\n- Password Changes\n- Who Am I (Logged-in user info)\n- Service Availability\n\n\nA CANFAR user can be identified in multiple ways, including:\n\n\n- Their distinguished name (DN) as described on their client certificate\n- Their CANFAR userID\n\n\nIn the cases where clients of the web service need to identify a user through the REST API, either in the URL or in a posted document, it is done using two fields:\n\n\nidType - Describes the type of identity being provided in field userID. Accepted values of idType are:\n\n\n\n  - x509 - Indicates value of userID is in DN format.\n\n\n\n  - http - Indicates value of userID is in http-basic authorization userid\nformat.\n\n\nid - The value identifying the user in the format specified by idType\n\n\nGroups have an owner, a list of administrators and a list of members. The list of members and administrators can be composed of groups and users. The following describes the role of these properties of a group. The API sometimes requires the role to be specified in parameter 'role':\n\n\n- owner - Can modify administrators list and members list. Can delete the group.\n\n\n- admin - Can modify the administrators and members list.\n\n\n- member - Are granted access to the resources the group is associated with.\n"
+    },
+    "host": "www.canfar.phys.uvic.ca",
+    "paths": {
+        "/ac/groups": {
+            "get": {
+                "description": "Lists the names of all the groups in the service\n",
+                "tags": [
+                    "Groups"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "produces": [
+                    "text/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "title": "Groups",
+                            "$ref": "#/definitions/GroupList"
+                        }
+                    },
+                    "403": {
+                        "description": "(forbidden) if the caller does not have read permission"
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Create the group according to the group XML document in the HTTP PUT.\n",
+                "tags": [
+                    "Groups"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "consumes": [
+                    "text/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "404": {
+                        "description": "404 Not Found - If a member is not recognized."
+                    },
+                    "409": {
+                        "description": "409 Conflict - If a group with the same name already exists."
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "group",
+                        "in": "body",
+                        "description": "The updated group object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Group"
+                        }
+                    }
+                ]
+            }
+        },
+        "/ac/groups/{groupID}": {
+            "get": {
+                "description": "Get the group with name {groupID}.\n",
+                "tags": [
+                    "Groups"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "produces": [
+                    "text/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "title": "Group",
+                            "$ref": "#/definitions/Group"
+                        }
+                    },
+                    "404": {
+                        "description": "404 Not Found - If the group {groupID} could not be found."
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "DELETE the group with name {groupID}.\n",
+                "tags": [
+                    "Groups"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "404": {
+                        "description": "404 Not Found - If the group {groupID} could not be found."
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Modify the group with name {groupID} according to the group XML document in the HTTP POST.\n",
+                "tags": [
+                    "Groups"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "consumes": [
+                    "text/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "404": {
+                        "description": "404 Not Found - If the group {groupID} could not be found."
+                    },
+                    "409": {
+                        "description": "409 Conflict - If a member group with the same name already exists."
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "group",
+                        "in": "body",
+                        "description": "The updated group object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Group"
+                        }
+                    }
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "groupID",
+                    "in": "path",
+                    "description": "The ID of the group",
+                    "required": true,
+                    "type": "string"
+                }
+            ]
+        },
+        "/ac/groups/{groupID}/userMembers/{userID}": {
+            "put": {
+                "description": "Add user {userID} as a member of group {groupID}.\n",
+                "tags": [
+                    "Groups"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "consumes": [
+                    "text/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "404": {
+                        "description": "404 Not Found - If the group {groupID} could not be found or if the member {userID} is not recognized"
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Remove user {userID} as a member of group {groupID}.\n",
+                "tags": [
+                    "Groups"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "consumes": [
+                    "text/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "404": {
+                        "description": "404 Not Found - If the group {groupID} could not be found or if the member {userID} is not recognized"
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "parameters": [
+                {
+                    "name": "groupID",
+                    "in": "path",
+                    "description": "The ID of the group",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "userID",
+                    "in": "path",
+                    "description": "The ID of the user member",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "idType",
+                    "in": "query",
+                    "description": "The type of userID",
+                    "required": true,
+                    "type": "string",
+                    "enum": [
+                        "http",
+                        "x509",
+                        "cadc"
+                    ]
+                }
+            ]
+        },
+        "/ac/groups/{groupID2}/groupMembers/{groupID}": {
+            "put": {
+                "description": "Add group {groupID2} as a member of group {groupID}.\n",
+                "tags": [
+                    "Groups"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "consumes": [
+                    "text/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "404": {
+                        "description": "404 Not Found - If the group {groupID} or group {groupID2} could not be found."
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Remove group {groupID2} as a member of group {groupID}.\n",
+                "tags": [
+                    "Groups"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "consumes": [
+                    "text/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "404": {
+                        "description": "404 Not Found - If the group {groupID} or {gropuID2} could not be found."
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "parameters": [
+                {
+                    "name": "groupID",
+                    "in": "path",
+                    "description": "The ID of the group to manage",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "groupID2",
+                    "in": "path",
+                    "description": "The ID of the group member.",
+                    "required": true,
+                    "type": "string"
+                }
+            ]
+        },
+        "/ac/search": {
+            "get": {
+                "description": "Membership searching.\n",
+                "tags": [
+                    "Membership searching"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "produces": [
+                    "text/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "title": "Groups",
+                            "$ref": "#/definitions/GroupList"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "The ID of the user",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "groupID",
+                        "in": "query",
+                        "description": "The group ID",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "idType",
+                        "in": "query",
+                        "description": "The type of userID",
+                        "required": true,
+                        "type": "string",
+                        "enum": [
+                            "http",
+                            "x509",
+                            "cadc"
+                        ]
+                    },
+                    {
+                        "name": "role",
+                        "in": "query",
+                        "description": "The group role",
+                        "required": true,
+                        "type": "string",
+                        "enum": [
+                            "owner",
+                            "admin",
+                            "member"
+                        ]
+                    }
+                ]
+            }
+        },
+        "/ac/users": {
+            "get": {
+                "description": "Lists basic public information about users in the service.\n",
+                "tags": [
+                    "Users"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "produces": [
+                    "text/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "title": "Groups",
+                            "$ref": "#/definitions/UserList"
+                        }
+                    },
+                    "403": {
+                        "description": "(forbidden) if the caller does not have permission"
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Request the user account in the user XML document in the HTTP PUT. This can take an arbitrary amount of time. If the account existed before but was deleted, this operation will reenable the account.\n",
+                "tags": [
+                    "Users"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "consumes": [
+                    "text/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "409": {
+                        "description": "409 Conflict - If a user with the same name already exists."
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "body",
+                        "description": "The new user object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                ]
+            }
+        },
+        "/ac/users/{userID}": {
+            "get": {
+                "description": "Get the user with userid {userID} of type {idType}. This operation supports an optional parameter 'detail', which can have values of display or identity. The detail parameter adjusts the amount type of user information that is returned.\n",
+                "tags": [
+                    "Users"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "produces": [
+                    "text/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "title": "User",
+                            "$ref": "#/definitions/User"
+                        }
+                    },
+                    "404": {
+                        "description": "404 Not Found - If the user {userID} could not be found."
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "detail",
+                        "in": "query",
+                        "description": "Set the level of detail",
+                        "required": false,
+                        "type": "string",
+                        "enum": [
+                            "display",
+                            "identity"
+                        ]
+                    }
+                ]
+            },
+            "delete": {
+                "description": "DELETE the user with ID {userID}.\n",
+                "tags": [
+                    "Users"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "404": {
+                        "description": "404 Not Found - If the user {userID} could not be found."
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "hard",
+                        "in": "query",
+                        "description": "If true, delete rather than deactive (operational use only)",
+                        "required": false,
+                        "type": "string"
+                    }
+                ]
+            },
+            "post": {
+                "description": "Modify the user with name {userID} according to the user XML document in the HTTP POST.\n",
+                "tags": [
+                    "Users"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "consumes": [
+                    "text/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "404": {
+                        "description": "404 Not Found - If the user {userID} could not be found."
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "body",
+                        "description": "The updated user object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "userID",
+                    "in": "path",
+                    "description": "The ID of the user",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "idType",
+                    "in": "query",
+                    "description": "The type of userID",
+                    "required": true,
+                    "type": "string",
+                    "enum": [
+                        "http",
+                        "x509",
+                        "cadc"
+                    ]
+                }
+            ]
+        },
+        "/ac/login": {
+            "post": {
+                "description": "Validate the userID and password combination. If the combination is valid this operation will return a cookie that can be used to enter any of these endpoints over HTTP.\n",
+                "tags": [
+                    "Users"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "consumes": [
+                    "text/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "403": {
+                        "description": "403 Permission Denied - If the userID / pasword validation failed."
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "description": "The username for login",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "The password for login",
+                        "required": true,
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "/ac/password": {
+            "post": {
+                "description": "Change password from {old_password} to {new_password}.  This must be an authenticated request.\n",
+                "tags": [
+                    "Users"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "consumes": [
+                    "text/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "403": {
+                        "description": "403 Permission Denied - If the old pasword is incorrect."
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "old_password",
+                        "in": "query",
+                        "description": "The old password of the user making the call.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "new_password",
+                        "in": "query",
+                        "description": "The new password of the user making the call.",
+                        "required": true,
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "/ac/whoami": {
+            "get": {
+                "description": "Returns information about the authentication user.\n",
+                "tags": [
+                    "Users"
+                ],
+                "schemes": [
+                    "http",
+                    "https"
+                ],
+                "consumes": [
+                    "text/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "title": "User",
+                            "$ref": "#/definitions/User"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal error"
+                    },
+                    "503": {
+                        "description": "Service busy"
+                    },
+                    "default": {
+                        "description": "Unexpeced error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/ac/availability": {
+            "get": {
+                "tags": [
+                    "Support Interfaces"
+                ],
+                "summary": "VOSI Availability",
+                "description": "Indicates whether the service is operable and the reliability of the service for extended and scheduled requests.\n",
+                "responses": {
+                    "200": {
+                        "description": "A VOSI availability document in XML.",
+                        "schema": {
+                            "$ref": "#/definitions/availability"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "GroupList": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Group"
+            }
+        },
+        "UserList": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/User"
+            }
+        },
+        "Group": {
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "description": "A group has an id, owner, administrative members, and members.",
+            "properties": {
+                "id": {
+                    "type": "string"
+                }
+            }
+        },
+        "User": {
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "description": "A user is identified by one or more principals.",
+            "properties": {
+                "id": {
+                    "type": "string"
+                }
+            }
+        },
+        "availability": {
+            "type": "object",
+            "xml": {
+                "namespace": "http://www.ivoa.net/xml/VOSIAvailability/v1.0",
+                "prefix": "vosi"
+            },
+            "properties": {
+                "available": {
+                    "type": "boolean",
+                    "xml": {
+                        "attribute": true,
+                        "prefix": "vosi"
+                    }
+                },
+                "note": {
+                    "type": "string",
+                    "xml": {
+                        "attribute": true,
+                        "prefix": "vosi"
+                    }
+                }
+            }
+        },
+        "capabilities": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/capability"
+            },
+            "xml": {
+                "namespace": "http://www.ivoa.net/xml/VOSICapabilities/v1.0",
+                "prefix": "vosi",
+                "wrapped": true
+            }
+        },
+        "capability": {
+            "type": "object",
+            "properties": {
+                "standardID": {
+                    "type": "string",
+                    "format": "uri",
+                    "xml": {
+                        "attribute": true
+                    }
+                },
+                "interface": {
+                    "type": "object",
+                    "properties": {
+                        "accessURL": {
+                            "type": "string",
+                            "properties": {
+                                "use": {
+                                    "type": "string",
+                                    "xml": {
+                                        "attribute": true
+                                    }
+                                }
+                            }
+                        },
+                        "securityMethod": {
+                            "type": "string",
+                            "properties": {
+                                "standardID": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "xml": {
+                                        "attribute": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "Error": {
+            "required": [
+                "code",
+                "message"
+            ],
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
