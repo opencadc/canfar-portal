@@ -1,5 +1,5 @@
 (function() {
-/* Login form with check to see if user is logged in or not.
+// Login form with check to see if user is logged in or not.
 // check logged in status
 // http://ws.canfar.net/ac/whoami/?view
 
