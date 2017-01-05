@@ -15,12 +15,12 @@
 //    dataType: 'json',
 //    success: function(data) {
 		var loginMenu = $("#loginForm"); 
-		var oData = {"payload": "George"};
+		var oData = {"payload": ""};
 		var loggedInUsername = oData.payload;
 		if (oData.payload === "") {			
 			loginMenu.append('  <a title="Login form" class="dropdown-toggle" role="button" aria-haspopup="true" ' +
 			       		' aria-expanded="false" data-toggle="dropdown"> ' +
-					'  Llogin <span class="caret"></span></a>'+
+					'  Login <span class="caret"></span></a>'+
 					'<ul class="dropdown-menu list-unstyled pull-right login-container">'+
 					' <li>'+
 					' <form class="form-inline" id="loginForm" role="form" method="post" action="http://apps.canfar.net/storage-beta/ac/authenticate">'+
