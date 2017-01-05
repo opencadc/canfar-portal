@@ -139,6 +139,8 @@ $ sudo apt  update -y
 $ sudo apt install -y sextractor libcfitsio-bin
 {% endhighlight %}
 
+</div>
+
 ### Test the Software on the VM
 
 We are now ready to do a simple test. Let’s download a FITS image to our scratch space. When we instantiated the VM we chose a flavour with an ephemeral disk. First, execute the following script to mount this device at `/ephemeral` and create a work directory to mimic the batch processing environment (note that this will be done automatically for batch jobs):
