@@ -15,7 +15,8 @@
 //    dataType: 'json',
 //    success: function(data) {
 		var loginMenu = $("#loginForm"); 
-		var oData = {"payload": ""};
+		var oData = {"payload": "George"};
+		var loggedInUsername = oData.payload;
 		if (oData.payload === "") {			
 			loginMenu.append('  <a title="Login form" class="dropdown-toggle" role="button" aria-haspopup="true" ' +
 			       		' aria-expanded="false" data-toggle="dropdown"> ' +
@@ -39,7 +40,8 @@
 					'</ul>');
 		} else {
 			loginMenu.append('<a title="User actions." class="dropdown-toggle" role="button" aria-haspopup="true" ' + 
-					 ' aria-expanded="false" data-toggle="dropdown"> {{ username }} <span class="caret"></span></a> ' +
+					 ' aria-expanded="false" data-toggle="dropdown"> ' + loggedInUsername + 
+					 ' <span class="caret"></span></a> ' +
            				' <ul class="dropdown-menu list-unstyled"> ' +
             				'  <li> ' +
              				'   <a title="Update profile." href="#">My profile</a></li> ' +
