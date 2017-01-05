@@ -19,7 +19,7 @@
 		if (oData.payload === "") {			
 			loginMenu.append('  <a title="Login form" class="dropdown-toggle" role="button" aria-haspopup="true" ' +
 			       		' aria-expanded="false" data-toggle="dropdown"> ' +
-					'  {{ t.login.name }} <span class="caret"></span></a>'+
+					'  Llogin <span class="caret"></span></a>'+
 					'<ul class="dropdown-menu list-unstyled pull-right login-container">'+
 					' <li>'+
 					' <form class="form-inline" id="loginForm" role="form" method="post" action="http://apps.canfar.net/storage-beta/ac/authenticate">'+
