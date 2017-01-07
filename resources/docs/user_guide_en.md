@@ -1,12 +1,12 @@
 ---
 layout: pages_left_nav
 
-namespace: resources.docs.tutorial
+namespace: resources.user_guide
 lang: en
-permalink: /en/resources/docs/tutorial
+permalink: /en/resources/user-guide
 ---
 
-# Processing Tutorial for CANFAR
+# CANFAR User Guide
 
 <div class="span-4 module-table-contents">
 	<h2>Table of contents</h2>
@@ -38,23 +38,23 @@ Each resource allocation corresponds to an OpenStack **tenant** or **project** (
 
 ### Allow ssh access to your VM
 
-* Click on **Access & Security** (left column of page), and then the **Security Groups** tab. 
+* Click on **Access & Security** (left column of page), and then the **Security Groups** tab.
 * Click on the **Manage Rules** button next to the default group. If you see a rule with **Ingress** direction, **22(SSH)** Port Range and **0.0.0.0/0 (CIDR)** , then that means someone in your tenant already  opened the ssh port for you. If you don't see it, add a new rule following step.
 * Click on the **+ Add Rule** button near the top-right. Select **SSH** at the bottom of the **Rule** pull-down menu, and then click on **Add** at the bottom-right. **This operation is only required once for the initial setup of the tenant**.
 
 ### Import an ssh public key
 
-Access to VMs is facilitated by SSH key pairs rather than less secure user name / password. A private key resides on your own computer, and the public key is copied to all machines that you wish to connect to. 
+Access to VMs is facilitated by SSH key pairs rather than less secure user name / password. A private key resides on your own computer, and the public key is copied to all machines that you wish to connect to.
 
 * If you have not yet created a key pair on your system, run **ssh-keygen** on this local machine to generate one or follow this [documentation](https://help.github.com/articles/generating-ssh-keys/) for example.
-* Click on **Access & Security**, switch to the **Key Pairs** tab and click on the **Import Key Pair** button at the top-right. 
-* Choose a meaningful name for the key, and then copy and paste the contents of ```~/.ssh/id_rsa.pub``` from the machine you plan to ssh from into the **Public Key** window. 
+* Click on **Access & Security**, switch to the **Key Pairs** tab and click on the **Import Key Pair** button at the top-right.
+* Choose a meaningful name for the key, and then copy and paste the contents of ```~/.ssh/id_rsa.pub``` from the machine you plan to ssh from into the **Public Key** window.
 
-### Allocate a public IP address 
+### Allocate a public IP address
 
-You will need to connect to your VM via a public IP. 
+You will need to connect to your VM via a public IP.
 
-* Click on the **Floating IPs** tab. If there are no IPs listed, click on the **Allocate IP to Project** button at the top-right. 
+* Click on the **Floating IPs** tab. If there are no IPs listed, click on the **Allocate IP to Project** button at the top-right.
 
 Each tenant/project will typically have one public IP. If you have already allocated all of your IPs, this button will read "Quota Exceeded".
 
@@ -64,16 +64,16 @@ We will now launch a VM with Ubuntu 16.04.
 
 * Switch to the **Images** window (left-hand column), and then click on the **Public** button at top right (it might be already selected.
 * For this tutorial, select ```ubuntu-server-16.04-amd64``` and click on the **Launch Instance** button on the right.
-* In the **Details** tab choose a meaningful **Instance Name**. **Flavor** is the hardware profile for the VM. ```c2-7.5gb-80``` provides the minimal requirements of 2 cores, 7.5GB or RAM for most VMs. Note that it provides an 80 GB *ephemeral disk* that will be used as scratch space for batch processing. **Availability Zone** should be left empty, and **Instance Count** 1 for this tutorial. 
+* In the **Details** tab choose a meaningful **Instance Name**. **Flavor** is the hardware profile for the VM. ```c2-7.5gb-80``` provides the minimal requirements of 2 cores, 7.5GB or RAM for most VMs. Note that it provides an 80 GB *ephemeral disk* that will be used as scratch space for batch processing. **Availability Zone** should be left empty, and **Instance Count** 1 for this tutorial.
 * In the **Access & Security** tab ensure that your public key is selected, and the ```default``` security group (with ssh rule added) is selected.
 * Finally, click the **Launch** button.
 
 ### Connect to the VM
 
 After launching the VM you are returned to the **Instances** window. You can check the VM status once booted by clicking on its name (the **Console** tab of this window provides a basic console in which you can monitor the boot process).
-Before being able to ssh to your instance, you will need to attach the public IP address to it. 
+Before being able to ssh to your instance, you will need to attach the public IP address to it.
 
-* Select **Associate Floating IP** from the **More** pull-down menu. 
+* Select **Associate Floating IP** from the **More** pull-down menu.
 * Select the address that was allocated and the new VM instance in the **Port to be associated** menu, and click on **Associate**.
 
 Your ssh public key will have been injected into a **generic account** with a name like ```centos```, or ```ubuntu```, depending on the Linux distribution. To discover the name of this account, first attempt to connect as root:
@@ -127,7 +127,7 @@ $ ssh [username]@[floating_ip]
 
 The VM operating system has only a minimal set of packages. For this tutorial, we will use:
 
-*  the [SExtractor](http://www.astromatic.net/software/sextractor) package to create catalogues of stars and galaxies. 
+*  the [SExtractor](http://www.astromatic.net/software/sextractor) package to create catalogues of stars and galaxies.
 * We also need to read FITS images. Most FITS images from CADC come Rice-compressed with an `fz` extension. SExtractor only reads uncompressed images, so we also need the ```funpack``` utility to uncompress the incoming data. The ```funpack``` executable is included in the package ```libcfitsio-bin```.
 
 Let's install them both system wide after a fresh update of the Ubuntu repositories:
@@ -179,7 +179,7 @@ The image `1056213p.fits` is a Multi-Extension FITS file with 36 extensions, eac
 ### Store the results on the CANFAR VOSpace
 
 All data stored on the VM and ephemeral disk since the last time it was saved are normally **wiped out** when the VM shuts down). We will use the [CANFAR VOSpace](/docs/vospace/) to store the result.
-We want to store the output catalogue `1056213p.cat` at a persistent, externally-accessible location. We will use the CANFAR VOSpace for this purpose. To store anything on the CANFAR VOSpace from a command line, you will need the CANFAR VOSpace client. 
+We want to store the output catalogue `1056213p.cat` at a persistent, externally-accessible location. We will use the CANFAR VOSpace for this purpose. To store anything on the CANFAR VOSpace from a command line, you will need the CANFAR VOSpace client.
 
 <div class="shell">
 

@@ -1,12 +1,12 @@
 ---
 layout: pages_left_nav
 
-namespace: resources.docs.tutorial
+namespace: resources.user_guide
 lang: fr
-permalink: /fr/ressources/docs/tutoriel
+permalink: /fr/ressources/guide-dutilisateur
 ---
 
-# Processing Tutorial for CANFAR
+# Guide d'utilisateur de CANFAR
 
 <div class="span-4 module-table-contents">
 	<h2>Table of contents</h2>
