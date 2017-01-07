@@ -1,3 +1,3 @@
 about: ['terms_of_reference', 'governance', 'organization', 'contact']
 nodes: ['nugrid', 'ngvs', 'cadc', 'uvic']
-resources: ['expertise', 'expertise.cadc', 'expertise.uvic', 'docs', 'docs.tutorial', 'docs.vms', 'docs.api', 'services', 'services.cloud_portal', 'services.digital_object_identifiers', 'services.storage', 'services.processing', 'services.group_management', 'hardware', 'hardware.cores', 'hardware.disk_space']
+resources: ['expertise', 'expertise.cadc', 'expertise.uvic', 'docs', 'docs.tutorial', 'docs.api', 'services', 'services.cloud_portal', 'services.digital_object_identifiers', 'services.storage', 'services.processing', 'services.group_management', 'hardware', 'hardware.cores', 'hardware.disk_space']
