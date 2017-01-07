@@ -66,16 +66,19 @@ en:
         name: 'Storage'
         link: 'http://apps.canfar.net/storage-beta/list/'
         doclink: '/en/resources/docs/storage/'
+        api_link: '/swagger-ui/?url=/docs/api_data/vospace.json'
         description: 'Storage description'
       processing:
         name: 'Batch Processing'
         link: 'http://www.canfar.phys.uvic.ca/processing/batchjobs'
         doclink: '/en/resources/docs/processing/'
+        api_link: '/swagger-ui/?url=/docs/api_data/proc.json'
         description: 'Batch Processing description'
       group_management:
         name: 'Group Management'
         link: 'http://www.canfar.phys.uvic.ca/canfar/groups'
         doclink: 'http://www.canfar.phys.uvic.ca/ac/'
+        api_link: '/swagger-ui/?url=/docs/api_data/ac.json'
         description: 'Group Management description'
     user_guide:
       name: 'User Guide'
