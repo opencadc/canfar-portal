@@ -18,6 +18,10 @@ Although CANFAR is able to "mint" a DOI linked to any type of digital object the
 
 CANFAR offers a simple process to satisify the need to link research data products to the publication that results from them. Research teams collect the data products into a VOSpace folder with explanatory material (typically a README file). When the folder is ready to publish it is copied into a readonly area of the CANFAR VOSpace so that it will remain perpetually static. A landing page is created and the DOI is "minted" poining to that landing page, where the data are accessible. The authors of the publication would normally provide the DOI itself to the paper publisher to associate the paper with the data that were used to produce it.
 
+CANFAR is willing to issue DOIs for any research material where publication is useful to the community even in the case where no publication is directly associated with those data. 
+
+CANFAR invites any researcher to contact us to discuss using the DOI process and long-term storage capability that we offer.
+
 
 
 
