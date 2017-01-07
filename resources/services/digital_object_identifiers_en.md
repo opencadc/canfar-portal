@@ -7,21 +7,17 @@ permalink: /en/resources/services/digital-object-identifiers
 ---
 
 <!-- Content start -->
-A Digitial Object Identifier is a string that is associated perpetually (at least in theory) with a particular digital object.
-CANFAR registers Digitial Object Identifiers (DOIs) with DataCite.
 
-About
+<h5>A Digitial Object Identifier is a string that is associated perpetually (at least in theory) with a particular digital object.
+CANFAR registers Digitial Object Identifiers (DOIs) with DataCite. A number of services will resolved the DOI directly to the digital
+object</h5>
 
-Nucleosynthesis Grid or NuGrid is an international collaboration of more than 50 researchers in seven countries, distributed over 12 institutions.The collaboration develops and maintains tools for large scale post-processing nucleosynthesis simulations, and apply these to complete sets of quiescent and explosive nuclear production environments. These data sets and research simulation codes are used applied in many areas of nuclear astrophysics and astronomy.
-Present use of CANFAR services and projects
+<b>Purpose</b>
 
-    NuGrid has developed within CANFAR the Web-Exploration of NuGrid Data Interactive WENDI, a platform to provide members of the NuGrid collaboration as well as external users analysis and exploration access to the NuGrid data sets
-    NuGrid is using the CANFAR VOspace for sharing data inside and outside the collaboration, taking advantage of the granular access model CANFAR VOspace.
+Although CANFAR is able to "mint" a DOI linked to any type of digital object the primary purpose was defined by the community's need to provide a link from a published paper to the data products that were used to produce the scientific results of that paper. A link to "archival" data (the data in the form that are receivded by CADC from teh observatories) is generally not sufficient because scientists typically do further processing that modifies those data to produce the data products used in their research. 
 
-Research data & software needs
+CANFAR offers a simple process to satisify the need to link research data products to the publication that results from them. Research teams collect the data products into a VOSpace folder with explanatory material (typically a README file). When the folder is ready to publish it is copied into a readonly area of the CANFAR VOSpace so that it will remain perpetually static. A landing page is created and the DOI is "minted" poining to that landing page, where the data are accessible. The authors of the publication would normally provide the DOI itself to the paper publisher to associate the paper with the data that were used to produce it.
 
-    enhance present capabilities by adding integrated processing capabilities into the WENDI platform
-    integrate collaborative tools, such as versioning and collaborative creation and sharing of analysis workflows
 
 
 
