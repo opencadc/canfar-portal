@@ -19,7 +19,7 @@ permalink: /en/resources/expertise/cadc
 <br>
 <br>
 <br>
-The Canadian Astronomy Data Centre (CADC) is the technical hub of CANFAR. It provides support for Operations and Development of CANFAR services.
+<h3>The Canadian Astronomy Data Centre (CADC) is the technical hub of CANFAR. It provides support for Operations and Development of CANFAR services.</h3>
 
  The CADC is a mixed group of science and technical staff. All of the 21 CADC staff are involved in CANFAR in one way or another.<br>
  
@@ -38,7 +38,7 @@ The Canadian Astronomy Data Centre (CADC) is the technical hub of CANFAR. It pro
  
  <b> Operations </b>
  
- John Oullette (Operations Manager)<br>
+ John Ouellette (Operations Manager)<br>
  Isabella Ghiurea<br>
  Ling Shao<br>
  Geoff Melnychuck<br>
