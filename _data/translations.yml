@@ -37,6 +37,21 @@ en:
     uvic:
       name: 'UVIC ARC'
       link: '/uvic'
+    jcmt_gbs:
+      name: 'JCMT GBS'
+      link: '/jcmt-gbs'
+    jwst:
+      name: 'JWST'
+      link: '/jwst'
+    vlass:
+      name: 'VLASS'
+      link: '/vlass'
+    taos_ii:
+      name: 'TAOS-II'
+      link: '/taos-ii'
+    node9:
+      name: '_NODE9_'
+      link: '/node9'
   resources:
     name: 'Resources'
     link: '/resources'
@@ -139,6 +154,21 @@ fr:
     uvic:
       name: 'UVIC ARC'
       link: '/uvic'
+    jcmt_gbs:
+      name: 'JCMT GBS'
+      link: '/jcmt-gbs'
+    jwst:
+      name: 'JWST'
+      link: '/jwst'
+    vlass:
+      name: 'VLASS'
+      link: '/vlass'
+    taos_ii:
+      name: 'TAOS-II'
+      link: '/taos-ii'
+    node9:
+      name: '_NODE9_'
+      link: '/node9'
   resources:
     name: 'Ressources'
     link: '/ressources'
