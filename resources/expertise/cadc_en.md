@@ -61,6 +61,7 @@ permalink: /en/resources/expertise/cadc
  
  Michael Peddle
  
+<img src="Staffing.tiff" alt="CADC Staff" style="width:304px;height:228px;">
  
  
  
