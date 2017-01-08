@@ -9,7 +9,7 @@ permalink: /en/resources/services/digital-object-identifiers
 <!-- Content start -->
 
 <h5>A Digitial Object Identifier is a string that is associated perpetually (at least in theory) with a particular digital object.
-CANFAR registers Digitial Object Identifiers (DOIs) with DataCite. A number of services will resolved the DOI directly to the digital
+CANFAR registers Digital Object Identifiers (DOIs) with DataCite. A number of services will resolved the DOI directly to the digital
 object</h5>
 
 <b>Purpose</b>
