@@ -14,11 +14,11 @@
             <h3 class="list-group-item-heading">{{ include.services[service_key].name }}</h3>
             <div class="list-group-item-text">
               <p>{{ include.services[service_key].description }}</p>
+              <p><a href="{{ include.services[service_key].doclink }}">User Documentation <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></p>
               {% if include.services[service_key].api_link %}
-              <p><a href="{{ include.services[service_key].api_link }}">API <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></p>
+              <p><a href="{{ include.services[service_key].api_link }}">Reference API <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></p>
               {% endif %}
-              <p><a href="{{ include.services[service_key].doclink }}">Documentation <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></p>
-              <p>{% include _link_item.md namespace=service_name link_only=true label='Service' glyphicon='glyphicon-play-circle' %}</p>
+              <p>{% include _link_item.md namespace=service_name link_only=true label='Go to service portal' glyphicon='glyphicon-play-circle' %}</p>
             </div>
           </div>
       {% endif %}

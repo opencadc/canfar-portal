@@ -75,7 +75,7 @@ en:
       digital_object_identifiers:
         name: 'Digital Object Identifiers'
         link: '/digital-object-identifiers'
-        doclink: '/en/resources/docs/digital-object-identifiers/'
+        doclink: '/en/resources/services/digital-object-identifiers/'
         description: 'DOI description'
       storage:
         name: 'Storage'
