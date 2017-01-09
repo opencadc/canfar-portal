@@ -1,7 +1,7 @@
 ---
 layout: pages_left_nav
 
-namespace: resources.docs.batch_processing
+namespace: resources.services.batch_processing
 lang: en
 permalink: /en/resources/docs/batch_processing/
 ---
