@@ -67,15 +67,15 @@ en:
     services:
       name: 'Services'
       link: '/services/'
-      cloud_portal:
-        name: 'Cloud Portal'
-        link: 'http://www.canfar.phys.uvic.ca/processing/vmod/'
-        doclink: '/en/resources/docs/cloud_portal'
-        description: 'Cloud Portal description'
+      openstack_cloud_portal:
+        name: 'OpenStack Cloud Portal'
+        link: 'http://apps.canfar.net/processing/vmod/'
+        doclink: '/en/resources/docs/openstack_cloud_portal'
+        description: 'OpenStack Cloud Portal description'
       digital_object_identifiers:
         name: 'Digital Object Identifiers'
         link: '/digital-object-identifiers'
-        doclink: '/en/resources/services/digital-object-identifiers/'
+        doclink: '/en/resources/docs/digital_object_identifiers/'
         description: 'DOI description'
       storage:
         name: 'Storage'
@@ -83,16 +83,16 @@ en:
         doclink: '/en/resources/docs/storage/'
         api_link: '/swagger-ui/?url=/docs/api_data/vospace.json'
         description: 'Storage description'
-      processing:
+      batch_processing:
         name: 'Batch Processing'
-        link: 'http://www.canfar.phys.uvic.ca/processing/batchjobs'
-        doclink: '/en/resources/docs/processing/'
+        link: 'http://apps.canfar.net/processing/batchjobs'
+        doclink: '/en/resources/docs/batch_processing/'
         api_link: '/swagger-ui/?url=/docs/api_data/proc.json'
         description: 'Batch Processing description'
       group_management:
         name: 'Group Management'
-        link: 'http://www.canfar.phys.uvic.ca/canfar/groups'
-        doclink: 'http://www.canfar.phys.uvic.ca/ac/'
+        link: 'http://apps.canfar.net/canfar/groups'
+        doclink: 'http://ws.canfar.net/ac/'
         api_link: '/swagger-ui/?url=/docs/api_data/ac.json'
         description: 'Group Management description'
     user_guide:
@@ -184,30 +184,30 @@ fr:
     services:
       name: 'Services'
       link: '/services'
-      cloud_portal:
-        name: 'Portail de cloud'
-        link: 'http://www.canfar.phys.uvic.ca/processing/vmod/'
-        doclink: '/fr/ressources/docs/portail_de_cloud'
+      openstack_cloud_portal:
+        name: 'Portail de cloud OpenStack'
+        link: 'http://apps.canfar.net/processing/vmod/'
+        doclink: '/fr/ressources/docs/portail_de_cloud_openstack'
         description: 'La description de Partail de cloud'
       digital_object_identifiers:
         name: 'Identificateurs d''objects digitale'
         link: '/identificateurs-objets-digitale'
-        doclink: '/fr/ressources/docs/identificateurs-objets-digitale/'
+        doclink: '/fr/ressources/docs/identificateurs_objets_digitale/'
         description: 'La description d''Identificateurs d''objects digitale'
       storage:
         name: 'Stockage'
         link: 'http://apps.canfar.net/storage-beta/list/'
         doclink: '/fr/ressources/docs/stockage/'
         description: 'La description de Stockage'
-      processing:
+      batch_processing:
         name: 'Le traitement par lots'
-        link: 'http://www.canfar.phys.uvic.ca/processing/batchjobs'
-        doclink: '/fr/ressources/docs/processing/'
+        link: 'http://apps.canfar.net/processing/batchjobs'
+        doclink: '/fr/ressources/docs/batch_processing/'
         description: 'La description du traitement par lots'
       group_management:
         name: 'Gestion de groupes'
-        link: 'http://www.canfar.phys.uvic.ca/canfar/groups'
-        doclink: 'http://www.canfar.phys.uvic.ca/ac/'
+        link: 'http://apps.canfar.net/canfar/groups'
+        doclink: 'http://ws.canfar.net/ac/'
         description: 'La description de Gestion de groupes'
     user_guide:
       name: 'Guide d''utilisateur'

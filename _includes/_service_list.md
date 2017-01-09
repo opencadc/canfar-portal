@@ -14,7 +14,11 @@
             <h3 class="list-group-item-heading">{{ include.services[service_key].name }}</h3>
             <div class="list-group-item-text">
               <p>{{ include.services[service_key].description }}</p>
+              {% if include.services[service_key].doclink | slice: 0, 4 == 'http' %}
               <p><a href="{{ include.services[service_key].doclink }}">User Documentation <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></p>
+              {% else %}
+              <p><a href="{{ include.services[service_key].doclink | prepend: site.baseurl }}">User Documentation <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></p>
+              {% endif %}
               {% if include.services[service_key].api_link %}
               <p><a href="{{ include.services[service_key].api_link }}">Reference API <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></p>
               {% endif %}

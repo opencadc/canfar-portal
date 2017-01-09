@@ -1,11 +1,10 @@
 ---
 layout: pages_left_nav
 
-namespace: resources.docs.vms
-lang: fr
-permalink: /fr/ressources/docs/vms
+namespace: resources.docs.openstack_cloud_portal
+lang: en
+permalink: /en/resources/docs/openstack_cloud_portal
 ---
-
 
 ## Introduction
 

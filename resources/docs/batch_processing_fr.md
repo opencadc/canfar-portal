@@ -1,9 +1,9 @@
 ---
 layout: pages_left_nav
 
-namespace: resources.services.processing
-lang: en
-permalink: /en/resources/docs/processing/
+namespace: resources.docs.batch_processing
+lang: fr
+permalink: /fr/ressources/docs/batch_processing/
 ---
 
 ## Introduction
