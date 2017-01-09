@@ -27,7 +27,7 @@ permalink: /en/resources/expertise/cadc
  
  Staffing of the groups:
  
-<b> Science </b>
+<h4> Science </h4>
  
  David Schade (Group Leader)<br>
  David Bohlender<br>
@@ -38,14 +38,14 @@ permalink: /en/resources/expertise/cadc
  Chris Willott<br>
 
  
- <b> Operations </b>
+ <h4> Operations </h4>
  
  John Ouellette (Operations Manager)<br>
  Isabella Ghiurea<br>
  Ling Shao<br>
  Geoff Melnychuck<br>
  
- <b> Development</b>
+ <h4> Development</h4>
  
  Severin Gaudet (Development Manager)<br>
  Jeff Burke<br>
@@ -57,7 +57,7 @@ permalink: /en/resources/expertise/cadc
  Brian Major<br>
  Alinga Yeung<br>
  
- <b> Project Management and Administration</b>
+ <h4> Project Management and Administration</h4>
  
  Michael Peddle
  
