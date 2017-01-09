@@ -8,11 +8,11 @@ permalink: /en/nodes/cadc
 
 <!-- Content start -->
 
-<h4> Institution(s) </h4>
+<h3> About </h3>
 
 The CADC node of CANFAR is located at the Dominion Astrophysical Observatory in Victora and is part of the National research Council. CADC provides scientific direction, operations support, and development support to the CANFAR platform. A primary function is supporting users of the the CANFAR platform where CADC is the first point of contact for Issue Tracking and resolution.
 
-<h4> Principal Activities </h4>
+<h3> Current Activities </h3>
 
 <ul>
   <li>Operations</li>
@@ -23,7 +23,7 @@ The CADC node of CANFAR is located at the Dominion Astrophysical Observatory in 
   <li>CANFAR proposal development</li>
 </ul>
 
-<h4>People</h4>
+<h3>People</h3>
 <ul>
   <li>David Schade: Group Leader of CADC and CANFAR Science Management Committee (SMC) member</li>
   <li>Severin Gaudet: Software Development Manager and Ex Officio SMC member</li>
@@ -32,9 +32,11 @@ The CADC node of CANFAR is located at the Dominion Astrophysical Observatory in 
   <li>John Ouellette: CADC and CANFAR Operations Manager</li>
 </ul>
 
-<h4>History</h4>
+<h3>History</h3>
 
 The CADC has been involved in all of the CANFAR proposals (since 2009) developed up to the present time and has provided key technical inputs and advice to the proposal process.
+
+<h3>Future Plans</h3>
 
 <h4>The C3TP project (CANFAR-CADC-COMPUTE CANADA Transition Project)</h4>
 
