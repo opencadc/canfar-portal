@@ -32,7 +32,9 @@ The CADC node of CANFAR is located at the Dominion Astrophysical Observatory in 
   <li>John Ouellette: CADC and CANFAR Operations Manager</li>
 </ul>
 
-The CADC has been involved in all of the CANFAR proposals developed up to the present time and has provided key technical inputs and advice to that process.
+<h4>History</h4>
+
+The CADC has been involved in all of the CANFAR proposals (since 2009) developed up to the present time and has provided key technical inputs and advice to the proposal process.
 
 <h4>The C3TP project (CANFAR-CADC-COMPUTE CANADA Transition Project)</h4>
 
