@@ -70,7 +70,7 @@ en:
       openstack_cloud_portal:
         name: 'OpenStack Cloud Portal'
         link: 'http://apps.canfar.net/processing/vmod/'
-        doclink: '/en/resources/docs/openstack_cloud_portal'
+        doclink: '/en/resources/docs/openstack_cloud_portal/'
         description: 'OpenStack Cloud Portal description'
       digital_object_identifiers:
         name: 'Digital Object Identifiers'
@@ -187,7 +187,7 @@ fr:
       openstack_cloud_portal:
         name: 'Portail de cloud OpenStack'
         link: 'http://apps.canfar.net/processing/vmod/'
-        doclink: '/fr/ressources/docs/portail_de_cloud_openstack'
+        doclink: '/fr/ressources/docs/portail_de_cloud_openstack/'
         description: 'La description de Partail de cloud'
       digital_object_identifiers:
         name: 'Identificateurs d''objects digitale'
