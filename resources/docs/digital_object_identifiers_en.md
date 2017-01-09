@@ -3,7 +3,7 @@ layout: pages_left_nav
 
 lang: en
 namespace: resources.services.digital_object_identifiers
-permalink: /en/resources/docs/digital_object_identifiers
+permalink: /en/resources/docs/digital_object_identifiers/
 ---
 
 <!-- Content start -->
