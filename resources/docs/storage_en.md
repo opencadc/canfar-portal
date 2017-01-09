@@ -3,7 +3,7 @@ layout: pages_left_nav
 
 namespace: resources.services.storage
 lang: en
-permalink: /en/resources/docs/storage
+permalink: /en/resources/docs/storage/
 ---
 
 ## Introduction
