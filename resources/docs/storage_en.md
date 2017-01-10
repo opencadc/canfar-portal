@@ -3,7 +3,7 @@ layout: pages_left_nav
 
 namespace: resources.services.storage
 lang: en
-permalink: /en/resources/docs/storage
+permalink: /en/resources/docs/storage/
 ---
 
 ## Introduction
@@ -42,10 +42,10 @@ The `vos` command line client is most likely not part of any Linux distribution 
 
 {% highlight bash %}
 # If you have root or sudo access:
-$ sudo apt-get install python-pip
+$ sudo apt install python-pip
 $ sudo pip install -U vos
 
-# If you don't have root or sudo access:
+# If you don't have root or sudo access (but you still need pip):
 $ pip install --user -U vos
 $ export PATH="${HOME}/.local/bin:${PATH}"
 
@@ -55,7 +55,7 @@ $ export PATH="${HOME}/.local/bin:${PATH}"
 
 #### RHEL 5 / CentOS 5 / Scientific Linux 5
 
-The default Python version on these antique distributions still are at Python 2.4, so you need to install dependencies and Python 2.6:
+The default Python version on these antique distributions is Python 2.4, so you need to install dependencies and Python 2.6:
 
 <div class="shell">
 
@@ -98,7 +98,7 @@ $ export DYLD_FALLBACK_LIBRARY_PATH=/usr/local/lib
 
 </div>
 
-### Using the VOSpace client command line tools
+### Using the VOSpace client command line tools (recommended)
 
 Try the following commands, substituting your CANFAR VOSpace in for VOSPACE (most CANFAR users have VOSpace that is the same name as their CANFAR user name. There are also project VOSpaces):
 
@@ -139,7 +139,7 @@ $ vchmod g+w vos:VOSPACE/foo/bar.txt 'GROUP1, GROUP2, GROUP3'
 
 Details on these commands can be found via the `--help` option, e.g. `vls --help`. And if you want to see a more verbose output, try `vls -v vos:USER`.  Currently the following commands are defined: `vcat` `vchmod` `vcp` `vln` `vlock` `vls` `vmkdir` `vmv` `vrm` `vrmdir` `vsync`  `vtag`
 
-### Using the VOSpace FUSE file system
+### Using the VOSpace FUSE file system (experimental)
 
 One can also access to VOSpace as a filesystem. This technique uses a [FUSE](http://en.wikipedia.org/wiki/Filesystem_in_Userspace) layer between file-system actions and the VOSpace storage system. Using the VOFS makes your VOSpace appear like a regular filesystem.
 
@@ -155,7 +155,7 @@ $ mountvofs
 
 Now looking in `/tmp/vospace` you should see a listing of all available VOSpaces that you have read access.
 
-To mount a specific vospace use commands like:
+To mount a specific VOSpace use commands like:
 
 <div class="shell">
 
@@ -166,9 +166,9 @@ $ mountvofs --vospace vos:USER --mountpoint /path/to/a/directory
 </div>
 
 
-the mountvofs command creates a cache directory where local copies of files from the VOSpace are kept, as needed. If the cached version is older than the copy on VOSpace then a new version is pulled.  You can specify the size of the cache (default is 50 GBytes) and the location (default is `${HOME}/vos:USER`) on the command line.
+The `mountvofs` command creates a cache directory where local copies of files from the VOSpace are kept, as needed. If the cached version is older than the copy on VOSpace then a new version is pulled. You can specify the size of the cache (default is 50 GBytes) and the location (default is `${HOME}/vos:USER`) on the command line.
 
-When a file is opened in a mounted directory, mountvofs gets the remote copy from VOspace, if the local copy is out of date. When the file is written to disk and closed, mountvofs puts the file back into VOspace.  With most science software, these operations typically occur rarely and the illusion of a local disk is maintained.  Most editors, however, tend to write temporary versions of a file frequently.  In this case, the file is frequently written to VOspace. Performance may suffer in this case.
+When a file is opened in a mounted directory, mountvofs gets the remote copy from VOspace, if the local copy is out of date. When the file is written to disk and closed, the VOSpace file system puts the file back into VOspace.  With most science software, these operations typically occur rarely and the illusion of a local disk is maintained.  Most editors, however, tend to write temporary versions of a file frequently.  In this case, the file is frequently written to VOspace. Performance may suffer in this case, or not even being compatible with the application.
 
 <div class="shell">
 
@@ -215,7 +215,3 @@ $ machine www.canfar.phys.uvic.ca USER password PASSWORD
 </div>
 
 WARNING: this is not a fully secure solution.
-
-### VOSpace API and access with web clients
-
-VOSpace is a RESTful service with an API that call be called through standard web client such as curl or wget. Please refer to the [API Reference](http://www.canfar.phys.uvic.ca/vospace) for more information.

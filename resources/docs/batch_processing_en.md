@@ -1,9 +1,9 @@
 ---
 layout: pages_left_nav
 
-namespace: resources.services.processing
-lang: fr
-permalink: /fr/ressources/docs/processing/
+namespace: resources.services.batch_processing
+lang: en
+permalink: /en/resources/docs/batch_processing/
 ---
 
 ## Introduction
@@ -12,10 +12,9 @@ Batch processing is a standard way to queue and run large amount of tasks while 
 
 ## Batch Framework on the CANFAR clouds
 
-CANFAR scheduling system is orchestrated with the [HTCondor](http://www.htcondor.org) high throughput computing software, and the [cloud-scheduler](http://www.cloudscheduler.org) to allow multi-clusters (multi-clouds) batch processing.
+The CANFAR scheduling system is orchestrated with the [HTCondor](http://www.htcondor.org) high throughput computing software, and the [cloud-scheduler](http://www.cloudscheduler.org) to allow multi-clusters (multi-clouds) batch processing.
 
-For a typical CANFAR user, `HTCondor` will be similar use as other scheduling software that can be found on High Performance Computing
-platforms, such as PBS/Torque, Sun Grid Engine, or Slurm. Most users will not have to care about the cloud scheduler since it runs in the background launching Virtual Machines (VMs) while monitoring the jobs queues, but HTCondor is important to understand in order to submit and manage jobs.
+For a typical CANFAR user, `HTCondor` will be similar use as other scheduling software that can be found on High Performance Computing platforms, such as PBS/Torque, Sun Grid Engine, or Slurm. Most users will not have to care about the cloud scheduler since it runs in the background launching Virtual Machines (VMs) while monitoring the jobs queues, but HTCondor is important to understand in order to submit and manage jobs.
 
 ## Writing a Batch Job
 

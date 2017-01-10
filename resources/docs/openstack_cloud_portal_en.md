@@ -1,11 +1,10 @@
 ---
 layout: pages_left_nav
 
-namespace: resources.docs.vms
-lang: fr
-permalink: /fr/ressources/docs/vms
+namespace: resources.services.openstack_cloud_portal
+lang: en
+permalink: /en/resources/docs/openstack_cloud_portal/
 ---
-
 
 ## Introduction
 
@@ -13,8 +12,7 @@ Are you an astronomer and would like to perform reproducible research? With the 
 
 There are multiple methods for interacting with CANFAR Virtual Machines, including the [OpenStack dashboard](http://www.openstack.org/software/openstack-dashboard/), [command-line interface (CLI)](http://docs.openstack.org/user-guide/content/ch_cli.html), and a [Python API](http://docs.openstack.org/developer/python-novaclient/api.html), all of which are based on an underlying [RESTful API](http://developer.openstack.org/api-ref.html).
 
-A good starting point for programmatic interactions with OpenStack is the CLI, which we introduce here. Some tutorials that go into greater depth may be found [here](http://www.cybera.ca/projects/cloud-resources/rapid-access-cloud/documentation).
-
+CANFAR uses resources of Compute Canada with special allocation. We strongly encourage the user to refer to the [Compute Canada cloud documentation](https://docs.computecanada.ca/wiki/CC-Cloud) to get started.
 
 
 <div class="row">
@@ -42,7 +40,7 @@ The easiest method is to use the package system of a modern Linux distribution. 
 For Debian-based distributions (e.g., Ubuntu):
 
 {% highlight bash %}
-$ sudo apt-get install python-novaclient python-glanceclient
+$ sudo apt install python-novaclient python-glanceclient
 {% endhighlight %}
 
 
@@ -54,7 +52,7 @@ $ sudo yum install python-novaclient python-glanceclient
 {% endhighlight %}
 
 
-Alternatively, to get the latest versions of the clients, install using **pip** (which may first require installation of the ```python-pip``` package using either ```apt-get``` or ```yum``` as above):
+Alternatively, to get the latest versions of the clients, install using **pip** (which may first require installation of the ```python-pip``` package using either ```apt``` or ```yum``` as above):
 
 
 {% highlight bash %}
@@ -145,7 +143,7 @@ where ```[image]``` can be either the ID or the name (output of ```glance image-
 
 ### Add Users to your CANFAR Processing Group
 
-Another option is to add a user to your CANFAR processing group through the [group management pages](http://www.canfar.phys.uvic.ca/canfar/groups/). Note, however, that *all* VM images in your tenant, as well as your processing allocation will also be available to them.
+Another option is to add a user to your CANFAR processing group through the [Group Management pages](http://apps.canfar.net/canfar/groups). Note, however, that *all* VM images in your tenant, as well as your processing allocation will also be available to them.
 
 {% include backToTop.html %}
 
@@ -158,7 +156,7 @@ Before launching an instance of a virtual machine, some preparation is needed:
 * Create a **keypair**. This is an SSH public key that will be injected into a generic user account to give you access to the VM.
 * Allocate an **IP address** to your tenant.
 
-The [CANFAR tutorial](../tutorial/#virtual-machine-on-demand) describes these steps using the dashboard. The equivalent steps from the command line are covered in [this tutorial](https://docs.google.com/document/d/1zxnuyi1NoO-Hi52OWpmQZKu4dD3DipvZB-fy91mZ18Q/edit#heading=h.3znysh7).
+The [CANFAR User Guide](en/resources/user-guide) describes these steps using the dashboard. The equivalent steps from the command line are covered in [this tutorial](https://docs.computecanada.ca/wiki/Cloud_Quick_Start).
 
 ### Launch the VM Instance
 

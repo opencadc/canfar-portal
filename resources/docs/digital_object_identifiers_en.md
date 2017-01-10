@@ -3,7 +3,7 @@ layout: pages_left_nav
 
 lang: en
 namespace: resources.services.digital_object_identifiers
-permalink: /en/resources/services/digital-object-identifiers
+permalink: /en/resources/docs/digital_object_identifiers/
 ---
 
 <!-- Content start -->
@@ -12,7 +12,7 @@ permalink: /en/resources/services/digital-object-identifiers
 CANFAR registers Digital Object Identifiers (DOIs) with DataCite. A number of services will resolved the DOI directly to the digital
 object</h5>
 
-<h4>Purpose</h4>
+<b>Purpose</b>
 
 Although CANFAR is able to "mint" a DOI linked to any type of digital object the primary purpose was defined by the community's need to provide a link from a published paper to the data products that were used to produce the scientific results of that paper. A link to "archival" data (the data in the form that are receivded by CADC from teh observatories) is generally not sufficient because scientists typically do further processing that modifies those data to produce the data products used in their research. 
 
