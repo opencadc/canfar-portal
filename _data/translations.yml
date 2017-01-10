@@ -79,7 +79,7 @@ en:
         description: 'Set a Digital Object Identifier for your data'
       storage:
         name: 'Storage'
-        link: 'http://apps.canfar.net/storage-beta/list/'
+        link: 'http://apps.canfar.net/vosui/'
         doclink: '/en/resources/docs/storage/'
         api_link: '/swagger-ui/?url=/docs/api_data/vospace.json'
         description: 'Manage your own storage for astronomy data'
