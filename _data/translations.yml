@@ -49,6 +49,9 @@ en:
     taos_ii:
       name: 'TAOS-II'
       link: '/taos-ii'
+    inaf-oat:
+      name: 'INAF-OAT'
+      link: '/inaf-oat'
     node9:
       name: '_NODE9_'
       link: '/node9'
@@ -172,6 +175,9 @@ fr:
     taos_ii:
       name: 'TAOS-II'
       link: '/taos-ii'
+    inaf-oat:
+      name: 'INAF-OAT'
+      link: '/inaf-oat'
     node9:
       name: '_NODE9_'
       link: '/node9'
