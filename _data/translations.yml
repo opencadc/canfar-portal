@@ -83,6 +83,12 @@ en:
         doclink: '/en/resources/docs/storage/'
         api_link: '/swagger-ui/?url=/docs/api_data/vospace.json'
         description: 'Manage your own storage for astronomy data'
+      storage_beta:
+        name: 'Storage (Beta)'
+        link: 'http://apps.canfar.net/storage-beta/list/'
+        doclink: '/en/resources/docs/storage/'
+        api_link: '/swagger-ui/?url=/docs/api_data/vospace.json'
+        description: 'Manage your own storage for astronomy data'
       batch_processing:
         name: 'Batch Processing'
         link: 'http://apps.canfar.net/processing/batchjobs'
@@ -199,6 +205,12 @@ fr:
         link: 'http://apps.canfar.net/vosui/'
         doclink: '/fr/ressources/docs/stockage/'
         description: 'La description de Stockage'
+      storage_beta:
+        name: 'Storage (Beta)'
+        link: 'http://apps.canfar.net/storage-beta/list/'
+        doclink: '/en/resources/docs/storage/'
+        api_link: '/swagger-ui/?url=/docs/api_data/vospace.json'
+        description: 'Manage your own storage for astronomy data'
       batch_processing:
         name: 'Le traitement par lots'
         link: 'http://apps.canfar.net/processing/batchjobs'

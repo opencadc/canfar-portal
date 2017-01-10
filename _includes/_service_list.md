@@ -1,7 +1,7 @@
 <div class="list-group list-group-services">
   {% for s in include.services %}
     {% assign service_key = s[0] %}
-    {% if service_key != 'name' and service_key != 'link' %}
+    {% if service_key != 'name' and service_key != 'link' and service_key != 'storage_beta' %}
       {% if include.menu_side == 'left' %}
         {% assign mod_check = 1 %}
       {% else %}
@@ -24,6 +24,9 @@
               <p><a href="{{ include.services[service_key].api_link }}">Reference API <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></p>
               {% endif %}
               <p>{% include _link_item.md namespace=service_name link_only=true label='Go to service portal' glyphicon='glyphicon-play-circle' %}</p>
+              {% if service_key == 'storage' %}
+              <p><a href="{{ include.services.storage_beta.link }}">Go to service portal (Beta version) <span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span></a></p>
+              {% endif %}
             </div>
           </div>
       {% endif %}
