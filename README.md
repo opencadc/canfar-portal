@@ -63,7 +63,7 @@ container:
 
 Then point a browser to the [local site](http://localhost:4000/).
 
-Normal development can occur in the `/usr/local/src/canfar_site` directory
+Normal development can occur in the `$HOME/src/canfar_site` directory
 and will be immediately reflected after a page refresh.
 
 Also, if the [_config.yml](./tree/gh-pages/_config.yml) file contains a
