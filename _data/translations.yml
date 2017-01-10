@@ -68,7 +68,7 @@ en:
       name: 'Services'
       link: '/services/'
       openstack_cloud_portal:
-        name: 'OpenStack Cloud Services'
+        name: 'OpenStack Cloud'
         link: 'http://apps.canfar.net/processing/vmod/'
         doclink: '/en/resources/docs/openstack_cloud_portal/'
         description: 'Run your own virtual machines on Compute Canada cloud'
