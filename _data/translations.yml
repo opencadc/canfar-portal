@@ -196,7 +196,7 @@ fr:
         description: 'La description d''Identificateurs d''objects digitale'
       storage:
         name: 'Stockage'
-        link: 'http://apps.canfar.net/storage-beta/list/'
+        link: 'http://apps.canfar.net/vosui/'
         doclink: '/fr/ressources/docs/stockage/'
         description: 'La description de Stockage'
       batch_processing:
