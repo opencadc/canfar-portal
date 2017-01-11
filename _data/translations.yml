@@ -52,9 +52,9 @@ en:
     inaf-oat:
       name: 'INAF-OAT'
       link: '/inaf-oat'
-    node9:
-      name: '_NODE9_'
-      link: '/node9'
+    euclid:
+      name: 'Euclid'
+      link: '/euclid'
   resources:
     name: 'Resources'
     link: '/resources'
@@ -178,9 +178,9 @@ fr:
     inaf-oat:
       name: 'INAF-OAT'
       link: '/inaf-oat'
-    node9:
-      name: '_NODE9_'
-      link: '/node9'
+    euclid:
+      name: 'Euclid'
+      link: '/euclid'
   resources:
     name: 'Ressources'
     link: '/ressources'
