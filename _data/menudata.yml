@@ -1,3 +1,3 @@
-about: ['terms_of_reference', 'governance', 'organization', 'contact']
+about: ['terms_of_reference', 'governance', 'organization', 'partners', 'contact']
 nodes: ['nugrid', 'ngvs', 'cadc', 'uvic', 'jcmt_gbs', 'jwst', 'vlass', 'taos_ii', 'inaf-oat', 'euclid']
 resources: ['user_guide', 'expertise', 'expertise.cadc', 'expertise.uvic', 'services', 'services.openstack_cloud_portal', 'services.digital_object_identifiers', 'services.storage', 'services.storage_beta', 'services.batch_processing', 'services.group_management', 'hardware', 'hardware.cores', 'hardware.disk_space']

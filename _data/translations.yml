@@ -19,6 +19,9 @@ en:
     governance:
        name: 'Governance'
        link: '/governance'
+    partners:
+       name: 'Partners'
+       link: '/partners'
     contact:
        name: 'Contact'
        link: '/contact'
@@ -145,6 +148,9 @@ fr:
     governance:
       name: 'Gouvernance'
       link: '/gouvernance'
+    partenaires:
+      name: 'Partenaires'
+      link: '/partenaires'
     contact:
       name: 'Contact'
       link: '/contact'
