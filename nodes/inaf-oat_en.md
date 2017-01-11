@@ -16,11 +16,12 @@ The first step in the project is to explore interoperability of authorisation se
 
 ### Present use of CANFAR services and projects
 INAF_OAT have deployed the open source versions of:
-  * VOSpace (user storage) service, 
-  * VOSpace browser user interface,
-  * Group management (GMS) service,
-  * GMS browser user inteface,
-  * Credential delegation service (CDS)
+
+  - VOSpace (user storage) service, 
+  - VOSpace browser user interface,
+  - Group management (GMS) service,
+  - GMS browser user inteface,
+  - Credential delegation service (CDS)
 
 They have customized the backend of these services to use local infrastructure.
 
