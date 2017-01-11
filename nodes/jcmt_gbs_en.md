@@ -12,7 +12,7 @@ permalink: /en/nodes/jcmt-gbs
 
 Image: GBS logo  [image available at: http://www.eaobservatory.org/jcmt/wp-content/uploads/sites/2/2015/02/gb_logo_small.gif ]
 
-About / Science
+<h4> About / Science </h4>
 
 The Gould Belt Legacy Survey (GBS) [link to http://tinyurl.com/hp4u9ku ] used two JCMT survey instruments (SCUBA-2 and HARP to survey nearby star-forming regions (D < 500 pc). The survey includes the best known Gould’s Belt clouds – Orion, Taurus, Perseus, Serpens and Ophiuchus – as well as less well-studied local star-forming regions, and complements similar Gould Belt surveys with the Spitzer and Herschel space telescopes. The SCUBA-2 targets are half-degree regions preselected on Herschel 500 micron emission to provide a deep, uniform 850 micron survey at 14" FWHM resolution.  Data at 450 microns at 9” FWHM resolution were also acquired in locations of high surface density of protostellar objects.  The HARP observations focus on subregions of the same clouds in 12CO(3-2), 13CO(3-2) and C18O(3-2). The science goals of the GBS are:
 
@@ -30,7 +30,7 @@ The Gould Belt Legacy Survey (GBS) [link to http://tinyurl.com/hp4u9ku ] used tw
 
 For more information see [link to http://www.eaobservatory.org/jcmt/science/legacy-survey/gbs/ ]
 
-People
+<h4>People</h4>
 <ul>
 <li>James Di Francesco, survey co-ordinator (Canada)</li>
 <li>Jennifer Hatchell, survey co-ordinator (UK)</li>
@@ -41,7 +41,7 @@ People
 </ul>
 
 
-History
+<h4>History</h4>
 
 The JCMT GBS obtained data between May 6, 2007 and January 27, 2015.  We have been active users of CANFAR since August 2013 to test and implement superior data processing techniques uniformly across all collected survey data.
 
