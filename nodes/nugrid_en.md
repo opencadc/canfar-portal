@@ -8,15 +8,28 @@ permalink: /en/nodes/nugrid
 
 <!-- Content start -->
 
-### About
-_Nucleosynthesis Grid_ or [NuGrid](http://www.nugridstars.org) is an international collaboration of more than 50 researchers in seven countries, distributed over 12 institutions.The collaboration develops and maintains tools for large scale post-processing nucleosynthesis simulations, and apply these to complete sets of quiescent and explosive nuclear production environments. These data sets and research simulation codes are used applied in many areas of nuclear astrophysics and astronomy.
+## NuGrid
+The international [Nucleosynthesis Grid (NuGrid)](http://www.nugridstars.org) collaboration creates scientific simulation codes and simulation data sets for the origin of the elements. 
 
-### Present use of CANFAR services and projects
+
+### CANFAR current activities
 * NuGrid has developed within CANFAR the _**W**eb-**E**xploration of **N**uGrid **D**ata **I**nteractive_ [WENDI](http://wendi.nugridstars.org), a platform to provide members of the NuGrid collaboration as well as external users analysis and exploration access to the NuGrid data sets
 * NuGrid is using the [CANFAR VOspace](http://data.nugridstars.org) for sharing data inside and outside the collaboration, taking advantage of the granular access model _CANFAR VOspace_.
 
-### Research data & software needs
+### Data & software needs and future plans
 * enhance present capabilities by adding integrated processing capabilities into the _WENDI_ platform
 * integrate collaborative tools, such as versioning and collaborative creation and sharing of analysis workflows
+
+
+### About
+**Project web page:** [http://www.nugridstars.org](http://www.nugridstars.org)
+**Node lead and contact:** TBD
+**People:**
+
+* Falk Herwig (University of Victoria)
+* Benoit Côté (University of Victoria and Michigan State University)
+* Christian Ritter (University of Victoria)
+* Sam Jones (Heidelberg Institute for Theoretical Studies, HITS, Germany)
+* Jaqueline DenHartog (Keele University, UK)
 
 <!-- Content end -->
