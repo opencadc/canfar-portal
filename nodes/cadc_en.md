@@ -28,7 +28,7 @@ The CADC node of CANFAR is located at the Dominion Astrophysical Observatory in 
   <li>David Schade: Group Leader of CADC and CANFAR Science Management Committee (SMC) member</li>
   <li>Severin Gaudet: Software Development Manager and Ex Officio SMC member</li>
   <li>Michael Peddle: Project Manager and Ex Officio SMC member</li>
-  <li>Sebastien Fabbro: CANFAR User Support</li>
+  <li>Sebastien Fabbro: Science Computing Specialist, SMC member and CANFAR user support</li>
   <li>John Ouellette: CADC and CANFAR Operations Manager</li>
 </ul>
 
