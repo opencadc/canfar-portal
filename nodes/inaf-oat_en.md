@@ -23,6 +23,6 @@ INAF_OAT have deployed the open source versions of:
   - GMS browser user inteface,
   - Credential delegation service (CDS)
 
-They have customized the backend of these services to use local infrastructure.
+The backend of these services have been customized to use local database and storage infrastructure.
 
 <!-- Content end -->
