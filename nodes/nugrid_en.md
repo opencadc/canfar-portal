@@ -8,7 +8,6 @@ permalink: /en/nodes/nugrid
 
 <!-- Content start -->
 
-## NuGrid
 The international [Nucleosynthesis Grid (NuGrid)](http://www.nugridstars.org) collaboration creates scientific simulation codes and simulation data sets for the origin of the elements. 
 
 
