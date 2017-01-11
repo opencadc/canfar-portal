@@ -20,7 +20,7 @@ permalink: /en/about/governance
 {% include __governance_item.md name='David Schade' institutes='Group Leader, Canadian Astronomy Data Centre, Adjunct Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
 
 
-<h3>Advisory Committee</h3>
+<h3>Advisory Committee (provisional)</h3>
 {% include __governance_item.md name='Pauline Barmby' institutes='University or Western Ontario' %}
 {% include __governance_item.md name='Ray Carlberg' institutes='University of Toronto' %}
 {% include __governance_item.md name='René Doyon' institutes='Université de Montréal' %}
