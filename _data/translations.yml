@@ -128,9 +128,6 @@ en:
         doclink: '/en/resources/docs/storage/'
         api_link: '/swagger-ui/?url=/docs/api_data/vospace.json'
         description: 'Manage your own storage for astronomy data'
-    user_guide:
-      name: 'User Guide'
-      link: '/user-guide'
     hardware:
       name: 'Hardware'
       link: '/hardware'
