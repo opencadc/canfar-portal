@@ -64,12 +64,6 @@ en:
     expertise:
       name: 'Expertise'
       link: '/expertise'
-      cadc:
-        name: '@CADC'
-        link: '/cadc'
-      uvic:
-        name: '@UVic'
-        link: '/uvic'
     services:
       name: 'Services'
       link: '/services/'
@@ -89,12 +83,6 @@ en:
         doclink: '/en/resources/docs/storage/'
         api_link: '/swagger-ui/?url=/docs/api_data/vospace.json'
         description: 'Manage your own storage for astronomy data'
-      storage_beta:
-        name: 'Storage (Beta)'
-        link: 'http://apps.canfar.net/storage-beta/list/'
-        doclink: '/en/resources/docs/storage/'
-        api_link: '/swagger-ui/?url=/docs/api_data/vospace.json'
-        description: 'Manage your own storage for astronomy data'
       batch_processing:
         name: 'Batch Processing'
         link: 'http://apps.canfar.net/processing/batchjobs'
@@ -107,18 +95,24 @@ en:
         doclink: '/en/resources/docs/group_management/'
         api_link: '/swagger-ui/?url=/docs/api_data/ac.json'
         description: 'Manage access permission to your data or data located with the Storage service'
+      caom_query_service:
+        name: 'CAOM Query Service'
+        link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/'
+        doclink: 'http://www.ivoa.net/documents/TAP/'
+        api_link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/tap/'
+        description: 'CAOM-2 metadata querying service (IVOA)'
+      storage_beta:
+        name: 'Storage (Beta)'
+        link: 'http://apps.canfar.net/storage-beta/list/'
+        doclink: '/en/resources/docs/storage/'
+        api_link: '/swagger-ui/?url=/docs/api_data/vospace.json'
+        description: 'Manage your own storage for astronomy data'
     user_guide:
       name: 'User Guide'
       link: '/user-guide'
     hardware:
       name: 'Hardware'
       link: '/hardware'
-      cores:
-        name: 'Cores'
-        link: '/cores'
-      disk_space:
-        name: 'Disk Space'
-        link: '/disk-space'
   footer_github: 'on GitHub'
   toggle_navigation: 'Toggle navigation'
   showcase_taglines:
@@ -193,12 +187,6 @@ fr:
     expertise:
       name: 'Compétence'
       link: '/competence'
-      cadc:
-        name: 'CCDA'
-        link: '/ccda'
-      uvic:
-        name: '@UVic'
-        link: '/uvic'
     services:
       name: 'Services'
       link: '/services'
@@ -217,12 +205,6 @@ fr:
         link: 'http://apps.canfar.net/vosui/'
         doclink: '/fr/ressources/docs/stockage/'
         description: 'La description de Stockage'
-      storage_beta:
-        name: 'Storage (Beta)'
-        link: 'http://apps.canfar.net/storage-beta/list/'
-        doclink: '/en/resources/docs/storage/'
-        api_link: '/swagger-ui/?url=/docs/api_data/vospace.json'
-        description: 'Manage your own storage for astronomy data'
       batch_processing:
         name: 'Le traitement par lots'
         link: 'http://apps.canfar.net/processing/batchjobs'
@@ -233,18 +215,24 @@ fr:
         link: 'http://apps.canfar.net/canfar/groups'
         doclink: 'http://ws.canfar.net/ac/'
         description: 'La description de Gestion de groupes'
+      caom_query_service:
+        name: 'CAOM Query Service'
+        link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/'
+        doclink: 'http://www.ivoa.net/documents/TAP/'
+        api_link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/tap/'
+        description: 'CAOM-2 metadata querying service (IVOA)'
+      storage_beta:
+        name: 'Storage (Beta)'
+        link: 'http://apps.canfar.net/storage-beta/list/'
+        doclink: '/en/resources/docs/storage/'
+        api_link: '/swagger-ui/?url=/docs/api_data/vospace.json'
+        description: 'Manage your own storage for astronomy data'
     user_guide:
       name: 'Guide d''utilisateur'
       link: '/guide-dutilisateur'
     hardware:
       name: 'Matériel'
       link: '/materiel'
-      cores:
-        name: 'Noyaux'
-        link: '/noyaux'
-      disk_space:
-        name: 'Espace de disque'
-        link: '/espace-de-disque'
   footer_github: 'sur GitHub'
   toggle_navigation: 'Verser la navigation'
   showcase_taglines:
