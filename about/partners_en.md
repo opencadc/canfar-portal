@@ -9,8 +9,11 @@ permalink: /en/about/partners
 <!-- Content start -->
 
 ### CANARIE
+
 ### Canadian Space Agency
+
 ### Compute Canada
+
 ### National Research Council
 
 <!-- Content end -->
