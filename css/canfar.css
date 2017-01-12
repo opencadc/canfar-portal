@@ -45,6 +45,20 @@ header h2 {
   font-family: Futura, sans-serif;
 }
 
+div#partner_links {
+  padding: 5px;
+  height: 58px;
+  text-align: center;
+}
+
+div#partner_links .nrc_logo {
+  margin-top: 8px;
+}
+
+hr.splash_divider {
+  margin-top: 0;
+}
+
 /*
  * Sidebar
  */
@@ -360,6 +374,10 @@ input[type=url] {
   #information_section {
     margin-top: 25px;
   }
+}
+
+ul#navbar_list.nav.navbar-nav {
+  font-size: 110%;
 }
 
 div.carousel-caption {

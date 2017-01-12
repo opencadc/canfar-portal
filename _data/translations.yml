@@ -3,10 +3,31 @@ en:
     name: 'Login'
     link: '/ac/login'
   science:
-    name: 'Science'
+    name: 'Science & News'
   home:
     name: 'Home'
     link: '/'
+  partners:
+    csa:
+      size: '2'
+      name: 'Canadian Space Agency'
+      img: '/css/images/CSA_48px.png'
+      url: 'http://www.asc-csa.gc.ca/eng/'
+    nrc:
+      size: '4'
+      name: 'National Research Council'
+      img: '/css/images/NRC_32px.png'
+      url: 'http://www.nrc-cnrc.gc.ca/eng/'
+    canarie:
+      size: '3'
+      name: 'CANARIE'
+      img: '/css/images/CANARIE_48px.png'
+      url: 'https://www.canarie.ca/en/'
+    compute_canada:
+      size: '3'
+      name: 'Compute Canada'
+      img: '/css/images/Compute_Canada_52px.png'
+      url: 'https://www.computecanada.ca/'
   about:
     name: 'About'
     link: '/about'
@@ -126,10 +147,31 @@ fr:
     name: 'Connexion'
     link: '/ac/login'
   science:
-    name: 'Science'
+    name: 'Science & Nouvelles'
   home:
     name: 'Acceuil'
     link: '/'
+  partners:
+    csa:
+      size: '2'
+      name: 'Canadian Space Agency'
+      img: '/css/images/CSA_48px.png'
+      url: 'http://www.asc-csa.gc.ca/fra/'
+    nrc:
+      size: '4'
+      name: 'National Research Council'
+      img: '/css/images/NRC_32px.png'
+      url: 'http://www.nrc-cnrc.gc.ca/fra/'
+    canarie:
+      size: '3'
+      name: 'CANARIE'
+      img: '/css/images/CANARIE_48px.png'
+      url: 'https://www.canarie.ca/fr/'
+    compute_canada:
+      size: '3'
+      name: 'Calcul Canada'
+      img: '/css/images/Compute_Canada_52px.png'
+      url: 'https://www.computecanada.ca/splash/?lang=fr'
   about:
     name: 'À propos'
     link: '/a-propos'
