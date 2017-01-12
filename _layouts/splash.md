@@ -105,7 +105,7 @@ layout: default
                     {% else %}
                       {% assign post_url = post.url | prepend: site.baseurl %}
                     {% endif %}
-                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span><a href="{{ post_url }}">{{ post.title }}{% if post.author %} by {{ post.author }}{% endif %}</a></h4>
+                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;<a href="{{ post_url }}">{{ post.title }}{% if post.author %} by {{ post.author }}{% endif %}</a></h4>
                     <time datetime="{{ post.date }}">{{ post.date | date: '%B %d, %Y' }}</time>
                     {{ post.excerpt | strip_html | truncatewords:10 }}
                   </div>
@@ -143,6 +143,7 @@ layout: default
         -->
       </div>
     </section>
+    <hr />
     <div id="partner_links">
       {% assign translated_partners = t['partners'] %}
       {% for partner_key in translated_partners %}

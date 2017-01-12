@@ -1,4 +1,9 @@
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
   font-family: 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 1em;
   line-height: 1.5;
@@ -53,10 +58,6 @@ div#partner_links {
 
 div#partner_links .nrc_logo {
   margin-top: 8px;
-}
-
-hr.splash_divider {
-  margin-top: 0;
 }
 
 /*
