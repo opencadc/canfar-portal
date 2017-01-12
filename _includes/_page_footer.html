@@ -1,8 +1,2 @@
-<hr class="splash_divider" />
-<footer>
-  {% for org in site.organizations %}
-  <a href="{{ org.repository }}">{{ org.name }}</a> {{ site.data.translations[page.lang]['footer_github'] }}<br>
-  {% endfor %}
-</footer>
 <script type="application/javascript" src="{{ '/js/jquery-2.2.4.min.js' | prepend: site.baseurl }}"></script>
 <script type="application/javascript" src="{{ '/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>

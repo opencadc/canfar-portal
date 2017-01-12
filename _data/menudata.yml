@@ -1,3 +1,3 @@
 about: ['terms_of_reference', 'governance', 'organization', 'partners', 'contact']
 nodes: ['cadc', 'euclid', 'inaf-oat', 'jcmt_gbs', 'jwst', 'ngvs', 'nugrid', 'taos_ii', 'uvic', 'vlass']
-resources: ['user_guide', 'expertise', 'services', 'hardware']
+resources: ['expertise', 'services', 'hardware', 'open_source_canfar', 'open_source_opencadc']

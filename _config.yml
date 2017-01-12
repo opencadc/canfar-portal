@@ -6,11 +6,6 @@ markdown: kramdown
 future: true
 github:
   repository_url: 'https://github.com/canfar/beta-canfar.github.io'
-organizations:
-  - name: CANFAR
-    repository: https://github.com/canfar
-  - name: OpenCADC
-    repository: https://github.com/opencadc
 
 # For beta site only!
 baseurl: '/beta-canfar.github.io'

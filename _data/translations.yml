@@ -106,13 +106,13 @@ en:
         description: 'Manage your own storage for astronomy data'
       batch_processing:
         name: 'Batch Processing'
-        link: 'http://apps.canfar.net/processing/batchjobs'
+        link: 'http://apps.canfar.net/canfar/login.html?target=/processing/batchjobs'
         doclink: '/en/resources/docs/batch_processing/'
         api_link: '/swagger-ui/?url=/docs/api_data/proc.json'
         description: 'Access large resources for batch processing on the cloud'
       group_management:
         name: 'Group Management'
-        link: 'http://apps.canfar.net/canfar/groups'
+        link: 'http://apps.canfar.net/canfar/login.html?target=/canfar/groups'
         doclink: '/en/resources/docs/group_management/'
         api_link: '/swagger-ui/?url=/docs/api_data/ac.json'
         description: 'Manage access permission to your data or data located with the Storage service'
@@ -131,6 +131,12 @@ en:
     hardware:
       name: 'Hardware'
       link: '/hardware'
+    open_source_canfar:
+      name: 'CANFAR on GitHub'
+      link: 'https://github.com/canfar'
+    open_source_opencadc:
+      name: 'OpenCADC on GitHub'
+      link: 'https://github.com/opencadc'
   footer_github: 'on GitHub'
   toggle_navigation: 'Toggle navigation'
   showcase_taglines:
@@ -246,12 +252,12 @@ fr:
         description: 'La description de Stockage'
       batch_processing:
         name: 'Le traitement par lots'
-        link: 'http://apps.canfar.net/processing/batchjobs'
+        link: 'http://apps.canfar.net/canfar/login.html?target=/processing/batchjobs'
         doclink: '/fr/ressources/docs/batch_processing/'
         description: 'La description du traitement par lots'
       group_management:
         name: 'Gestion de groupes'
-        link: 'http://apps.canfar.net/canfar/groups'
+        link: 'http://apps.canfar.net/canfar/login.html?target=/canfar/groups'
         doclink: 'http://ws.canfar.net/ac/'
         description: 'La description de Gestion de groupes'
       caom_query_service:
@@ -272,6 +278,12 @@ fr:
     hardware:
       name: 'Matériel'
       link: '/materiel'
+    open_source_canfar:
+      name: 'CANFAR sur GitHub'
+      link: 'https://github.com/canfar'
+    open_source_opencadc:
+      name: 'OpenCADC sur GitHub'
+      link: 'https://github.com/opencadc'
   footer_github: 'sur GitHub'
   toggle_navigation: 'Verser la navigation'
   showcase_taglines:
