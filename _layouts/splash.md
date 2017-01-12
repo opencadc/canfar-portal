@@ -148,7 +148,7 @@ layout: default
       {% for partner_key in translated_partners %}
       {% assign pk = partner_key[0] %}
       {% assign partner = translated_partners[pk] %}
-      <div class="col-md-{{ partner.size }} {{ pk }}_logo"><a href="{{ partner.url | prepend: site.baseurl }}" title="{{ partner.name }} {{ t['home'].name }}"><img alt="{{ partner.name }}" src="{{ partner.img }}" /></a></div>
+      <div class="col-md-{{ partner.size }} {{ pk }}_logo"><a href="{{ partner.url }}" title="{{ partner.name }} {{ t['home'].name }}"><img alt="{{ partner.name }}" src="{{ partner.img | prepend: site.baseurl }}" /></a></div>
       {% endfor %}
     </div>
     {% include _page_footer.html %}
