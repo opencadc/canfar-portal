@@ -53,6 +53,7 @@ header h2 {
 div#partner_links {
   padding: 5px;
   height: 58px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
@@ -413,8 +414,13 @@ div.carousel-caption {
   font-size: 90%;
 }
 
+#information_content > div {
+  height: 625px;
+  min-height: 625px;
+}
+
 #information_content > div .panel {
-  height: 400px;
+  height: 100%;
   overflow-y: hidden;
   text-overflow: ellipsis;
   border-radius: 1.5rem;

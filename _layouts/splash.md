@@ -77,7 +77,7 @@ layout: default
               </div>
               <div class="panel-body">
                 {% assign nodes_posts = (site.posts | where: 'category', 'nodes') %}
-                {% for post in nodes_posts limit: 3 %}
+                {% for post in nodes_posts limit: 7 %}
                 {% capture node_post_url %}{{ t[post.namespace].link | prepend: site.baseurl }}{% endcapture %}
                 <div class="media">
                   <div class="media-body">
@@ -97,7 +97,7 @@ layout: default
               </div>
               <div class="panel-body">
                 {% assign science_posts = (site.posts | where: 'category', 'science') %}
-                {% for post in science_posts %}
+                {% for post in science_posts limit: 7 %}
                 <div class="media">
                   <div class="media-body">
                     {% if post.external_url %}
@@ -123,7 +123,7 @@ layout: default
               <div class="panel-body">
                 {% assign services_posts = (site.posts | where: 'category', 'services') %}
                 {% comment %}Only the first four service posts (latest) are used.{% endcomment %}
-                {% for post in services_posts limit: 4 %}
+                {% for post in services_posts limit: 7 %}
                 {% assign translated_item = translated_services[post.local_name] %}
                 {% capture service_post_url %}{{ translated_item.link | prepend: site.baseurl }}{% endcapture %}
                 <div class="media">

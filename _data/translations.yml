@@ -113,14 +113,14 @@ en:
         capacity: 'Capacity: Default is 500GB, can accomodate up to 100TB per project'
       batch_processing:
         name: 'Batch Processing'
-        link: 'http://apps.canfar.net/canfar/login.html?target=/processing/batchjobs'
+        link: 'http://apps.canfar.net/processing/batchjobs'
         doclink: '/en/resources/docs/batch_processing/'
         api_link: '/swagger-ui/?url=/docs/api_data/proc.json'
         description: 'Access large resources for batch processing on the cloud'
         capacity: 'Capacity: Up to 2,000 CPUs shared between VMs of up to 16 CPUs and 120GB each'
       group_management:
         name: 'Group Management'
-        link: 'http://apps.canfar.net/canfar/login.html?target=/canfar/groups'
+        link: 'http://apps.canfar.net/canfar/groups'
         doclink: '/en/resources/docs/group_management/'
         api_link: '/swagger-ui/?url=/docs/api_data/ac.json'
         description: 'Manage access permission to your data or data located with the Storage service'
@@ -259,12 +259,12 @@ fr:
         description: 'La description de Stockage'
       batch_processing:
         name: 'Le traitement par lots'
-        link: 'http://apps.canfar.net/canfar/login.html?target=/processing/batchjobs'
+        link: 'http://apps.canfar.net/processing/batchjobs'
         doclink: '/fr/ressources/docs/batch_processing/'
         description: 'La description du traitement par lots'
       group_management:
         name: 'Gestion de groupes'
-        link: 'http://apps.canfar.net/canfar/login.html?target=/canfar/groups'
+        link: 'http://apps.canfar.net/canfar/groups'
         doclink: 'http://ws.canfar.net/ac/'
         description: 'La description de Gestion de groupes'
       caom_query_service:
