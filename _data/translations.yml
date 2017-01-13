@@ -127,7 +127,7 @@ en:
       caom_query_service:
         name: 'CADC Data Collections'
         link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/'
-        doclink: 'http://www.ivoa.net/documents/TAP/'
+        doclink: 'http://http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/about.html#mandate'
         api_link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/tap/'
         description: 'CADC Data Discovery and Access'
       storage_beta:
