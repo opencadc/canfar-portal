@@ -98,7 +98,7 @@ en:
         link: 'http://apps.canfar.net/processing/vmod/'
         doclink: '/en/resources/docs/openstack_cloud_portal/'
         description: 'Run your own virtual machines on Compute Canada cloud'
-        capacity: 'Capacity: default is 10 VMs sharing 20 CPUs, 50GB RAM, 1TB disk and 1 public IP'
+        capacity: 'Default is 10 VMs sharing 20 CPUs, 50GB RAM, 1TB disk and 1 public IP'
       digital_object_identifiers:
         name: 'Digital Object Identifiers'
         link: '/digital-object-identifiers'
@@ -110,14 +110,14 @@ en:
         doclink: '/en/resources/docs/storage/'
         api_link: '/swagger-ui/?url=/docs/api_data/vospace.json'
         description: 'Manage your own large storage for astronomy data'
-        capacity: 'Capacity: Default is 500GB, can accomodate up to 100TB per project'
+        capacity: 'Default is 500GB, can accomodate up to 100TB per project'
       batch_processing:
         name: 'Batch Processing'
         link: 'http://apps.canfar.net/processing/batchjobs'
         doclink: '/en/resources/docs/batch_processing/'
         api_link: '/swagger-ui/?url=/docs/api_data/proc.json'
         description: 'Access large resources for batch processing on the cloud'
-        capacity: 'Capacity: Up to 2,000 CPUs shared between VMs of up to 16 CPUs and 120GB each'
+        capacity: 'Up to 16 CPUs, 120GB RAM per VM and up to 2,000 VMs'
       group_management:
         name: 'Group Management'
         link: 'http://apps.canfar.net/canfar/groups'

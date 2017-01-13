@@ -5,15 +5,15 @@ namespace: resources.docs.quick_start
 lang: en
 permalink: /en/resources/docs/quick-start/
 ---
-# Quick Start: build a star detection pipeline with your VM
-
-Before starting this example, you will need to [register](http://apps.canfar.net/canfar/login.html) to CANFAR. The CANFAR team will take care of your registration to Compute Canada infrastructure.
+# Quick Start: Build a star detection pipeline
 
 This quick start guide will demonstrate how to:
 
 * create, configure, and interact with OpenStack cloud and Virtual Machines (VMs)
 * store files with the CANFAR VOSpace storage
 * launch batch processing jobs from the CANFAR batch host, using VMs created in the previous step
+
+Before starting this example, you will need to [register](http://apps.canfar.net/canfar/login.html) to CANFAR. The CANFAR team will take care of your registration to Compute Canada infrastructure.
 
 ## Create your interactive Virtual Machine
 
