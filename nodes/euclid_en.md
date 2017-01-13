@@ -31,12 +31,12 @@ The description of the need or plan.
 
 ### About
 
-* **Project web page:** [http://http://www.euclid-ec.org/](http://http://www.euclid-ec.org/)
+* **Project web page:** [http://www.euclid-ec.org/](http://http://www.euclid-ec.org/)
 * **Node lead and contact:** Lean Name
 * **People:**
-  * Person 1 (Affililiation): Function and CANFAR role
-  * Person 2 (Affililiation): Function and CANFAR role
-  * Person N (Affililiation): Function and CANFAR role
+  * Ray Carlberg (University of Toronto): Canadian Lead for EUCLID
+  * David Schade (National Research Council Canada): EUCLID consoritum member, Group Leader CADC, CANFAR SMC member
+
 
 
 
