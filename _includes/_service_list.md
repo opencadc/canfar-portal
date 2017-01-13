@@ -23,6 +23,9 @@
               {% if include.services[service_key].api_link %}
               <p><a href="{{ include.services[service_key].api_link }}">Reference API <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></p>
               {% endif %}
+              {% if include.services[service_key].capacity %}
+              <p>{{ include.services[service_key].capacity }}</p>
+              {% endif %}
               <p>{% include _link_item.md namespace=service_name link_only=true label='Go to service portal' glyphicon='glyphicon-play-circle' %}</p>
               {% if service_key == 'storage' %}
               <p><a href="{{ include.services.storage_beta.link }}">Go to service portal (Beta version) <span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span></a></p>
