@@ -128,15 +128,9 @@ en:
         doclink: '/en/resources/docs/storage/'
         api_link: '/swagger-ui/?url=/docs/api_data/vospace.json'
         description: 'Manage your own storage for astronomy data'
-    hardware:
-      name: 'Hardware'
-      link: '/hardware'
-    open_source_canfar:
-      name: 'CANFAR on GitHub'
-      link: 'https://github.com/canfar'
-    open_source_opencadc:
-      name: 'OpenCADC on GitHub'
-      link: 'https://github.com/opencadc'
+    open_source:
+      name: 'Open Source'
+      link: '/open-source/'
   footer_github: 'on GitHub'
   toggle_navigation: 'Toggle navigation'
   showcase_taglines:
@@ -275,15 +269,9 @@ fr:
     user_guide:
       name: 'Guide d''utilisateur'
       link: '/guide-dutilisateur'
-    hardware:
-      name: 'Matériel'
-      link: '/materiel'
-    open_source_canfar:
-      name: 'CANFAR sur GitHub'
-      link: 'https://github.com/canfar'
-    open_source_opencadc:
-      name: 'OpenCADC sur GitHub'
-      link: 'https://github.com/opencadc'
+    open_source:
+      name: 'Open Source'
+      link: '/open-source/'
   footer_github: 'sur GitHub'
   toggle_navigation: 'Verser la navigation'
   showcase_taglines:
