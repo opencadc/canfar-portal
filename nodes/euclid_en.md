@@ -17,16 +17,12 @@ permalink: /en/nodes/euclid
 
 
 
-* Item 1
-* Item 2
-* Item N
-*
+* **EUCLID** launch is planned for 2020. CANFAR is currently working with EUCLID sciencists and with the EUCLID project to define Canadian roles and reponsiblities related to data management.
+
 
 ### Data & software needs and future plans
 
-* **Perhaps a title for one future need or plan followed by the description below**
-
-The description of the need or plan.
+* Does Canada need to plan for a Canadian EUCLID data centre?
 
 ### About
 
