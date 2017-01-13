@@ -268,11 +268,11 @@ fr:
         doclink: 'http://ws.canfar.net/ac/'
         description: 'La description de Gestion de groupes'
       caom_query_service:
-        name: 'CAOM Query Service'
+        name: 'CADC Data Collections'
         link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/'
         doclink: 'http://www.ivoa.net/documents/TAP/'
         api_link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/tap/'
-        description: 'CAOM-2 metadata querying service (IVOA)'
+        description: 'CADC Data Discovery and Access Service'
       storage_beta:
         name: 'Storage (Beta)'
         link: 'http://apps.canfar.net/storage-beta/list/'
