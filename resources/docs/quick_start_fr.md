@@ -1,9 +1,9 @@
 ---
 layout: pages_left_nav
 
-namespace: resources.services.quick_start
-lang: en
-permalink: /en/resources/services/quick_start/
+namespace: resources.docs.quick_start
+lang: fr
+permalink: /fr/ressources/docs/commencer/
 ---
 
 

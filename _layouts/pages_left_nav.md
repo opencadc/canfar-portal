@@ -14,8 +14,13 @@ layout: default
     <div role="main" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       <div class="inner">
         <section id="main_content">
-          <h2><a id="canfar-beta" class="anchor" href="#canfar-beta" aria-hidden="true">
-            <span aria-hidden="true" class="octicon octicon-link"></span></a>{{ child_item.name }} <a class="btn btn-sm btn-warning" href="{{site.github.repository_url}}/blob/gh-pages/{{page.path}}"><span class="glyphicon glyphicon-pencil"></span> Improve this page</a></h2>
+          {% comment %}
+            Use the no-wrap in your page content to prevent a newline after the header.
+            Useful to make use of the space beside the 'Improve this page' link.
+          {% endcomment %}
+          <h2 {% if page.no-wrap == true %}style="display: inline-block;"{% endif %}><a id="canfar-beta" class="anchor" href="#canfar-beta" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span></a>{{ child_item.name }} <a class="btn btn-sm btn-warning" href="{{site.github.repository_url}}/blob/gh-pages/{{page.path}}">
+                <span class="glyphicon glyphicon-pencil"></span> Improve this page</a></h2>
           {{ content }}
         </section>
       </div>

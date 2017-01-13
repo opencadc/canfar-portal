@@ -447,3 +447,11 @@ div.list-group-services > .list-group-item {
 div.list-group-services > .list-group-item:hover {
   background-color: #fff;
 }
+
+#quick_start_btn_container {
+  margin-bottom: 20px;
+}
+
+#quick_start_btn_container a {
+  width: 100%;
+}

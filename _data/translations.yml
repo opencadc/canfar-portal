@@ -85,6 +85,11 @@ en:
     expertise:
       name: 'Expertise'
       link: '/expertise'
+    docs:
+      link: '/docs'
+      quick_start:
+        label: 'Get started!'
+        link: '/quick-start/'
     services:
       name: 'Services'
       link: '/services/'
@@ -226,6 +231,11 @@ fr:
     expertise:
       name: 'Compétence'
       link: '/competence'
+    docs:
+      link: '/docs'
+      quick_start:
+        label: 'Commencer immediatement!'
+        link: '/commencer/'
     services:
       name: 'Services'
       link: '/services'
