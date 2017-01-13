@@ -8,6 +8,49 @@ permalink: /en/nodes/cadc
 
 <!-- Content start -->
 
+The international [Nucleosynthesis Grid (NuGrid)](http://www.nugridstars.org) collaboration creates scientific simulation codes and simulation data sets for the origin of the elements. 
+
+The CADC node (http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/) of CANFAR is located at the Dominion Astrophysical Observatory in Victora and is part of the National Research Council of Canda. CADC provides scientific direction, operations support, and development support to the CANFAR platform. A primary function is supporting users of the the CANFAR platform where CADC is the first point of contact for Issue Tracking and resolution.
+
+
+
+### CANFAR current activities
+
+The CADC is active a all areas of CANFAR:
+
+<ul>
+  <li>Operations</li>
+  <li>Software Development</li>
+  <li>Science</li>
+  <li>User Support</li>
+  <li>Management</li>
+  <li>CANFAR proposal development</li>
+</ul>
+
+
+
+* NuGrid has developed within CANFAR the _**W**eb-**E**xploration of **N**uGrid **D**ata **I**nteractive_ [WENDI](http://wendi.nugridstars.org), a platform to provide members of the NuGrid collaboration as well as external users analysis and exploration access to the NuGrid data sets
+* NuGrid is using the [CANFAR VOspace](http://data.nugridstars.org) for sharing data inside and outside the collaboration, taking advantage of the granular access model _CANFAR VOspace_.
+
+### Data & software needs and future plans
+* enhance present capabilities by adding integrated processing capabilities into the _WENDI_ platform
+* integrate collaborative tools, such as versioning and collaborative creation and sharing of analysis workflows
+
+
+### About
+
+* **Project web page:** [http://www.nugridstars.org](http://www.nugridstars.org)
+* **Node lead and contact:** TBD
+* **People:**
+  * Falk Herwig (University of Victoria)
+  * Benoit Côté (University of Victoria and Michigan State University)
+  * Christian Ritter (University of Victoria)
+  * Sam Jones (Heidelberg Institute for Theoretical Studies, HITS, Germany)
+  * Jaqueline DenHartog (Keele University, UK)
+
+
+
+HERE
 <h3> About </h3>
 
 The CADC node of CANFAR is located at the Dominion Astrophysical Observatory in Victora and is part of the National Research Council of Canda. CADC provides scientific direction, operations support, and development support to the CANFAR platform. A primary function is supporting users of the the CANFAR platform where CADC is the first point of contact for Issue Tracking and resolution.
