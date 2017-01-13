@@ -36,7 +36,7 @@ The CADC is currently (2015-2018) engaged in a $2.5 million co-development proje
 * **Project web page:** [http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/](http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/)
 * **Node lead and contact:** David Schade
 * **People:**
-  * David Schade (National Research Council Canada & University of Victoria): David Schade: Group Leader of CADC and CANFAR Science Management Committee (SMC) member
+  * David Schade (NRC & University of Victoria): Group Leader of CADC and CANFAR Science Management Committee (SMC) member
   * Severin Gaudet: (NRC): Software Development Manager and Ex Officio SMC member
   * Michael Peddle (NRC): Project Manager and Ex Officio SMC member
   * Sebastien Fabbro (NRC): Science Computing Specialist, SMC member and CANFAR user support
