@@ -31,7 +31,7 @@ The description of the need or plan.
 
 ### About
 
-* **Project web page:** [http://www.euclid-ec.org/](http://http://www.euclid-ec.org/)
+* **Project web page:** [http://www.euclid-ec.org/](http://www.euclid-ec.org/)
 * **Node lead and contact:** Lean Name
 * **People:**
   * Ray Carlberg (University of Toronto): Canadian Lead for EUCLID
