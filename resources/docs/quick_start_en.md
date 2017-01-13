@@ -5,7 +5,7 @@ namespace: resources.docs.quick_start
 lang: en
 permalink: /en/resources/docs/quick-start/
 ---
-
+# Quick Start: build a star detection pipeline with your VM
 
 Before starting this example, you will need to [register](http://apps.canfar.net/canfar/login.html) to CANFAR. The CANFAR team will take care of your registration to Compute Canada infrastructure.
 
@@ -15,19 +15,19 @@ This quick start guide will demonstrate how to:
 * store files with the CANFAR VOSpace storage
 * launch batch processing jobs from the CANFAR batch host, using VMs created in the previous step
 
-# Create your interactive Virtual Machine
+## Create your interactive Virtual Machine
 
 To manage the VMs with OpenStack, we suggest using the  dashboard at Compute Canada. [Log into the dashboard](https://west.cloud.computecanada.ca). Provide your CANFAR username, adding a ```-canfar``` suffix, e.g, ```janesmith-canfar```, and your usual CANFAR password. We will refer the CANFAR username (excluding the ```-canfar``` suffix which is only used for logging into the dashboard) as ```[username]``` throughout this document.
 
 Each resource allocation corresponds to an OpenStack **tenant** or **project** (these two names are used interchangeably). A user may be a member of multiple tenants, and a tenant usually has multiple users. A pull-down menu near the top-left allows you to select between the different tenants that you are a member of.
 
-## Allow ssh access to your VM
+### Allow ssh access to your VM
 
 * Click on **Access & Security** (left column of page), and then the **Security Groups** tab.
 * Click on the **Manage Rules** button next to the default group. If you see a rule with **Ingress** direction, **22(SSH)** Port Range and **0.0.0.0/0 (CIDR)** , then that means someone in your tenant already  opened the ssh port for you. If you don't see it, add a new rule following step.
 * Click on the **+ Add Rule** button near the top-right. Select **SSH** at the bottom of the **Rule** pull-down menu, and then click on **Add** at the bottom-right. **This operation is only required once for the initial setup of the tenant**.
 
-## Import an ssh public key
+### Import an ssh public key
 
 Access to VMs is facilitated by SSH key pairs rather than less secure user name / password. A private key resides on your own computer, and the public key is copied to all machines that you wish to connect to.
 
@@ -35,7 +35,7 @@ Access to VMs is facilitated by SSH key pairs rather than less secure user name 
 * Click on **Access & Security**, switch to the **Key Pairs** tab and click on the **Import Key Pair** button at the top-right.
 * Choose a meaningful name for the key, and then copy and paste the contents of ```~/.ssh/id_rsa.pub``` from the machine you plan to ssh from into the **Public Key** window.
 
-## Allocate a public IP address
+### Allocate a public IP address
 
 You will need to connect to your VM via a public IP.
 
@@ -43,7 +43,7 @@ You will need to connect to your VM via a public IP.
 
 Each tenant/project will typically have one public IP. If you have already allocated all of your IPs, this button will read "Quota Exceeded".
 
-## Launch a VM
+### Launch a VM
 
 We will now launch a VM with Ubuntu 16.04.
 
@@ -53,7 +53,7 @@ We will now launch a VM with Ubuntu 16.04.
 * In the **Access & Security** tab ensure that your public key is selected, and the ```default``` security group (with ssh rule added) is selected.
 * Finally, click the **Launch** button.
 
-## Connect to the VM
+### Connect to the VM
 
 After launching the VM you are returned to the **Instances** window. You can check the VM status once booted by clicking on its name (the **Console** tab of this window provides a basic console in which you can monitor the boot process).
 Before being able to ssh to your instance, you will need to attach the public IP address to it.
@@ -84,7 +84,7 @@ $ ssh ubuntu@[floating ip]
 
 </div>
 
-## Create a user on the VM
+### Create a user on the VM
 
 You might need to create a different user than the default one, and for batch processing to work, it is presently necessary for you to create a user on the VM with your CANFAR username. You can use a wrapper script for this:
 
@@ -108,7 +108,7 @@ $ ssh [username]@[floating_ip]
 
 </div>
 
-## Install software on the VM
+### Install software on the VM
 
 The VM operating system has only a minimal set of packages. For this example, we will use:
 
@@ -126,7 +126,7 @@ $ sudo apt install -y sextractor libcfitsio-bin
 
 </div>
 
-## Test the Software on the VM
+### Test the Software on the VM
 
 We are now ready to do a simple test. Let’s download a FITS image to our scratch space. When we instantiated the VM we chose a flavour with an ephemeral disk. First, execute the following script to mount this device at `/ephemeral` and create a work directory to mimic the batch processing environment (note that this will be done automatically for batch jobs):
 
@@ -161,7 +161,7 @@ $ sextractor 1056213p.fits -CATALOG_NAME 1056213p.cat
 
 The image `1056213p.fits` is a Multi-Extension FITS file with 36 extensions, each containing data from one CCD from the CFHT Megacam camera.
 
-# Store results on the CANFAR VOSpace
+## Store results on the CANFAR VOSpace
 
 All data stored on the VM and ephemeral disk since the last time it was saved are normally **wiped out** when the VM shuts down). We will use the [CANFAR VOSpace](/docs/vospace/) to store the result.
 We want to store the output catalogue `1056213p.cat` at a persistent, externally-accessible location. We will use the CANFAR VOSpace for this purpose. To store anything on the CANFAR VOSpace from a command line, you will need the CANFAR VOSpace client.
@@ -200,7 +200,7 @@ $ vcp 1056213p.cat vos:[username]
 
 Verify that the file is properly uploaded by pointing your browser to the [VOSpace browser interface](http://www.canfar.phys.uvic.ca/vosui).
 
-# Automate all the above and run it in batch
+## Automate all the above and run it in batch
 
 Now we want to automate the whole procedure above in a single script, in preparation for batch processing. Paste the following commands into one BASH script named ```~/do_catalog.bash``` on your VM:
 
@@ -257,7 +257,7 @@ $ scp [username]@[floating_ip]:do_catalog.bash .
 
 </div>
 
-## Install HTCondor for Batch
+### Install HTCondor for Batch
 
 Batch jobs are scheduled using a software package called [HTCondor](http://www.htcondor.org). HTCondor will dynamically launch jobs on the VMs (workers), connecting to the batch processing head node (the central manager). In order to install HTCondor (which provides a minimal HTCondor daemon to execute jobs) run this script on your VM instance:
 
@@ -270,20 +270,20 @@ $ sudo bash canfar_batch_setup.bash
 
 </div>
 
-## Snapshot (save) the VM Instance
+### Snapshot (save) the VM Instance
 
 Now we want to save our work. Return to your browser on the OpenStack dashboard.
 
 * Save the state of your VM by navigating to the **Instances** window of the dashboard, and click on the **Create Snapshot** button to the right of your VM instance's name. After selecting a name for the snapshot of the VM instance, e.g., ```my_vm_image```, click the **Create Snapshot** button. It will eventually be saved and listed in the VM **Images** window, and will be available next time you launch an instance of that VM image.
 
-## Shutdown the VM Instance
+### Shutdown the VM Instance
 
 * In the **Instances** window, select ```Terminate Instance``` in the **More** pull-down menu, and confirm.
 
 
 We are now are ready to launch batch processing jobs creating catalogues of many CFHT Megacam images and uploading the catalogues to VOSpace.
 
-## Write your batch processing job submission
+### Write your batch processing job submission
 
 Assuming you have the `do_catalog.bash` script written above on your local desktop, copy it to the CANFAR batch host, and then log into the batch host:
 
@@ -342,7 +342,7 @@ Again, be sure to substitue the correct value for `[username]`. It is important 
 
 Save the submission file as `myjobs.sub`.
 
-## Submit the batch jobs
+### Submit the batch jobs
 
 Source the OpenStack RC tenant file, and enter your CANFAR password. This sets environment variables used by OpenStack (only required once per login session):
 
