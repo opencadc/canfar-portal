@@ -14,6 +14,9 @@
             <h3 class="list-group-item-heading">{{ include.services[service_key].name }}</h3>
             <div class="list-group-item-text">
               <p>{{ include.services[service_key].description }}</p>
+              {% if include.services[service_key].capacity %}
+              <p>{{ include.services[service_key].capacity }}</p>
+              {% endif %}
               {% capture _service_doclink %}{{ include.services[service_key].doclink | slice: 0, 4 }}{% endcapture %}
               {% if _service_doclink == 'http' %}
               <p><a href="{{ include.services[service_key].doclink }}">User Documentation <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></p>
@@ -22,9 +25,6 @@
               {% endif %}
               {% if include.services[service_key].api_link %}
               <p><a href="{{ include.services[service_key].api_link }}">Reference API <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></p>
-              {% endif %}
-              {% if include.services[service_key].capacity %}
-              <p>{{ include.services[service_key].capacity }}</p>
               {% endif %}
               <p>{% include _link_item.md namespace=service_name link_only=true label='Go to service portal' glyphicon='glyphicon-play-circle' %}</p>
               {% if service_key == 'storage' %}
