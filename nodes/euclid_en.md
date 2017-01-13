@@ -9,7 +9,7 @@ permalink: /en/nodes/euclid
 <!-- Content start -->
 
 
-[**EUCLID**](http://www.euclid-ec.org/) is a [_European Space Agency_](http://http://www.esa.int/ESA) medium class astronomy and astrophysics space mission whose goal is to understand why the expansion of the Universe is accelerating and what is the nature of the _**dark energy**_ responsible for this acceleration. Canada has 20 scientists who are members of the EUCLID consortium.
+[**EUCLID**](http://www.euclid-ec.org/) is a [_European Space Agency_](http://www.esa.int/ESA) medium class astronomy and astrophysics space mission whose goal is to understand why the expansion of the Universe is accelerating and what is the nature of the _**dark energy**_ responsible for this acceleration. Canada has 20 scientists who are members of the EUCLID consortium.
 
 
 
