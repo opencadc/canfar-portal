@@ -10,7 +10,7 @@ permalink: /en/nodes/cadc
 
 The international [Nucleosynthesis Grid (NuGrid)](http://www.nugridstars.org) collaboration creates scientific simulation codes and simulation data sets for the origin of the elements. 
 
-The CADC node (http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/) of CANFAR is located at the Dominion Astrophysical Observatory in Victora and is part of the National Research Council of Canda. CADC provides scientific direction, operations support, and development support to the CANFAR platform. A primary function is supporting users of the the CANFAR platform where CADC is the first point of contact for Issue Tracking and resolution.
+The [CADC](http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/) node of CANFAR is located at the Dominion Astrophysical Observatory in Victora and is part of the National Research Council of Canda. CADC provides scientific direction, operations support, and development support to the CANFAR platform. A primary function is supporting users of the the CANFAR platform where CADC is the first point of contact for Issue Tracking and resolution.
 
 
 
