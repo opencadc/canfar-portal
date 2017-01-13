@@ -48,6 +48,34 @@ The JCMT GBS obtained data between May 6, 2007 and January 27, 2015.  We have be
 Image: Orion with Hubble and SCUBA-2[image available at http://www.eaobservatory.org/jcmt/wp-content/uploads/sites/2/2015/02/gb_hst_s2_orion.jpeg]
 image caption: The dust lanes in Orion are detected in emission by SCUBA-2 at 850 microns (red) but appear as dark features blocking the optical starlight observed by the Hubble Space Telescope map (blue). Figure Credit: Carl Salji.
 
+A short description of the institute and project.
+
+
+
+### CANFAR current activities
+
+An itemized list of CANFAR activities or  CANFAR services that are heavily used
+
+
+* Item 1
+* Item 2
+* Item N
+*
+
+### Data & software needs and future plans
+
+* **Perhaps a title for one future need or plan followed by the description below**
+
+The description of the need or plan.
+
+### About
+
+* **Project web page:** [http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/](http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/)
+* **Node lead and contact:** Lean Name
+* **People:**
+  * Person 1 (Affililiation): Function and CANFAR role
+  * Person 2 (Affililiation): Function and CANFAR role
+  * Person N (Affililiation): Function and CANFAR role
 
 
 
