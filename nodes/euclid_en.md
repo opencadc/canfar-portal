@@ -17,7 +17,7 @@ permalink: /en/nodes/euclid
 
 
 
-* **EUCLID** launch is planned for 2020. CANFAR is currently working with EUCLID sciencists and with the EUCLID project to define Canadian roles and reponsiblities related to data management.
+* **EUCLID** launch is planned for 2020. CANFAR is currently working with EUCLID scientists and with the EUCLID project to define Canadian roles and reponsiblities related to data management.
 
 
 ### Data & software needs and future plans
@@ -27,7 +27,7 @@ permalink: /en/nodes/euclid
 ### About
 
 * **Project web page:** [http://www.euclid-ec.org/](http://www.euclid-ec.org/)
-* **Node lead and contact:** Lean Name
+* **Node lead and contact:** Ray Carlberg
 * **People:**
   * Ray Carlberg (University of Toronto): EUCLID Consortium Board member for Canada 
   * David Schade (National Research Council Canada): EUCLID consoritum member, Group Leader CADC, CANFAR SMC member
