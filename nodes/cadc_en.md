@@ -27,7 +27,7 @@ The CADC is active in nearly all areas of CANFAR:
 
 ### Data & software needs and future plans
 
-* **The C3TP project (CANFAR-CADC-COMPUTE CANADA Transition Project)
+* **The C3TP project (CANFAR-CADC-COMPUTE CANADA Transition Project)**
 
 The CADC is currently (2015-2018) engaged in a $2.5 million co-development project with Compute Canada to develop and deploy CANFAR services on Compute Canada and to shift major operational responsibilities from CADC to Compute Canada. Half of the budget is being spent within CADC and half is directed to Compute Canada through a contract to develop services that will support CANFAR. The delivery of those services to the astronomy community will continue to be done through the Compute _Canada Resource Allocation process_.
 
