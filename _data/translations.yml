@@ -125,7 +125,7 @@ en:
         api_link: '/swagger-ui/?url=/docs/api_data/ac.json'
         description: 'Manage access permission to your data or data located with the Storage service'
       caom_query_service:
-        name: 'CAOM Query Service'
+        name: 'CADC Data Collections'
         link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/'
         doclink: 'http://www.ivoa.net/documents/TAP/'
         api_link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/tap/'
