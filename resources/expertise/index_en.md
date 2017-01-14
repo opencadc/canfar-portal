@@ -14,4 +14,8 @@ permalink: /en/resources/expertise/
   {% include _menudata_list.md namespace=page.namespace %}
 </ul>
 
+![Expertise]({{ site.baseurl }}/images/EXpertiseTable1.tiff)
+
+
+
 <!-- Content ends -->
