@@ -88,7 +88,7 @@ en:
     docs:
       link: '/docs'
       quick_start:
-        label: 'Get started!'
+        label: 'Get started with CANFAR!'
         link: '/quick-start/'
     services:
       name: 'Services'
