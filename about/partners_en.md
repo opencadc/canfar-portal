@@ -14,6 +14,6 @@ permalink: /en/about/partners
 
 ### Compute Canada
 
-### National Research Council
+### National Research Council Canada
 
 <!-- Content end -->
