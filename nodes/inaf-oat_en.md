@@ -8,52 +8,29 @@ permalink: /en/nodes/inaf-oat
 
 <!-- Content start -->
 
-### About
-_INAF-Osservatorio astronomico di Trieste_ (INAF-OAT) hosts IA2, the data centre for the Italian astronomical archives, a collection of ground based facilaties which includes TNG and LBT.
-In 2015, in a joint project with CANFAR/CADC funded by EGI under the Data Commons project, work began on exploring interoperability betweeen data centre services using International Virtual Observatory Alliance (IVOA) standards and re-using the open source software from CANFAR/CADC.
-
-The first step in the project is to explore interoperability of authorisation services using the CANFAR group management and VOSpace services.
-
-### Present use of CANFAR services and projects
-INAF_OAT have deployed the open source versions of:
-
-  - VOSpace (user storage) service, 
-  - VOSpace browser user interface,
-  - Group management (GMS) service,
-  - GMS browser user inteface,
-  - Credential delegation service (CDS)
-
-The backend of these services have been customized to use local database and storage infrastructure.
-
-
-A short description of the institute and project.
-
-
+_INAF-Osservatorio astronomico di Trieste_ (INAF-OAT) hosts IA2, the data centre for the Italian astronomical archives, a collection of data from a set of ground based facilities which includes TNG and LBT. INAF-OATs is also a node of the European Grid Initiative (EGI) cloud.
 
 ### CANFAR current activities
+INAF_OAT have deployed the open source versions of:
 
-An itemized list of CANFAR activities or  CANFAR services that are heavily used
-
-
-* Item 1
-* Item 2
-* Item N
-*
+* VOSpace (user storage) service, 
+* VOSpace browser user interface,
+* Group management (GMS) service,
+* Credential delegation service (CDS)
 
 ### Data & software needs and future plans
 
-* **Perhaps a title for one future need or plan followed by the description below**
-
-The description of the need or plan.
+* an open-source GMS browser user inteface,
 
 ### About
 
-* **Project web page:** [http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/](http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/)
-* **Node lead and contact:** Lean Name
-* **People:**
-  * Person 1 (Affililiation): Function and CANFAR role
-  * Person 2 (Affililiation): Function and CANFAR role
-  * Person N (Affililiation): Function and CANFAR role
+* Project web page: [http://ia2.oats.inaf.it/](http://ia2.oats.inaf.it/)
+* Node lead and contact: Giuliano Taffoni
+* People:
+  * Fabio Pasian (INAF-OAT): Leader of INAF-OATs Technology Group
+  * Giuliano Taffoni (INAF-OAT): Software Development Manager
+  * Sara Bertocco (INAF-OAT): Science Computing Specialist
+  * Enol Fernández (EGI): member of the software provisioning team of EGI
 
 
 
