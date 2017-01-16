@@ -11,16 +11,16 @@ permalink: /en/nodes/inaf-oat
 _INAF-Osservatorio astronomico di Trieste_ (INAF-OAT) hosts IA2, the data centre for the Italian astronomical archives, a collection of data from a set of ground based facilities which includes TNG and LBT. INAF-OATs is also a node of the European Grid Initiative (EGI) cloud.
 
 ### CANFAR current activities
-INAF_OAT have deployed the open source versions of:
+INAF-OAT has deployed the open source versions of:
 
-* VOSpace (user storage) service, 
-* VOSpace browser user interface,
-* Group management (GMS) service,
+* User storage service (VOSpace), 
+* User storage browser user interface,
+* Group management service (GMS) ,
 * Credential delegation service (CDS)
 
 ### Data & software needs and future plans
 
-* an open-source GMS browser user inteface,
+* Contribute in the building of a global geographically distributed and integrated infrastructure for astronomical data archiving, providing computing resources and services tailored to astronomical use cases.
 
 ### About
 
