@@ -8,8 +8,7 @@ permalink: /en/nodes/taos-ii
 
 <!-- Content start -->
 
-A short description of the institute and project.
-
+TAOS II, the Transneptunian Automated Occultation Survey II, will measure the size distribution of small objects (down to 1 km diameter) in the Kuiper Belt and beyond. The Kuiper Belt size distribution is of scientific interest because it provides important information on the formation and dynamical evolution of the Solar System. Furthermore, the Kuiper Belt is thought to be the source of the short period comets, and an accurate census of these small objects can help us understand the mechanism by which an object in the Kuiper Belt Is perturbed into a cometary orbit. Such objects are impossible to detect directly because they are too faint to be seen with even the largest telescopes. However, when such an object passes in front of a star, the star will "blink out" for a small fraction of a second. The detection and characterization of these occultation events are the primary science goals of this survey.
 
 
 ### CANFAR current activities
