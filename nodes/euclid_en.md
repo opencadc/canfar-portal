@@ -31,6 +31,7 @@ permalink: /en/nodes/euclid
 * **People:**
   * Ray Carlberg (University of Toronto): EUCLID Consortium Board member for Canada 
   * David Schade (National Research Council Canada): EUCLID consortium member, Group Leader CADC, CANFAR SMC member
+  * JJ Kavelaars (National Research Council Canada): EUCLID consortium member.
 
 
 
