@@ -6,17 +6,11 @@ lang: en
 permalink: /en/about/governance
 ---
 
-<!-- Content start -->
+<!--  For a three column layout, add the role attribute. -->
 
-<h3>Principal Investigator</h3>
+<div class="table-responsive">
 <table class="table table-condensed">
-<tbody>
-{% include __governance_item.md name='Falk Herwig' institutes='Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
-</tbody>
-</table>
-
-<h3>Management Team (provisional)</h3>
-<table class="table table-condensed">
+<caption class="h3">Management Team (provisional)</caption>
 <tbody>
 {% include __governance_item.md role="%ROLE%" name='Laura Ferrarese' institutes='National Research Council Canada and Adjunct Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
 {% include __governance_item.md role="%ROLE%" name='Séverin Gaudet' institutes='National Research Council Canada, Canadian Astronomy Data Centre, ex officio' %}
@@ -26,10 +20,11 @@ permalink: /en/about/governance
 {% include __governance_item.md role="%ROLE%" name='David Schade' institutes='Group Leader, Canadian Astronomy Data Centre, Adjunct Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
 </tbody>
 </table>
+</div>
 
-
-<h3>Advisory Committee (provisional)</h3>
+<div class="table-responsive">
 <table class="table table-condensed">
+<caption class="h3">Advisory Committee (provisional)</caption>
 <tbody>
 {% include __governance_item.md name='Pauline Barmby' institutes='University or Western Ontario' %}
 {% include __governance_item.md name='Ray Carlberg' institutes='University of Toronto' %}
@@ -50,5 +45,20 @@ permalink: /en/about/governance
 {% include __governance_item.md name='James Wadsley' institutes='McMaster University' %}
 </tbody>
 </table>
+</div>
+
+<div class="table-responsive">
+<table class="table table-condensed">
+<caption class="h3">Executive Committee (provisional)</caption>
+<tbody>
+{% include __governance_item.md role="%ROLE%" name='Laura Ferrarese' institutes='National Research Council Canada and Adjunct Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
+{% include __governance_item.md role="%ROLE%" name='Séverin Gaudet' institutes='National Research Council Canada, Canadian Astronomy Data Centre, ex officio' %}
+{% include __governance_item.md role="%ROLE%" name='Falk Herwig' institutes='Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
+{% include __governance_item.md role="%ROLE%" name='Michael Peddle' institutes='National Research Council Canada, Canadian Astronomy Data Centre, ex officio' %}
+{% include __governance_item.md role="%ROLE%" name='Erik Rosolowsky' institutes='Associate Professor University of Alberta' %}
+{% include __governance_item.md role="%ROLE%" name='David Schade' institutes='Group Leader, Canadian Astronomy Data Centre, Adjunct Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
+</tbody>
+</table>
+</div>
 
 <!-- Content end -->
