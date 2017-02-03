@@ -17,9 +17,8 @@ A short description of the institute and project.
 An itemized list of CANFAR activities or  CANFAR services that are heavily used
 
 
-* Item 1
-* Item 2
-* Item N
+* Data storage for archiving and reprocessing
+* Computing for bulk reprocessing of TAOS-II survey data.
 *
 
 ### Data & software needs and future plans
