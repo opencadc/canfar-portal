@@ -29,7 +29,7 @@ The description of the need or plan.
 
 ### About
 
-* **Project web page:** [https://taos2.asiaa.sinica.edu.tw](TAOS-II)
+* **Project web page:** [TAOS-II](https://taos2.asiaa.sinica.edu.tw)
 * **Node lead and contact:** Lean Name
 * **People:**
   * Person 1 (Affililiation): Function and CANFAR role
