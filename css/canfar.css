@@ -461,3 +461,9 @@ div.list-group-services > .list-group-item:hover {
 #quick_start_btn_container a {
   width: 100%;
 }
+
+/*  Table data for Governance. */
+td.management_team_name
+{
+  font-weight: bolder;
+}

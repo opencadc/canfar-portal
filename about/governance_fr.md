@@ -8,7 +8,7 @@ permalink: /fr/a-propos/gouvernance
 
 Investigateur principale: Falk Herwig, Professor, Dept. de Physics and Astronomy, Universit&eacute; de Victoria
 
-Executive Committee (provisional)
+Management Team (provisional)
 Falk Herwig, Professor, Dept. de Physics and Astronomy, Universit&eacute; de Victoria
 David Schade, Group Leader, Canadian Astronomy Data Centre, Adjunct Professor, Dept. de Physics and Astronomy, Universit&eacute; de Victoria Severin Gaudet, Conseil national de recherches Canada, Canadian Astronomy Data Centre, ex officio
 Michael Peddle, Conseil national de recherches Canada, Canadian Astronomy Data Centre, ex officio
