@@ -1,4 +1,7 @@
 en:
+  support:
+    name: 'email'
+    link: 'support@canfar.net'
   login:
     name: 'Login'
     link: '/ac/login'
@@ -148,6 +151,9 @@ en:
   next: 'Next'
   previous: 'Previous'
 fr:
+  support:
+    name: 'email'
+    link: 'support@canfar.net'
   login:
     name: 'Connexion'
     link: '/ac/login'
