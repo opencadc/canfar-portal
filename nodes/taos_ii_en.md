@@ -30,11 +30,13 @@ The description of the need or plan.
 ### About
 
 * **Project web page:** [TAOS-II](https://taos2.asiaa.sinica.edu.tw)
-* **Node lead and contact:** Lean Name
+* **Node lead and contact:** JJ Kavelaars
 * **People:**
-  * Person 1 (Affililiation): Function and CANFAR role
-  * Person 2 (Affililiation): Function and CANFAR role
-  * Person N (Affililiation): Function and CANFAR role
+  * Matthew Lehner (ASIAA): Principle Investigator
+  * Shiang-Yu Wang (ASIAA): Co-PI, Project Manager
+  * Mauricio Reyes-Ruiz (UNAM): UNAM PI
+  * Charles Alcock (CfA): CfA PI
+  * JJ Kavelaars (NRC HAA): Data archve storage.
 
 
 
