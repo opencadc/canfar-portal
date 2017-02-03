@@ -10,7 +10,7 @@ permalink: /en/about/organization
 
 The CANFAR consortium is organized as a network of university nodes that
 participate in determining directions and emphasis of the consortium through
-membership in the [Management Team]({{ site.baseurl }}/en/about/governance).
+membership in the [Executive Committee]({{ site.baseurl }}/en/about/governance).
 
 The day-to-day operation of the consortium is coordinated by the management team 
 which consists of:

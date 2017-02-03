@@ -3,7 +3,7 @@ layout: pages_left_nav
 
 lang: en
 namespace: nodes.jwst
-permalink: /en/nodes/jwst
+permalink: /en/nodes/jwst-niriss
 ---
 
 <!-- Content start -->

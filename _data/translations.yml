@@ -43,6 +43,9 @@ en:
     governance:
        name: 'Governance'
        link: '/governance'
+    processes:
+       name: 'Processes'
+       link: '/processes'
     partners:
        name: 'Partners'
        link: '/partners'
@@ -68,8 +71,8 @@ en:
       name: 'JCMT GBS'
       link: '/jcmt-gbs'
     jwst:
-      name: 'JWST'
-      link: '/jwst'
+      name: 'JWST NIRISS'
+      link: '/jwst-niriss'
     vlass:
       name: 'VLASS'
       link: '/vlass'
@@ -195,6 +198,9 @@ fr:
     governance:
       name: 'Gouvernance'
       link: '/gouvernance'
+    processes:
+       name: 'Processus'
+       link: '/processus'
     partenaires:
       name: 'Partenaires'
       link: '/partenaires'

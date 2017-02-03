@@ -1,10 +1,12 @@
 ---
 layout: pages_left_nav
 
+namespace: about.processes
 lang: fr
-namespace: nodes.jwst
-permalink: /fr/nodes/jwst-niriss
+permalink: /fr/about/processus
 ---
+
+{% include __vars.md %}
 
 <!-- Content start -->
 
