@@ -12,12 +12,11 @@ permalink: /en/about/governance
 <table class="table table-condensed">
 <caption class="h3">Management Team (provisional)</caption>
 <tbody>
-{% include __governance_item.md role="%ROLE%" name='Laura Ferrarese' institutes='National Research Council Canada and Adjunct Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
-{% include __governance_item.md role="%ROLE%" name='Séverin Gaudet' institutes='National Research Council Canada, Canadian Astronomy Data Centre, ex officio' %}
-{% include __governance_item.md role="%ROLE%" name='Falk Herwig' institutes='Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
-{% include __governance_item.md role="%ROLE%" name='Michael Peddle' institutes='National Research Council Canada, Canadian Astronomy Data Centre, ex officio' %}
-{% include __governance_item.md role="%ROLE%" name='Erik Rosolowsky' institutes='Associate Professor University of Alberta' %}
-{% include __governance_item.md role="%ROLE%" name='David Schade' institutes='Group Leader, Canadian Astronomy Data Centre, Adjunct Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
+{% include __governance_item.md role="Principal Investigator" name='Falk Herwig' institutes='Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
+{% include __governance_item.md role="Science Coordinator Observations" name='Laura Ferrarese' institutes='National Research Council Canada and Adjunct Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
+{% include __governance_item.md role="Science Coordinator Simulations" name='' institutes='' %}
+{% include __governance_item.md role="Project Management Coordinator" name='Michael Peddle' institutes='National Research Council Canada, Canadian Astronomy Data Centre, ex officio' %}
+{% include __governance_item.md role="CADC Group Leader" name='David Schade' institutes='Group Leader, Canadian Astronomy Data Centre, Adjunct Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
 </tbody>
 </table>
 </div>
@@ -26,7 +25,16 @@ permalink: /en/about/governance
 <table class="table table-condensed">
 <caption class="h3">Executive Committee (provisional)</caption>
 <tbody>
+{% include __governance_item.md role="CADC" name='David Schade' institutes='Group Leader, Canadian Astronomy Data Centre, Adjunct Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
+{% include __governance_item.md role="Euclid" name='nnnn' institutes='nnnn' %}
+{% include __governance_item.md role="INAF-OAT" name='Giuliano Taffoni' institutes='nnnn' %}
+{% include __governance_item.md role="JCMT GBS" name='nnnn' institutes='nnnn' %}
+{% include __governance_item.md role="JWST NIRISS" name='nnnn' institutes='nnnn' %}
 {% include __governance_item.md role="NGVS" name='Laura Ferrarese' institutes='National Research Council Canada and Adjunct Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
+{% include __governance_item.md role="NuGrid" name='nnnn' institutes='nnnn' %}
+{% include __governance_item.md role="TAOS-II" name='JJ Kavelaars' institutes='National Research Council Canada and Adjunct Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
+{% include __governance_item.md role="UVIC ARC" name='nnnn' institutes='nnnn' %}
+{% include __governance_item.md role="VLASS" name='Erik Rosolowsky' institutes='Associate Professor University of Alberta' %}
 </tbody>
 </table>
 </div>
