@@ -23,11 +23,10 @@ The international [Nucleosynthesis Grid (NuGrid)](http://www.nugridstars.org) co
 ### About
 
 * **Project web page:** [http://www.nugridstars.org](http://www.nugridstars.org)
-* **Node lead and contact:** TBD
-* **People:**
+* **Node lead and contact:** Sam Jones (Heidelberg Institute for Theoretical Studies, HITS, Germany)
+* **People:** (provisional)
   * Falk Herwig (University of Victoria)
   * Benoit Côté (University of Victoria and Michigan State University)
   * Christian Ritter (University of Victoria)
-  * Sam Jones (Heidelberg Institute for Theoretical Studies, HITS, Germany)
   * Jaqueline DenHartog (Keele University, UK)
 <!-- Content end -->
