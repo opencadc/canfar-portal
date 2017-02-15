@@ -14,7 +14,7 @@ permalink: /en/about/governance
 <tbody>
 {% include __governance_item.md role="Principal Investigator" name='Falk Herwig' institutes='Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
 {% include __governance_item.md role="Science Coordinator Observations" name='Laura Ferrarese' institutes='National Research Council Canada and Adjunct Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
-{% include __governance_item.md role="Science Coordinator Simulations" name='' institutes='' %}
+{% include __governance_item.md role="Science Coordinator Simulations" name='TBD' institutes='' %}
 {% include __governance_item.md role="Project Management Coordinator (ex officio)" name='Michael Peddle' institutes='National Research Council Canada, Canadian Astronomy Data Centre' %}
 {% include __governance_item.md role="CADC Group Leader (ex officio)" name='David Schade' institutes=', National Research Council Canada and Adjunct Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
 </tbody>
