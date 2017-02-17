@@ -91,6 +91,70 @@ en:
     expertise:
       name: 'Expertise'
       link: '/expertise'
+      people:
+        david_schade:
+          name: 'David Schade'
+          member: 'NRC CADC'
+          member_role: 'CADC Group Leader'
+          canfar_role: 'NRC CANFAR Lead'
+          expertise: 'Observational cosmology, imaging, and spectroscopy of very faint objects, large volume computer processing and the storage of astronomy datasets.'
+          responsibilities: ''
+        sebastien_fabbro:
+          name: 'Sébastien Fabbro'
+          member: 'NRC CADC'
+          member_role: 'Science Computing Specialist'
+          canfar_role: 'User Support'
+          expertise: ''
+          responsibilities: 'Processing, general operations, liaison with Compute Canada.'
+        john_ouellette:
+          name: 'John Ouellette'
+          member: 'NRC CADC'
+          member_role: 'CADC Operations Manager'
+          canfar_role: 'User Support'
+          expertise: ''
+          responsibilities: 'Storage, accounts and group management, general operations, liaison with Compute Canada.'
+        cadc_operations_team:
+          name: 'CADC Operations Team'
+          member: 'NRC CADC'
+          member_role: 'CADC Operations Team'
+          canfar_role: 'Operations Support'
+          expertise: ''
+          responsibilities: 'General operations support, issue triage.'
+        cadc_development_team:
+          name: 'CADC Development Team'
+          member: 'NRC CADC'
+          member_role: 'CADC Development Team'
+          canfar_role: 'Software development and maintenance'
+          expertise: ''
+          responsibilities: 'Maintenance of operational software, design and development of new features.'
+        cadc_science_team:
+          name: 'CADC Science Team'
+          member: 'NRC CADC'
+          member_role: 'CADC Science Team'
+          canfar_role: 'Science Support'
+          expertise: ''
+          responsibilities: 'General science support, user requirements.'
+        falk_herwig:
+          name: 'Falk Herwig'
+          member: 'UVic CSA'
+          member_role: 'Professor, Group Leader'
+          canfar_role: 'PI, CSA Lead'
+          expertise: 'Computational Stellar Astrophysics, collaboration technologies, portals for analysis and exploration of simulation data.'
+          responsibilities: ''
+        stephenson_yang:
+          name: 'Stephenson Yang'
+          member: 'UVic CSA'
+          member_role: 'Senior instructor and systems specialist astronomy'
+          canfar_role: 'Cloud workstation support, collaborative web services support'
+          expertise: 'Computational Stellar Astrophysics, collaboration technologies, portals for analysis and exploration of simulation data.'
+          responsibilities: ''
+        robert_andrassy:
+          name: 'Robert Andrassy'
+          member: 'UVic CSA'
+          member_role: 'Post-doctoral fellow (CITA national fellow)'
+          canfar_role: ''
+          expertise: 'Remote visualization of stellar hydro data, scientific Python algorithms and programming.'
+          responsibilities: ''
     docs:
       link: '/docs'
       quick_start:
@@ -246,6 +310,70 @@ fr:
     expertise:
       name: 'Compétence'
       link: '/competence'
+      people:
+        david_schade:
+          name: 'David Schade'
+          member: 'CNRC CCDA'
+          member_role: 'CADC Group Leader'
+          canfar_role: 'NRC CANFAR Lead'
+          expertise: 'Observational cosmology, imaging, and spectroscopy of very faint objects, large volume computer processing and the storage of astronomy datasets.'
+          responsibilities: ''
+        sebastien_fabbro:
+          name: 'Sébastien Fabbro'
+          member: 'CNRC CCDA'
+          member_role: 'Science Computing Specialist'
+          canfar_role: 'User Support'
+          expertise: ''
+          responsibilities: 'Processing, general operations, liaison with Compute Canada.'
+        john_ouellette:
+          name: 'John Ouellette'
+          member: 'CNRC CCDA'
+          member_role: 'CADC Operations Manager'
+          canfar_role: 'User Support'
+          expertise: ''
+          responsibilities: 'Storage, accounts and group management, general operations, liaison with Compute Canada.'
+        cadc_operations_team:
+          name: 'CADC Operations Team'
+          member: 'CNRC CCDA'
+          member_role: 'CADC Operations Team'
+          canfar_role: 'Operations Support'
+          expertise: ''
+          responsibilities: 'General operations support, issue triage.'
+        cadc_development_team:
+          name: 'CADC Development Team'
+          member: 'CNRC CCDA'
+          member_role: 'CADC Development Team'
+          canfar_role: 'Software development and maintenance'
+          expertise: ''
+          responsibilities: 'Maintenance of operational software, design and development of new features.'
+        cadc_science_team:
+          name: 'CADC Science Team'
+          member: 'CNRC CCDA'
+          member_role: 'CADC Science Team'
+          canfar_role: 'Science Support'
+          expertise: ''
+          responsibilities: 'General science support, user requirements.'
+        falk_herwig:
+          name: 'Falk Herwig'
+          member: 'UVic CSA'
+          member_role: 'Professor, Group Leader'
+          canfar_role: 'PI, CSA Lead'
+          expertise: 'Computational Stellar Astrophysics, collaboration technologies, portals for analysis and exploration of simulation data.'
+          responsibilities: ''
+        stephenson_yang:
+          name: 'Stephenson Yang'
+          member: 'UVic CSA'
+          member_role: 'Senior instructor and systems specialist astronomy'
+          canfar_role: 'Cloud workstation support, collaborative web services support'
+          expertise: 'Computational Stellar Astrophysics, collaboration technologies, portals for analysis and exploration of simulation data.'
+          responsibilities: ''
+        robert_andrassy:
+          name: 'Robert Andrassy'
+          member: 'UVic CSA'
+          member_role: 'Post-doctoral fellow (CITA national fellow)'
+          canfar_role: ''
+          expertise: 'Remote visualization of stellar hydro data, scientific Python algorithms and programming.'
+          responsibilities: ''
     docs:
       link: '/docs'
       quick_start:

@@ -467,3 +467,20 @@ td.management_team_name
 {
   font-weight: bolder;
 }
+
+table.table-experts {
+  font-size: 12px;
+}
+
+table.table-experts > tbody > tr {
+  background: #eee;
+}
+
+table.table-experts > thead > tr {
+  background-color: #c2c2c2;
+  color: #000;
+}
+
+table.table-experts > tbody > tr > td:first-child {
+  font-weight: bolder;
+}
