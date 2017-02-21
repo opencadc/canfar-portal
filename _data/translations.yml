@@ -104,7 +104,7 @@ en:
           member: 'NRC CADC'
           member_role: 'Science Computing Specialist'
           canfar_role: 'User Support'
-          expertise: ''
+          expertise: 'Observational cosmology, supernovae, distributed computing, machine learning'
           responsibilities: 'Processing, general operations, liaison with Compute Canada.'
         john_ouellette:
           name: 'John Ouellette'
