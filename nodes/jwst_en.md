@@ -8,32 +8,25 @@ permalink: /en/nodes/jwst-niriss
 
 <!-- Content start -->
 
-A short description of the institute and project.
-
+The FGS-NIRISS science team is led by Professor René Doyon from the Université de Montréal, Director of the Mont-Mégantic Observatory, Director of the Institute for Research on Exoplanets (iRex), and member of the Centre de recherche en astrophysique du Québec (CRAQ). The team includes astronomers from: COM DEV; the National Research Council Canada; Saint Mary's University; the Space Telescope Science Institute (STScI); the Swiss Federal Institute of Technology Zurich (ETH Zurich); the Université de Montréal; York University; the University of Rochester; Cornell University; and the University of Toronto. 
 
 
 ### CANFAR current activities
 
-An itemized list of CANFAR activities or  CANFAR services that are heavily used
+* The NIRISS team is working with the CADC and the CSA to define ther requirements for integrating CANFAR into their workflow both for science and instrument team work.
 
-
-* Item 1
-* Item 2
-* Item N
-*
 
 ### Data & software needs and future plans
 
-* **Perhaps a title for one future need or plan followed by the description below**
+* The requirements of the team at Université de Montréal will drive the development of CANFAR systems that will serve all Canadian JWST users.
 
-The description of the need or plan.
 
 ### About
 
 * **Project web page:** [http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/](http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/)
 * **Node lead and contact:** Lean Name
 * **People:**
-  * Person 1 (Affililiation): Function and CANFAR role
+  * Person 1  Professor René Doyon from the Université de Montréal: Function and CANFAR role
   * Person 2 (Affililiation): Function and CANFAR role
   * Person N (Affililiation): Function and CANFAR role
 
