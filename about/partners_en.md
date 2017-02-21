@@ -18,7 +18,8 @@ The [Canadian Space Agency ](http://www.asc-csa.gc.ca/eng/) supports space astro
 sector. The CSA supports CANFAR through its funding of the Canadian Astronomy Data Centre.
 
 ### Compute Canada
+[Compute Canada ](https://www.computecanada.ca/)
 
 ### National Research Council Canada
-
+[The National Research Council of Canada ](https://www.nrc-cnrc.gc.ca/eng/)
 <!-- Content end -->
