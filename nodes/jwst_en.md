@@ -23,8 +23,8 @@ The FGS-NIRISS science team is led by Professor René Doyon from the Université
 
 ### About
 
-* **Project web page:** [http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/](http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/)
-* **Node lead and contact:** Lean Name
+* **Project web page:** [http://jwst.astro.umontreal.ca/)
+* **Node lead and contact:** René Doyon
 * **People:**
   * Person 1  Professor René Doyon from the Université de Montréal: Function and CANFAR role
   * Person 2 (Affililiation): Function and CANFAR role
