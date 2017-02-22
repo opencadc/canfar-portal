@@ -48,8 +48,7 @@ layout: default
     <section id="information_section">
       <div class="row">
         <div class="col-md-4">
-          <h3 class="text-info information_section_capture">Providing research cyberinfrastructure services
-            to the Canadian astronomical community</h3>
+          <h3 class="text-info information_section_capture">Research cyberinfrastructure for the Canadian astronomical community</h3>
           <p>The Canadian Advanced Network for Astronomy Research is a national platform
             for data-intensive scientific computing.</p>
           <p>CANFAR is a consortium of Canadian university astronomers, Compute Canada,
