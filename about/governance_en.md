@@ -33,7 +33,7 @@ permalink: /en/about/governance
 {% include __governance_item.md role="NGVS" name='Laura Ferrarese' institutes='National Research Council Canada and Adjunct Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
 {% include __governance_item.md role="NuGrid" name='' institutes='' %}
 {% include __governance_item.md role="TAOS-II" name='JJ Kavelaars' institutes='National Research Council Canada and Adjunct Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
-{% include __governance_item.md role="UVIC ARC" name='Kim Venn' institutes='Director, Astronomy Research Centre, ' %}
+{% include __governance_item.md role="UVIC Astronomy Research Center" name='' institutes=' ' %}
 {% include __governance_item.md role="VLASS" name='Erik Rosolowsky' institutes='Associate Professor University of Alberta' %}
 </tbody>
 </table>
