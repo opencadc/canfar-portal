@@ -18,7 +18,8 @@ such as:
 
   - Research Data Management
   - User-managed storage and cloud processing
-  - Specialized visualization and analytics services • Authentication and Authorization
+  - Specialized visualization and analytics services
+  - Authentication and Authorization
   - Support to researchers in adapting the system to their needs
 
 ### Mission
