@@ -76,13 +76,12 @@ layout: default
               </div>
               <div class="panel-body">
                 {% assign nodes_posts = (site.posts | where: 'category', 'nodes') %}
-                {% for post in nodes_posts limit: 7 %}
-                {% capture node_post_url %}{{ t[post.namespace].link | prepend: site.baseurl }}{% endcapture %}
+                {% for node in site.data.menudata.nodes %}
+                {% capture node_post_url %}{{ t[node].link | prepend: site.baseurl }}{% endcapture %}
+                {% capture node_namespace %}nodes.{{ node }}{% endcapture %}
                 <div class="media">
                   <div class="media-body">
-                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span>{% include _link_item.md namespace=post.namespace link_only=true %}</h4>
-                    <time datetime="{{ post.date }}">{{ post.date | date: '%B %d, %Y' }}</time>
-                    {{ post.excerpt | strip_html | truncatewords:10 }}
+                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span>{% include _link_item.md namespace=node_namespace link_only=true %}</h4>
                   </div>
                 </div>
                 {% endfor %}
@@ -128,7 +127,6 @@ layout: default
                 <div class="media">
                   <div class="media-body">
                     <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span>{% include _link_item.md namespace=post.namespace link_only=true %}</h4>
-                    <time datetime="{{ post.date }}">{{ post.date | date: '%B %d, %Y' }}</time>
                     {{ post.excerpt | strip_html | truncatewords:10 }}
                   </div>
                 </div>
