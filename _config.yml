@@ -8,4 +8,4 @@ github:
   repository_url: 'https://github.com/canfar/beta-canfar.github.io'
 
 # For beta site only!
-# baseurl: '/beta-canfar.github.io'
+baseurl: '/beta-canfar.github.io'
