@@ -484,3 +484,15 @@ table.table-experts > thead > tr {
 table.table-experts > tbody > tr > td:first-child {
   font-weight: bolder;
 }
+
+/*  Table data for Processes. */
+
+table.processes-table {
+  width: 70%;
+  margin: 10px auto auto;
+}
+
+table.processes-table > tbody > tr > td {
+  text-align: center;
+  vertical-align: middle;
+}
