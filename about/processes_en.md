@@ -10,4 +10,11 @@ permalink: /en/about/processes
 
 <!-- Content start -->
 
+![Functional Diagram]({{ site.baseurl }}/images/Functional_Diagram_600.png)
+
+
+![Workflow Operations]({{ site.baseurl }}/images/CANFAR_WORKFLOW_OPERATIONS_600.png)
+
+![Workflow Initiation Analysis]({{ site.baseurl }}/images/CANFAR_WORKFLOW_INITIATION-ANALYSIS-APPROVAL_600.png)
+
 <!-- Content end -->
