@@ -15,9 +15,4 @@ permalink: /en/about/processes
 | [![Workflow Initiation Analysis]({{ site.baseurl }}/images/CANFAR_WORKFLOW_INITIATION-ANALYSIS-APPROVAL_300.png)]({{ site.baseurl }}/images/CANFAR_WORKFLOW_INITIATION-ANALYSIS-APPROVAL_600.png) | [![Workflow Initiation Analysis Approval PDF]({{ site.baseurl }}/css/images/pdf_32.png)]({{ site.baseurl }}/images/CANFAR_WORKFLOW_INITIATION-ANALYSIS-APPROVALV2.pdf) |
 {:.table .table-bordered .processes-table}
 
-<!-- ![Workflow Operations]({{ site.baseurl }}/images/CANFAR_WORKFLOW_OPERATIONS_300.png) -->
-
-<!-- ![Workflow Initiation Analysis]({{ site.baseurl }}/images/CANFAR_WORKFLOW_INITIATION-ANALYSIS-APPROVAL_300.png) -->
-
-
 <!-- Content end -->
