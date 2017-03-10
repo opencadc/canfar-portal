@@ -13,7 +13,7 @@ The Canadian Advanced Network for Astronomy Research is a consortium that serves
 data-intensive storage, access, and processing needs of university groups and
 centers engaged in astronomy research.
 
-To this end, CANFAR develops and operates user-facing and integrated services, 
+To this end, CANFAR develops and operates user-facing and integrated services,
 such as:
 
   - Research Data Management
@@ -23,9 +23,9 @@ such as:
   - Support to researchers in adapting the system to their needs
 
 ### Mission
-  - To maintain and develop services in data and computationally intensive 
-  research that enable Canadian researchers and their international collaborators 
-  to generate the greatest possible scientific return on Canada’s investment in 
+  - To maintain and develop services in data and computationally intensive
+  research that enable Canadian researchers and their international collaborators
+  to generate the greatest possible scientific return on Canada’s investment in
   telescopes and computational resources.
 
   - To coordinate efforts and resources in multi-use applications and services
@@ -41,7 +41,7 @@ such as:
 
   - Reduce barriers and accelerate adoption of new emerging technologies in Big
   Data and Computing in the astronomy community.
-  
+
   - Share capabilities developed in the astronomy community with other domains.
 
 ### Membership
@@ -57,8 +57,8 @@ Consequently the following groups are eligible for membership in the CANFAR cons
   - Individual university researchers and their groups
   - University centers or institutions engaged in astronomy research
   - Multi-institutional or multi-investigator collaborations, including their international partners
-  - Individuals and teams from the CADC, or teams from Compute Canada, WestGrid 
-  or other entities that provide computational and data resources and 
+  - Individuals and teams from the CADC, or teams from Compute Canada, WestGrid
+  or other entities that provide computational and data resources and
   infrastructure
 
-See associated document CANFAR_portfolio.pdf for details.
+See associated document [CANFAR Portfolio]({{ site.baseurl }}/assets/CANFAR_portfolio.pdf) for details.
