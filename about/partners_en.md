@@ -1,7 +1,7 @@
 ---
 layout: pages_left_nav
 
-namespace: about.partners
+namespace: about.partnershttps://github.com/canfar/beta-canfar.github.io/edit/gh-pages/about/partners_en.md
 lang: en
 permalink: /en/about/partners
 ---
@@ -18,7 +18,7 @@ The [Canadian Space Agency ](http://www.asc-csa.gc.ca/eng/) supports space astro
 sector. The CSA supports CANFAR through its funding of the Canadian Astronomy Data Centre.
 
 ### Compute Canada
-[Compute Canada ](https://www.computecanada.ca/)
+[Compute Canada ](https://www.computecanada.ca/) leads the acceleration of research and innovation by deploying state-of-the-art advanced research computing (ARC) systems, storage and software solutions. Together with their regional partners, they provide essential ARC services and infrastructure for Canadian researchers and their collaborators in all academic and industrial sectors.
 
 ### National Research Council Canada
 [The National Research Council of Canada ](https://www.nrc-cnrc.gc.ca/eng/)
