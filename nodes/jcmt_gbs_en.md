@@ -27,8 +27,6 @@ The Gould Belt Legacy Survey [GBS](http://tinyurl.com/hp4u9ku) used two JCMT sur
 
 ### CANFAR current activities
 
-An itemized list of CANFAR activities or  CANFAR services that are heavily used
-
 JCMT Gould Belt Survey
 
 * Archives data at the Canadian Astronomy Data Centre and on CANFAR
