@@ -36,7 +36,7 @@ The NGVS team uses CANFAR services for:
 
 ### About
 
-* **Project web page:** [http://astrowww.phys.uvic.ca/~lff/NGVS/Home.html]
+* **Project web page:** [http://astrowww.phys.uvic.ca/~lff/NGVS/Home.html](http://astrowww.phys.uvic.ca/~lff/NGVS/Home.html)
 * **Node lead and contact:** Laura Ferrarese
 * **People:**
   * Chantal Balkowski  (Observatoire de Paris, GEPI, France):  interstellar medium, galaxy harassment.
