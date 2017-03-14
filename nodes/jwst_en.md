@@ -8,7 +8,7 @@ permalink: /en/nodes/jwst-niriss
 
 <!-- Content start -->
 
-The FGS-NIRISS science team is led by Professor René Doyon from the Université de Montréal, Director of the Mont-Mégantic Observatory, Director of the Institute for Research on Exoplanets (iRex), and member of the Centre de recherche en astrophysique du Québec (CRAQ). The team includes astronomers from: COM DEV; the National Research Council Canada; Saint Mary's University; the Space Telescope Science Institute (STScI); the Swiss Federal Institute of Technology Zurich (ETH Zurich); the Université de Montréal; York University; the University of Rochester; Cornell University; and the University of Toronto. 
+The James Web Space Telescope FGS-NIRISS science team is led by Professor René Doyon from the Université de Montréal, Director of the Mont-Mégantic Observatory, Director of the Institute for Research on Exoplanets (iRex), and member of the Centre de recherche en astrophysique du Québec (CRAQ). The team includes astronomers from: COM DEV; the National Research Council Canada; Saint Mary's University; the Space Telescope Science Institute (STScI); the Swiss Federal Institute of Technology Zurich (ETH Zurich); the Université de Montréal; York University; the University of Rochester; Cornell University; and the University of Toronto. 
 
 
 ### CANFAR current activities
