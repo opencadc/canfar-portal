@@ -176,7 +176,7 @@ en:
         description: 'Set a Digital Object Identifier for your data'
       storage:
         name: 'Storage'
-        link: 'http://www.canfar.phys.uvic.ca/vosui/'
+        link: 'http://apps.canfar.net/storage/list/'
         doclink: '/en/resources/docs/storage/'
         api_link: '/swagger-ui/?url=/docs/api_data/vospace.json'
         description: 'Manage your own large storage for astronomy data'
@@ -394,7 +394,7 @@ fr:
         description: 'La description d''Identificateurs d''objects digitale'
       storage:
         name: 'Stockage'
-        link: 'http://www.canfar.phys.uvic.ca/vosui/'
+        link: 'http://apps.canfar.net/storage/list/'
         doclink: '/fr/ressources/docs/stockage/'
         description: 'La description de Stockage'
       batch_processing:
