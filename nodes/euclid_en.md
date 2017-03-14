@@ -33,7 +33,7 @@ permalink: /en/nodes/euclid
 * **Node lead and contact:** Ray Carlberg
 * **People:**
   * Ray Carlberg (University of Toronto): EUCLID Consortium Board member for Canada 
-  * Alan McConnachie ational Research Council Canada): EUCLID consortium member, Principal Investigator, CFIS
+  * Alan McConnachie (National Research Council Canada): EUCLID consortium member, Principal Investigator, CFIS
   * David Schade (National Research Council Canada): EUCLID consortium member, Group Leader CADC, CANFAR SMC member
   * JJ Kavelaars (National Research Council Canada): EUCLID consortium member.
   * Sebastien Fabbro (National Research Council Canada): EUCLID consortium member.
