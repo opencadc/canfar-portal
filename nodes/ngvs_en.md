@@ -22,7 +22,6 @@ A short description of the institute and project.
 
 The NGVS team uses CANFAR services for:
 
-
 * Data Storage and sharing on VOSpace 
 * Batch and interactive cloud processing using OpenStack
 * Graphical data search using custom interfaces
@@ -36,12 +35,15 @@ The NGVS team uses CANFAR services for:
 
 ### About
 
-* **Project web page:** [http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/](http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/)
-* **Node lead and contact:** Lean Name
+* **Project web page:** [http://astrowww.phys.uvic.ca/~lff/NGVS/Home.html)
+* **Node lead and contact:** Laura Ferrarese
 * **People:**
-  * Person 1 (Affililiation): Function and CANFAR role
-  * Person 2 (Affililiation): Function and CANFAR role
-  * Person N (Affililiation): Function and CANFAR role
+  * Chantal Balkowski  (Observatoire de Paris, GEPI, France):  interstellar medium, galaxy harassment.
+  * Michael Balogh (University of Waterloo, Canada) - Low surface brightness features, tidal stripping, galaxy harassment, environmental effects on galaxy evolution. CoI of the NGVS-IR.
+  * John Blakeslee (NRC Herzberg Institute of Astrophysics, Canada) - Structure and evolution of early-type galaxies and galaxy clusters, globular clusters and stellar populations, distance measurements and galaxy peculiar motions. CoI of the ACS Virgo Cluster Survey, the Virgo Redux, and the NGVS-IR.
+
+
+
 
 
 
