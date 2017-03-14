@@ -27,6 +27,10 @@ The James Web Space Telescope FGS-NIRISS science team is led by Professor René 
 * **Node lead and contact:** René Doyon
 * **People:**
   * Professor René Doyon from the Université de Montréal: Team Lead
+  * Chris Willott (NRC-HAA: Co-Investigator)
+  * John Hutchings (NRC-HAA: Science Team)
+  * David Lafrenière (UdeM: Science Team)
+  * Judy Pipher (Rochester: Science Team)
  
 
 
