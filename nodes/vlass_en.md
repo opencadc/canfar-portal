@@ -29,8 +29,8 @@ The description of the need or plan.
 
 ### About
 
-* **Project web page:** [http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/](http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/)
-* **Node lead and contact:** Lean Name
+* **Project web page:** 
+* **Node lead and contact:** Erik Rosolowsky
 * **People:**
   * Erik Rosolowsky (University of Alberta): VLASS Canada lead
   
