@@ -13,7 +13,7 @@ The James Web Space Telescope FGS-NIRISS science team is led by Professor René 
 
 ### CANFAR current activities
 
-* The NIRISS team is working with the CADC and the CSA to define ther requirements for integrating CANFAR into their workflow both for science and instrument team work.
+* The NIRISS team is working with the CADC and the CSA to define their requirements for integrating CANFAR into their workflow both for science and instrument team work.
 
 
 ### Data & software needs and future plans
