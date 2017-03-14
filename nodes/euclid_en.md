@@ -19,10 +19,13 @@ permalink: /en/nodes/euclid
 
 * **EUCLID** launch is planned for 2020. CANFAR is currently working with EUCLID scientists and with the EUCLID project to define Canadian roles and reponsiblities related to data management.
 
+* The Canada-France-Imaging Survey (CFIS) is providing u and r band data to support Euclid photometric redshift estimation.
+* CANFAR is the portal that provides CFIS data to the CFIS collaboration, the Canada-France user community, Euclid and public access.
+
 
 ### Data & software needs and future plans
 
-* Does Canada need to plan for a Canadian EUCLID data centre?
+* There are opportunities for a wide varity of science and technical involvement of EUCLID and CANFAR.
 
 ### About
 
@@ -30,6 +33,7 @@ permalink: /en/nodes/euclid
 * **Node lead and contact:** Ray Carlberg
 * **People:**
   * Ray Carlberg (University of Toronto): EUCLID Consortium Board member for Canada 
+  * Alan McConnachie ational Research Council Canada): EUCLID consortium member, Principal Investigator, CFIS
   * David Schade (National Research Council Canada): EUCLID consortium member, Group Leader CADC, CANFAR SMC member
   * JJ Kavelaars (National Research Council Canada): EUCLID consortium member.
   * Sebastien Fabbro (National Research Council Canada): EUCLID consortium member.
