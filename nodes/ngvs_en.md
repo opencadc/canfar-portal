@@ -20,19 +20,19 @@ A short description of the institute and project.
 
 ### CANFAR current activities
 
-An itemized list of CANFAR activities or  CANFAR services that are heavily used
+The NGVS team uses CANFAR services for:
 
 
-* Item 1
-* Item 2
-* Item N
-*
+* Data Storage and sharing on VOSpace 
+* Batch and interactive cloud processing using OpenStack
+* Graphical data search using custom interfaces
 
 ### Data & software needs and future plans
 
-* **Perhaps a title for one future need or plan followed by the description below**
+* NVGS needs improved management and sharing tools for catalogues of derived science parameters 
+* NGVS needs improved integration of postage stamp presentation with catalogue query
+* NGVS needs improvements in the cloud processing interface
 
-The description of the need or plan.
 
 ### About
 
