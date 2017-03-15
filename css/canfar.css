@@ -291,6 +291,15 @@ input[type=url] {
     text-align: center;
   }
 
+  ul.login-container > li > a {
+    text-align: left;
+    color: #337ab7;
+  }
+
+  ul.login-container > li > a:hover {
+    text-decoration: underline;
+  }
+
   #sidebar_nav {
     position: fixed;
     top: 90px;
