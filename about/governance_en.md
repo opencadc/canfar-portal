@@ -16,7 +16,7 @@ permalink: /en/about/governance
 {% include __governance_item.md role="Science Coordinator Observations" name='Laura Ferrarese' institutes='National Research Council Canada and Adjunct Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
 {% include __governance_item.md role="Science Coordinator Simulations" name='TBD' institutes='' %}
 {% include __governance_item.md role="Project Management Coordinator (ex officio)" name='Michael Peddle' institutes='National Research Council Canada, Canadian Astronomy Data Centre' %}
-{% include __governance_item.md role="CADC Group Leader (ex officio)" name='David Schade' institutes=', National Research Council Canada and Adjunct Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
+{% include __governance_item.md role="CADC Group Leadern" name='David Schade' institutes=', National Research Council Canada and Adjunct Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
 </tbody>
 </table>
 </div>
@@ -51,6 +51,7 @@ permalink: /en/about/governance
 {% include __governance_item.md name='Bryan Gaensler' institutes='University of Toronto' %}
 {% include __governance_item.md name='Mike Hudson' institutes='University of Waterloo' %}
 {% include __governance_item.md name='JJ Kavelaars' institutes='National Research Council Canada and University of Victoria' %}
+% include __governance_item.md name='Alan.McConnachie' institutes='National Research Council Canada' %}
 {% include __governance_item.md name='Laura Parker' institutes='McMaster University' %}
 {% include __governance_item.md name='Chris Pritchet' institutes='University of Victoria' %}
 {% include __governance_item.md name='Erik Rosolowsky' institutes='University of Alberta' %}
