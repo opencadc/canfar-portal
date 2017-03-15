@@ -22,9 +22,13 @@ An itemized list of CANFAR activities or  CANFAR services that are heavily used
 
 ### Data & software needs and future plans
 
-* **Perhaps a title for one future need or plan followed by the description below**
+* **Machine Learning techniques for time-series analysis**
 
-The description of the need or plan.
+The shape of the time-series produced by an occultation event is complex function of mulitple geometry parameters, some of which produce redunant signatures within the data stream. We will explore the use of ML ANN as an approach to the classification timeseries sets to estimate the intrinsic geometric parameters associated with the event. 
+
+* **Time-series searches via micro-service deployment on storage**
+
+Each star monitored by  the TAOS-II project will be measured millions of times during the survey.  We will develope a analysis process that will allow the execution cross-correlation analysis of the time series as a micro-service running on the storage node containing the data stream.  This approach will collapse the network bandwith to near zero, keeping the data in place and moving the code to the data.
 
 ### About
 
