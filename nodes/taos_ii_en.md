@@ -22,6 +22,8 @@ An itemized list of CANFAR activities or  CANFAR services that are heavily used
 
 ### Data & software needs and future plans
 
+* Storage of the TAOS-II collection will require substantial capacity be available.  Approximately 1 PByte over the 3 years of the project. *
+
 * **Machine Learning techniques for time-series analysis**
 
 The shape of the time-series produced by an occultation event is complex function of mulitple geometry parameters, some of which produce redunant signatures within the data stream. We will explore the use of ML ANN as an approach to the classification timeseries sets to estimate the intrinsic geometric parameters associated with the event. 
