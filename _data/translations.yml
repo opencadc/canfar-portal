@@ -155,6 +155,13 @@ en:
           canfar_role: ''
           expertise: 'Remote visualization of stellar hydro data, scientific Python algorithms and programming.'
           responsibilities: ''
+        michael_bertolli:
+          name: 'Michael Bertolli'
+          member: 'NuGrid'
+          member_role: 'Avrio Chief Scientific Officer'
+          canfar_role: 'NuGrid node lead'
+          expertise: 'Nuclear structure and reaction theory, nuclear astrophysics/Nucleosynthetic uncertainty quantification, machine learning algorithm design and implementation, deep learning and online-learning methods, big data and machine learning organizational deployments and capability development'
+          responsibilities: ''
     docs:
       link: '/docs'
       quick_start:
@@ -200,12 +207,6 @@ en:
         doclink: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/about.html#mandate'
         api_link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/tap/'
         description: 'CADC Data Discovery and Access'
-      storage_beta:
-        name: 'Storage (Beta)'
-        link: 'http://apps.canfar.net/storage-beta/list/'
-        doclink: '/en/resources/docs/storage/'
-        api_link: '/swagger-ui/?url=/docs/api_data/vospace.json'
-        description: 'Manage your own storage for astronomy data'
     open_source:
       name: 'Open Source'
       link: '/open-source/'
@@ -374,6 +375,13 @@ fr:
           canfar_role: ''
           expertise: 'Remote visualization of stellar hydro data, scientific Python algorithms and programming.'
           responsibilities: ''
+        michael_bertolli:
+          name: 'Michael Bertolli'
+          member: 'NuGrid'
+          member_role: 'Avrio Chief Scientific Officer'
+          canfar_role: 'NuGrid node lead'
+          expertise: 'Nuclear structure and reaction theory, nuclear astrophysics/Nucleosynthetic uncertainty quantification, machine learning algorithm design and implementation, deep learning and online-learning methods, big data and machine learning organizational deployments and capability development'
+          responsibilities: ''
     docs:
       link: '/docs'
       quick_start:
@@ -413,12 +421,6 @@ fr:
         doclink: 'http://www.ivoa.net/documents/TAP/'
         api_link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/tap/'
         description: 'CADC Data Discovery and Access Service'
-      storage_beta:
-        name: 'Storage (Beta)'
-        link: 'http://apps.canfar.net/storage-beta/list/'
-        doclink: '/en/resources/docs/storage/'
-        api_link: '/swagger-ui/?url=/docs/api_data/vospace.json'
-        description: 'Manage your own storage for astronomy data'
     user_guide:
       name: 'Guide d''utilisateur'
       link: '/guide-dutilisateur'

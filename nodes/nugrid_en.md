@@ -30,4 +30,5 @@ The international [Nucleosynthesis Grid (NuGrid)](http://www.nugridstars.org) co
   * Sam Jones (Heidelberg Institute for Theoretical Studies, HITS, Germany)
   * Christian Ritter (University of Victoria)
   * Jaqueline DenHartog (Keele University, UK)
+  * Michael Bertolli (Chief Scientific Officer, Avrio — a machine learning research and marketing applications company. http://avrio.ai)
 <!-- Content end -->

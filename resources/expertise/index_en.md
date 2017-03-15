@@ -23,8 +23,8 @@ permalink: /en/resources/expertise/
   </thead>
   <tbody>
     {% assign t_expertise = t['resources']['expertise']['people'] %}
-    {% for expert in site.data.expertise %}
-    {% assign t_expert = t_expertise[expert] %}
+    {% for expert in t_expertise %}
+    {% assign t_expert = expert[1] %}
     {% include __expertise_row.md name=t_expert.name member=t_expert.member member_role=t_expert.member_role canfar_role=t_expert.canfar_role expertise=t_expert.expertise responsibilities=t_expert.responsibilities %}
     {% endfor %}
   </tbody>
