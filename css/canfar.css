@@ -298,6 +298,8 @@ input[type=url] {
 
   ul.login-container > li > a:hover {
     text-decoration: underline;
+    color: #337ab7;
+    background-color: inherit;
   }
 
   #sidebar_nav {
