@@ -11,7 +11,7 @@ permalink: /en/nodes/vlass
 
 <h5> VLASS  </h5>
  
-The Very Large Array Sky Survey (VLASS) will survey then entire sky visible from the VLA in the 2-4 GHz radiocontinuum band.  This 23,000 square degree survey will take place over 6 years, spanning three different observing epochs.  VLASS will provide the widest view of the radio sky, revealing a rich population of galaxies, teasing out the role of the magnetic field, and hunting for hidden explosions hidden in visible light.
+The Very Large Array Sky Survey (VLASS) will survey then entire sky visible from the VLA in the 2-4 GHz radiocontinuum band.  This 23,000 square degree survey will take place over 6 years, spanning three different observing epochs.  VLASS will provide the widest view of the radio sky, revealing a rich population of galaxies, teasing out the role of the magnetic field, and hunting for hidden explosions hidden from optical telescope.
 
 The VLASS Pilot Survey has been defined by NRAO and the SSG to cover ~2400 square degrees, and 200 hours has been allocated to these observations by the Time Allocation Committee and the NRAO Assistant Director for NM Operations.   Test observations began in June 2017.  NRAO staff are currently developing the specialized data reduction scripts required to image these data. products (calibrated visibility data, images) will be made available after undergoing quality assurance.  The full survey will require up to 8000 hours and is undergoing final design review and approval.
 
