@@ -23,12 +23,11 @@ The international [Nucleosynthesis Grid (NuGrid)](http://www.nugridstars.org) co
 ### About
 
 * **Project web page:** [http://www.nugridstars.org](http://www.nugridstars.org)
-* **Node lead and contact:** 
+* **Node lead and contact:** Michael Bertolli (Chief Scientific Officer, Avrio — a machine learning research and marketing applications company. http://avrio.ai)
 * **People:** (provisional)
   * Benoit Côté (University of Victoria and Michigan State University)
   * Falk Herwig (University of Victoria)
   * Sam Jones (Heidelberg Institute for Theoretical Studies, HITS, Germany)
   * Christian Ritter (University of Victoria)
   * Jaqueline DenHartog (Keele University, UK)
-  * Michael Bertolli (Chief Scientific Officer, Avrio — a machine learning research and marketing applications company. http://avrio.ai)
 <!-- Content end -->
