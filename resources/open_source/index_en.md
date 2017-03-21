@@ -10,14 +10,19 @@ permalink: /en/resources/open-source/
 
 <!-- Content starts -->
 ## vostools
-* VOSpace command line and FUSE clients <https://github.com/opencadc/vostools>
+
+   VOSpace command line and FUSE clients <https://github.com/opencadc/vostools>
 ## vosui
-* Portable VOSpace browser user interface <https://github.com/opencadc/vosui>
+
+   Portable VOSpace browser user interface <https://github.com/opencadc/vosui>
 ## vos
-* Client and server implementation of VOSpace specification <https://github.com/opencadc/vos>
+
+   Client and server implementation of VOSpace specification <https://github.com/opencadc/vos>
 ## ac
-* Client and server implementations for user and group management <https://github.com/opencadc/ac>
+
+   Client and server implementations for user and group management <https://github.com/opencadc/ac>
 ## gmui
-* Group management browser user interface <https://github.com/opencadc/gmui>
+
+   Group management browser user interface <https://github.com/opencadc/gmui>
 
 <!-- Content ends -->
