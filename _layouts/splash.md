@@ -121,7 +121,7 @@ layout: default
               <div class="panel-body">
                 {% assign services_posts = (site.posts | where: 'category', 'services') %}
                 {% comment %}Only the first four service posts (latest) are used.{% endcomment %}
-                {% for post in services_posts limit: 7 %}
+                {% for post in services_posts %}
                 {% assign translated_item = translated_services[post.local_name] %}
                 {% capture service_post_url %}{{ translated_item.link | prepend: site.baseurl }}{% endcapture %}
                 <div class="media">
