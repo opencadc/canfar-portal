@@ -65,7 +65,7 @@ en:
       name: 'CADC'
       link: '/cadc'
     uvic:
-      name: 'UVIC ARC'
+      name: 'UVic'
       link: '/uvic'
     jcmt_gbs:
       name: 'JCMT GBS'
@@ -285,7 +285,7 @@ fr:
       name: 'CCDA'
       link: '/ccda'
     uvic:
-      name: 'UVIC ARC'
+      name: 'UVic'
       link: '/uvic'
     jcmt_gbs:
       name: 'JCMT GBS'

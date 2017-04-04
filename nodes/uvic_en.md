@@ -8,24 +8,28 @@ permalink: /en/nodes/uvic
 
 <!-- Content start -->
 
-The Astronomy Research Center (ARC) comprises a wide range of astronomy, astrophysics and cosmology research and facilitates connections to engeneering, instrumentation and nuclear astrophysics research at nearby insitutions, such as NRC Herzberg and TRIUMF.
+**(Provisonal)**
+
+The UVic astronomy group has a number of [research activities](http://www.uvic.ca/research/centres/arc/research/index.php) that require computational and data-intensive infrastructure.
 
 ### CANFAR current activities
-* machine learning - simulating observations
+* astro-hub
 
 ### Data & software needs and future plans
 *  observing simulations: cyber infrastructure to explore large-scale astrophysics simulations
+* machine learning for stellar astronomy
 
 
 ### About
 
-* **Project web page:** [http://www.astro.uvic.ca](http://www.astro.uvic.ca)
-* **Node lead and contact:** Professor Kim Venn, ARC Director
+* **Project web page:** [http://www.uvic.ca/arc](http://www.astro.uvic.ca)
+* **Node lead and contact:** Falk Herwig, Professor
 * **People:** (provisional)
   * Robert Andrassy, CITA National Fellow, stellar hydrodynamics
   * Sara Ellison, Professor, extra-galactic astronomy
   * Falk Herwig, Professor, stellar astrophysics 
   * Julio Navarro, Professor, cosmology
+  * Kim Venn, Professor, stellar astronomy
   * Stephenson Yang, Senior Instructor, systems specialist astronomy
 
 <!-- Content end -->
