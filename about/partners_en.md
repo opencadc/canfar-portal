@@ -1,7 +1,7 @@
 ---
 layout: pages_left_nav
 
-namespace: about.partnershttps://github.com/canfar/beta-canfar.github.io/edit/gh-pages/about/partners_en.md
+namespace: about.partners
 lang: en
 permalink: /en/about/partners
 ---
