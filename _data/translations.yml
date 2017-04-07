@@ -76,9 +76,9 @@ en:
     vlass:
       name: 'VLASS'
       link: '/vlass'
-    taos_ii:
-      name: 'TAOS-II'
-      link: '/taos-ii'
+#    taos_ii:
+#     name: 'TAOS-II'
+#      link: '/taos-ii'
     inaf-oat:
       name: 'INAF-OAT'
       link: '/inaf-oat'
@@ -296,9 +296,9 @@ fr:
     vlass:
       name: 'VLASS'
       link: '/vlass'
-    taos_ii:
-      name: 'TAOS-II'
-      link: '/taos-ii'
+#    taos_ii:
+#      name: 'TAOS-II'
+#      link: '/taos-ii'
     inaf-oat:
       name: 'INAF-OAT'
       link: '/inaf-oat'
