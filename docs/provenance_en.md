@@ -3,7 +3,7 @@ layout: pages_no_left_nav
 
 lang: en
 namespace: docs.provenance
-permalink: /docs/provenance/
+permalink: /docs/provenance
 ---
 
 # CANFAR Provenance
