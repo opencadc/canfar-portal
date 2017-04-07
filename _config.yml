@@ -6,4 +6,3 @@ markdown: kramdown
 future: true
 github:
   repository_url: 'https://github.com/canfar/canfar.github.io'
-
