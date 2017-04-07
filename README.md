@@ -57,7 +57,7 @@ container:
 
 ```
 ~$ mkdir $HOME/src && cd $HOME/src
-~$ git clone https://github.com/canfar/beta-canfar.github.io canfar_site
+~$ git clone https://github.com/canfar/canfar.github.io canfar_site
 ~$ docker run --rm --name canfar-site -p 4000:4000 -v $(pwd)/canfar_site:/srv/jekyll jekyll/jekyll:pages jekyll s
 ```
 

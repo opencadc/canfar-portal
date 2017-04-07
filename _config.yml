@@ -5,7 +5,5 @@ relative_permalinks: false
 markdown: kramdown
 future: true
 github:
-  repository_url: 'https://github.com/canfar/beta-canfar.github.io'
+  repository_url: 'https://github.com/canfar/canfar.github.io'
 
-# For beta site only!
-baseurl: '/beta-canfar.github.io'
