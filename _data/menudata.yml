@@ -1,3 +1,4 @@
 about: ['terms_of_reference', 'governance', 'organization', 'processes', 'partners', 'contact']
 nodes: ['cadc', 'euclid', 'inaf-oat', 'jcmt_gbs', 'jwst', 'ngvs', 'nugrid', 'uvic', 'vlass']
+docs: ['storage', 'batch_processing', 'openstack_cloud_portal', 'group_management', 'caom_query_service', 'digital_object_identifiers']
 resources: ['expertise', 'services', 'open_source']

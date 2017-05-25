@@ -1,9 +1,9 @@
 ---
 layout: pages_left_nav
 
-namespace: resources.docs.group_management
+namespace: docs.group_management
 lang: en
-permalink: /en/resources/docs/group_management/
+permalink: /en/docs/group_management/
 ---
 
 The Group Management system is shared between CADC and CANFAR. This system provides the ability to limit access to particular archive and VOSpace datasets to particular groups of users.

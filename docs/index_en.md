@@ -1,9 +1,9 @@
 ---
 layout: pages_left_nav
 
-namespace: resources.docs
+namespace: docs
 lang: en
-permalink: /en/resources/docs/
+permalink: /en/docs/
 ---
 
 {% include __vars.md %}

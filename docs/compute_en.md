@@ -1,9 +1,9 @@
 ---
 layout: pages_left_nav
 
-namespace: resources.services.cloud_portal
+namespace: docs.cloud_portal
 lang: en
-permalink: /en/resources/docs/cloud_portal
+permalink: /en/docs/cloud_portal
 ---
 
 ##  Introduction

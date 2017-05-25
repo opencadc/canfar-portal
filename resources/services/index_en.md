@@ -12,6 +12,7 @@ no-wrap: true
 <!-- Content starts -->
 
 {% assign all_services = site.data.translations[page.lang]['resources']['services'] %}
+{% assign all_docs = site.data.translations[page.lang]['docs'] %}
 
 <div class="row">
   <div id="quick_start_btn_container" class="col-sm-4 col-sm-offset-4">
@@ -22,10 +23,10 @@ no-wrap: true
 
 <div class="row">
   <div class="col-sm-6">
-  {% include _service_list.md services=all_services menu_side='left' %}
+  {% include _service_list.md services=all_services docs=all_docs menu_side='left' %}
   </div>
   <div class="col-sm-6">
-  {% include _service_list.md services=all_services menu_side='right' %}
+  {% include _service_list.md services=all_services docs=all_docs menu_side='right' %}
   </div>
 </div>
 

@@ -1,7 +1,7 @@
 ---
 layout: pages_left_nav
 
-namespace: resources.services.storage
+namespace: docs.storage
 lang: fr
 permalink: /fr/resources/docs/storage/
 ---

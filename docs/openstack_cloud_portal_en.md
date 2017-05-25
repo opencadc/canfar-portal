@@ -1,9 +1,9 @@
 ---
 layout: pages_left_nav
 
-namespace: resources.services.openstack_cloud_portal
+namespace: docs.openstack_cloud_portal
 lang: en
-permalink: /en/resources/docs/openstack_cloud_portal/
+permalink: /en/docs/openstack_cloud_portal/
 ---
 
 

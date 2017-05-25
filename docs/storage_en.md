@@ -1,9 +1,9 @@
 ---
 layout: pages_left_nav
 
-namespace: resources.services.storage
+namespace: docs.storage
 lang: en
-permalink: /en/resources/docs/storage/
+permalink: /en/docs/storage/
 ---
 
 ## Introduction
