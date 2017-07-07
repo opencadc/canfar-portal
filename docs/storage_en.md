@@ -42,12 +42,12 @@ The `vos` command line client is most likely not part of any Linux distribution 
 
 {% highlight bash %}
 # If you have root or sudo access:
-$ sudo apt install python-pip
-$ sudo pip install -U vos
+sudo apt install python-pip
+sudo pip install -U vos
 
 # If you don't have root or sudo access (but you still need pip):
-$ pip install --user -U vos
-$ export PATH="${HOME}/.local/bin:${PATH}"
+pip install --user -U vos
+export PATH="${HOME}/.local/bin:${PATH}"
 
 {% endhighlight %}
 
@@ -60,8 +60,8 @@ The default Python version on these antique distributions is Python 2.4, so you 
 <div class="shell">
 
 {% highlight bash %}
-$ sudo yum install python26 python26-distribute fuse fuse-devel
-$ sudo /usr/sbin/usermod -a  -G fuse `whoami`
+sudo yum install python26 python26-distribute fuse fuse-devel
+sudo /usr/sbin/usermod -a  -G fuse `whoami`
 {% endhighlight %}
 
 </div>
@@ -71,7 +71,7 @@ Then install or update the vos client on Python 2.6:
 <div class="shell">
 
 {% highlight bash %}
-$ sudo easy_install-2.6 -U vos
+sudo easy_install-2.6 -U vos
 {% endhighlight %}
 
 </div>
@@ -83,7 +83,7 @@ You will need to install [OSX-FUSE](http://osxfuse.github.com/ OSX-FUSE) first (
 <div class="shell">
 
 {% highlight bash %}
-$ sudo easy_install vos
+sudo easy_install vos
 {% endhighlight %}
 
 </div>
@@ -93,7 +93,7 @@ On some OS-X installations the mountvofs command will result in an error like 'l
 <div class="shell">
 
 {% highlight bash %}
-$ export DYLD_FALLBACK_LIBRARY_PATH=/usr/local/lib
+export DYLD_FALLBACK_LIBRARY_PATH=/usr/local/lib
 {% endhighlight %}
 
 </div>
@@ -106,31 +106,31 @@ Try the following commands, substituting your CANFAR VOSpace in for VOSPACE (mos
 
 {% highlight bash %}
 # lists the contents to the root directory of VOSPACE
-$ vls vos:VOSPACE
+vls vos:VOSPACE
 
 # copies the bar file to the root node of VOSPACE
-$ vcp ${HOME}/bar vos:VOSPACE
+vcp ${HOME}/bar vos:VOSPACE
 
 # wildcards also work
-$ vcp vos:VOSPACE/foo/*.txt .
+vcp vos:VOSPACE/foo/*.txt .
 
 # Our you can do FITS cutouts at the service side
-$ vcp vos:VOSPACE/image.fits[1:100,1:100] .
+vcp vos:VOSPACE/image.fits[1:100,1:100] .
 
 # removes the bar file from VOSPACE
-$ vrm vos:VOSPACE/foo
+vrm vos:VOSPACE/foo
 
 # creates a new container node (directory) called foo in VOSPACE
-$ vmkdir vos:VOSPACE/bar
+vmkdir vos:VOSPACE/bar
 
 # moves the file bar into the container node foo
-$ vmv vos:VOSPACE/bar vos:VOSPACE/foo/
+vmv vos:VOSPACE/bar vos:VOSPACE/foo/
 
 # changes the name of file bar to bar2 on the VOSpace
-$ vmv vos:VOSPACE/foo/bar vos:VOSPACE/foo/bar2
+vmv vos:VOSPACE/foo/bar vos:VOSPACE/foo/bar2
 
 # provide group write permission on a VOSpace location (can be a dirtory or file). Can due up-to 4 groups
-$ vchmod g+w vos:VOSPACE/foo/bar.txt 'GROUP1, GROUP2, GROUP3'
+vchmod g+w vos:VOSPACE/foo/bar.txt 'GROUP1, GROUP2, GROUP3'
 
 # For a list of GROUP names visit the [Group Managemnet Service](http://www.canfar.phys.uvic.ca/canfar/groups/)
 {% endhighlight %}
@@ -148,7 +148,7 @@ To mount all available VOSpaces use the command:
 <div class="shell">
 
 {% highlight bash %}
-$ mountvofs
+mountvofs
 {% endhighlight %}
 
 </div>
@@ -160,7 +160,7 @@ To mount a specific VOSpace use commands like:
 <div class="shell">
 
 {% highlight bash %}
-$ mountvofs --vospace vos:USER --mountpoint /path/to/a/directory
+mountvofs --vospace vos:USER --mountpoint /path/to/a/directory
 {% endhighlight %}
 
 </div>
@@ -173,7 +173,7 @@ When a file is opened in a mounted directory, mountvofs gets the remote copy fro
 <div class="shell">
 
 {% highlight bash %}
-$ mountvofs --help
+mountvofs --help
 {% endhighlight %}
 
 </div>
@@ -185,8 +185,8 @@ To unmount the VOSpace, use the following command:
 <div class="shell">
 
 {% highlight bash %}
-$ fusermount -u /path/to/a/directory   # Linux
-$ umount /path/to/a/directory          # OS-X
+fusermount -u /path/to/a/directory   # Linux
+umount /path/to/a/directory          # OS-X
 {% endhighlight %}
 
 </div>
@@ -199,7 +199,7 @@ To access a VOSpace, the command line client needs a certificate. These certific
 <div class="shell">
 
 {% highlight bash %}
-$ getCert
+getCert
 {% endhighlight %}
 
 </div>
@@ -213,7 +213,7 @@ machine www.canfar.phys.uvic.ca USER password PASSWORD
 {% endhighlight %}
 and do:
 {% highlight bash %}
-$ chmod 600 $HOME/.netrc
+chmod 600 $HOME/.netrc
 {% endhighlight %}
 </div>
 

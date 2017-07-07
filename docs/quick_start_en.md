@@ -66,7 +66,7 @@ Your ssh public key will have been injected into a **generic account** with a na
 <div class="shell">
 
 {% highlight bash %}
-$ ssh root@[floating ip]
+ssh root@[floating ip]
 {% endhighlight %}
 
 <code class="output">
@@ -79,7 +79,7 @@ Please login as the user "ubuntu" rather than the user "root".
 <div class="shell">
 
 {% highlight bash %}
-$ ssh ubuntu@[floating ip]
+ssh ubuntu@[floating ip]
 {% endhighlight %}
 
 </div>
@@ -91,8 +91,8 @@ You might need to create a different user than the default one, and for batch pr
 <div class="shell">
 
 {% highlight bash %}
-$ curl https://raw.githubusercontent.com/canfar/openstack-sandbox/master/scripts/canfar_create_user.bash -o canfar_create_user.bash
-$ sudo bash canfar_create_user.bash [username]
+curl https://raw.githubusercontent.com/canfar/openstack-sandbox/master/scripts/canfar_create_user.bash -o canfar_create_user.bash
+sudo bash canfar_create_user.bash [username]
 {% endhighlight %}
 
 </div>
@@ -102,8 +102,8 @@ Now, exit the VM, and re-connect with your CANFAR username instead of the standa
 <div class="shell">
 
 {% highlight bash %}
-$ exit
-$ ssh [username]@[floating_ip]
+exit
+ssh [username]@[floating_ip]
 {% endhighlight %}
 
 </div>
@@ -120,8 +120,8 @@ Let's install them both system wide after a fresh update of the Ubuntu repositor
 <div class="shell">
 
 {% highlight bash %}
-$ sudo apt  update -y
-$ sudo apt install -y sextractor libcfitsio-bin
+sudo apt update -y
+sudo apt install -y sextractor libcfitsio-bin
 {% endhighlight %}
 
 </div>
@@ -133,10 +133,10 @@ We are now ready to do a simple test. Let’s download a FITS image to our scrat
 <div class="shell">
 
 {% highlight bash %}
-$ curl https://raw.githubusercontent.com/canfar/openstack-sandbox/master/scripts/canfar_mount_ephemeral.bash -o canfar_mount_ephemeral.bash
-$ sudo bash canfar_mount_ephemeral.bash
-$ sudo mkdir /ephemeral/work
-$ sudo chown [username]:[username] /ephemeral/work
+curl https://raw.githubusercontent.com/canfar/openstack-sandbox/master/scripts/canfar_mount_ephemeral.bash -o canfar_mount_ephemeral.bash
+sudo bash canfar_mount_ephemeral.bash
+sudo mkdir /ephemeral/work
+sudo chown [username]:[username] /ephemeral/work
 {% endhighlight %}
 
 </div>
@@ -146,15 +146,15 @@ Next, enter the directory, copy an astronomical image there, and run SExtractor 
 <div class="shell">
 
 {% highlight bash %}
-$ cd /ephemeral/work
-$ cp /usr/share/sextractor/default* .
-$ rm default.param
-$ echo 'NUMBER
+cd /ephemeral/work
+cp /usr/share/sextractor/default* .
+rm default.param
+echo 'NUMBER
 MAG_AUTO
 X_IMAGE
 Y_IMAGE' > default.param
-$ curl -L http://www.canfar.phys.uvic.ca/data/pub/CFHT/1056213p | funpack -O 1056213p.fits -
-$ sextractor 1056213p.fits -CATALOG_NAME 1056213p.cat
+curl -L http://www.canfar.phys.uvic.ca/data/pub/CFHT/1056213p | funpack -O 1056213p.fits -
+sextractor 1056213p.fits -CATALOG_NAME 1056213p.cat
 {% endhighlight %}
 
 </div>
@@ -169,8 +169,8 @@ We want to store the output catalogue `1056213p.cat` at a persistent, externally
 <div class="shell">
 
 {% highlight bash %}
-$ sudo apt install -y python-pip
-$ sudo pip install vos
+sudo apt install -y python-pip
+sudo pip install vos
 
 {% endhighlight %}
 
@@ -181,9 +181,9 @@ $ sudo pip install vos
 <div class="shell">
 
 {% highlight bash %}
-$ echo "machine www.canfar.phys.uvic.ca login [username] password [password]" > ~/.netrc
-$ chmod 600 ~/.netrc
-$ getCert
+echo "machine www.canfar.phys.uvic.ca login [username] password [password]" > ~/.netrc
+chmod 600 ~/.netrc
+getCert
 {% endhighlight %}
 
 </div>
@@ -193,7 +193,7 @@ Let's check that the VOSpace client works by copying the results to your VOSpace
 <div class="shell">
 
 {% highlight bash %}
-$ vcp 1056213p.cat vos:[username]
+vcp 1056213p.cat vos:[username]
 {% endhighlight %}
 
 </div>
@@ -229,7 +229,7 @@ This script runs all the commands, one after the other, and takes only one param
 <div class="shell">
 
 {% highlight bash %}
-$ chmod +x ~/do_catalog.bash
+chmod +x ~/do_catalog.bash
 {% endhighlight %}
 
 </div>
@@ -239,8 +239,8 @@ Now let's test the newly created script with a different file ID. The ```do_cata
 <div class="shell">
 
 {% highlight bash %}
-$ cd /ephemeral/work
-$ ~/do_catalog.bash 1056214p
+cd /ephemeral/work
+~/do_catalog.bash 1056214p
 {% endhighlight %}
 
 </div>
@@ -252,7 +252,7 @@ Finally, make a copy of the script on your local machine so that it will be avai
 <div class="shell">
 
 {% highlight bash %}
-$ scp [username]@[floating_ip]:do_catalog.bash .
+scp [username]@[floating_ip]:do_catalog.bash .
 {% endhighlight %}
 
 </div>
@@ -264,8 +264,8 @@ Batch jobs are scheduled using a software package called [HTCondor](http://www.h
 <div class="shell">
 
 {% highlight bash %}
-$ curl https://raw.githubusercontent.com/canfar/openstack-sandbox/master/vm_config/canfar_batch_setup.bash -o canfar_batch_setup.bash
-$ sudo bash canfar_batch_setup.bash
+curl https://raw.githubusercontent.com/canfar/openstack-sandbox/master/vm_config/canfar_batch_setup.bash -o canfar_batch_setup.bash
+sudo bash canfar_batch_setup.bash
 {% endhighlight %}
 
 </div>
@@ -290,8 +290,8 @@ Assuming you have the `do_catalog.bash` script written above on your local deskt
 <div class="shell">
 
 {% highlight bash %}
-$ scp docatalog.bash [username]@batch.canfar.net:
-$ ssh [username]@batch.canfar.net
+scp docatalog.bash [username]@batch.canfar.net:
+ssh [username]@batch.canfar.net
 {% endhighlight %}
 
 </div>
@@ -349,7 +349,7 @@ Source the OpenStack RC tenant file, and enter your CANFAR password. This sets e
 <div class="shell">
 
 {% highlight bash %}
-$ . canfar-[tenant]-openrc.sh
+. canfar-[tenant]-openrc.sh
 {% endhighlight %}
 
 <code class="output">
@@ -362,7 +362,7 @@ You can then submit your jobs to the condor job pool:
 <div class="shell">
 
 {% highlight bash %}
-$ canfar_submit myjobs.sub my_vm_image c4-15gb-83
+canfar_submit myjobs.sub my_vm_image c4-15gb-83
 {% endhighlight %}
 
 </div>
@@ -374,7 +374,7 @@ After submitting, wait a couple of minutes. Check where your jobs stand in the q
 <div class="shell">
 
 {% highlight bash %}
-$ condor_q [username]
+condor_q [username]
 {% endhighlight %}
 
 </div>
@@ -384,7 +384,7 @@ Check the status of the VMs and jobs running on the cloud:
 <div class="shell">
 
 {% highlight bash %}
-$ condor_status -submitter
+condor_status -submitter
 {% endhighlight %}
 
 </div>

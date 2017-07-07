@@ -88,7 +88,7 @@ In this case, the submission files and the executable will have to reside on the
 <div class="shell">
 
 {% highlight bash %}
-$ ssh [username]@batch.canfar.net
+ssh [username]@batch.canfar.net
 {% endhighlight %}
 
 </div>
@@ -98,7 +98,7 @@ Then you will need to source your credentials to access your tenant's VMs:
 <div class="shell">
 
 {% highlight bash %}
-$ . canfar-[tenant]-openrc.sh
+. canfar-[tenant]-openrc.sh
 {% endhighlight %}
 
 </div>
@@ -108,7 +108,7 @@ Now to submit the job, there is a special wrapper script that will share your VM
 <div class="shell">
 
 {% highlight bash %}
-$ canfar_submit myjob.jdl my_vm_image c8-30gb-380
+canfar_submit myjob.jdl my_vm_image c8-30gb-380
 {% endhighlight %}
 
 </div>
@@ -122,7 +122,7 @@ Check the status of the global queue:
 <div class="shell">
 
 {% highlight bash %}
-$ condor_status -submitter
+condor_status -submitter
 {% endhighlight %}
 
 </div>
@@ -132,7 +132,7 @@ Check the status of your jobs
 <div class="shell">
 
 {% highlight bash %}
-$ condor_q [username]
+condor_q [username]
 {% endhighlight %}
 
 </div>
@@ -144,7 +144,7 @@ See why your job 11.3 is still idle (job status is "I"):
 <div class="shell">
 
 {% highlight bash %}
-$ condor_q -better-analyze 11.3
+condor_q -better-analyze 11.3
 {% endhighlight %}
 
 </div>
@@ -154,7 +154,7 @@ Check to see if your VMs are joining the pool of execution hosts:
 <div class="shell">
 
 {% highlight bash %}
-$ condor_status
+condor_status
 {% endhighlight %}
 
 </div>
