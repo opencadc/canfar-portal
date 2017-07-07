@@ -209,9 +209,12 @@ In batch processing, you might want to use the getCert at the start of every job
 <div class="shell">
 
 {% highlight bash %}
-$ machine www.canfar.phys.uvic.ca USER password PASSWORD
+machine www.canfar.phys.uvic.ca USER password PASSWORD
 {% endhighlight %}
-
+and do:
+{% highlight bash %}
+$ chmod 600 $HOME/.netrc
+{% endhighlight %}
 </div>
 
 WARNING: this is not a fully secure solution.
