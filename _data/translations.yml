@@ -43,6 +43,9 @@ en:
     storage:
       name: 'Storage'
       link: '/storage/'
+    quick_start:
+      name: 'Quick Start'
+      link: '/quick_start/'
     batch_processing:
       name: 'Batch Processing'
       link: '/batch_processing/'
