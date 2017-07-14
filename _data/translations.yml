@@ -281,6 +281,9 @@ fr:
     storage:
       name: 'Stockage'
       link: '/stockage/'
+    quick_start:
+      name: 'Commencer'
+      link: '/commencer'
     batch_processing:
       name: 'Le traitement par lot'
       link: '/batch_processing/'

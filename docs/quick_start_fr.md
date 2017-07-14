@@ -1,7 +1,7 @@
 ---
 layout: pages_left_nav
 
-namespace: resources.docs.quick_start
+namespace: docs.quick_start
 lang: fr
 permalink: /fr/docs/commencer/
 ---

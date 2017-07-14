@@ -1,9 +1,9 @@
 ---
 layout: pages_left_nav
 
-namespace: resources.docs.quick_start
+namespace: docs.quick_start
 lang: en
-permalink: /en/docs/quick-start/
+permalink: /en/docs/quick_start/
 ---
 # Quick Start: Build a star detection pipeline
 
