@@ -500,6 +500,24 @@ table.table-experts > tbody > tr > td:first-child {
   font-weight: bolder;
 }
 
+/*  Table data for status. */
+table.table-status {
+  font-size: 12px;
+}
+
+table.table-status > tbody > tr {
+  background: #eee;
+}
+
+table.table-status > thead > tr {
+  background-color: #c2c2c2;
+  color: #000;
+}
+
+table.table-status > tbody > tr > td:first-child {
+  font-weight: bolder;
+}
+
 /*  Table data for Processes. */
 
 table.processes-table {
