@@ -201,7 +201,7 @@
       $.each(serviceCapabilities.split("\n"), function(index, line) {
         if (line[0] && line[0] != "#") {
           var urls = line.split("=");
-          for(var capsServer of CAPS_SERVERS) {
+          for(const capsServer of CAPS_SERVERS) {
             if (urls[1].indexOf(capsServer) != -1) {
               var rowNode = _createEmptyNode(_extractServiceName(urls[1]));
               serviceKVPs[urls[1]] = rowNode;
