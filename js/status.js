@@ -7,7 +7,11 @@
   );
 
   /**
-   * The main Status application.
+   * This application builds and displays a status table constructed from
+   * queries to a list of services. Each row in the table contains
+   * the status of a service.
+   *
+   * param: _options - values to be supplied to this application
    */
   function StatusApp(_options)
   {
@@ -17,9 +21,29 @@
     const STANDARD_ID = '[standardID="ivo://ivoa.net/std/VOSI#availability"]';
     const RESOURCE_CAPS_URL = "http://demo.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/reg/resource-caps";
     const CAPS_SERVERS = ["demo.canfar.phys.uvic.ca", "demo.cadc-ccda.hia-iha.nrc-cnrc.gc.ca"];
+    const REFRESH_PERIOD = 180000; // 180 seconds or 3 minutes
     const IMAGES_DIR = _options.images;
+
+    // serviceKVPs contains key/value pairs which map service capabilities URL to 
+    // an html element containing a row of status info for a service, e.g.
+    // key=http://canfar.phys.uvic.ca/ac/capabilities
+    // value=<tr class="ac">
+    //         <td class="ac-service">
+    //           ac          
+    //           <img id="load-ac" src="../../images/progress_small.gif"></td>
+    //         <td class="ac-available">true</td>
+    //         <td class="ac-message">/ac is available</td>
+    //         <td class="ac-time">Fri, 18 Aug 2017 14:59:06 GMT</td>
+    //       </tr>
     var serviceKVPs = {};
 
+    /**
+     * A function to create a node which represents a table cell.
+     *
+     * param: tagName - tag name for the html element in this node
+     * param: className - class name to identify the html element in this ndoe
+     * param: data - the text data associated with this html element
+     */
     var _createNode = function (tagName, className, data) {
         var result = document.createElement(tagName);
 
@@ -34,6 +58,14 @@
         return result;
     };
 
+    /**
+     * An ajax query to obtain capabilities and availability of a service.
+     *
+     * param: queryURL - the URL to be queried
+     * param: ct - content type for this query
+     * param: successFunc - callback function on success
+     * param: rowNode - a node containing one table row of status information
+     */
     var _query = function (queryURL, ct, successFunc, rowNode)
     {
       jQuery.ajax({
@@ -57,6 +89,13 @@
       });
     };
 
+    /**
+     * A function which parses the status document and updates 
+     * the availability status of the service.
+     *
+     * param: statusXML - XML document containing service availability status
+     * param: rowNode - a node containing one table row of status information
+     */
     var _processAvailabilityStatus = function(statusXML, rowNode)
     {
       var serviceName = $(rowNode).attr('class');
@@ -74,10 +113,19 @@
       $('#load-' + serviceName).hide();
     };
 
-    var _processServiceCapabilities = function(serviceCapabilities, rowNode)
+    /**
+     * A function which parses the capabilities document, extracts 
+     * the availability url for the service and queries the 
+     * availability of the service based on that url.
+     *
+     * param: serviceCapabilitiesXML - XML document containing the 
+     *        capabilities of a service
+     * param: rowNode - a node containing one table row of status information
+     */
+    var _processServiceCapabilities = function(serviceCapabilitiesXML, rowNode)
     {
       var serviceName = $(rowNode).attr('class');
-      var element = $(serviceCapabilities).find(STANDARD_ID);
+      var element = $(serviceCapabilitiesXML).find(STANDARD_ID);
       var accessURL = $(element).find('accessURL').text();
       $('#load-' + serviceName).show();
       if (accessURL) {
@@ -91,14 +139,27 @@
       }
     };
 
+    /**
+     * A function which iterates through a list of previously stored 
+     * services and queries the availability of each service. This function
+     * schedules itself so that the availability status of each service 
+     * is updated periodically.
+     */
     var _refreshStatus = function ()
     {
       $.each(serviceKVPs, function(url, rowNode) {
         _query(url, XML_CONTENT_TYPE, _processServiceCapabilities, rowNode);
       });
-      setTimeout(_refreshStatus, 180000);
+      setTimeout(_refreshStatus, REFRESH_PERIOD);
     };
 
+    /**
+     * A function to extract the name of a service from the resource-caps
+     * document.
+     *
+     * param: serviceURL - a URL containing the name of the service
+     *        e.g. http://canfar.phys.uvic.ca/ac/capabilities
+     */
     var _extractServiceName = function(serviceURL)
     {
         var head = serviceURL.substring(0, serviceURL.lastIndexOf("/"));
@@ -106,6 +167,13 @@
         return tail; 
     }
    
+    /**
+     * A function to create a node which represents a table cell. 
+     * The node is used to initialize the status table and does not 
+     * contain any status information.
+     * 
+     * param: serviceName - the name of a service, e.g. ac
+     */
     var _createEmptyNode = function(serviceName)
     {
       var rowNode = _createNode("tr", serviceName, "");
@@ -117,6 +185,16 @@
       return rowNode;
     }
 
+    /**
+     * A function which parses the resource-caps document, filters out
+     * the capabilities url of all services relevant to CADC and 
+     * initializes the status table based on these urls.
+     *
+     * param: serviceCapabilities - contains service capabilities URLs for
+     *        all supported services
+     * param: tbodyNode - a node containing all rowNodes of the status 
+     *        table to be displayed
+     */
     var _processCapabilities = function(serviceCapabilities, tbodyNode)
     {
       var refreshed = false;
@@ -129,6 +207,8 @@
               serviceKVPs[urls[1]] = rowNode;
               tbodyNode.appendChild(rowNode);
               if (refreshed===false) {
+                // wait for 10 ms to ensure that serviceKVPs have been 
+                // populated before starting availability status queries 
                 setTimeout(_refreshStatus, 10);
                 refreshed = true;
               }
@@ -139,6 +219,10 @@
       });
     };
 
+    /**
+     * A function to obtain the resource-caps file. This is the main function
+     * to be invoked from outside of this script.
+     */
     this.printStatus = function ()
     {
       var tbodyNode = _createNode("tbody", "tbody", "");
