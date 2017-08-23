@@ -19,8 +19,8 @@
     const XML_CONTENT_TYPE = 'application/xml; charset=utf-8';
     const TEXT_CONTENT_TYPE = 'text/plain; charset=utf-8';
     const STANDARD_ID = '[standardID="ivo://ivoa.net/std/VOSI#availability"]';
-    const RESOURCE_CAPS_URL = "http://demo.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/reg/resource-caps";
-    const CAPS_SERVERS = ["demo.canfar.phys.uvic.ca", "demo.cadc-ccda.hia-iha.nrc-cnrc.gc.ca"];
+    const RESOURCE_CAPS_URL = "http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/reg/resource-caps";
+    const CAPS_SERVERS = ["www.canfar.phys.uvic.ca", "www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca"];
     const REFRESH_PERIOD = 180000; // 180 seconds or 3 minutes
     const IMAGES_DIR = _options.images;
 
