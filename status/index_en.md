@@ -26,7 +26,8 @@ type="application/javascript" src="/js/status.js">
   $(document).ready(function ()
                     {
                       var statusApp = new StatusApp({
-                        "images": "../../images/"
+                        "images": "../../images/",
+                        "resourceCaps": "https://apps.canfar.net/reg/resource-caps"
                       });
 
                       statusApp.printStatus();
