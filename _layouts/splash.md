@@ -75,7 +75,7 @@ layout: default
                 <h3 class="panel-title">{{ t['nodes'].name }} </h3>
               </div>
               <div class="panel-body">
-                {% assign nodes_posts = (site.posts | where: 'category', 'nodes') %}
+                {% assign nodes_posts = site.posts | where: 'category', 'nodes' %}
                 {% for node in site.data.menudata.nodes %}
                 {% capture node_post_url %}{{ t[node].link | prepend: site.baseurl }}{% endcapture %}
                 {% capture node_namespace %}nodes.{{ node }}{% endcapture %}
@@ -94,7 +94,7 @@ layout: default
                 <h3 class="panel-title">{{ t['science'].name }} </h3>
               </div>
               <div class="panel-body">
-                {% assign science_posts = (site.posts | where: 'category', 'science') %}
+                {% assign science_posts = site.posts | where: 'category', 'science' %}
                 {% for post in science_posts limit: 7 %}
                 <div class="media">
                   <div class="media-body">
@@ -119,7 +119,7 @@ layout: default
                 <h3 class="panel-title">{{ translated_services.name }} </h3>
               </div>
               <div class="panel-body">
-                {% assign services_posts = (site.posts | where: 'category', 'services') %}
+                {% assign services_posts = site.posts | where: 'category', 'services' %}
                 {% comment %}Only the first four service posts (latest) are used.{% endcomment %}
                 {% for post in services_posts %}
                 {% assign translated_item = translated_services[post.local_name] %}
