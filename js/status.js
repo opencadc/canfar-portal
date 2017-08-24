@@ -1,28 +1,30 @@
-(function ($, window)
-{
-  // register namespace
+"use strict";
+
+(function ($, window) {
   $.extend(true, window, {
     "StatusApp": StatusApp
-    }
-  );
+  });
 
   /**
    * This application builds and displays a status table constructed from
    * queries to a list of services. Each row in the table contains
    * the status of a service.
    *
-   * param: _options - values to be supplied to this application
+   * @param {{}} _options - values to be supplied to this application
+   * @param {String} [_options.resourceCaps]    Resource caps URL
+   * @param {String} [_options.images]          Images directory
    */
   function StatusApp(_options)
   {
-    var VERSION_PARAM = "?version=" + new Date().getTime();
-    var XML_CONTENT_TYPE = 'application/xml; charset=utf-8';
-    var TEXT_CONTENT_TYPE = 'text/plain; charset=utf-8';
-    var STANDARD_ID = '[standardID="ivo://ivoa.net/std/VOSI#availability"]';
-    var CAPS_SERVERS = ["www.canfar.phys.uvic.ca", "www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca"];
-    var REFRESH_PERIOD = 180000; // 180 seconds or 3 minutes
-    var IMAGES_DIR = _options.images;
-    var RESOURCE_CAPS_URL = _options.resourceCaps;
+    this.versionParam = "?version=" + new Date().getTime();
+    this.xmlContentType = "application/xml; charset=utf-8";
+    this.textContentType = "text/plain; charset=utf-8";
+    this.standardID = "[standardID=\"ivo://ivoa.net/std/VOSI#availability\"]";
+    this.servers = ["www.canfar.phys.uvic.ca", "www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca"];
+    this.refreshPeriod = 180000; // 180 seconds or 3 minutes
+
+    this.imagesDir = _options.images;
+    this.resourceCapsURL = _options.resourceCaps;
 
     /*
      * serviceKVPs contains key/value pairs which map service capabilities URL to 
@@ -37,28 +39,31 @@
      *         <td class="ac-time">Fri, 18 Aug 2017 14:59:06 GMT</td>
      *       </tr>
      */
-    var serviceKVPs = {};
+    this.serviceKVPs = {};
 
-    /*
+    /**
      * A function to create a node which represents a table cell.
      *
      * param: tagName - tag name for the html element in this node
      * param: className - class name to identify the html element in this ndoe
      * param: data - the text data associated with this html element
+     * @private
      */
-    var _createNode = function (tagName, className, data) {
-        var result = document.createElement(tagName);
+    this._createNode = function (tagName, className, data) {
+      var result = document.createElement(tagName);
 
-        result.appendChild(document.createTextNode("" + data));
-        if (className !== "") {
-          result.className = className;
-          if (tagName === "td") {
-            var loadID = "load-" + jQuery.trim(data);
-            $(result).append('<img id="' + loadID + '" src="' + IMAGES_DIR + 'progress_small.gif" />');
-          }
+      result.appendChild(document.createTextNode("" + data));
+      if (className !== "")
+      {
+        result.className = className;
+        if (tagName === "td")
+        {
+          var loadID = "load-" + jQuery.trim(data);
+          $(result).append("<img id=\"" + loadID + "\" src=\"" + this.imagesDir + "progress_small.gif\" />");
         }
+      }
 
-        return result;
+      return result;
     };
 
     /**
@@ -69,93 +74,96 @@
      * param: successFunc - callback function on success
      * param: rowNode - a node containing one table row of status information
      */
-    var _query = function (queryURL, ct, successFunc, rowNode)
-    {
+    this._query = function (queryURL, ct, successFunc, rowNode) {
       $.ajax({
-        url: queryURL+VERSION_PARAM,
-        type: "GET",
-        contentType: ct,
-        jsonp: false,
-        success: function(resultXML) {
-          successFunc(resultXML, rowNode);
-        },
-        error : function(jqXHR, textStatus, errorThrown) {
-          var serviceName = $(rowNode).attr('class');
-          $("." + serviceName + "-available").text(textStatus);
-          $("." + serviceName + "-message").text(errorThrown);
-          $("." + serviceName + "-time").text(new Date().toUTCString());
-          $('#load-' + serviceName).hide();
-        },
-        timeout: 30000, 
-      });
+               url: queryURL + this.versionParam,
+               type: "GET",
+               contentType: ct,
+               jsonp: false,
+               timeout: 10000
+             })
+          .done(function (resultXML) {
+            successFunc.bind(this)(resultXML, rowNode);
+          }.bind(this))
+          .fail(function (jqXHR, textStatus, errorThrown) {
+            var serviceName = $(rowNode).attr("class");
+            $("." + serviceName + "-available").text(textStatus);
+            $("." + serviceName + "-message").text(errorThrown);
+            $("." + serviceName + "-time").text(new Date().toUTCString());
+            $("#load-" + serviceName).hide();
+          });
     };
 
     /**
-     * A function which parses the status document and updates 
+     * A function which parses the status document and updates
      * the availability status of the service.
      *
      * param: statusXML - XML document containing service availability status
      * param: rowNode - a node containing one table row of status information
+     * @private
      */
-    var _processAvailabilityStatus = function(statusXML, rowNode)
-    {
-      var serviceName = $(rowNode).attr('class');
-      var isAvailable = $(statusXML).find('available').text();
-      if (isAvailable==="") {   
+    this._processAvailabilityStatus = function (statusXML, rowNode) {
+      var serviceName = $(rowNode).attr("class");
+      var isAvailable = $(statusXML).find("available").text();
+      if (isAvailable === "")
+      {
         // ==="" on mozilla browser
-        isAvailable = $(statusXML).find('vosi\\:available').text();
+        isAvailable = $(statusXML).find("vosi\\:available").text();
       }
 
-      var note = $(statusXML).find('note').text();
-      if (note==="") {   
+      var note = $(statusXML).find("note").text();
+      if (note === "")
+      {
         // ==="" on mozilla browser
-        note = $(statusXML).find('vosi\\:note').text();
+        note = $(statusXML).find("vosi\\:note").text();
       }
 
       $("." + serviceName + "-available").text(isAvailable);
       $("." + serviceName + "-message").text(note);
       $("." + serviceName + "-time").text(new Date().toUTCString());
-      $('#load-' + serviceName).hide();
+      $("#load-" + serviceName).hide();
     };
 
     /**
-     * A function which parses the capabilities document, extracts 
-     * the availability url for the service and queries the 
+     * A function which parses the capabilities document, extracts
+     * the availability url for the service and queries the
      * availability of the service based on that url.
      *
-     * param: serviceCapabilitiesXML - XML document containing the 
+     * param: serviceCapabilitiesXML - XML document containing the
      *        capabilities of a service
      * param: rowNode - a node containing one table row of status information
+     * @private
      */
-    var _processServiceCapabilities = function(serviceCapabilitiesXML, rowNode)
-    {
-      var serviceName = $(rowNode).attr('class');
-      var element = $(serviceCapabilitiesXML).find(STANDARD_ID);
-      var accessURL = $(element).find('accessURL').text();
-      $('#load-' + serviceName).show();
-      if (accessURL) {
-        _query(accessURL, XML_CONTENT_TYPE, _processAvailabilityStatus, rowNode);
+    this._processServiceCapabilities = function (serviceCapabilitiesXML, rowNode) {
+      var serviceName = $(rowNode).attr("class");
+      var element = $(serviceCapabilitiesXML).find(this.standardID);
+      var accessURL = $(element).find("accessURL").text();
+      $("#load-" + serviceName).show();
+      if (accessURL)
+      {
+        this._query(accessURL, this.xmlContentType, this._processAvailabilityStatus, rowNode);
       }
-      else {
+      else
+      {
         $("." + serviceName + "-available").text("false");
         $("." + serviceName + "-message").text("availability URL is not defined");
         $("." + serviceName + "-time").text(new Date().toUTCString());
-        $('#load-' + serviceName).hide();
+        $("#load-" + serviceName).hide();
       }
     };
 
     /**
-     * A function which iterates through a list of previously stored 
+     * A function which iterates through a list of previously stored
      * services and queries the availability of each service. This function
-     * schedules itself so that the availability status of each service 
+     * schedules itself so that the availability status of each service
      * is updated periodically.
+     *
+     * @private
      */
-    var _refreshStatus = function ()
-    {
-      $.each(serviceKVPs, function(url, rowNode) {
-        _query(url, XML_CONTENT_TYPE, _processServiceCapabilities, rowNode);
-      });
-      setTimeout(_refreshStatus, REFRESH_PERIOD);
+    this._refreshStatus = function () {
+      $.each(this.serviceKVPs, function (url, rowNode) {
+        this._query(url, this.xmlContentType, this._processServiceCapabilities, rowNode);
+      }.bind(this));
     };
 
     /**
@@ -164,75 +172,82 @@
      *
      * param: serviceURL - a URL containing the name of the service
      *        e.g. http://canfar.phys.uvic.ca/ac/capabilities
+     * @private
      */
-    var _extractServiceName = function(serviceURL)
-    {
-        var head = serviceURL.substring(0, serviceURL.lastIndexOf("/"));
-        return head.substring(head.lastIndexOf("/") + 1);
+    this._extractServiceName = function (serviceURL) {
+      var head = serviceURL.substring(0, serviceURL.lastIndexOf("/"));
+      return head.substring(head.lastIndexOf("/") + 1);
     };
-   
+
     /**
-     * A function to create a node which represents a table cell. 
-     * The node is used to initialize the status table and does not 
+     * A function to create a node which represents a table cell.
+     * The node is used to initialize the status table and does not
      * contain any status information.
-     * 
+     *
      * param: serviceName - the name of a service, e.g. ac
+     * @private
      */
-    var _createEmptyNode = function(serviceName)
-    {
-      var rowNode = _createNode("tr", serviceName, "");
+    this._createEmptyNode = function (serviceName) {
+      var rowNode = this._createNode("tr", serviceName, "");
       var paddedServiceName = serviceName + "          ";
-      rowNode.appendChild(_createNode("td", serviceName + "-service", paddedServiceName));
-      rowNode.appendChild(_createNode("td", serviceName + "-available", ""));
-      rowNode.appendChild(_createNode("td", serviceName + "-message", ""));
-      rowNode.appendChild(_createNode("td", serviceName + "-time", ""));
+      rowNode.appendChild(this._createNode("td", serviceName + "-service", paddedServiceName));
+      rowNode.appendChild(this._createNode("td", serviceName + "-available", ""));
+      rowNode.appendChild(this._createNode("td", serviceName + "-message", ""));
+      rowNode.appendChild(this._createNode("td", serviceName + "-time", ""));
       return rowNode;
     };
 
     /**
      * A function which parses the resource-caps document, filters out
-     * the capabilities url of all services relevant to CADC and 
+     * the capabilities url of all services relevant to CADC and
      * initializes the status table based on these urls.
      *
      * param: serviceCapabilities - contains service capabilities URLs for
      *        all supported services
-     * param: tbodyNode - a node containing all rowNodes of the status 
+     * param: tbodyNode - a node containing all rowNodes of the status
      *        table to be displayed
+     * @private
      */
-    var _processCapabilities = function(serviceCapabilities, tbodyNode)
-    {
-      var refreshed = false;
-      $.each(serviceCapabilities.split("\n"), function(index, line) {
-        if (line[0] && line[0] !== "#") {
+    this._processCapabilities = function (serviceCapabilities, tbodyNode) {
+      $.each(serviceCapabilities.split("\n"), function (index, line) {
+        if (line[0] && line[0] !== "#")
+        {
           var urls = line.split("=");
-          for(var capsServer of CAPS_SERVERS) {
-            if (urls[1].indexOf(capsServer) !== -1) {
-              var rowNode = _createEmptyNode(_extractServiceName(urls[1]));
-              serviceKVPs[urls[1]] = rowNode;
+          for (var si = 0, serverLen = this.servers.length; si < serverLen; si++)
+          {
+            var capsServer = this.servers[si];
+            if (urls[1].indexOf(capsServer) !== -1)
+            {
+              var rowNode = this._createEmptyNode(this._extractServiceName(urls[1]));
+              this.serviceKVPs[urls[1]] = rowNode;
               tbodyNode.appendChild(rowNode);
-              if (refreshed===false) {
-                // wait for 10 ms to ensure that serviceKVPs have been 
-                // populated before starting availability status queries 
-                setTimeout(_refreshStatus, 10);
-                refreshed = true;
-              }
-              break;
             }
           }
+
+          this._refreshStatus();
         }
-      });
+      }.bind(this));
     };
 
     /**
      * A function to obtain the resource-caps file. This is the main function
      * to be invoked from outside of this script.
      */
-    this.printStatus = function ()
-    {
-      var tbodyNode = _createNode("tbody", "tbody", "");
-      _query(RESOURCE_CAPS_URL, TEXT_CONTENT_TYPE, _processCapabilities, tbodyNode);
+    this.printStatus = function () {
+      var tbodyNode = this._createNode("tbody", "tbody", "");
+      this._query(this.resourceCapsURL, this.textContentType, this._processCapabilities, tbodyNode);
       $("#status").append(tbodyNode);
+
+      // Set refresh...
+      setInterval(function () {
+        this._refreshStatus();
+      }.bind(this), this.refreshPeriod);
     };
   }
-})(jQuery, window);
 
+  // In case this is imported directly into a page...
+  if (typeof module !== "undefined" && module.exports)
+  {
+    module.exports = StatusApp;
+  }
+})(jQuery, window);
