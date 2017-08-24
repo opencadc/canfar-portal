@@ -15,29 +15,31 @@
    */
   function StatusApp(_options)
   {
-    const VERSION_PARAM = "?version=" + new Date().getTime();
-    const XML_CONTENT_TYPE = 'application/xml; charset=utf-8';
-    const TEXT_CONTENT_TYPE = 'text/plain; charset=utf-8';
-    const STANDARD_ID = '[standardID="ivo://ivoa.net/std/VOSI#availability"]';
-    const CAPS_SERVERS = ["www.canfar.phys.uvic.ca", "www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca"];
-    const REFRESH_PERIOD = 180000; // 180 seconds or 3 minutes
-    const IMAGES_DIR = _options.images;
-    const RESOURCE_CAPS_URL = _options.resourceCaps;
+    var VERSION_PARAM = "?version=" + new Date().getTime();
+    var XML_CONTENT_TYPE = 'application/xml; charset=utf-8';
+    var TEXT_CONTENT_TYPE = 'text/plain; charset=utf-8';
+    var STANDARD_ID = '[standardID="ivo://ivoa.net/std/VOSI#availability"]';
+    var CAPS_SERVERS = ["www.canfar.phys.uvic.ca", "www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca"];
+    var REFRESH_PERIOD = 180000; // 180 seconds or 3 minutes
+    var IMAGES_DIR = _options.images;
+    var RESOURCE_CAPS_URL = _options.resourceCaps;
 
-    // serviceKVPs contains key/value pairs which map service capabilities URL to 
-    // an html element containing a row of status info for a service, e.g.
-    // key=http://canfar.phys.uvic.ca/ac/capabilities
-    // value=<tr class="ac">
-    //         <td class="ac-service">
-    //           ac          
-    //           <img id="load-ac" src="../../images/progress_small.gif"></td>
-    //         <td class="ac-available">true</td>
-    //         <td class="ac-message">/ac is available</td>
-    //         <td class="ac-time">Fri, 18 Aug 2017 14:59:06 GMT</td>
-    //       </tr>
+    /*
+     * serviceKVPs contains key/value pairs which map service capabilities URL to 
+     * an html element containing a row of status info for a service, e.g.
+     * key=http://canfar.phys.uvic.ca/ac/capabilities
+     * value=<tr class="ac">
+     *         <td class="ac-service">
+     *           ac          
+     *           <img id="load-ac" src="../../images/progress_small.gif"></td>
+     *         <td class="ac-available">true</td>
+     *         <td class="ac-message">/ac is available</td>
+     *         <td class="ac-time">Fri, 18 Aug 2017 14:59:06 GMT</td>
+     *       </tr>
+     */
     var serviceKVPs = {};
 
-    /**
+    /*
      * A function to create a node which represents a table cell.
      *
      * param: tagName - tag name for the html element in this node
@@ -48,12 +50,13 @@
         var result = document.createElement(tagName);
 
         result.appendChild(document.createTextNode("" + data));
-        if (className != "")
+        if (className !== "") {
           result.className = className;
-          if (tagName == "td") {
+          if (tagName === "td") {
             var loadID = "load-" + jQuery.trim(data);
             $(result).append('<img id="' + loadID + '" src="' + IMAGES_DIR + 'progress_small.gif" />');
           }
+        }
 
         return result;
     };
@@ -68,7 +71,7 @@
      */
     var _query = function (queryURL, ct, successFunc, rowNode)
     {
-      jQuery.ajax({
+      $.ajax({
         url: queryURL+VERSION_PARAM,
         type: "GET",
         contentType: ct,
@@ -78,8 +81,6 @@
         },
         error : function(jqXHR, textStatus, errorThrown) {
           var serviceName = $(rowNode).attr('class');
-          var isAvailableNode = _createNode("td", "", textStatus);
-          var noteNode = _createNode("td", "", errorThrown);
           $("." + serviceName + "-available").text(textStatus);
           $("." + serviceName + "-message").text(errorThrown);
           $("." + serviceName + "-time").text(new Date().toUTCString());
@@ -100,12 +101,16 @@
     {
       var serviceName = $(rowNode).attr('class');
       var isAvailable = $(statusXML).find('available').text();
-      if (isAvailable=="")    // =="" on mozilla browser
+      if (isAvailable==="") {   
+        // ==="" on mozilla browser
         isAvailable = $(statusXML).find('vosi\\:available').text();
+      }
 
       var note = $(statusXML).find('note').text();
-      if (note=="")    // =="" on mozilla browser
+      if (note==="") {   
+        // ==="" on mozilla browser
         note = $(statusXML).find('vosi\\:note').text();
+      }
 
       $("." + serviceName + "-available").text(isAvailable);
       $("." + serviceName + "-message").text(note);
@@ -163,9 +168,8 @@
     var _extractServiceName = function(serviceURL)
     {
         var head = serviceURL.substring(0, serviceURL.lastIndexOf("/"));
-        var tail = head.substring(head.lastIndexOf("/") + 1);
-        return tail; 
-    }
+        return head.substring(head.lastIndexOf("/") + 1);
+    };
    
     /**
      * A function to create a node which represents a table cell. 
@@ -183,7 +187,7 @@
       rowNode.appendChild(_createNode("td", serviceName + "-message", ""));
       rowNode.appendChild(_createNode("td", serviceName + "-time", ""));
       return rowNode;
-    }
+    };
 
     /**
      * A function which parses the resource-caps document, filters out
@@ -199,10 +203,10 @@
     {
       var refreshed = false;
       $.each(serviceCapabilities.split("\n"), function(index, line) {
-        if (line[0] && line[0] != "#") {
+        if (line[0] && line[0] !== "#") {
           var urls = line.split("=");
-          for(const capsServer of CAPS_SERVERS) {
-            if (urls[1].indexOf(capsServer) != -1) {
+          for(var capsServer of CAPS_SERVERS) {
+            if (urls[1].indexOf(capsServer) !== -1) {
               var rowNode = _createEmptyNode(_extractServiceName(urls[1]));
               serviceKVPs[urls[1]] = rowNode;
               tbodyNode.appendChild(rowNode);
