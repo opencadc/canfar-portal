@@ -127,12 +127,22 @@ condor_status -submitter
 
 </div>
 
-Check the status of your jobs
+Check the status of your jobs in a summarized format:
 
 <div class="shell">
 
 {% highlight bash %}
 condor_q [username]
+{% endhighlight %}
+
+</div>
+
+Or, look at a bit more detail about each task in the queue:
+
+<div class="shell">
+
+{% highlight bash %}
+condor_q [username] -nobatch
 {% endhighlight %}
 
 </div>
