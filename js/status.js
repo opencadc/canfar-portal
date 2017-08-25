@@ -35,7 +35,7 @@
      *           ac          
      *           <img id="load-ac" src="../../images/progress_small.gif"></td>
      *         <td class="ac-available">true</td>
-     *         <td class="ac-message">/ac is available</td>
+     *         <td class="ac-availability">/ac is available</td>
      *         <td class="ac-time">Fri, 18 Aug 2017 14:59:06 GMT</td>
      *       </tr>
      */
@@ -88,7 +88,7 @@
           .fail(function (jqXHR, textStatus, errorThrown) {
             var serviceName = $(rowNode).attr("class");
             $("." + serviceName + "-available").text(textStatus);
-            $("." + serviceName + "-message").text(errorThrown);
+            $("." + serviceName + "-availability").text(errorThrown);
             $("." + serviceName + "-time").text(new Date().toUTCString());
             $("#load-" + serviceName).hide();
           });
@@ -119,7 +119,7 @@
       }
 
       $("." + serviceName + "-available").text(isAvailable);
-      $("." + serviceName + "-message").text(note);
+      $("." + serviceName + "-availability").text(note);
       $("." + serviceName + "-time").text(new Date().toUTCString());
       $("#load-" + serviceName).hide();
     };
@@ -146,7 +146,7 @@
       else
       {
         $("." + serviceName + "-available").text("false");
-        $("." + serviceName + "-message").text("availability URL is not defined");
+        $("." + serviceName + "-availability").text("availability URL is not defined");
         $("." + serviceName + "-time").text(new Date().toUTCString());
         $("#load-" + serviceName).hide();
       }
@@ -192,7 +192,7 @@
       var paddedServiceName = serviceName + "          ";
       rowNode.appendChild(this._createNode("td", serviceName + "-service", paddedServiceName));
       rowNode.appendChild(this._createNode("td", serviceName + "-available", ""));
-      rowNode.appendChild(this._createNode("td", serviceName + "-message", ""));
+      rowNode.appendChild(this._createNode("td", serviceName + "-availability", ""));
       rowNode.appendChild(this._createNode("td", serviceName + "-time", ""));
       return rowNode;
     };
