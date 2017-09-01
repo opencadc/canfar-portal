@@ -150,43 +150,41 @@ python
 
 ## The VOSpace FUSE based file system
 
-One can also access to VOSpace as a filesystem using (vofs)[https://pypi.python.org/pypi/vofs).
-This technique uses a [FUSE](http://en.wikipedia.org/wiki/Filesystem_in_Userspace) layer between file-system actions and the VOSpace storage system. Using the VOFS makes your VOSpace appear like a regular filesystem.
-The **vofs is not recommended for batch processing or i/o heavy applications**.
+One can also access to VOSpace as a filesystem using [vofs](https://pypi.python.org/pypi/vofs).
+This technique uses a [FUSE](http://en.wikipedia.org/wiki/Filesystem_in_Userspace) layer between file-system actions and the VOSpace storage system. Using **vofs** makes your VOSpace appear like a regular filesystem.
+
+**vofs is not recommended for batch processing or i/o heavy applications**
 
 ### Installation
 
-First, follow the instructions for installing *vos*.  Then follow the instructions below.
+First, follow the instructions for installing `vos`.  Then follow the instructions below.
 
 The `vofs` python module is not part of any distribution packages, but it is part of [PyPi](https://pypi.python.org/pypi/vofs).
 
-##### Ubuntu
+#### Linux
 
-You will need to add your accout to the 'fuse' group of users, to be allowed to make filesystem mounts work:
-
-<div class="shell">
-
-{% highlight bash %}
-sudo /usr/sbin/usermod -a  -G fuse `whoami`
-{% endhighlight %}
-
-</div>
-
-
-##### RHEL 5 / CentOS 5 / Scientific Linux 5
-
-These systems donot have fuse installed by default, so you'll need to do that first and then add your account to the fuse group.
+* On some ditros (RHEL 5, CentOS 5, Scientific Linux 5) you may need to add the fuse library:
 
 <div class="shell">
 
 {% highlight bash %}
 sudo yum install fuse fuse-devel
+{% endhighlight %}
+
+</div>
+
+* On all distros you will also need to add your accout to the 'fuse' group of users, to be allowed to make filesystem mounts work:
+
+<div class="shell">
+
+{% highlight bash %}
 sudo /usr/sbin/usermod -a  -G fuse `whoami`
 {% endhighlight %}
 
 </div>
 
-Then instally the **vofs** python module
+
+* Then instally the **vofs** python module
 
 **If you have root or sudo access:**
 
@@ -212,7 +210,9 @@ export PATH="${HOME}/.local/bin:${PATH}"
 
 ##### OS-X
 
-You will need to install [OSX-FUSE](http://osxfuse.github.com/ OSX-FUSE) first (you will need to install this package in 'MacFUSE Compatibility' mode, there is a selection box for this during the install) and then follow the instructions for installing the mountvofs python package (see below).
+* Install [OSX-FUSE](http://osxfuse.github.com/) first (you will need to install this package in 'MacFUSE Compatibility' mode, there is a selection box for this during the install).
+
+* Install the `vofs` python package:
 
 <div class="shell">
 
@@ -222,7 +222,7 @@ sudo pip install vofs
 
 </div>
 
-On some OS-X installations the mountvofs command will result in an error like 'libfuse.dylib' not found. Setting the environment variable `DYLD_FALLBACK_LIBRARY_PATH` can help resolve this issue:
+* On some OS-X installations the mountvofs command will result in an error like 'libfuse.dylib' not found. Setting the environment variable `DYLD_FALLBACK_LIBRARY_PATH` can help resolve this issue:
 
 <div class="shell">
 
@@ -233,7 +233,9 @@ export DYLD_FALLBACK_LIBRARY_PATH=/usr/local/lib
 </div>
 
 
-#### After installing vofs you can mount all available VOSpaces use the command:
+#### Usage
+
+* Mount all available VOSpaces:
 
 <div class="shell">
 
@@ -245,7 +247,19 @@ mountvofs
 
 Now looking in `/tmp/vospace` you should see a listing of all available VOSpaces that you have read access.
 
-To mount a specific VOSpace use commands like:
+* Unmount the VOSpace:
+
+<div class="shell">
+
+{% highlight bash %}
+fusermount -u /tmp/vospace   # Linux
+umount /tmp/vospace          # OS-X
+{% endhighlight %}
+
+</div>
+
+
+* Mount a specific VOSpace:
 
 <div class="shell">
 
@@ -255,28 +269,19 @@ mountvofs --vospace vos:USER --mountpoint /path/to/a/directory
 
 </div>
 
-
 The `mountvofs` command creates a cache directory where local copies of files from the VOSpace are kept, as needed. If the cached version is older than the copy on VOSpace then a new version is pulled. You can specify the size of the cache (default is 50 GBytes) and the location (default is `${HOME}/vos:USER`) on the command line.
 
 When a file is opened in a mounted directory, mountvofs gets the remote copy from VOspace, if the local copy is out of date. When the file is written to disk and closed, the VOSpace file system puts the file back into VOspace.  With most science software, these operations typically occur rarely and the illusion of a local disk is maintained.  Most editors, however, tend to write temporary versions of a file frequently.  In this case, the file is frequently written to VOspace. Performance may suffer in this case, or not even being compatible with the application.
+
+* Options
+
+There are many options that can help improve your vofs experience (in particular vofs is most useful in --readonly mode).
+To see all the possible options use the --help flag.
 
 <div class="shell">
 
 {% highlight bash %}
 mountvofs --help
-{% endhighlight %}
-
-</div>
-
-for more details.
-
-To unmount the VOSpace, use the following command:
-
-<div class="shell">
-
-{% highlight bash %}
-fusermount -u /path/to/a/directory   # Linux
-umount /path/to/a/directory          # OS-X
 {% endhighlight %}
 
 </div>
