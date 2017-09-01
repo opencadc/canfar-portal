@@ -191,7 +191,7 @@ sudo /usr/sbin/usermod -a  -G fuse `whoami`
 <div class="shell">
 
 {% highlight bash %}
-sudo pip install -U vos
+sudo pip install -U vofs
 {% endhighlight %}
 
 </div>
@@ -201,7 +201,7 @@ sudo pip install -U vos
 <div class="shell">
 
 {% highlight bash %}
-pip install --user -U vos
+pip install --user -U vofs
 export PATH="${HOME}/.local/bin:${PATH}"
 {% endhighlight %}
 
