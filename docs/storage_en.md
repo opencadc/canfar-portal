@@ -8,11 +8,16 @@ permalink: /en/docs/storage/
 
 ## Introduction
 
-VOSpace is the CANFAR storage system , an implementation of	the [Virtual Observatory Specification](http://www.ivoa.net/Documents/VOSpace/). It is intended to be used for storing the output of the CANFAR processing system and also for sharing files between members of a collaboration. If the data you want to process is not already on a CADC archive, you can stage it on a VOSpace for further processing. Files in VOSpace are mirrored in four physical locations, so they are secure against disk failure.
+VOSpace is the CANFAR storage system , an implementation of	the [Virtual Observatory Specification](http://www.ivoa.net/Documents/VOSpace/).
+It is intended to be used for storing the output of the CANFAR processing system and also for sharing files between members of a collaboration.
+If the data you want to process is not already on a CADC archive, you can stage it on a VOSpace for further processing. Files in VOSpace are mirrored in four physical locations, so they are secure against disk failure.
 
 You will need to [register](http://apps.canfar.net/canfar/auth/request.html).
 
-There are two ways to interact with VOspace. The first is with your browser via the web user interface. The web interface is familiar for most people to use and interactive. To access your VOSpace in scripts, a command line client is available.
+There are two ways to interact with VOspace. The first is with your browser via the [web user interface](http://apps.canfar.net/storage/list).
+The web interface is familiar for most people to use and interactive.
+To access your VOSpace in scripts, the Python based [vos](https://pypi.python.org/pypi/vos) modules and command line clients are available.
+Some users might also find the VOSpace filesystem [vofs](https://pypi.python.org/pypi/vofs), the FS view is based on FUSE and not recommended for serious data processing, but does provide a convenient interactive interface for exploring a respository.
 
 ## The web user interface
 
@@ -24,7 +29,7 @@ The web user interface should be fairly easy to use. The only part that is not c
 - To delete files, tick off their boxes and click on **Delete**.
 - To set permissions on files tick off their boxes and click on **Set Permissions**.
 
-## The command line client
+## The *vos* Python module and *nix command line client
 
 The VOspace can also be accessed via some commands on a terminal or a script. They are part of the [vos](https://github.com/canfar/vos) command line client.
 
@@ -41,11 +46,12 @@ The `vos` command line client is most likely not part of any Linux distribution 
 <div class="shell">
 
 {% highlight bash %}
-# If you have root or sudo access:
+**If you have root or sudo access:**
+
 sudo apt install python-pip
 sudo pip install -U vos
 
-# If you don't have root or sudo access (but you still need pip):
+**If you don't have root or sudo access (but you still need pip):**
 pip install --user -U vos
 export PATH="${HOME}/.local/bin:${PATH}"
 
@@ -55,13 +61,13 @@ export PATH="${HOME}/.local/bin:${PATH}"
 
 #### RHEL 5 / CentOS 5 / Scientific Linux 5
 
-The default Python version on these antique distributions is Python 2.4, so you need to install dependencies and Python 2.6:
+The default Python version on these antique distributions is Python 2.4,
+so you need to install dependencies and Python 2.6:
 
 <div class="shell">
 
 {% highlight bash %}
-sudo yum install python26 python26-distribute fuse fuse-devel
-sudo /usr/sbin/usermod -a  -G fuse `whoami`
+sudo yum install python26 python26-distribute
 {% endhighlight %}
 
 </div>
@@ -78,27 +84,16 @@ sudo easy_install-2.6 -U vos
 
 #### OS-X
 
-You will need to install [OSX-FUSE](http://osxfuse.github.com/ OSX-FUSE) first (you will need to install this package in 'MacFUSE Compatibility' mode, there is a selection box for this during the install) and then follow the instructions for installing the mountvofs python package (see below).
+We recommend that for OS-X you have installed a non-system version of Python.  (Anaconda)[http://anaconda.org] is recommended, and (astroconda)[https://astroconda.readthedocs.io/en/latest/#] is particularly useful.
+Once you have a working version of Python installed you can install **vos** using pip.
 
 <div class="shell">
-
 {% highlight bash %}
-sudo easy_install vos
+pip install vos -U
 {% endhighlight %}
-
 </div>
 
-On some OS-X installations the mountvofs command will result in an error like 'libfuse.dylib' not found. Setting the environment variable `DYLD_FALLBACK_LIBRARY_PATH` can help resolve this issue:
-
-<div class="shell">
-
-{% highlight bash %}
-export DYLD_FALLBACK_LIBRARY_PATH=/usr/local/lib
-{% endhighlight %}
-
-</div>
-
-### Using the VOSpace client command line tools (recommended)
+### Using the client command line tools (recommended)
 
 Try the following commands, substituting your CANFAR VOSpace in for VOSPACE (most CANFAR users have VOSpace that is the same name as their CANFAR user name. There are also project VOSpaces):
 
@@ -139,11 +134,106 @@ vchmod g+w vos:VOSPACE/foo/bar.txt 'GROUP1, GROUP2, GROUP3'
 
 Details on these commands can be found via the `--help` option, e.g. `vls --help`. And if you want to see a more verbose output, try `vls -v vos:USER`.  Currently the following commands are defined: `vcat` `vchmod` `vcp` `vln` `vlock` `vls` `vmkdir` `vmv` `vrm` `vrmdir` `vsync`  `vtag`
 
-### Using the VOSpace FUSE file system (experimental)
+### Using the **vos** python module directly
 
-One can also access to VOSpace as a filesystem. This technique uses a [FUSE](http://en.wikipedia.org/wiki/Filesystem_in_Userspace) layer between file-system actions and the VOSpace storage system. Using the VOFS makes your VOSpace appear like a regular filesystem.
+There is documentation built into the libary `pydoc vos`.  Here we provide a very basic example usage.
 
-To mount all available VOSpaces use the command:
+<div class="shell">
+{% highlight bash %}
+python
+>>> from vos import Client
+>>> directory_listing = Client().listdir('vos:MyVOSpace')
+>>> Client().copy('vos:MyVOSpace/Filename', '/local/filename')
+{% endhighlight %}
+</div>
+
+
+## The VOSpace FUSE based file system
+
+One can also access to VOSpace as a filesystem using (vofs)[https://pypi.python.org/pypi/vofs).
+This technique uses a [FUSE](http://en.wikipedia.org/wiki/Filesystem_in_Userspace) layer between file-system actions and the VOSpace storage system. Using the VOFS makes your VOSpace appear like a regular filesystem.
+The **vofs is not recommended for batch processing or i/o heavy applications**.
+
+### Installation
+
+First, follow the instructions for installing *vos*.  Then follow the instructions below.
+
+The `vofs` python module is not part of any distribution packages, but it is part of [PyPi](https://pypi.python.org/pypi/vofs).
+
+##### Ubuntu
+
+You will need to add your accout to the 'fuse' group of users, to be allowed to make filesystem mounts work:
+
+<div class="shell">
+
+{% highlight bash %}
+sudo /usr/sbin/usermod -a  -G fuse `whoami`
+{% endhighlight %}
+
+</div>
+
+
+##### RHEL 5 / CentOS 5 / Scientific Linux 5
+
+These systems donot have fuse installed by default, so you'll need to do that first and then add your account to the fuse group.
+
+<div class="shell">
+
+{% highlight bash %}
+sudo yum install fuse fuse-devel
+sudo /usr/sbin/usermod -a  -G fuse `whoami`
+{% endhighlight %}
+
+</div>
+
+Then instally the **vofs** python module
+
+**If you have root or sudo access:**
+
+<div class="shell">
+
+{% highlight bash %}
+sudo pip install -U vos
+{% endhighlight %}
+
+</div>
+
+**If you don't have root or sudo access (but you still need pip):**
+
+<div class="shell">
+
+{% highlight bash %}
+pip install --user -U vos
+export PATH="${HOME}/.local/bin:${PATH}"
+{% endhighlight %}
+
+</div>
+
+
+##### OS-X
+
+You will need to install [OSX-FUSE](http://osxfuse.github.com/ OSX-FUSE) first (you will need to install this package in 'MacFUSE Compatibility' mode, there is a selection box for this during the install) and then follow the instructions for installing the mountvofs python package (see below).
+
+<div class="shell">
+
+{% highlight bash %}
+sudo pip install vofs
+{% endhighlight %}
+
+</div>
+
+On some OS-X installations the mountvofs command will result in an error like 'libfuse.dylib' not found. Setting the environment variable `DYLD_FALLBACK_LIBRARY_PATH` can help resolve this issue:
+
+<div class="shell">
+
+{% highlight bash %}
+export DYLD_FALLBACK_LIBRARY_PATH=/usr/local/lib
+{% endhighlight %}
+
+</div>
+
+
+#### After installing vofs you can mount all available VOSpaces use the command:
 
 <div class="shell">
 
