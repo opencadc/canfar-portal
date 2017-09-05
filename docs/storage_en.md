@@ -84,7 +84,7 @@ sudo easy_install-2.6 -U vos
 
 #### OS-X
 
-We recommend that for OS-X you have installed a non-system version of Python.  (Anaconda)[http://anaconda.org] is recommended, and (astroconda)[https://astroconda.readthedocs.io/en/latest/#] is particularly useful.
+We recommend that for OS-X you have installed a non-system version of Python.  [Anaconda](http://anaconda.org) is recommended, and [astroconda](https://astroconda.readthedocs.io/en/latest/#) is particularly useful.
 Once you have a working version of Python installed you can install **vos** using pip.
 
 <div class="shell">
