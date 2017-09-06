@@ -291,21 +291,11 @@ getCert
 
 </div>
 
-In batch processing, you might want to use the getCert at the start of every job. To avoid interactivity asking for your CANFAR username/password, add a `$HOME/.netrc` file containing these lines:
+### Using on your batch processing VM
 
-<div class="shell">
+In batch processing you might require that the cadcproxy certificate is available on your batch VM.  There are two approaches:
 
-{% highlight bash %}
-machine www.canfar.phys.uvic.ca USER password PASSWORD
-{% endhighlight %}
-and do:
-{% highlight bash %}
-chmod 600 $HOME/.netrc
-{% endhighlight %}
-</div>
-
-*WARNING: this is not a fully secure solution.*
-A more secure process is to copy your proxy certifact to your VM at the start of each condor batch job.
+#### Secure but slightly complicated
 
 - On the CANFAR batch submission host, batch.canfar.net, run the command getCert.
 
@@ -338,5 +328,25 @@ transfer_input_files = cadcproxy.pem
 mv cadcproxy.pem ${HOME}/.ssl/
 {% endhighlight %}
 </div>
+
+
+#### Insecure but slight less complicated
+
+Use the getCert at the start of every job.  To avoid getCert from
+asking for your CANFAR username/password, add a `$HOME/.netrc` file containing these lines:
+
+<div class="shell">
+
+{% highlight bash %}
+machine www.canfar.phys.uvic.ca USER password PASSWORD
+{% endhighlight %}
+and do:
+{% highlight bash %}
+chmod 600 $HOME/.netrc
+{% endhighlight %}
+</div>
+
+*WARNING: this is not a fully secure solution.*
+
 
 
