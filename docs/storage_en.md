@@ -29,7 +29,7 @@ The web user interface should be fairly easy to use. The only part that is not c
 - To delete files, tick off their boxes and click on **Delete**.
 - To set permissions on files tick off their boxes and click on **Set Permissions**.
 
-## The *vos* Python module and *nix command line client
+## The *vos* Python module and command line client
 
 The VOspace can also be accessed via some commands on a terminal or a script. They are part of the [vos](https://github.com/canfar/vos) command line client.
 
@@ -39,14 +39,14 @@ Below are the installation steps.  (NOTE:  `vos` is installed on the CANFAR batc
 
 Steps:
 - Ensure Python is up-to-date
-- Install the `vos` module using `pip`
+- Install the `vos` module using `pip` or `easy_install`
 
 
 #### Python
 
-For Python we recommend that users download and install the [Anaconda](https://www.anaconda.com/download/#download) Python distribution,  and the [astroconda](https://astroconda.readthedocs.io/en/latest/#) channel is particularly useful..  The `vos` and `vofs` packages have been extensively tested with this variant of python.  Regardless, you will need a least Python 2.7.2.
+For Python we recommend that users download and install the [Anaconda](https://www.anaconda.com/download/#download) Python distribution,  and the [astroconda](https://astroconda.readthedocs.io/en/latest/#) channel is particularly useful.  The `vos` package has been extensively tested with this python distribution.  Regardless, you will need a least Python 2.7.2, `vos` also works with Python-3.4 and higher.
 
-#### pip
+#### pip / easy_install
 
 The `vos` command line client is part of [PyPi](https://pypi.python.org/pypi/vos).
 PyPI packages can be installed using either `pip` (recommend) or `easy_install` depending on your Python distribution.
@@ -84,10 +84,10 @@ Try the following commands, substituting your CANFAR VOSpace in for VOSPACE (mos
 <div class="shell">
 
 {% highlight bash %}
-# lists the contents to the root directory of VOSPACE
-vls vos:VOSPACE
+# lists the contents to the root directory of the entire VOSpace system
+vls vos:
 
-# copies the bar file to the root node of VOSPACE
+# copies the bar file from the local disk to the root node of VOSPACE
 vcp ${HOME}/bar vos:VOSPACE
 
 # wildcards also work
@@ -96,27 +96,37 @@ vcp vos:VOSPACE/foo/*.txt .
 # Our you can do FITS cutouts at the service side
 vcp vos:VOSPACE/image.fits[1:100,1:100] .
 
-# removes the bar file from VOSPACE
+# remove the bar file from VOSPACE
 vrm vos:VOSPACE/foo
 
-# creates a new container node (directory) called foo in VOSPACE
+# create a new container node (directory) called foo in VOSPACE
 vmkdir vos:VOSPACE/bar
 
-# moves the file bar into the container node foo
+# move the file bar into the container node foo
 vmv vos:VOSPACE/bar vos:VOSPACE/foo/
 
-# changes the name of file bar to bar2 on the VOSpace
+# change the name of file bar to bar2 in VOSPACE
 vmv vos:VOSPACE/foo/bar vos:VOSPACE/foo/bar2
 
-# provide group write permission on a VOSpace location (can be a dirtory or file). Can due up-to 4 groups
+# provide group write permission on a VOSpace location (can be a directory or file). Up-to 4 groups can be given assigned permission.
 vchmod g+w vos:VOSPACE/foo/bar.txt 'GROUP1, GROUP2, GROUP3'
 
-# For a list of GROUP names visit the [Group Managemnet Service](http://www.canfar.phys.uvic.ca/canfar/groups/)
+# List of GROUP names is availabe from the [Group Managemnet Service](http://www.canfar.phys.uvic.ca/canfar/groups/)
 {% endhighlight %}
 
 </div>
 
-Details on these commands can be found via the `--help` option, e.g. `vls --help`. And if you want to see a more verbose output, try `vls -v vos:USER`.  Currently the following commands are defined: `vcat` `vchmod` `vcp` `vln` `vlock` `vls` `vmkdir` `vmv` `vrm` `vrmdir` `vsync`  `vtag`
+Details on these commands can be found via the `--help` option, e.g. `vls --help`. And if you want to see a more verbose output, try `vls -v vos:VOSPACE`.
+
+The following commands are defined: `vcat` `vchmod` `vcp` `vln` `vlock` `vls` `vmkdir` `vmv` `vrm` `vrmdir` `vsync`  `vtag`
+
+Help on these commands can also be found using `pydoc`
+
+<div class="shell">
+{% highlight bash %}
+pydoc vos.comamnds
+{% endhighlight %}
+</div>
 
 ### Using the **vos** python module directly
 
@@ -134,18 +144,19 @@ python
 
 ## The VOSpace FUSE based file system
 
-One can also access to VOSpace as a filesystem using [vofs](https://pypi.python.org/pypi/vofs).
+VOSpace can also be accessed as a remote filesystem using the [vofs](https://pypi.python.org/pypi/vofs) python module.
 This technique uses a [FUSE](http://en.wikipedia.org/wiki/Filesystem_in_Userspace) layer between file-system actions and the VOSpace storage system. Using **vofs** makes your VOSpace appear like a regular filesystem.
 
 **vofs is not recommended for batch processing or i/o heavy applications**
 
 ### Installation
 
-First, follow the instructions for installing `vos`.  Then follow the instructions below.
+ - Follow the instructions for installing `vos`.  Then follow the instructions below.
+ - Install the FUSE system extention (seperate instructions for Linux and OS-X)
+ - install the `vofs` python module.
 
-The `vofs` python module is not part of any distribution packages, but it is part of [PyPi](https://pypi.python.org/pypi/vofs).
-
-#### Linux
+#### FUSE
+##### Linux
 
 * On some ditros (RHEL 5, CentOS 5, Scientific Linux 5) you may need to add the fuse library:
 
@@ -157,7 +168,7 @@ sudo yum install fuse fuse-devel
 
 </div>
 
-* On all distros you will also need to add your accout to the 'fuse' group of users, to be allowed to make filesystem mounts work:
+* On all distros you will also need to add your account to the 'fuse' group of users, to be allowed to make filesystem mounts work:
 
 <div class="shell">
 
@@ -167,41 +178,42 @@ sudo /usr/sbin/usermod -a  -G fuse `whoami`
 
 </div>
 
-
-* Then instally the **vofs** python module
-
-**If you have root or sudo access:**
-
-<div class="shell">
-
-{% highlight bash %}
-sudo pip install -U vofs
-{% endhighlight %}
-
-</div>
-
-**If you don't have root or sudo access (but you still need pip):**
-
-<div class="shell">
-
-{% highlight bash %}
-pip install --user -U vofs
-export PATH="${HOME}/.local/bin:${PATH}"
-{% endhighlight %}
-
-</div>
-
-
 ##### OS-X
 
 * Install [OSX-FUSE](http://osxfuse.github.com/) first (you will need to install this package in 'MacFUSE Compatibility' mode, there is a selection box for this during the install).
 
-* Install the `vofs` python package:
+
+#### vofs
+
+The `vofs` python module is dtributed via [PyPi](https://pypi.python.org/pypi/vofs).
+
+
+
+<div class="shell">
+{% highlight bash %}
+# If you have an anaconda install
+pip install -U vofs
+{% endhighlight %}
+</div>
+
+
+<div class="shell">
+# If you don't have anaconda (but you still need pip):
+{% highlight bash %}
+pip install --user -U vofs
+# You might need to add the install area to your path
+export PATH="${HOME}/.local/bin:${PATH}"
+{% endhighlight %}
+</div>
+
+#### Usage
+
+* Mount all available VOSpaces:
 
 <div class="shell">
 
 {% highlight bash %}
-sudo pip install vofs
+mountvofs
 {% endhighlight %}
 
 </div>
@@ -217,19 +229,15 @@ export DYLD_FALLBACK_LIBRARY_PATH=/usr/local/lib
 </div>
 
 
-#### Usage
+Now looking in `/tmp/vospace` you should see a listing of all available VOSpaces that you have read access.
 
-* Mount all available VOSpaces:
+* List the root of vospace
 
 <div class="shell">
-
-{% highlight bash %}
-mountvofs
+{% highligh bash %}
+ls /tmp/vospace
 {% endhighlight %}
-
 </div>
-
-Now looking in `/tmp/vospace` you should see a listing of all available VOSpaces that you have read access.
 
 * Unmount the VOSpace:
 
@@ -273,7 +281,7 @@ mountvofs --help
 
 ### Retrieving your CANFAR X509 certificates
 
-To access a VOSpace, the command line client needs a certificate. These certificates are created for you when you request an account, and you can get a short-lived proxy of this certificate to access your data with the "getCert" command line, distributed with the vos client:
+To access a VOSpace, the command line client needs a certificate. These certificates are created for you when you request an account, and you can get a short-lived proxy of this certificate to access your data with the `getCert` command line, distributed with the cadc-utils library that was automatically installed as part of the `vos` installation process above.
 
 <div class="shell">
 
@@ -296,4 +304,39 @@ chmod 600 $HOME/.netrc
 {% endhighlight %}
 </div>
 
-WARNING: this is not a fully secure solution.
+*WARNING: this is not a fully secure solution.*
+A more secure process is to copy your proxy certifact to your VM at the start of each condor batch job.
+
+- On the CANFAR batch submission host, batch.canfar.net, run the command getCert.
+
+<div class="shell">
+ {% highlight bash %}
+getCert
+{% endhighlight %}
+</div>
+
+- Copy the file .ssl/cadcproxy.pem to the directory where you are submitting your jobs from.
+
+<div class="shell">
+ {% highlight bash %}
+cp ${HOME}/.ssl/cadcproxy.pem .
+{% endhighlight %}
+</div>
+
+
+- Add cadcproxy.pem to the list of files to transfer when the job executes (this is the done by adding these lines your submission file).
+
+<div class="shell">
+should_transfer_files = YES
+transfer_input_files = cadcproxy.pem
+</div>
+
+ - Add this line to the start of your batch script
+
+ <div class="shell">
+ {% highlight bash %}
+mv cadcproxy.pem ${HOME}/.ssl/
+{% endhighlight %}
+</div>
+
+
