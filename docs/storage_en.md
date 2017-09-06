@@ -35,28 +35,33 @@ The VOspace can also be accessed via some commands on a terminal or a script. Th
 
 ### Installation
 
-#### CANFAR computers and VMs
+Below are the installation steps.  (NOTE:  `vos` is installed on the CANFAR batch host)
 
-The latest version of the vos command line client should be already installed on the CANFAR login host and all the template VMs. If not, either file a bug. You can also install it yourself following the docs below.
+Steps:
+- Ensure Python is up-to-date
+- Install the `vos` module using `pip`
+
 
 #### Python
 
-For Python we recommend that users download and install the [Anaconda](https://www.anaconda.com/download/#download) Python distribution.  The `vos` and `vofs` packages have been extensively tested with this variant of python.  Regardless, you will need a least Python 2.7.2.
+For Python we recommend that users download and install the [Anaconda](https://www.anaconda.com/download/#download) Python distribution,  and the [astroconda](https://astroconda.readthedocs.io/en/latest/#) channel is particularly useful..  The `vos` and `vofs` packages have been extensively tested with this variant of python.  Regardless, you will need a least Python 2.7.2.
 
-#### PyPI based install.
+#### pip
 
-The `vos` command line client is most likely not part of any Linux distribution packages, but it is part of [PyPi](https://pypi.python.org/pypi/vos). You then to install a Python installer such as PIP or easy_install.  PyPI packages can be installed using either `pip` (recommend) or `easy_install` depending on your Python distribution.
-Once you have a recent version of Python installed the `pip` tool is the most direct way to install `vos`.
+The `vos` command line client is part of [PyPi](https://pypi.python.org/pypi/vos).
+PyPI packages can be installed using either `pip` (recommend) or `easy_install` depending on your Python distribution.
 
+If you have a recent distribution of Python (eg. anaconda) installed the `pip` tool is the most direct way to install `vos`.
 
 <div class="shell">
 
 {% highlight bash %}
-**If you have root or sudo access:**
-sudo pip install -U vos
+# anaconda install
+pip install -U vos
 
-**If you don't have root or sudo access (but you still need pip):**
+# If you didn't use anaconda a user install is required (you still need pip):
 pip install --user -U vos
+# You might also need to update your path:
 export PATH="${HOME}/.local/bin:${PATH}"
 {% endhighlight %}
 </div>
@@ -71,17 +76,6 @@ sudo easy_install -U vos
 
 </div>
 
-#### OS-X
-
-As with Linux, we recommend installing a non-system version of Python.
-[Anaconda](http://anaconda.org) is recommended, and [astroconda](https://astroconda.readthedocs.io/en/latest/#) is particularly useful.
-Once you have a working version of Python installed you can install **vos** using pip.
-
-<div class="shell">
-{% highlight bash %}
-pip install vos -U
-{% endhighlight %}
-</div>
 
 ### Using the client command line tools (recommended)
 
