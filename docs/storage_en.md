@@ -39,52 +39,42 @@ The VOspace can also be accessed via some commands on a terminal or a script. Th
 
 The latest version of the vos command line client should be already installed on the CANFAR login host and all the template VMs. If not, either file a bug. You can also install it yourself following the docs below.
 
-#### Linux based systems (fairly recent)
+#### Python
 
-The `vos` command line client is most likely not part of any Linux distribution packages, but it is part of [PyPi](https://pypi.python.org/pypi/vos). You then to install a Python installer such as PIP or easy_install. It is usually called `pip` or `python-pip` depending on your distribution. Example on Ubuntu:
+For Python we recommend that users download and install the [Anaconda](https://www.anaconda.com/download/#download) Python distribution.  The `vos` and `vofs` packages have been extensively tested with this variant of python.  Regardless, you will need a least Python 2.7.2.
+
+#### PyPI based install.
+
+The `vos` command line client is most likely not part of any Linux distribution packages, but it is part of [PyPi](https://pypi.python.org/pypi/vos). You then to install a Python installer such as PIP or easy_install.  PyPI packages can be installed using either `pip` (recommend) or `easy_install` depending on your Python distribution.
+Once you have a recent version of Python installed the `pip` tool is the most direct way to install `vos`.
+
 
 <div class="shell">
 
 {% highlight bash %}
 **If you have root or sudo access:**
-
-sudo apt install python-pip
 sudo pip install -U vos
 
 **If you don't have root or sudo access (but you still need pip):**
 pip install --user -U vos
 export PATH="${HOME}/.local/bin:${PATH}"
-
 {% endhighlight %}
-
 </div>
 
-#### RHEL 5 / CentOS 5 / Scientific Linux 5
-
-The default Python version on these antique distributions is Python 2.4,
-so you need to install dependencies and Python 2.6:
+If you don't have `pip` installed with your Python distribution you can attempt to use `easy_install`:
 
 <div class="shell">
 
 {% highlight bash %}
-sudo yum install python26 python26-distribute
-{% endhighlight %}
-
-</div>
-
-Then install or update the vos client on Python 2.6:
-
-<div class="shell">
-
-{% highlight bash %}
-sudo easy_install-2.6 -U vos
+sudo easy_install -U vos
 {% endhighlight %}
 
 </div>
 
 #### OS-X
 
-We recommend that for OS-X you have installed a non-system version of Python.  [Anaconda](http://anaconda.org) is recommended, and [astroconda](https://astroconda.readthedocs.io/en/latest/#) is particularly useful.
+As with Linux, we recommend installing a non-system version of Python.
+[Anaconda](http://anaconda.org) is recommended, and [astroconda](https://astroconda.readthedocs.io/en/latest/#) is particularly useful.
 Once you have a working version of Python installed you can install **vos** using pip.
 
 <div class="shell">
