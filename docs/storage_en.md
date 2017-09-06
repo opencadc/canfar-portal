@@ -234,7 +234,7 @@ Now looking in `/tmp/vospace` you should see a listing of all available VOSpaces
 * List the root of vospace
 
 <div class="shell">
-{% highligh bash %}
+{% highlight bash %}
 ls /tmp/vospace
 {% endhighlight %}
 </div>
@@ -336,7 +336,6 @@ Use the getCert at the start of every job.  To avoid getCert from
 asking for your CANFAR username/password, add a `$HOME/.netrc` file containing these lines:
 
 <div class="shell">
-
 {% highlight bash %}
 machine www.canfar.phys.uvic.ca USER password PASSWORD
 {% endhighlight %}
