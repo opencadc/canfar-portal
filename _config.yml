@@ -4,5 +4,5 @@ permalink: /news/:year/:month/:day/:title/
 relative_permalinks: false
 markdown: kramdown
 future: true
-github:
-  repository_url: 'https://github.com/canfar/canfar.github.io'
+github_url: 'https://github.com/canfar/canfar.github.io'
+repository: 'canfar/canfar.github.io'

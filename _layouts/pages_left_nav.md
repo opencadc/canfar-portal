@@ -19,7 +19,7 @@ layout: default
             Useful to make use of the space beside the 'Improve this page' link.
           {% endcomment %}
           <h2 {% if page.no-wrap == true %}style="display: inline-block;"{% endif %}><a id="canfar-beta" class="anchor" href="#canfar-beta" aria-hidden="true">
-                <span aria-hidden="true" class="octicon octicon-link"></span></a>{{ child_item.name }} <a class="btn btn-sm btn-warning" href="{{site.github.repository_url}}/blob/gh-pages/{{page.path}}">
+                <span aria-hidden="true" class="octicon octicon-link"></span></a>{{ child_item.name }} <a class="btn btn-sm btn-warning" href="{{site.github_url}}/blob/gh-pages/{{page.path}}">
                 <span class="glyphicon glyphicon-pencil"></span> Improve this page</a></h2>
           {{ content }}
         </section>
