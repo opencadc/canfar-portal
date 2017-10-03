@@ -19,17 +19,16 @@ permalink: /en/status/
 <!-- Content ends -->
 
 {% include _page_footer.html %}
-<script
-type="application/javascript" src="/js/status.js">
+<script type="application/javascript" src="http://www.canfar.net/js/status.js">
 </script>
 <script type="application/javascript">
   $(document).ready(function ()
                     {
+                      $('head').append('<link href="http://www.canfar.net/css/status.css" rel="stylesheet" media="screen">');
                       var statusApp = new StatusApp({
-                        "images": "../../images/",
-                        "resourceCaps": "https://apps.canfar.net/reg/resource-caps"
+                        'resourceCapsURL': 'https://apps.canfar.net/reg/resource-caps'
                       });
 
-                      statusApp.printStatus();
+                      statusApp.start();
                     });
 </script>

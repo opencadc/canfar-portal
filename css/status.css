@@ -1,0 +1,23 @@
+/*  Table data for status. */
+table.table-status {
+  font-size: 12px;
+  min-height: 100px
+}
+
+table.table-status > tbody > tr {
+  background: #eee;
+}
+
+table.table-status > thead > tr {
+  background-color: #c2c2c2;
+  color: #000;
+}
+
+table.table-status > tbody > tr > td:first-child {
+  font-weight: bolder;
+}
+
+table.table-status > tbody > tr.loading, .loading {
+  background: url('http://www.canfar.net/images/progress_small.gif') center no-repeat;
+  opacity: 0.2;
+}
