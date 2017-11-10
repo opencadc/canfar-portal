@@ -5,4 +5,8 @@ relative_permalinks: false
 markdown: kramdown
 future: true
 github_url: 'https://github.com/canfar/canfar.github.io'
+twitter_url: 'https://twitter.com/astro_canfar'
+slack_url: '/slack'
 repository: 'canfar/canfar.github.io'
+plugins:
+  - jekyll-redirect-from

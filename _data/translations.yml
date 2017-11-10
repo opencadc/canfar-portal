@@ -2,6 +2,9 @@ en:
   support:
     name: 'email'
     link: 'support@canfar.net'
+  slack:
+    name: 'Slack Channel'
+    link: '/slack/'
   login:
     name: 'Login'
     link: '/ac/login'
@@ -240,6 +243,9 @@ fr:
   support:
     name: 'email'
     link: 'support@canfar.net'
+  slack:
+    name: 'Slack'
+    link: '/slack/'    
   login:
     name: 'Connexion'
     link: '/ac/login'

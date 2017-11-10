@@ -34,7 +34,8 @@ header {
 
 header h1 {
   font-family: 'Chivo', 'Helvetica Neue', Helvetica, Arial, serif;
-  font-size: 48px; font-weight: 900;
+  font-size: 48px;
+  font-weight: 900;
   line-height: 1.2;
   color: #303030;
   letter-spacing: -1px;
@@ -48,7 +49,8 @@ header h2 {
   letter-spacing: -1px;
 }
 
-#information_content h3, h3.information_section_capture {
+#information_content h3,
+h3.information_section_capture {
   text-transform: uppercase;
   font-size: 160%;
   font-family: Futura, sans-serif;
@@ -90,7 +92,7 @@ div#partner_links .nrc_logo {
   height: 1px;
   margin: 9px 0;
   overflow: hidden;
-  background-color: #e5e5e5
+  background-color: #e5e5e5;
 }
 
 .nav-sidebar > .active > a,
@@ -104,7 +106,8 @@ div#partner_links .nrc_logo {
   margin-bottom: -5px;
 }
 
-.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
   cursor: auto;
 }
 
@@ -135,11 +138,11 @@ ul > li.divider-vertical {
  */
 
 a.github-link {
-  background: url("images/GitHub-Mark-32px.png") 24px 50% no-repeat;
+  background: url('images/GitHub-Mark-32px.png') 24px 50% no-repeat;
 }
 
 a.docker-link {
-  background: url("images/logo_docker.png") 20px 50% no-repeat;
+  background: url('images/logo_docker.png') 20px 50% no-repeat;
 }
 
 a.social-link > span {
@@ -202,16 +205,16 @@ main.container {
   background: transparent !important;
 }
 
-input[type=url] {
+input[type='url'] {
   width: 100%;
 }
-
 
 /* #Media Queries
 ================================================== */
 
 /* Smaller than standard 960 (devices and browsers) */
-@media only screen and (max-width: 959px) { }
+@media only screen and (max-width: 959px) {
+}
 
 /* Tablet Portrait size to standard 960 (devices and browsers) */
 @media only screen and (min-width: 768px) and (max-width: 1001px) {
@@ -234,7 +237,8 @@ input[type=url] {
   #downloads {
     margin-bottom: 25px;
   }
-  #download-zip, #download-tar-gz {
+  #download-zip,
+  #download-tar-gz {
     display: none;
   }
   .inner {
@@ -255,7 +259,7 @@ input[type=url] {
     margin-top: 25px;
   }
 
-  .navbar-nav .open .dropdown-menu>li>a.menu-item-indent-2 {
+  .navbar-nav .open .dropdown-menu > li > a.menu-item-indent-2 {
     padding-left: 30px;
   }
 }
@@ -359,21 +363,24 @@ input[type=url] {
 
 @media only screen and (min-width: 1002px) {
   #top_nav.navbar {
-    height: 90px;  }
+    height: 90px;
+  }
 
   #top_nav.navbar > .container .navbar-brand {
     height: 90px;
-    line-height: 7.0rem;  }
+    line-height: 7rem;
+  }
 
   #canfar-carousel > .carousel-inner > .item {
-    height: 350px;  }
+    height: 350px;
+  }
 
   #navbar_list.navbar-nav {
     height: 90px;
   }
 
   .nav > li > a.menu-item-indent-2,
-  .dropdown-menu>li>a.menu-item-indent-2 {
+  .dropdown-menu > li > a.menu-item-indent-2 {
     padding-left: 40px;
   }
 
@@ -407,7 +414,8 @@ div.carousel-caption {
 
 #top_nav.navbar {
   margin-bottom: 0;
-  color: #fff;  }
+  color: #fff;
+}
 
 #top_nav.navbar > div > ul li {
   color: #fff;
@@ -478,8 +486,7 @@ div.list-group-services > .list-group-item:hover {
 }
 
 /*  Table data for Governance. */
-td.management_team_name
-{
+td.management_team_name {
   font-weight: bolder;
 }
 
@@ -528,4 +535,28 @@ table.processes-table {
 table.processes-table > tbody > tr > td {
   text-align: center;
   vertical-align: middle;
+}
+
+ul.community-links {
+  padding-left: 10px;
+}
+
+.community-icon-link {
+  top: -6px;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.social-btn-toolbar {
+  margin-top: 5px;
+}
+
+a.btn.btn-default.social-button {
+  border: 0;
+  background: transparent;
+}
+
+a.btn.btn-default.social-button:hover {
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
 }
