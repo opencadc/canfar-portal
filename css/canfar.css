@@ -282,7 +282,7 @@ input[type='url'] {
 
 @media only screen and (min-width: 1002px) {
   body {
-    padding-top: 130px;
+    padding-top: 85px;
   }
 
   ul.login-container {
@@ -308,7 +308,7 @@ input[type='url'] {
 
   #sidebar_nav {
     position: fixed;
-    top: 133px;
+    top: 85px;
     bottom: 0;
     left: 0;
     z-index: 1000;
@@ -363,7 +363,7 @@ input[type='url'] {
 
 @media only screen and (min-width: 1002px) {
   #top_nav.navbar {
-    height: 134px;
+    height: 85px;
   }
 
   #top_nav.navbar > .container .navbar-brand {

@@ -1,10 +1,9 @@
 ---
 
 layout: default
-
 ---
 
-{% include _page_header.html %}
+{% include _page_header.html %} {% include bs_maintenance_message_en.html %}
 
 <div class="container">
   <div class="row">
