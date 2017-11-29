@@ -27,11 +27,13 @@ CANFAR invites any researcher to contact us to discuss using the DOI process and
 
 The authors should create a folder in the CANFAR VOSpace that contains the material to be published associated with a Digital Object Identifier (DOI). 
 
-It is feasible to include the data in the refereeing process by giving permission to the publisher and the referee to access the VOSpace folder containing the data. The referee or publisher can suggest or require changes to be made to that material and the author can make the required changes.
+It is feasible to include the data in the refereeing process by giving permission to the publisher and the referee to access the VOSpace folder containing the data. The referee or publisher can examine tha material and can suggest or require changes to be made to that material. The author can make the required changes before the paper is accepted or published.
 
-Once all of the changes are made to the material to be published, the auther should contact CADC and ask us to take over curation of the VOSpace folder. CADC will copy that folder into a read-only location in VOSpace. The material is then ready to publish.
+Once all of the changes are made to the material to be published, the auther should contact CADC and ask us to take over curation of the VOSpace folder. CADC will copy that folder into a read-only location in VOSpace. The material is then ready to publish. The author should proved publication infromation (author list, journal and volume, etc.) that is as complete as possible.
 
 The DOI is normally "minted" at this time in the process. When a DOI is "minted" a small set of metadata is entered into the DataCite system along with the location that the DOI refers to. That data is entered and the process is complete.
+
+Normally, once a DOI is "minted", nochanges can be made to the published folder. Trivial exceptions may be made. For example, modifying the README files to include journal information that was unavailable previously might be allowed.
 
 A DOI can be reserved at any time ahead of the minting process. CADC can tell the authors the exact DOI that will be "minted" because the choice of the exact DOI at the time of "minting" is under the control of CADC. So if the DOI is needed, for example, to give to the publisher before or after the paper is accepted, but before it is time to "mint" a DOI, that can be done by contacting CADC.
 
