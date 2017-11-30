@@ -33,7 +33,7 @@ Once all of the changes are made to the material to be published, the auther sho
 
 The DOI is normally "minted" at this time in the process. When a DOI is "minted" a small set of metadata is entered into the DataCite system along with the location that the DOI refers to. That data is entered and the process is complete.
 
-Normally, once a DOI is "minted", nochanges can be made to the published folder. Trivial exceptions may be made. For example, modifying the README files to include journal information that was unavailable previously might be allowed.
+Normally, once a DOI is "minted", no changes can be made to the published folder. Trivial exceptions may be made. For example, modifying the README files to include journal information that was unavailable previously might be allowed.
 
 A DOI can be reserved at any time ahead of the minting process. CADC can tell the authors the exact DOI that will be "minted" because the choice of the exact DOI at the time of "minting" is under the control of CADC. So if the DOI is needed, for example, to give to the publisher before or after the paper is accepted, but before it is time to "mint" a DOI, that can be done by contacting CADC.
 
