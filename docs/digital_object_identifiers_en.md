@@ -37,5 +37,23 @@ Normally, once a DOI is "minted", no changes can be made to the published folder
 
 A DOI can be reserved at any time ahead of the minting process. CADC can tell the authors the exact DOI that will be "minted" because the choice of the exact DOI at the time of "minting" is under the control of CADC. So if the DOI is needed, for example, to give to the publisher before or after the paper is accepted, but before it is time to "mint" a DOI, that can be done by contacting CADC.
 
+#### TO-DO list for requesting a DOI
 
+1. **BEFORE** submitting a DOI request, you should have the following information:
+   *  **Required** Full title
+   *  **Required** Full author list
+   *  **Required** Journal name 
+      +  Full journal reference can be provided after the DOI is minted, but it is your responsibility to contact the CADC with the full reference if it is not provided with the initial DOI request.
+   *  **Required** (if applicable) The full VOSpace path to your data.
+      +  As outlined above, the data will not be moved/copied until you confirm that the data is final.
+   *  **Required** Journal submission date
+   *  **Optional with _initial_ request** Journal acceptance date
+      +  Must be provided with the full journal reference, when available
+   *  **Optional** Journal article DOI
+1. Send an email to `cadc@nrc-cnrc.gc.ca` requesting a DOI
+   *  Include the above information in your request
+1. **AFTER** your article is accepted, you should provide the following:
+   * Full journal reference
+   * Acceptance date
+   * Article DOI (if provided by Journal)
 <!-- Content end -->
