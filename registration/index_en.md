@@ -8,5 +8,5 @@ namespace: register
 
 # Registration
 
-To start the registration process, please send us a short message describing your interest in CANFAR, along with your
+To start the registration process, please send a short message describing your interest in CANFAR, along with your
 storage and processing needs to [CANFAR](mailto:cadc@nrc.gc.ca).
