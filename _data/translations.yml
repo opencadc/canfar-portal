@@ -34,6 +34,9 @@ en:
       name: 'Compute Canada'
       img: '/css/images/Compute_Canada_52px.png'
       url: 'https://www.computecanada.ca/'
+  register:
+    name: 'Register'
+    link: '/register'
   docs:
     name: 'Documentation'
     link: '/docs'
@@ -275,6 +278,9 @@ fr:
       name: 'Calcul Canada'
       img: '/css/images/Compute_Canada_52px.png'
       url: 'https://www.computecanada.ca/splash/?lang=fr'
+  register:
+    name: 'Enregistrer'
+    link: '/enregistrer'
   docs:
     name: 'Documentation'
     link: '/docs'
