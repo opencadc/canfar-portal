@@ -13,7 +13,11 @@ This quick start guide will demonstrate how to:
 * store files with the CANFAR VOSpace storage
 * launch batch processing jobs from the CANFAR batch host, using VMs created in the previous step
 
-Before starting this example, you will need to [register](http://apps.canfar.net/canfar/auth/request.html) to CANFAR. The CANFAR team will take care of your registration to Compute Canada infrastructure.
+Before starting this example, you will need to have a CANAR/CADC account ([register](http://apps.canfar.net/canfar/auth/request.html)) and you will need to request a CANFAR resource allocation. The CANFAR team will take care of your registration to Compute Canada infrastructure.
+
+## Resource Allocation
+
+email support@canfar.net include your account name, the amount of resource require (storage volume and processing capacity) and a a few sentences of justification.  Your request will be reviewed and you will be contacted by our support group. 
 
 ## Create your interactive Virtual Machine
 
