@@ -61,6 +61,9 @@ en:
     caom_query_service:
       name: 'CADC Data Collections'
       link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/about.html#mandate'
+    jcmt_starlink:
+      name: 'JCMT Starlink'
+      link: '/jcmt_starlink'
   about:
     name: 'About'
     link: '/about'
