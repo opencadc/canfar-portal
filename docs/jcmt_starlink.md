@@ -1,7 +1,7 @@
 ---
 layout: pages_left_nav
 
-namespace: docs.quick_start
+namespace: docs.jcmt_starlink
 lang: en
 permalink: /en/docs/jcmt_starlink/
 ---
