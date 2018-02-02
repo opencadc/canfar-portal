@@ -7,8 +7,6 @@ permalink: /en/docs/jcmt_starlink/
 ---
 # Quick Start: Build a starlink VM 
 
-
-
 ## Getting started
 
 Step 1 is to get a CANFAR resource allocation.  See the Quick Start guide for info on doing this.
@@ -28,7 +26,8 @@ We will do the following steps:
 3. Select the 'Launch Instance' link in the top right, above the list of runing instances. 
 4. Select starlink_python_ubuntu in the Launch Dialog: 
 
-![alt text]({{ site.baseurl }}/images/Launch_Instance_800.png "Launch Instance Dialog")
+<span style="display:block;text-align:center">![Launch Instance Dialog image]({{ site.baseurl }}/images/Launch_Instance_600.png "Launch Instance Dialog")</span>
+
 
 5. On the 'Access & Security' make certain your ssh key is selected (see the Quick Start guide for details).
 6. Click Launch
