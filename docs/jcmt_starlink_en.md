@@ -26,7 +26,7 @@ We will do the following steps:
 1. To get a starlink Instance log into the west.cloud.computecanada.ca dashboard.  
 1. Click on the 'Instance' link in the left handside of the menu.
 3. Select the 'Launch Instance' link in the top right, above the list of runing instances. 
-4. Select starlink_python_ubuntu in the Launch Dialog: ![alt text](Launch_Instance.png "Launch Instance Dialog")
+4. Select starlink_python_ubuntu in the Launch Dialog: ![alt text]({{ site.baseurl }}/docs/Launch_Instance.png "Launch Instance Dialog")
 5. On the 'Access & Security' make certain your ssh key is selected (see the Quick Start guide for details).
 6. Click Launch
 7. In the 'Instance' listing, once the VM has started, select "Assocaite IP" and associate your public IP address to this VM.
