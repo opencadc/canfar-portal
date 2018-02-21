@@ -75,7 +75,21 @@ Next, add the some lines to the .bashrc file using the following script:
  
  </div>
  
- The 'sync' at the end ensures that the content is flushed to disk before we move on to craeting a snapshot.
+ The 'sync' at the end ensures that the content is flushed to disk before we move on to creating a snapshot.  
+ 
+ Adding the /home/ubuntu/bin directory to your path is to provide access to the cadc_plane_download.sh script. That script is a very simple one for accessing data associated with a JCMT Plan and provided below:
+ 
+ <div class="code">
+ {% highlight bash %}
+#!/bin/bash
+
+PROTOCOL=https
+URL=www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca
+ENDPOINT=caom2ops/pkg
+ID=$1
+curl --verbose -J -L -O -k -E ${HOME}/.ssl/cadcproxy.pem  ${PROTOCOL}://${URL}/${ENDPOINT}?ID=${ID} 
+{% highlight bash %}
+</div>
  
  ## Snapshot that Instance
  Now that you have added your user account to the VM you should snapshot it as this is your personal VM.  
