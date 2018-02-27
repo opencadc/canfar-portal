@@ -62,7 +62,7 @@ sudo bash canfar_create_user.bash [username]
 
 ## Modify your user environment to enable access to starlink
 
-Next, add the some lines to the .bashrc file using the following script:
+Next, add some lines to the .bashrc file using the following script:
 
 <div class="shell">
  
