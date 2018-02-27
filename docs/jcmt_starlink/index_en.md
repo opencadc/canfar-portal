@@ -60,6 +60,8 @@ sudo bash canfar_create_user.bash [username]
 
 </div>
 
+## Modify your user environment to enable access to starlink
+
 Next, add the some lines to the .bashrc file using the following script:
 
 <div class="shell">
@@ -88,7 +90,7 @@ URL=www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca
 ENDPOINT=caom2ops/pkg
 ID=$1
 curl --verbose -J -L -O -k -E ${HOME}/.ssl/cadcproxy.pem  ${PROTOCOL}://${URL}/${ENDPOINT}?ID=${ID} 
-{% highlight bash %}
+{% endhighlight bash %}
 </div>
  
  ## Snapshot that Instance
