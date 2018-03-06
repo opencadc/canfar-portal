@@ -34,7 +34,7 @@
 
         if ((nextItem.length === 2) && (nextItem[0] === 'frameinfo')) {
           var $input = $('<input type="hidden" name="frameinfo" />').appendTo($form)
-          $input.val(nextItem[1])
+          $input.val(decodeURIComponent(nextItem[1]))
         }      
       }
 
