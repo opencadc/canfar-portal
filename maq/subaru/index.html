@@ -12,10 +12,15 @@
 
 <body>
   <main class="container">
-    <em id="message" style="display: none;"></em>
+    <div id="message_container" style="display: none;">
+      <em id="message_en" lang="en" class="message"></em>
+      <br />
+      <em id="message_fr" lang="fr" class="message"></em>
+    </div>
     <form action="http://smoka.nao.ac.jp/datarequest" id="smoka_form" method="POST" style="display: none;">
       <input type="hidden" name="action" value="Datarequest" />
       <input type="hidden" name="search_type" value="" />
+      
       <!-- Script below will add inputs to the form. -->
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
@@ -29,15 +34,36 @@
     crossorigin="anonymous"></script>
 
   <script type="application/javascript">
+    var messageDictionary = {
+      en: {
+        submission_success: 'Submitting your request to SUBARU...',
+        input_missing: 'Request this page with ?frameinfo=<YYYY-MM-DD>/<FRAMEID>'
+      },
+      fr: {
+        submission_success: 'Soumettre votre demande à SUBARU...',
+        input_missing: 'Demander cette page avec ?frameinfo=<YYYY-MM-DD>/<FRAMEID>'
+      }
+    }
+
     $(document).ready(function () {
       var $form = $("#smoka_form")
+      var $messageContainer = $("#message_container")
 
       function appendInput(val) {
         var $input = $('<input type="hidden" name="frameinfo" />').appendTo($form)
         $input.val(val)
       }
 
-      var frameIDTypeDictionary = { 'X': 9, 'Y': 8 }      
+      function setMessage(key) {
+        $messageContainer.find('.message').each(function(index, item) {
+          var $item = $(item)
+          var lang = $item.attr('lang')
+          $item.text(messageDictionary[lang][key])
+        })
+        $messageContainer.show()
+      }
+
+      var frameIDTypeDictionary = { 'X': 9, 'Y': 8 }
       var query = window.location.search.replace('?', '')
       var queryItems = query.split('&')
 
@@ -58,16 +84,16 @@
               appendInput(decodeURIComponent(s.replace(frameIDType, i)) + ' ' + date)
             }
           } else {
-              appendInput(frameIDDesc + ' ' + date)
+            appendInput(frameIDDesc + ' ' + date)
           }
         }
       }
 
       if ($form.find('input[name="frameinfo"]').length > 0) {
-        $('#message').text('Submitting your request to SUBARU...').show()
+        setMessage('submission_success')
         $form.submit()
       } else {
-        $('#message').text('Request this page with ?frameinfo=<YYYY-MM-DD>/<FRAMEID>').show()
+        setMessage('input_missing')
       }
     })
   </script>
