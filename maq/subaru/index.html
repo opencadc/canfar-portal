@@ -20,7 +20,7 @@
     <form action="http://smoka.nao.ac.jp/datarequest" id="smoka_form" method="POST" style="display: none;">
       <input type="hidden" name="action" value="Datarequest" />
       <input type="hidden" name="search_type" value="" />
-      
+
       <!-- Script below will add inputs to the form. -->
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
@@ -55,7 +55,7 @@
       }
 
       function setMessage(key) {
-        $messageContainer.find('.message').each(function(index, item) {
+        $messageContainer.find('.message').each(function (index, item) {
           var $item = $(item)
           var lang = $item.attr('lang')
           $item.text(messageDictionary[lang][key])
@@ -75,13 +75,13 @@
           var date = paramItems[0]
           var frameIDDesc = paramItems[1]
           var frameIDType = frameIDDesc.slice(-1) // Last character
-          var count = frameIDTypeDictionary[frameIDType]
+          var maxIndex = frameIDTypeDictionary[frameIDType]
 
           // May not end in one of the dictionary values.
-          if (count) {
-            for (var i = 1; i <= count; i++) {
+          if (maxIndex) {
+            for (var j = 0; j <= maxIndex; j++) {
               var s = frameIDDesc
-              appendInput(decodeURIComponent(s.replace(frameIDType, i)) + ' ' + date)
+              appendInput(decodeURIComponent(s.replace(frameIDType, j)) + ' ' + date)
             }
           } else {
             appendInput(frameIDDesc + ' ' + date)
