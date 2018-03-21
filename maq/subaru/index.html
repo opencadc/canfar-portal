@@ -37,10 +37,12 @@
     var messageDictionary = {
       en: {
         submission_success: 'Submitting your request to SUBARU...',
+        bad_frameinfo: 'The frameinfo parameter needs to be in the format <YYYY-MM-DD>/<FRAMEID>',
         input_missing: 'Request this page with ?frameinfo=<YYYY-MM-DD>/<FRAMEID>'
       },
       fr: {
         submission_success: 'Soumettre votre demande à SUBARU...',
+        bad_frameinfo: 'Le paramètre frameinfo doit être au format <YYYY-MM-DD>/<FRAMEID>',
         input_missing: 'Demander cette page avec ?frameinfo=<YYYY-MM-DD>/<FRAMEID>'
       }
     }
@@ -72,19 +74,24 @@
 
         if ((nextItem.length === 2) && (nextItem[0] === 'frameinfo')) {
           var paramItems = decodeURIComponent(nextItem[1]).split('/')
-          var date = paramItems[0]
-          var frameIDDesc = paramItems[1]
-          var frameIDType = frameIDDesc.slice(-1) // Last character
-          var maxIndex = frameIDTypeDictionary[frameIDType]
 
-          // May not end in one of the dictionary values.
-          if (maxIndex) {
-            for (var j = 0; j <= maxIndex; j++) {
-              var s = frameIDDesc
-              appendInput(decodeURIComponent(s.replace(frameIDType, j)) + ' ' + date)
+          if (paramItems.length === 2) {
+            var date = paramItems[0]
+            var frameIDDesc = paramItems[1]
+            var frameIDType = frameIDDesc.slice(-1) // Last character
+            var maxIndex = frameIDTypeDictionary[frameIDType]
+
+            // May not end in one of the dictionary values.
+            if (maxIndex) {
+              for (var j = 0; j <= maxIndex; j++) {
+                var s = frameIDDesc
+                appendInput(decodeURIComponent(s.replace(frameIDType, j)) + ' ' + date)
+              }
+            } else {
+              appendInput(frameIDDesc + ' ' + date)
             }
           } else {
-            appendInput(frameIDDesc + ' ' + date)
+            setMessage('bad_frameinfo')
           }
         }
       }
