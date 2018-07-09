@@ -11,7 +11,7 @@ layout: default
       <div class="col-md-7 order-1 mb-4 text-center">
         <h2 class="mt-5 h4 text-left font-weight-light">Canadian Advanced Network for Astronomical Research</h2>
         <div role="toolbar" aria-label="Action button toolbar" class="pt-2 text-left">
-          <a href="#" class="btn btn-outline-info mr-3 font-weight-bold">Take the tour</a>
+          <a href="/en/docs/quick_start/" class="btn btn-outline-info mr-3 font-weight-bold">Take the tour</a>
           <a href="#" class="btn btn-primary">Documentation</a>
         </div>
         <br />
