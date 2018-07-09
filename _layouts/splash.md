@@ -1,155 +1,173 @@
 ---
-
 layout: default
 ---
 
 {% include _page_header.html %} {% include bs_maintenance_message_en.html %}
 
+<div id="stars"></div>
 <div class="container">
-  <div class="row">
-    <section id="main_content">
-      <div id="canfar-carousel" class="carousel slide"
-           data-ride="carousel" data-keyboard="true">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          {% for showcase in site.data.showcases %}
-          {% assign idx = forloop.index | minus: 1 %}
-          <li data-target="#canfar-carousel" data-slide-to="{{ idx }}" {% if idx == 0 %}class="active"{% endif %}></li>
-          {% endfor %}
-        </ol>
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-          {% for showcase in site.data.showcases %}
-          {% assign tagindex = forloop.index | minus: 1 %}
-          <div class="item {% if forloop.index == 1 %}active{% endif %}" style="background-image: url('{{ showcase.img | prepend: site.baseurl }}');">
-            <div class="carousel-caption">
-              <h3>{{ showcase.title }}</h3>
-              <p>{{ t.showcase_taglines[tagindex] }}</p>
-            </div>
-          </div>
-          {% endfor %}
+  <div class="py-3 pb-md-5">
+    <div class="row">
+      <div class="col-md-7 order-1 mb-4 text-center">
+        <h2 class="mt-5 h4 text-left font-weight-light">Canadian Advanced Network for Astronomical Research</h2>
+        <div role="toolbar" aria-label="Action button toolbar" class="pt-2 text-left">
+          <a href="#" class="btn btn-outline-info mr-3 font-weight-bold">Take the tour</a>
+          <a href="#" class="btn btn-primary">Documentation</a>
         </div>
-        <!-- Controls -->
-        <a class="left carousel-control" href="#canfar-carousel"
-           role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left"
-                aria-hidden="true"></span>
-          <span class="sr-only">{{ t.previous }}</span>
-        </a>
-        <a class="right carousel-control" href="#canfar-carousel"
-           role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right"
-                aria-hidden="true"></span>
-          <span class="sr-only">{{ t.next }}</span>
-        </a>
-      </div>
-    </section>
-    <section id="information_section">
-      <div class="row">
-        <div class="col-md-4">
-          <h3 class="text-info information_section_capture">Research cyberinfrastructure for the Canadian astronomical community</h3>
-          <p>The Canadian Advanced Network for Astronomy Research is a national platform
-            for data-intensive scientific computing.</p>
-          <p>CANFAR is a consortium of Canadian university astronomers, Compute Canada,
-            and the National Research Council Canada’s Canadian Astronomy Data Centre
-            with support from CANARIE and the Canadian Space Agency.</p>
-          <p>CANFAR services include:</p>
-          <ul>
-            <li>Archival data storage for major Canadian and international observatories
-              and projects
-            </li>
-            <li>Cloud processing</li>
-            <li>Infrastructure for visualization and analytics on massive datasets</li>
-            <li>User-managed storage for research teams</li>
-            <li>Innovative development to keep Canadian science at the leading edge</li>
-          </ul>
-        </div>
-        <!-- 
-          Information modules 
-        -->
-        <div id="information_content" class="col-md-8">
-          <div class="col-md-4">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h3 class="panel-title">{{ t['nodes'].name }} </h3>
+        <br />
+        <div class="mt-md-5">
+          <div class="row text-center mb-3">
+            <div class="mx-1 col">
+              <a href="http://apps.canfar.net/storage/list" class="text-secondary">
+                <i class="fas fa-hdd service-link"></i>
+              </a>
+              <div>
+                <span>Storage</span>
               </div>
-              <div class="panel-body">
-                {% assign nodes_posts = site.posts | where: 'category', 'nodes' %}
-                {% for node in site.data.menudata.nodes %}
-                {% capture node_post_url %}{{ t[node].link | prepend: site.baseurl }}{% endcapture %}
-                {% capture node_namespace %}nodes.{{ node }}{% endcapture %}
-                <div class="media">
-                  <div class="media-body">
-                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span>{% include _link_item.md namespace=node_namespace link_only=true %}</h4>
-                  </div>
-                </div>
-                {% endfor %}
+            </div>
+            <div class="mx-1 col">
+              <a href="http://apps.canfar.net/gmui" class="text-secondary">
+                <i class="fas fa-users service-link"></i>
+              </a>
+              <div>
+                <span>Team Management</span>
+              </div>
+            </div>
+            <div class="mx-1 col">
+              <a href="http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/" class="text-secondary">
+                <i class="fas fa-archive service-link"></i>
+              </a>
+              <div>
+                <span>CADC Search</span>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h3 class="panel-title">{{ t['science'].name }} </h3>
-              </div>
-              <div class="panel-body">
-                {% assign science_posts = site.posts | where: 'category', 'science' %}
-                {% for post in science_posts limit: 7 %}
-                <div class="media">
-                  <div class="media-body">
-                    {% if post.external_url %}
-                      {% assign post_url = post.external_url %}
-                    {% else %}
-                      {% assign post_url = post.url | prepend: site.baseurl %}
-                    {% endif %}
-                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;<a href="{{ post_url }}">{{ post.title }}{% if post.author %} by {{ post.author }}{% endif %}</a></h4>
-                    <time datetime="{{ post.date }}">{{ post.date | date: '%B %d, %Y' }}</time>
-                    {{ post.excerpt | strip_html | truncatewords:10 }}
-                  </div>
-                </div>
-                {% endfor %}
+          <br />
+          <div class="row text-center">
+            <div class="mx-1 col">
+              <a href="http://apps.canfar.net/processing/batchjobs" class="text-secondary">
+                <i class="fas fa-microchip service-link"></i>
+              </a>
+              <div>
+                <span>Batch Processing</span>
               </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="panel panel-default">
-              {% assign translated_services = t['resources']['services'] %}
-              <div class="panel-heading">
-                <h3 class="panel-title">{{ translated_services.name }} </h3>
+            <div class="mx-1 col">
+              <a href="http://proto.canfar.net" class="text-secondary">
+                <i class="fas fa-desktop service-link"></i>
+              </a>
+              <div>
+                <span>Data Bench</span>
               </div>
-              <div class="panel-body">
-                {% assign services_posts = site.posts | where: 'category', 'services' %}
-                {% comment %}Only the first four service posts (latest) are used.{% endcomment %}
-                {% for post in services_posts %}
-                {% assign translated_item = translated_services[post.local_name] %}
-                {% capture service_post_url %}{{ translated_item.link | prepend: site.baseurl }}{% endcapture %}
-                <div class="media">
-                  <div class="media-body">
-                    <h4 class="media-heading"><span class="glyphicon glyphicon-chevron-right"></span>{% include _link_item.md namespace=post.namespace link_only=true %}</h4>
-                    {{ post.excerpt | strip_html | truncatewords:10 }}
-                  </div>
-                </div>
-              {% endfor %}
+            </div>
+            <div class="mx-1 col">
+              <a href="http://apps.canfar.net/processing/vmod" class="text-secondary">
+                <i class="fas fa-power-off service-link"></i>
+              </a>
+              <div>
+                <span>Open Stack</span>
               </div>
             </div>
           </div>
         </div>
-        <!-- 
-          End information modules 
-        -->
       </div>
-    </section>
-    <hr />
-    <div id="partner_links">
-      {% assign translated_partners = t['partners'] %}
-      {% for partner_key in translated_partners %}
-      {% assign pk = partner_key[0] %}
-      {% assign partner = translated_partners[pk] %}
-      <div class="col-md-{{ partner.size }} {{ pk }}_logo">
-        <a href="{{ partner.url }}" title="{{ partner.name }} {{ t['home'].name }}"><img alt="{{ partner.name }}" src="{{ partner.img | prepend: site.baseurl }}" /></a>
+      <div class="col-md-4 offset-md-1 order-md-2 pl-1">
+        <div class="border-bottom">
+          <div class="mb-2">
+            <h2 class="mt-3 font-weight-bold">Sign up</h2>
+            <form name="register" action="#">
+              <div class="form-group">
+                <label for="email" hidden>Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email">
+                <small id="emailHelp" class="form-text text-muted"><a href="#">Privacy statement</a></small>
+              </div>
+              <div class="form-group">
+                <label for="password" hidden>Password</label>
+                <input type="password" class="form-control" id="password" aria-describedby="passwordHelp" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <div class="form-row">
+                  <div class="col">
+                    <label for="firstName" hidden>First name</label>
+                    <input type="text" class="form-control" id="firstName" aria-describedby="firstNameHelp" placeholder="First name">
+                  </div>
+                  <div class="col">
+                    <label for="lastName" hidden>Last name</label>
+                    <input type="text" class="form-control" id="lastName" aria-describedby="firstNameHelp" placeholder="Last name">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="institution" hidden>Institution</label>
+                <input type="institution" class="form-control" id="institution" aria-describedby="institutionHelp" placeholder="Institution name">
+                <small id="institutionHelp" class="form-text text-muted">Known university, research institute, or data centre.</small>
+              </div>
+              <input type="submit" class="btn btn-primary" value="Register" />
+            </form>
+          </div>
+        </div>
+        <div>
+          <h3 class="mt-3">Existing users</h3>
+          <form name="login" action="#">
+            <div class="form-group">
+              <label for="username" hidden>Username</label>
+              <input type="username" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Username or Email">
+            </div>
+            <div class="form-group">
+              <label for="loginPassword" hidden>Password</label>
+              <input type="password" class="form-control" id="loginPassword" aria-describedby="passwordHelp" placeholder="Password">
+            </div>
+            <input type="submit" class="btn btn-primary" value="Login" />
+          </form>
+        </div>
       </div>
-      {% endfor %}
     </div>
-    {% include _page_footer.html %}
-  </div>
+  </div>  
+  <footer class="my-md-5 pt-md-3 border-top">
+    <div class="row">
+      <div class="col-12 col-md">
+        <small class="d-block mb-3 text-muted">© 2018-2019</small>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Download</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Client applications</a></li>
+          <li><a class="text-muted" href="#">Web services</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5 hidden>Resources</h5>
+        <div class="social-link-toolbar" role="toolbar">
+          <a href="https://github.com/opencadc" class="social-link pl-sm-1" aria-label="Center Align">
+            <i class="fab fa-github fa-3x" aria-hidden="true"></i>
+          </a>
+          <a href="https://twitter.com/AstroCADC" class="social-link" aria-label="Center Align">
+            <i class="fab fa-twitter fa-3x" aria-hidden="true"></i>
+          </a>
+          <a href="/en/slack" class="social-link" aria-label="Center Align">
+            <i class="fab fa-slack fa-3x" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-6 col-md">
+        <h5>About</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">CANFAR</a></li>
+          <li><a class="text-muted" href="#">Astronomy</a></li>
+          <li><a class="text-muted" href="#">Privacy</a></li>
+          <li><a class="text-muted" href="#">Terms</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Acknowledgements</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="http://www.asc-csa.gc.ca/eng/">Canadian Space Agency</a></li>
+          <li><a class="text-muted" href="http://www.nrc-cnrc.gc.ca/eng/">National Research Council</a></li>
+          <li><a class="text-muted" href="https://www.canarie.ca/">Canarie</a></li>
+          <li><a class="text-muted" href="https://www.computecanada.ca/">Compute Canada</a></li>
+        </ul>
+      </div>      
+    </div>
+  </footer>
+  {% include _page_footer.html %}
 </div>
