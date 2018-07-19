@@ -106,20 +106,6 @@ layout: default
             </form>
           </div>
         </div>
-        <div>
-          <h3 class="mt-3">Existing users</h3>
-          <form name="login" action="#">
-            <div class="form-group">
-              <label for="username" hidden>Username</label>
-              <input type="username" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Username or Email">
-            </div>
-            <div class="form-group">
-              <label for="loginPassword" hidden>Password</label>
-              <input type="password" class="form-control" id="loginPassword" aria-describedby="passwordHelp" placeholder="Password">
-            </div>
-            <input type="submit" class="btn btn-primary" value="Login" />
-          </form>
-        </div>
       </div>
     </div>
   </div>  
