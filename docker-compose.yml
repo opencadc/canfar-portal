@@ -1,13 +1,13 @@
 version: '3.2'
 services:
   canfar:
-    hostname: ${HOSTNAME:-localhost}
+    hostname: ${HOSTNAME}
     image: canfar/canfar-site
     command: bash -c "bundle install && bundle exec jekyll s --host ${HOSTNAME}"
     ports:
       - 4000:4000
     volumes:
-      - './root:/srv/jekyll'
+      - './:/srv/jekyll'
     networks:
       - canfar
 
