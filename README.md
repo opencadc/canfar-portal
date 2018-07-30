@@ -58,6 +58,7 @@ container using the supplied `docker-compose.yml` file:
 ```
 ~$ mkdir $HOME/src && cd $HOME/src
 ~$ git clone https://github.com/canfar/canfar.github.io canfar_site
+~$ cd canfar_site
 ~$ docker-compose up -d
 ```
 
