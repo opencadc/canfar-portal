@@ -7,7 +7,7 @@ layout: default
 <div class="container-fluid">
   <div class="row">
     <div id="sidebar_nav" role="navigation" class="col-sm-3 col-md-2 sidebar">
-      <ul class="nav nav-sidebar">
+      <ul class="nav nav-sidebar list-group">
         {% include _menudata_list.md namespace=parent_namespace %}
       </ul>
     </div>
@@ -20,8 +20,7 @@ layout: default
             Useful to make use of the space beside the 'Improve this page' link.
           {% endcomment %}
           <h2 {% if page.no-wrap == true %}style="display: inline-block;"{% endif %}><a id="canfar-beta" class="anchor" href="#canfar-beta" aria-hidden="true">
-                <span aria-hidden="true" class="octicon octicon-link"></span></a>{{ child_item.name }} <a class="btn btn-sm btn-warning" href="{{site.github_url}}/blob/gh-pages/{{page.path}}">
-                <span class="glyphicon glyphicon-pencil"></span> Improve this page</a></h2>
+                <span aria-hidden="true" class="octicon octicon-link"></span></a>{{ child_item.name }} 
           {{ content }}
         </section>
       </div>
