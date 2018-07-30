@@ -52,8 +52,12 @@ container like so:
 
 which is meant as very close simulation of running the site on GitHub.
 
-Then it can be run by cloning this repository, then starting the [Docker](http://www.docker.com)
-container using the supplied `docker-compose.yml` file:
+Then it can be run by cloning this repository.  Ensure the `HOSTNAME` variable is set:
+`export HOSTNAME=myhost.com`
+
+or add it into a `.env` file in this folder.
+
+Then starting the [Docker](http://www.docker.com) container using the supplied `docker-compose.yml` file:
 
 ```
 ~$ mkdir $HOME/src && cd $HOME/src
