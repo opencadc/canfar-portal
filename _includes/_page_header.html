@@ -17,15 +17,89 @@
           <a class="p-2 text-dark" href="#">Download</a>
         </li>
         <li class="nav-item d-flex">
-          <a class="p-2 text-dark" href="#">Documentation</a>
+            <a class="p-2 text-dark" href="#">Documentation</a>
         </li>
         <li class="nav-item d-flex">
           <a class="p-2 text-dark" href="https://github.com/opencadc">Open Source</a>
         </li>
-        <li class="nav-item pl-4">
-          <a class="btn btn-outline-primary" href="#">Login</a>
+        <li class="nav-item pl-4 dropdown canfar-access-control canfar-anonymous open">
+          <a title="Login form" class="dropdown-toggle access-actions login-form btn btn-outline-primary" data-toggle="dropdown" href="#">Login</a>
+          <ul class="dropdown-menu list-unstyled pull-right login-container">
+            <li>
+              <form class="form-inline access-control" id="loginForm" role="form" method="post" action="/access/login?target=http://apps.canfar.net/gmui/">
+                <span id="login_fail" class="help-block text-danger pull-left"></span>
+                <div class="form-group">
+                  <label for="username" class="hidden" id="usernameLabel">Username</label>
+                  <input type="text" id="username" name="username" class="form-control" tabindexx="1" required="required" placeholder="Username">
+                </div>
+                <div class="form-group">
+                  <label for="password" class="hidden" id="passwordLabel">Password</label>
+                  <input type="password" id="password" name="password" class="form-control" tabindexx="2" required="required" placeholder="Password">
+                </div>
+                <button type="submit" id="submitLogin" class="btn btn-success">
+                  <i class="fa fa-sign-in"></i>Login
+                </button>
+              </form>
+              <a href="/canfar/auth/forgot.html" class="account_access_info" tabindex="5" title="Forgot Uesrname" id="forgot_username_1">Forgot your Account information?</a>
+              <a href="/canfar/auth/request.html" class="account_access_info" tabindex="6" title="Register" id="register_cadc_1">Request an Account</a>
+            </li>
+          </ul>
         </li>
       </ul>
     </div>
   </nav>
 </header>
+<script type="text/javascript">
+  $(document).ready(function () {
+    function authorizationComplete(redirectURL) {
+      window.location.replace(redirectURL);
+    }
+
+    var $loginForm = $("form.access-control");
+    var requestURI = new cadc.web.util.currentURI();
+    var hashValue = requestURI.getHash();
+
+    var $_logout = $('#logout');
+    if ($_logout) {
+      $_logout.attr('href', $_logout.attr('href') + "?target="
+        + encodeURI(requestURI.getURI()));
+    }
+
+    if (hashValue.indexOf("PASSWORD_RESET_SUCCESS") >= 0) {
+      var $successMessageContainer = $("#success_message_container");
+      $successMessageContainer.parent().removeClass("wb-invisible");
+    }
+
+    $("#cancel_login_button").click(function () {
+      parent.history.back();
+      return false;
+    });
+
+    // turn the form submission into an ajax request
+    $loginForm.submit(function () {
+      var $_form = $(this);
+      var formData = $_form.serialize();
+      if (formData.indexOf('target=') < 0) {
+        formData += "&target="
+          +
+          encodeURI(requestURI.getURI());
+      }
+
+      $.ajax(
+        {
+          url: $_form.attr('action'),
+          method: 'POST',
+          data: formData
+        }).done(function (message) {
+          authorizationComplete(message);
+        }).fail(function () {
+          // clear the password field and show an error message
+          $_form.find("#login_fail").text(
+            "The username or password you entered is incorrect.");
+        });
+
+      return false;
+    });
+  });
+</script>
+
