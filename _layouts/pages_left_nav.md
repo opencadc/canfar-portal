@@ -20,7 +20,7 @@ layout: default
             Useful to make use of the space beside the 'Improve this page' link.
           {% endcomment %}
           <h2 {% if page.no-wrap == true %}style="display: inline-block;"{% endif %}><a id="canfar-beta" class="anchor" href="#canfar-beta" aria-hidden="true">
-                <span aria-hidden="true" class="octicon octicon-link"></span></a>{{ child_item.name }}</h2> 
+                <span aria-hidden="true" class="octicon octicon-link"></span></a>{{ child_item.name }} 
           {{ content }}
         </section>
       </div>
