@@ -24,17 +24,19 @@
         </li>
         <li class="nav-item pl-4 dropdown canfar-access-control canfar-anonymous open">
           <a title="Login form" class="dropdown-toggle access-actions login-form btn btn-outline-primary" data-toggle="dropdown" href="#">Login</a>
-          <ul class="dropdown-menu list-unstyled pull-right login-container">
+          <ul class="dropdown-menu dropdown-menu-right list-unstyled login-container">
             <li>
-              <form class="form-inline access-control" id="loginForm" role="form" method="post" action="/access/login?target=http://apps.canfar.net/gmui/">
-                <span id="login_fail" class="help-block text-danger pull-left"></span>
-                <div class="form-group">
-                  <label for="username" class="hidden" id="usernameLabel">Username</label>
-                  <input type="text" id="username" name="username" class="form-control" tabindexx="1" required="required" placeholder="Username">
-                </div>
-                <div class="form-group">
-                  <label for="password" class="hidden" id="passwordLabel">Password</label>
-                  <input type="password" id="password" name="password" class="form-control" tabindexx="2" required="required" placeholder="Password">
+              <form class="form-inline justify-content-center access-control" id="loginForm" role="form" method="post" action="/access/login?target=http://apps.canfar.net/gmui/">
+                <span id="login_fail" class="help-block text-danger"></span>
+                <div class="form-row">
+                  <div class="form-group col-auto">
+                    <label for="username" class="sr-only" id="usernameLabel">Username</label>
+                    <input type="text" id="username" name="username" class="form-control" tabindexx="1" required="required" placeholder="Username">
+                  </div>
+                  <div class="form-group col-auto">
+                    <label for="password" class="sr-only" id="passwordLabel">Password</label>
+                    <input type="password" id="password" name="password" class="form-control" tabindexx="2" required="required" placeholder="Password">
+                  </div>
                 </div>
                 <button type="submit" id="submitLogin" class="btn btn-success">
                   <i class="fa fa-sign-in"></i>Login
