@@ -15,3 +15,5 @@
 {% else %}
   {% assign child_item = parent_item %}
 {% endif %}
+
+{% assign host_name = "NRC-008897.cadc.dao.nrc.ca:4000" %}

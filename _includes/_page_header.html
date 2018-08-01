@@ -22,11 +22,32 @@
         <li class="nav-item d-flex">
           <a class="p-2 text-dark" href="https://github.com/opencadc">Open Source</a>
         </li>
+        <li class="nav-item pl-4 dropdown canfar-access-control canfar-authenticated hidden">
+          <ul class="dropdown-menu list-unstyled">
+            <li>
+              <a href="/canfar/auth/update.html" tabindex="2" title="Update profile" class="account_access_info" id="updateProfile">Update profile
+              </a>
+            </li>
+            <li>
+              <a href="/canfar/auth/changePassword.shtml" tabindex="2" title="Change password" class="account_access_info" id="changePassword">Change password
+              </a>
+            </li>
+            <li>
+              <a id="logout" title="Logout." class="access-control" href="http://apps.canfar.net/access/logout?target=http://{{ host_name }}/en/databench/">
+                <span class="glyphicon glyphicon-log-out"></span> Logout</a>
+            </li>
+          </ul><a title="User actions." class="dropdown-toggle access-actions user-actions" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+          <span class="canfar-auth-username"></span>
+          <span class="caret"></span>
+        </a>
+
+        </li>
         <li class="nav-item pl-4 dropdown canfar-access-control canfar-anonymous open">
           <a title="Login form" class="dropdown-toggle access-actions login-form btn btn-outline-primary" data-toggle="dropdown" href="#">Login</a>
           <ul class="dropdown-menu dropdown-menu-right list-unstyled login-container">
             <li>
-              <form class="form-inline justify-content-center access-control" id="loginForm" role="form" method="post" action="/access/login?target=http://apps.canfar.net/gmui/">
+              <!--<form class="form-inline justify-content-center access-control" id="loginForm" role="form" method="post" action="/access/login?target=http://apps.canfar.net/gmui/">-->
+              <form class="form-inline justify-content-center access-control" id="loginForm" role="form" method="post" action="/access/login?target=/en/databench/">
                 <span id="login_fail" class="help-block text-danger"></span>
                 <div class="form-row">
                   <div class="form-group col-auto">
@@ -42,7 +63,7 @@
                   <i class="fa fa-sign-in"></i>Login
                 </button>
               </form>
-              <a href="/canfar/auth/forgot.html" class="account_access_info" tabindex="5" title="Forgot Uesrname" id="forgot_username_1">Forgot your Account information?</a>
+              <a href="/canfar/auth/forgot.html" class="account_access_info" tabindex="5" title="Forgot Username" id="forgot_username_1">Forgot your Account information?</a>
               <a href="/canfar/auth/request.html" class="account_access_info" tabindex="6" title="Register" id="register_cadc_1">Request an Account</a>
             </li>
           </ul>
@@ -51,13 +72,22 @@
     </div>
   </nav>
 </header>
+<!--<script src="https://code.jquery.com/jquery-3.3.1..min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"-->
+        <!--crossorigin="anonymous"></script>-->
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha384-fJU6sGmyn07b+uD1nMk7/iSb4yvaowcueiQhfVgQuD98rfva8mcr1eSvjchfpMrH"
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="http://apps.canfar.net/cadcJS/javascript/org.opencadc.js"></script>
+<script type="text/javascript" src="http://apps.canfar.net/cadcJS/javascript/cadc.uri.js"></script>
+<script type="text/javascript" src="http://apps.canfar.net/canfar/javascript/cadc.user.js"></script>
+
 <script type="text/javascript">
   $(document).ready(function () {
     function authorizationComplete(redirectURL) {
       window.location.replace(redirectURL);
     }
 
-    var $loginForm = $("form.access-control");
+    var $loginForm = $("#loginForm");
     var requestURI = new cadc.web.util.currentURI();
     var hashValue = requestURI.getHash();
 
@@ -102,6 +132,76 @@
 
       return false;
     });
+
+    function appendRelativeURI($_parent)
+    {
+      $_parent.find('.access-control').each(function()
+      {
+        var $elem = $(this);
+        var target =
+                '?target='
+                + encodeURI(new cadc.web.util.URI(window.location.href).getURI());
+
+        if ($elem.is("form"))
+        {
+          var currAction = new cadc.web.util.URI($elem.attr('action'));
+          $elem.attr('action', currAction.getPath() + target);
+        }
+        else
+        {
+          var currLink = new cadc.web.util.URI($elem.attr('href'));
+          $elem.attr('href', currLink.getPath() + target);
+        }
+      });
+    }
+
+    if ($.address)
+    {
+      $.address.change(function ()
+      {
+        appendRelativeURI($('li.canfar-access-control'));
+      });
+    }
+
+    var userManager = new cadc.web.UserManager();
+    userManager.subscribe(cadc.web.events.onUserLoad,
+        function (event, data)
+        {
+          var $auth = $('li.canfar-authenticated');
+
+          var $userFullNameDisplay =
+                  $auth.find('a > span.canfar-auth-username');
+
+          if (data.user)
+          {
+            $userFullNameDisplay.text(
+                data.user.getFullName());
+
+            $auth.removeClass('hidden');
+            appendRelativeURI($auth);
+          }
+          else
+          {
+            $userFullNameDisplay.empty();
+
+            // TODO: different pages may want to respond to
+            // this in different ways. The code below will
+            // show the login form if the user is unauthenticated.
+            // Individual pages may have to do more if they
+            // require authentication
+
+             var $anon =
+               $('li.canfar-anonymous');
+             $anon.removeClass('hidden');
+             appendRelativeURI($anon);
+          }
+        });
+
+    userManager.loadCurrent();
+
+    appendRelativeURI($('li.canfar-access-control'));
   });
+
+
 </script>
 
