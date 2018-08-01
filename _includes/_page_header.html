@@ -22,8 +22,8 @@
         <li class="nav-item d-flex">
           <a class="p-2 text-dark" href="https://github.com/opencadc">Open Source</a>
         </li>
-        <li class="nav-item pl-4 dropdown canfar-access-control canfar-authenticated hidden">
-          <ul class="dropdown-menu list-unstyled">
+        <li class="nav-item pl-4 dropdown canfar-access-control canfar-authenticated d-none">
+          <ul class="dropdown-menu dropdown-menu-right list-unstyled">
             <li>
               <a href="/canfar/auth/update.html" tabindex="2" title="Update profile" class="account_access_info" id="updateProfile">Update profile
               </a>
@@ -34,9 +34,9 @@
             </li>
             <li>
               <a id="logout" title="Logout." class="access-control" href="http://apps.canfar.net/access/logout?target=http://{{ host_name }}/en/databench/">
-                <span class="glyphicon glyphicon-log-out"></span> Logout</a>
+                <span class="fa fa-log-out"></span> Logout</a>
             </li>
-          </ul><a title="User actions." class="dropdown-toggle access-actions user-actions" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+          </ul><a title="User actions." class="dropdown-toggle access-actions user-actions btn btn-outline-primary" data-toggle="dropdown">
           <span class="canfar-auth-username"></span>
           <span class="caret"></span>
         </a>
