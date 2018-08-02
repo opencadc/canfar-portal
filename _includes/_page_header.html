@@ -33,7 +33,7 @@
               </a>
             </li>
             <li>
-              <a id="logout" title="Logout." class="access-control" href="http://apps.canfar.net/access/logout?target=http://{{ host_name }}/en/databench/">
+              <a id="logout" title="Logout." class="access-control" href="/access/logout">
                 <span class="fa fa-log-out"></span> Logout</a>
             </li>
           </ul><a title="User actions." class="dropdown-toggle access-actions user-actions btn btn-outline-primary" data-toggle="dropdown">
@@ -47,7 +47,7 @@
           <ul class="dropdown-menu dropdown-menu-right list-unstyled login-container">
             <li>
               <!--<form class="form-inline justify-content-center access-control" id="loginForm" role="form" method="post" action="/access/login?target=http://apps.canfar.net/gmui/">-->
-              <form class="form-inline justify-content-center access-control" id="loginForm" role="form" method="post" action="/access/login?target=/en/databench/">
+              <form class="form-inline justify-content-center access-control" id="loginForm" role="form" method="post" action="/access/login">
                 <span id="login_fail" class="help-block text-danger"></span>
                 <div class="form-row">
                   <div class="form-group col-auto">
@@ -82,6 +82,7 @@
 <script type="text/javascript" src="http://apps.canfar.net/canfar/javascript/cadc.user.js"></script>
 
 <script type="text/javascript">
+  var userManager;
   $(document).ready(function () {
     function authorizationComplete(redirectURL) {
       window.location.replace(redirectURL);
@@ -163,11 +164,12 @@
       });
     }
 
-    var userManager = new cadc.web.UserManager();
+    userManager = new cadc.web.UserManager();
     userManager.subscribe(cadc.web.events.onUserLoad,
         function (event, data)
         {
           var $auth = $('li.canfar-authenticated');
+          var $anon = $('li.canfar-anonymous');
 
           var $userFullNameDisplay =
                   $auth.find('a > span.canfar-auth-username');
@@ -177,7 +179,8 @@
             $userFullNameDisplay.text(
                 data.user.getFullName());
 
-            $auth.removeClass('hidden');
+            $auth.removeClass('d-none');
+            $anon.addClass('d-none');
             appendRelativeURI($auth);
           }
           else
@@ -192,7 +195,8 @@
 
              var $anon =
                $('li.canfar-anonymous');
-             $anon.removeClass('hidden');
+             $anon.removeClass('d-none');
+             $auth.addClass('d-none');
              appendRelativeURI($anon);
           }
         });
