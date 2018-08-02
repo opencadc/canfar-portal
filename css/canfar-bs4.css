@@ -105,10 +105,18 @@ body a {
     border: 1px solid #eee;
   }
 
+  ul.login-container > li > a {
+    color: #337ab7;
+  }
+
   ul.login-container > li > a:hover {
     text-decoration: underline;
     color: #337ab7;
     background-color: inherit;
   }
 
-
+  .dropdown-menu > li > a:hover,
+  .dropdown-menu > li > a:focus {
+    background-color: #f5f5f5;
+    color: #337ab7;
+  }
