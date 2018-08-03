@@ -10,6 +10,13 @@ permalink: /en/databench/
     <div class="session-list card panel-default">
         <div class="card-body">
             <h3>Quarry Session list</h3>
+            <form class="session-add form-inline">
+              <div class="form-group mx-sm-3 mb-2">
+                <label for="sessionName" class="sr-only">Session Name</label>
+                <input class="form-control" id="sessionName" placeholder="Session Name">
+              </div>
+              <button type="submit" class="fa fa-plus btn btn-primary mb-2"></button>
+            </form>
             <table id="sessions" class="table table-sm table-hover table-responsive-md">
               <thead>
                 <tr>
@@ -26,8 +33,9 @@ permalink: /en/databench/
                 </tr>
                 </tbody>
             </table>
+            <i class="table-refresh fa fa-sync"></i>
         </div>
-    </div>
+    </div> 
 </div>
 
 <div class="databench-anonymous d-none">
@@ -66,6 +74,21 @@ permalink: /en/databench/
                 loadDatabenchSessions();
              }          
           });
+          
+        $('.table-refresh').click(function() {
+            clearSessionTable();
+            loadDatabenchSessions();
+        });
+        
+        
+        $('.session-add').submit(function () {
+          var $_form = $(this);
+          var formData = $_form.serialize();
+          alert("this will add a new session once the ajax functions are hooked up...");
+    
+          return false;
+        });
+            
   });
     
   function loadDatabenchSessions() {
@@ -82,6 +105,11 @@ permalink: /en/databench/
          setSessionPanel("Unable to list sessions: " + message.status + ": " + message.responseText);
        });  
   };
+  
+  function clearSessionTable() {
+    var tableEl = $('.session-table');
+    tableEl.html("<tr><td>-</td><td>-</td></tr>");
+  };
     
   function setInfoPanel(errorMsg) {
     $('.databench-authenticated').addClass('d-none');
@@ -95,8 +123,7 @@ permalink: /en/databench/
       $('.databench-anonymous').addClass('d-none');
   };
   
-  function mkRowHtml(rowData) {
-      //var rowData = unsplitRowData.split("\t");   
+  function mkRowHtml(rowData) { 
       var rHtml = "<tr><td><a href=\"" + rowData[2] + "\" target=\"_blank\">" + rowData[1] + "</a></td><td>" + rowData[3] + "</td></tr>";
       return rHtml;
   };
