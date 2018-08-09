@@ -156,8 +156,8 @@
      */
     function error(message, fields) {
       var $errContainer = $('#request_form_error')
-      $errContainer.find('.panel-body').text(message)
-      $errContainer.removeClass('hidden')
+      $errContainer.find('.card-text').text(message)
+      $errContainer.removeClass('d-none')
 
       if (fields) {
         fields.each(function($field) {
