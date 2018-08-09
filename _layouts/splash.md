@@ -3,6 +3,13 @@ layout: default
 ---
 
 {% include _page_header.html %} {% include bs_maintenance_message_en.html %}
+{% assign pagetitle = "Account Request" %}
+{% assign LAST_MOD = "$LastChangeDate$" %}
+{% assign formName = "register" %}
+{% assign formAction = "/ac/userRequests" %}
+{% assign form_error_title = "Unable to process" %}
+{% assign form_error_message = "All fields are required" %}
+{% assign successURI = "/en/register/requestSubmitted.html"" %}
 
 <div id="stars"></div>
 <div class="container">
@@ -75,31 +82,31 @@ layout: default
         <div class="border-bottom">
           <div class="mb-2">
             <h2 class="mt-3 font-weight-bold">Sign up</h2>
-            <form name="register" action="#">
+            <form id="register" name="register" action="#">
               <div class="form-group">
                 <label for="email" hidden>Email address</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email">
+                <input type="email" required="required" name="email" class="form-control" id="email" data-personal-detail="true" aria-describedby="emailHelp" placeholder="Email">
                 <small id="emailHelp" class="form-text text-muted"><a href="#">Privacy statement</a></small>
               </div>
               <div class="form-group">
                 <label for="password" hidden>Password</label>
-                <input type="password" class="form-control" id="password" aria-describedby="passwordHelp" placeholder="Password">
+                <input type="password" required="required" class="form-control" id="password" aria-describedby="passwordHelp" placeholder="Password">
               </div>
               <div class="form-group">
                 <div class="form-row">
                   <div class="col">
                     <label for="firstName" hidden>First name</label>
-                    <input type="text" class="form-control" id="firstName" aria-describedby="firstNameHelp" placeholder="First name">
+                    <input type="text" required="required" name="firstName" class="form-control" id="firstName" data-personal-detail="true" aria-describedby="firstNameHelp" placeholder="First name">
                   </div>
                   <div class="col">
                     <label for="lastName" hidden>Last name</label>
-                    <input type="text" class="form-control" id="lastName" aria-describedby="firstNameHelp" placeholder="Last name">
+                    <input type="text" required="required" name="lastName" class="form-control" id="lastName" data-personal-detail="true" aria-describedby="firstNameHelp" placeholder="Last name">
                   </div>
                 </div>
               </div>
               <div class="form-group">
                 <label for="institution" hidden>Institution</label>
-                <input type="institution" class="form-control" id="institution" aria-describedby="institutionHelp" placeholder="Institution name">
+                <input type="institution" required="required" name="institution" class="form-control" id="institution" data-personal-detail="true" aria-describedby="institutionHelp" placeholder="Institution name">
                 <small id="institutionHelp" class="form-text text-muted">Known university, research institute, or data centre.</small>
               </div>
               <input type="submit" class="btn btn-primary" value="Register" />
@@ -157,3 +164,20 @@ layout: default
   </footer>
   {% include _page_footer.html %}
 </div>
+<!-- Internationalization libraries -->
+<script type="text/javascript" src="/js/jquery.i18n.js"></script>
+<script type="text/javascript" src="/js/jquery.i18n.messagestore.js"></script>
+<script type="text/javascript" src="/js/jquery.i18n.fallbacks.js"></script>
+<script type="text/javascript" src="/js/jquery.i18n.parser.js"></script>
+<script type="text/javascript" src="/js/jquery.i18n.emitter.js"></script>
+<script type="text/javascript" src="/js/jquery.i18n.language.js"></script>
+<script type="text/javascript" src="/js/cadc.auth.js"></script>
+<script type="text/javascript">
+  $(document).ready(function () {
+    var successURI = '{{ successURI }}';
+    var formName = '{{ formName }}';
+    new cadc.auth.UserDetailsForm($('#' + formName), false,
+      true, successURI);
+  });
+</script>
+
