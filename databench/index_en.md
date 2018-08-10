@@ -118,9 +118,6 @@ permalink: /en/databench/
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" integrity="sha384-rgWRqC0OFPisxlUvl332tiM/qmaNxnlY46eksSZD84t+s2vZlqGeHrncwIRX7CGp" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js" integrity="sha384-uiSTMvD1kcI19sAHJDVf68medP9HA2E2PzGis9Efmfsdb8p9+mvbQNgFhzii1MEX" crossorigin="anonymous"></script>
 
-<!--<script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.js"></script>-->
-<!--<script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.js"></script>-->
-
 
 <script type="application/javascript">
         
@@ -141,7 +138,7 @@ permalink: /en/databench/
                     "Name": "<a href=\"" + rowData[2] + "\" target=\"_blank\">" + rowData[1] + "</a>",
                     "ID": rowData[0],
                     "Uptime": rowData[3],
-                    "Action": "<i class=\"fas fa-minus-circle\" sessionid=\"" + rowData[0] + "\" sessionname=\"" + rowData[1] + "\"></i>"
+                    "Action": "<i class=\"fas fa-ban\" sessionid=\"" + rowData[0] + "\" sessionname=\"" + rowData[1] + "\"></i>"
                   };
                   jsonTableData.push(tmpJson);
               };
@@ -228,14 +225,14 @@ permalink: /en/databench/
     // Pass in addDeleteListeners() as the callback so the 
     // delete icons will work
     setProgressBar(true);
-    $("#session_table").DataTable().ajax.reload(addDeleteListeners);
+    $('#session_table').DataTable().ajax.reload(addDeleteListeners);
   };
   
   function setProgressBar(busy) {
     if (busy === true) {
-      $(".session-table-progress").addClass("progress-bar-striped");
+      $('.session-table-progress').addClass('progress-bar-striped');
    } else {
-      $(".session-table-progress").removeClass("progress-bar-striped");
+      $('.session-table-progress').removeClass('progress-bar-striped');
    }
   };
   
@@ -266,21 +263,6 @@ permalink: /en/databench/
         setInfoModal("Error", errorMsg, false);     
         break;
     };
-  };
-  
-  // TODO: probably do not need this as the function
-  // is embedded in the DataTable now
-  function loadDatabenchSessions() {
-    $.ajax({
-      method: "GET",
-       url: "http://databench.canfar.net/quarry/session",
-       xhrFields: { withCredentials:true }
-     }).done(function (data) {
-        // Load data into table
-       reloadSessionTable(data);
-     }).fail(function (message, m2) {
-       handleAjaxFail(0, message);
-     });  
   };
   
   function addDatabenchSession(formData) {
@@ -315,7 +297,6 @@ permalink: /en/databench/
      }).done(function (data) {
        // Refresh session list
        $('#infoModal').modal('hide');
-       // loadDatabenchSessions();
        reloadSessionTable();
      }).fail(function (message) {
        handleAjaxFail(2, message);
@@ -323,7 +304,7 @@ permalink: /en/databench/
   };
   
   function addDeleteListeners() {
-      $('.fa-minus-circle').click(function () {
+      $('.fa-ban').click(function () {
         setDeleteModal(this.getAttribute("sessionid"), this.getAttribute("sessionname"));
       });
   };
@@ -331,7 +312,7 @@ permalink: /en/databench/
   // ------------ Panel & modal management functions --------------
   
   function setInfoPanel(errorMsg) {
-    $(".info-span").html(errorMsg);
+    $('.info-span').html(errorMsg);
     $('.databench-authenticated').addClass('d-none');
     $('.databench-anonymous').removeClass('d-none');
   };
@@ -342,31 +323,31 @@ permalink: /en/databench/
   };
   
   function setInfoModal(title, msg, hideThanks) {    
-    $(".info-span").html(msg);
-    $("#infoModalLongTitle").html(title);
+    $('.info-span').html(msg);
+    $('#infoModalLongTitle').html(title);
     $('#infoModal').modal('show');
     
     if (hideThanks === true) {
-      $("#infoThanks").addClass('d-none');
+      $('#infoThanks').addClass('d-none');
     } else {
-      $("#infoThanks").removeClass('d-none');
+      $('#infoThanks').removeClass('d-none');
     }
   };
   
   function setDeleteModal(sessionId, sessionName) {
     $('#deleteModal').modal('show');
-    $(".delete-name").html(sessionName);
-    $(".delete-session-id").html(sessionId);
+    $('.delete-name').html(sessionName);
+    $('.delete-session-id').html(sessionId);
   };
   
   function clearDeleteModal() {
     $('#deleteModal').modal('hide');
-    $(".delete-name").html("");
-    $(".delete-session-id").html("");
+    $('.delete-name').html("");
+    $('.delete-session-id').html("");
   };
 
   function setFormError(title, msg) {    
-    $(".error-span").html(msg);
+    $('.error-span').html(msg);
   };
 
 </script>

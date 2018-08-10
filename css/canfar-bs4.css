@@ -168,3 +168,7 @@ div.progress {
 .session-add {
   margin-right: 10px;
 }
+
+.fa-ban {
+  color: red;
+}
