@@ -128,7 +128,7 @@ permalink: /en/databench/
             type   : "GET",
             url    : 'http://databench.canfar.net/quarry/session',
             xhrFields : { withCredentials:true },
-            dataType: "text",
+            dataType: "text",  
             dataSrc: function( data ) {
              var jsonTableData = [];
               var dataArray = data.split("\n");
@@ -147,6 +147,7 @@ permalink: /en/databench/
             return jsonTableData;
           }
         },
+        order: [[ 2, "asc" ]],
         columns: [
           {"data" : "Name"},
           {"data" : "ID"},
