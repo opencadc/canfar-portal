@@ -113,6 +113,14 @@ layout: default
             </form>
           </div>
         </div>
+        <div class="d-none" id="request_form_error">
+          <div class="card bg-transparent">
+            <div class="card-body">
+              <p class="card-title bg-danger text-center"> {{ form_error_title }} <br></p> 
+              <small class="card-text"></small>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>  
