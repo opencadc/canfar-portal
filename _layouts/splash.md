@@ -115,8 +115,8 @@ layout: default
         </div>
         <div class="d-none" id="request_form_error">
           <div class="card bg-transparent">
+            <p class="card-header bg-danger">{{ form_error_title }}<br></p> 
             <div class="card-body">
-              <p class="card-title bg-danger text-center"> {{ form_error_title }} <br></p> 
               <small class="card-text"></small>
             </div>
           </div>
