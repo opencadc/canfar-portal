@@ -147,7 +147,6 @@ permalink: /en/databench/
             return jsonTableData;
           }
         },
-        order: [[ 2, "asc" ]],
         columns: [
           {"data" : "Name"},
           {"data" : "ID"},
