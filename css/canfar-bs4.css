@@ -1,6 +1,7 @@
 html body {
   background: transparent;
   background-color: #e7e7e7;
+  padding-top: 75px;
 }
 
 header {
@@ -126,3 +127,44 @@ li a {
     color: #337ab7;
   }
 
+
+/* Databench progress bar  */
+
+div.progress {
+  background-color: #5cb85c;
+  height: 10px;
+}
+
+.session-table-progress  {
+  background-image: -webkit-linear-gradient(top,#5cb85c 0,#449d44 100%);
+  background-image: -o-linear-gradient(top,#5cb85c 0,#449d44 100%);
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#5cb85c),to(#449d44));
+  background-image: linear-gradient(to bottom,#5cb85c 0,#449d44 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5cb85c', endColorstr='#ff449d44', GradientType=0);
+  background-repeat: repeat-x;
+  height: 10px;
+}
+
+.table-refresh {
+  padding-left: 10px;
+  padding-top: 10px;
+  vertical-align: middle;
+  height: 34px;
+}
+
+.session-add-control {
+  height: 34px;
+  margin-left: 10px;
+}
+
+.databench-authenticated .row {
+  padding-top: 0px;
+}
+
+.databench-title {
+  margin-top: 7px;
+}
+
+.session-add {
+  margin-right: 10px;
+}

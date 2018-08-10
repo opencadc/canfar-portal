@@ -1,6 +1,6 @@
 {% include __vars.md %}
 
-<header class="d-flex flex-column flex-md-row align-items-center p-2 px-md-4 mb-2 bg-white border-bottom">
+<header class="fixed-top d-flex flex-column flex-md-row align-items-center p-2 px-md-4 mb-2 bg-white border-bottom">
   <h5 class="my-0 mr-md-auto font-weight-normal">
     <a class="navbar-brand" href="{{ page_lang_link }}">
       <img src="{{ '/css/images/logo.png' | prepend: site.baseurl }}">
@@ -71,6 +71,8 @@
     </div>
   </nav>
 </header>
+
+<!-- todo: use min version when deployingF - need to check link below however -->
 <!--<script src="https://code.jquery.com/jquery-3.3.1..min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"-->
         <!--crossorigin="anonymous"></script>-->
 
@@ -82,7 +84,12 @@
 
 <script type="text/javascript">
   var userManager;
+
   $(document).ready(function () {
+
+    var height = $("#main_content").height();
+    $("#sidebar_nav").height(height);
+
     function authorizationComplete(redirectURL) {
       window.location.replace(redirectURL);
     }

@@ -1,5 +1,5 @@
 ---
-layout: pages_no_left_nav_no_footer
+layout: pages_no_left_nav_no_footer_wide
 lang: en
 permalink: /en/databench/
 ---
@@ -7,38 +7,50 @@ permalink: /en/databench/
 <!-- Content starts -->
 
 <div class="databench-authenticated">
+<section>
+  <h2 class="databench-title">Sessions</h2>
+</section>
+<section id="main_section">
     <div class="session-list card panel-default">
+      <nav class="navbar navbar-expand-sm" id="navbar-functions">
+        <ul class="nav navbar-nav">
+            <li class="nav-item dataTables_filter">
+              <form class="session-add form-inline">
+                <div class="form-group mx-sm-3 mb-2">
+                  Create new session: 
+                  <label for="sessionName" class="sr-only">Session Name</label>
+                  <input class="form-control session-add-control" id="sessionName" name="name" placeholder="Session Name">
+                </div>
+                <button type="submit" class="fa fa-plus btn btn-primary mb-2"></button>
+                <div class="form-group" id="errorDiv"><span class="error-span"></span></div>
+              </form>
+            </li>
+            <li class="nav-item">
+              <button type="submit" class="fa fa-sync table-refresh btn btn-light"></button>
+            </li>
+        </ul>
+      </nav>
+      <div class="progress session-table-progress progress-bar-striped">
+        <div class="cadc-progress progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="100" aria-valuemax="100">
+        </div>
+      </div>
+      <div id="sessions" class="table-responsive">
         <div class="card-body">
-            <h3>Quarry Session list</h3>
-            <form class="session-add form-inline">
-              <div class="form-group mx-sm-3 mb-2">
-                <label for="sessionName" class="sr-only">Session Name</label>
-                <input class="form-control" id="sessionName" name="name" placeholder="Session Name">
-              </div>
-              <button type="submit" class="fa fa-plus btn btn-primary mb-2"></button>
-              <div class="form-group" id="errorDiv"><span class="error-span"></span></div>
-            </form>
-            <table id="sessions" class="table table-sm table-hover table-responsive-md">
-              <thead>
-                <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">ID</th>
-                    <th scope="col">Uptime</th>
-                    <th scope="col"></th>
-                </tr>
-              </thead>
-              <tbody class="session-table">
-                <tr id="firstrow">
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                </tbody>
-            </table>
-            <i class="table-refresh fa fa-sync"></i>
+           <table id="session_table" class="table table-sm table-hover table-responsive-md dataTable">
+             <thead>
+               <tr>
+                 <th>Name</th>
+                 <th>ID</th>
+                 <th>Uptime</th>
+                 <th></th>
+               </tr>
+             </thead>
+             <tbody>
+             </tbody>
+           </table>          
         </div>
     </div> 
+    </div></section>
 </div>
 
 <div class="databench-anonymous d-none">
@@ -98,15 +110,67 @@ permalink: /en/databench/
 
 {% include _page_footer.html %}
 
+<!-- fontawesome *should* be included in the header -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">        
 
+<!-- DataTables includes this page requires -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" integrity="sha384-EkHEUZ6lErauT712zSr0DZ2uuCmi3DoQj6ecNdHQXpMpFNGAQ48WjfXCE5n20W+R" crossorigin="anonymous">
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" integrity="sha384-rgWRqC0OFPisxlUvl332tiM/qmaNxnlY46eksSZD84t+s2vZlqGeHrncwIRX7CGp" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js" integrity="sha384-uiSTMvD1kcI19sAHJDVf68medP9HA2E2PzGis9Efmfsdb8p9+mvbQNgFhzii1MEX" crossorigin="anonymous"></script>
+
+<!--<script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.js"></script>-->
+<!--<script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.js"></script>-->
+
+
 <script type="application/javascript">
-      
-  var closeModal = true;
-    
+        
   $(document).ready(function () {
-       
-    // Add listeners
+ 
+     var sessionTable = $("#session_table").dataTable({
+          ajax: {
+            type   : "GET",
+            url    : 'http://databench.canfar.net/quarry/session',
+            xhrFields : { withCredentials:true },
+            dataType: "text",
+            dataSrc: function( data ) {
+             var jsonTableData = [];
+              var dataArray = data.split("\n");
+              for (i=0; i< dataArray.length - 1; i++) {
+                 var rowData = dataArray[i].split("\t");
+                  var tmpJson = {
+                    "Name": "<a href=\"" + rowData[2] + "\" target=\"_blank\">" + rowData[1] + "</a>",
+                    "ID": rowData[0],
+                    "Uptime": rowData[3],
+                    "Action": "<i class=\"fas fa-minus-circle\" sessionid=\"" + rowData[0] + "\" sessionname=\"" + rowData[1] + "\"></i>"
+                  };
+                  jsonTableData.push(tmpJson);
+              };
+              
+            setProgressBar(false);
+            return jsonTableData;
+          }
+        },
+        columns: [
+          {"data" : "Name"},
+          {"data" : "ID"},
+          {"data" : "Uptime"},
+          {"data" : "Action"}
+        ],
+        columnDefs: [
+            { width: 20, targets: 3 }
+        ],
+      });
+         
+     // Add listeners
+     
+     // Required so that delete icon function works after ajax data refresh
+     // https://datatables.net/reference/event/init
+     $('#session_table').on( 'init.dt', function () {
+        setProgressBar(false);
+        addDeleteListeners();
+     } );
+         
+    // From cadc.user.js. Listens for when user logs in
     userManager.subscribe(cadc.web.events.onUserLoad,
       function (event, data)
       {
@@ -121,13 +185,21 @@ permalink: /en/databench/
             setInfoPanel(errorMsg);        
         } else {
             setSessionPanel();
-            loadDatabenchSessions();
          }          
     });
       
     $('.table-refresh').click(function() {
-        clearSessionTable();
-        loadDatabenchSessions();
+    
+     $('#refreshButton').click(function(){
+       $(this).addClass('fa-spin');
+       var el = $(this);
+       fleetTable.ajax.reload(function() {
+           el.removeClass('fa-spin');
+       });
+    });
+    
+    
+        reloadSessionTable();
     });
         
     $('.session-add').submit(function () {
@@ -135,23 +207,42 @@ permalink: /en/databench/
       var formData = $_form.serialize();
       addDatabenchSession(formData); 
       
-      // allow this to be an ajax session, in addDatabenchSession
+      // allow form submit to be ajax, performed in addDatabenchSession
       return false;
     });
     
+    // From delete modal
     $('#delete_ok').click(function () {
-      rmDatabenchSession($('.delete-session-id').text());     
+      rmDatabenchSession($('.delete-session-id').text());    
+       
       // Leave panel up until ajax call returns
       false;
     });
-            
+                      
   });  // end $(document).ready... 
   
     
   // ---------------- databench.canfar.net ajax functions & response handlers ---------------
   
+  function reloadSessionTable() {
+    // Pass in addDeleteListeners() as the callback so the 
+    // delete icons will work
+    setProgressBar(true);
+    $("#session_table").DataTable().ajax.reload(addDeleteListeners);
+  };
+  
+  function setProgressBar(busy) {
+    if (busy === true) {
+      $(".session-table-progress").addClass("progress-bar-striped");
+   } else {
+      $(".session-table-progress").removeClass("progress-bar-striped");
+   }
+  };
+  
+  
   function handleAjaxFail(callType, message) {
-   
+    setProgressBar(false);
+    
     //Option: to make sure error messages are correct, 
     // can add specific messages here
     switch (callType) {
@@ -177,6 +268,8 @@ permalink: /en/databench/
     };
   };
   
+  // TODO: probably do not need this as the function
+  // is embedded in the DataTable now
   function loadDatabenchSessions() {
     $.ajax({
       method: "GET",
@@ -184,13 +277,14 @@ permalink: /en/databench/
        xhrFields: { withCredentials:true }
      }).done(function (data) {
         // Load data into table
-       refreshSessionTable(data);
+       reloadSessionTable(data);
      }).fail(function (message, m2) {
        handleAjaxFail(0, message);
      });  
   };
   
   function addDatabenchSession(formData) {
+    setProgressBar(true);
     setInfoModal("Pease wait ", "Processing request... (may take up to 10 seconds)", true);
     $.ajax({ 
        xhrFields: { withCredentials: true },
@@ -202,7 +296,7 @@ permalink: /en/databench/
         // clear form
         $(".session-add input").val("");
         // Refresh session list
-       loadDatabenchSessions();
+        reloadSessionTable();
      }).fail(function (message) {
        // Option: possibly put error beside form
        // setFormError(message.status, "Unable to add session: " + message.status + ": " + message.responseText);
@@ -211,6 +305,7 @@ permalink: /en/databench/
   };
   
   function rmDatabenchSession(sessionID) {
+    setProgressBar(true);
     clearDeleteModal();
     setInfoModal("Pease wait ", "Processing request...", true);
     $.ajax({ 
@@ -220,7 +315,8 @@ permalink: /en/databench/
      }).done(function (data) {
        // Refresh session list
        $('#infoModal').modal('hide');
-       loadDatabenchSessions();
+       // loadDatabenchSessions();
+       reloadSessionTable();
      }).fail(function (message) {
        handleAjaxFail(2, message);
      });  
@@ -231,37 +327,6 @@ permalink: /en/databench/
         setDeleteModal(this.getAttribute("sessionid"), this.getAttribute("sessionname"));
       });
   };
-  
-  
-  // --------------- Table management functions----------------
-  
-  function clearSessionTable() {
-    var tableEl = $('.session-table');
-    tableEl.html("<tr><td>-</td><td>-</td><td>-</td><td></td></tr>");
-  };
-    
-  function mkRowHtml(rowData) { 
-      var rHtml = "<tr><td><a href=\"" + rowData[2] + "\" target=\"_blank\">" + 
-      rowData[1] + "</a></td><td>" + rowData[0] + "</td><td>" + rowData[3] + 
-      "</td><td><i class=\"fas fa-minus-circle\" sessionid=\"" + rowData[0] + "\" sessionname=\"" + rowData[1] + 
-      "\"></i></td></tr>";
-      return rHtml;
-  };
-    
-  function refreshSessionTable(tableData) {
-    var tableEl = $('.session-table');
-    var rowHtml = "";
-   
-    var dataArray = tableData.split("\n");
-    for (i=0; i< dataArray.length - 1; i++) {
-        rowHtml = rowHtml + mkRowHtml(dataArray[i].split("\t"));
-    };
-   
-    tableEl.html(rowHtml);
-    // May need to clear listeners? or does jquery handle this well?
-    addDeleteListeners();
-  };
-
     
   // ------------ Panel & modal management functions --------------
   
