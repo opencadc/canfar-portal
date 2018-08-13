@@ -38,6 +38,10 @@ li a {
   padding-top: 20px;
 }
 
+#emailAddress {
+  font-size: 10px;
+}
+
 /*
  * Sidebar
  */
