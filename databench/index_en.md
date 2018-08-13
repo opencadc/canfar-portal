@@ -6,7 +6,7 @@ permalink: /en/databench/
 
 <!-- Content starts -->
 
-<div class="databench-authenticated d-none">
+<div class="databench-authenticated">
 <section>
   <h2 class="databench-title">Sessions</h2>
 </section>
@@ -118,61 +118,59 @@ permalink: /en/databench/
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" integrity="sha384-rgWRqC0OFPisxlUvl332tiM/qmaNxnlY46eksSZD84t+s2vZlqGeHrncwIRX7CGp" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js" integrity="sha384-uiSTMvD1kcI19sAHJDVf68medP9HA2E2PzGis9Efmfsdb8p9+mvbQNgFhzii1MEX" crossorigin="anonymous"></script>
 
-
 <script type="application/javascript">
         
   $(document).ready(function () {
  
-     var sessionTable = $("#session_table").dataTable({
-          ajax: {
-            type   : "GET",
-            url    : 'http://databench.canfar.net/quarry/session',
-            xhrFields : { withCredentials:true },
-            dataType: "text",  
-            error: function(message) {
-              //if ($('.databench-authenticated').hasClass('d-none') || message.status === 0) {
-              //  // not logged in, shouldn't have performed this call so quietly continue
-              //} else {
-              //  handleAjaxFail(0, message);
-              //}
-            },
-            dataSrc: function( data ) {
-             var jsonTableData = [];
-              var dataArray = data.split("\n");
-              for (i=0; i< dataArray.length - 1; i++) {
-                 var rowData = dataArray[i].split("\t");
-                  var tmpJson = {
-                    "Name": "<a href=\"" + rowData[2] + "\" target=\"_blank\">" + rowData[1] + "</a>",
-                    "ID": rowData[0],
-                    "Uptime": rowData[3],
-                    "Action": "<i class=\"fas fa-ban\" sessionid=\"" + rowData[0] + "\" sessionname=\"" + rowData[1] + "\"></i>"
-                  };
-                  jsonTableData.push(tmpJson);
-              };
-              
-            setProgressBar(false);
-            return jsonTableData;
+    var sessionTable = $("#session_table").dataTable({
+      ajax: {
+        type   : "GET",
+        url    : 'http://databench.canfar.net/quarry/session',
+        xhrFields : { withCredentials:true },
+        dataType: "text",  
+        error: function(message) {
+          if ($('.databench-authenticated').hasClass('d-none') || message.status === 0) {
+            // not logged in, shouldn't have performed this call so quietly continue
+          } else {
+            handleAjaxFail(0, message);
           }
         },
-        columns: [
-          {"data" : "Name"},
-          {"data" : "ID"},
-          {"data" : "Uptime"},
-          {"data" : "Action"}
-        ],
-        columnDefs: [
-            { width: 20, targets: 3 }
-        ],
-      });
+        dataSrc: function( data ) {
+          var jsonTableData = [];
+          var dataArray = data.split("\n");
+          for (i=0; i< dataArray.length - 1; i++) {
+             var rowData = dataArray[i].split("\t");
+              var tmpJson = {
+                "Name": "<a href=\"" + rowData[2] + "\" target=\"_blank\">" + rowData[1] + "</a>",
+                "ID": rowData[0],
+                "Uptime": rowData[3],
+                "Action": "<i class=\"fas fa-ban\" sessionid=\"" + rowData[0] + "\" sessionname=\"" + rowData[1] + "\"></i>"
+              };
+              jsonTableData.push(tmpJson);
+          };   
+          setProgressBar(false);
+          return jsonTableData;
+        }
+      },
+      columns: [
+        {"data" : "Name"},
+        {"data" : "ID"},
+        {"data" : "Uptime"},
+        {"data" : "Action"}
+      ],
+      columnDefs: [
+        { width: 20, targets: 3 }
+      ]
+    });
          
-     // Add listeners
-     
-     // Required so that delete icon function works after ajax data refresh
-     // https://datatables.net/reference/event/init
-     $('#session_table').on( 'init.dt', function () {
-        setProgressBar(false);
-        addDeleteListeners();
-     } );
+    // Add listeners
+    
+    // Required so that delete icon function works after ajax data refresh
+    // https://datatables.net/reference/event/init
+    $('#session_table').on( 'init.dt', function () {
+      setProgressBar(false);
+      addDeleteListeners();
+    });
          
     // From cadc.user.js. Listens for when user logs in
     userManager.subscribe(cadc.web.events.onUserLoad,
@@ -180,30 +178,29 @@ permalink: /en/databench/
       {
         // Check to see if user is logged in or not        
         if (typeof(data.error) != "undefined") {                
-            var errorMsg = "";
-            if (data.errorStatus === 401) {
-                errorMsg = "<em>" + data.errorStatus + " " + data.error + "</em>. Please log in to use Databench.";
-            } else {
-                errorMsg = "Unable to list sessions: " + data.errorStatus + " " + data.error ;
-            }
-            setInfoPanel(errorMsg);        
+          var errorMsg = "";
+          if (data.errorStatus === 401) {
+              errorMsg = "<em>" + data.errorStatus + " " + data.error + "</em>. Please log in to use Databench.";
+          } else {
+              errorMsg = "Unable to list sessions: " + data.errorStatus + " " + data.error ;
+          }
+          setInfoPanel(errorMsg);        
         } else {
-            setSessionPanel();
-         }          
+          setSessionPanel();
+        }          
     });
       
     $('.table-refresh').click(function() {
     
-     $('#refreshButton').click(function(){
+      $('#refreshButton').click(function(){
        $(this).addClass('fa-spin');
        var el = $(this);
        fleetTable.ajax.reload(function() {
            el.removeClass('fa-spin');
        });
-    });
+      });
     
-    
-        reloadSessionTable();
+      reloadSessionTable();
     });
         
     $('.session-add').submit(function () {

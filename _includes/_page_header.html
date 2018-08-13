@@ -33,34 +33,29 @@
               </a>
             </li>
             <li>
-              <a id="logout" title="Logout." class="access-control" href="/access/logout">
-                <span class="fa fa-log-out"></span> Logout</a>
+              <a id="logout" title="Logout." class="access-control dropdown-item account_access_info" href="/access/logout">
+                <span class="fas fa-sign-out-alt"></span> Logout</a>
             </li>
           </ul><a title="User actions." class="dropdown-toggle access-actions user-actions btn btn-outline-primary" data-toggle="dropdown">
           <span class="canfar-auth-username"></span>
           <span class="caret"></span>
         </a>
-
         </li>
+
         <li class="nav-item pl-4 dropdown canfar-access-control canfar-anonymous open">
           <a title="Login form" class="dropdown-toggle access-actions login-form btn btn-outline-primary" data-toggle="dropdown" href="#">Login</a>
           <ul class="dropdown-menu dropdown-menu-right list-unstyled login-container">
             <li>
-              <form class="form-inline justify-content-center access-control" id="loginForm" role="form" method="post" action="/access/login">
+              <form class="form-inline access-control" id="loginForm" role="form" method="post" action="/access/login">
                 <span id="login_fail" class="help-block text-danger"></span>
-                <div class="form-row">
-                  <div class="form-group col-auto">
                     <label for="username" class="sr-only" id="usernameLabel">Username</label>
-                    <input type="text" id="username" name="username" class="form-control" tabindexx="1" required="required" placeholder="Username">
-                  </div>
-                  <div class="form-group col-auto">
+                    <input type="text" id="username" name="username" class="form-control mb-2 mr-sm-2 ml-sm-2" tabindex="1" required="required" placeholder="Username">
+
                     <label for="password" class="sr-only" id="passwordLabel">Password</label>
-                    <input type="password" id="password" name="password" class="form-control" tabindexx="2" required="required" placeholder="Password">
-                  </div>
-                </div>
-                <button type="submit" id="submitLogin" class="btn btn-success">
-                  <i class="fa fa-sign-in"></i>Login
-                </button>
+                    <input type="password" id="password" name="password" class="form-control mb-2 mr-sm-2 ml-sm-2" tabindex="2" required="required" placeholder="Password">
+                    <button type="submit" id="submitLogin" class="btn btn-success ml-sm-2 mb-2">
+                    <i class="fa fa-sign-in"></i>Login
+                  </button>
               </form>
               <a href="/en/auth/forgot.html" class="dropdown-item account_access_info" tabindex="5" title="Forgot Username" id="forgot_username_1">Forgot your Account information?</a>
               <a href="/en" class="dropdown-item account_access_info" tabindex="6" title="Register" id="register_cadc_1">Request an Account</a>
