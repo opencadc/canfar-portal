@@ -6,7 +6,7 @@ permalink: /en/databench/
 
 <!-- Content starts -->
 
-<div class="databench-authenticated">
+<div class="databench-authenticated d-none">
 <section>
   <h2 class="databench-title">Sessions</h2>
 </section>
@@ -53,7 +53,7 @@ permalink: /en/databench/
     </div></section>
 </div>
 
-<div class="databench-anonymous d-none">
+<div class="databench-anonymous">
     <div class="info-panel card panel-default">
         <div class="card-body">
             <span class="info-span"></span>
@@ -129,6 +129,13 @@ permalink: /en/databench/
             url    : 'http://databench.canfar.net/quarry/session',
             xhrFields : { withCredentials:true },
             dataType: "text",  
+            error: function(message) {
+              //if ($('.databench-authenticated').hasClass('d-none') || message.status === 0) {
+              //  // not logged in, shouldn't have performed this call so quietly continue
+              //} else {
+              //  handleAjaxFail(0, message);
+              //}
+            },
             dataSrc: function( data ) {
              var jsonTableData = [];
               var dataArray = data.split("\n");
@@ -320,6 +327,7 @@ permalink: /en/databench/
   function setSessionPanel() {
     $('.databench-authenticated').removeClass('d-none');
     $('.databench-anonymous').addClass('d-none');
+    reloadSessionTable();
   };
   
   function setInfoModal(title, msg, hideThanks) {    
