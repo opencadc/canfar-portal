@@ -6,11 +6,12 @@ layout: default
 
 <div class="container-fluid">
   <div class="row">
-    <div id="sidebar_nav" role="navigation" class="col-sm-3 col-md-2 sidebar">
+  <div class="col-12 col-md-3-col-xl-2 bd-sidebar">
+    <nav id="sidebar_nav" role="navigation" class="">
       <ul class="nav nav-sidebar list-group">
         {% include _menudata_list.md namespace=parent_namespace %}
       </ul>
-    </div>
+    </nav>
     <div role="main" class="col-sm-9 col-md-10 main">
     {% include bs_maintenance_message_en.html %}
       <div class="inner">
@@ -25,6 +26,7 @@ layout: default
         </section>
       </div>
     </div>
+  </div>
   </div>
 </div>
 {% include _page_footer.html %}
