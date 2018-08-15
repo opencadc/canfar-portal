@@ -57,7 +57,12 @@ div.container {
 
 /* Sidebar navigation */
 .sidebar {
+  display: none;
   height: 100%;
+  position: fixed;
+}
+
+#sidebar_nav {
   position: fixed;
 }
 
@@ -118,27 +123,111 @@ div.container {
  * End Sidebar
  */
 
+
+/* #Media Queries
+================================================== */
+
+@media only screen and (min-width: 1002px) {
+  body {
+    padding-top: 85px;
+  }
+
   ul.login-container {
+    min-width: 470px;
     background-color: #f5f5f5;
     border: 1px solid #eee;
   }
 
+  ul.login-container > li {
+    text-align: center;
+  }
+
   ul.login-container > li > a {
+    text-align: left;
     color: #337ab7;
   }
 
-  ul.login-container > li > a:hover,
-  ul.login-container > li > a:focus {
+  ul.login-container > li > a:hover {
     text-decoration: underline;
     color: #337ab7;
     background-color: inherit;
   }
 
-  .dropdown-menu > li > a:hover,
-  .dropdown-menu > li > a:focus {
+  #sidebar_nav {
+    position: fixed;
+    top: 85px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
     background-color: #f5f5f5;
-    color: #337ab7;
+    border-right: 1px solid #eee;
   }
+
+  .sidebar {
+    position: fixed;
+    top: 85px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 1001px) {
+  body {
+    padding-top: 100px;
+  }
+  .sidebar {
+    position: fixed;
+    top: 85px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* 
+ * End Media Queries
+ */
+
+ul.login-container {
+  background-color: #f5f5f5;
+  border: 1px solid #eee;
+}
+
+ul.login-container > li > a {
+  color: #337ab7;
+}
+
+ul.login-container > li > a:hover,
+ul.login-container > li > a:focus {
+  text-decoration: underline;
+  color: #337ab7;
+  background-color: inherit;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  background-color: #f5f5f5;
+  color: #337ab7;
+}
+
 
 
 /* Databench progress bar  */
