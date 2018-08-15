@@ -58,6 +58,7 @@ div.container {
 /* Sidebar navigation */
 .sidebar {
   height: 100%;
+  position: fixed;
 }
 
 .nav-sidebar {                                        
@@ -68,7 +69,6 @@ div.container {
   margin-bottom: 20px;
   margin-left: -20px;
   background-color: #fff;
-  position: fixed;
 }
 
 .nav-sidebar > li > a {

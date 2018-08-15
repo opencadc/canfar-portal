@@ -11,7 +11,7 @@ layout: default
         {% include _menudata_list.md namespace=parent_namespace %}
       </ul>
     </nav>
-    <div role="main" class="col-sm-9 col-md-10 main">
+    <div role="main" class="offset-md-2 col-sm-9 col-md-10 main">
     {% include bs_maintenance_message_en.html %}
       <div class="inner">
         <section id="main_content">
