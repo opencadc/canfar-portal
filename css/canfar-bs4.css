@@ -74,7 +74,7 @@ div.container {
   margin-bottom: 20px;
   margin-left: -20px;
   background-color: #fff;
-  flex-wrap: nowrap;
+  flex-wrap: nowrap!important;
 }
 
 .nav-sidebar > li > a {
