@@ -60,7 +60,7 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="http://proto.canfar.net" class="text-secondary">
+              <a href="http://databench.canfar.net" class="text-secondary">
                 <i class="fas fa-desktop service-link"></i>
               </a>
               <div>
@@ -86,7 +86,7 @@ layout: default
               <div class="form-group">
                 <label for="email" hidden>Email address</label>
                 <input type="email" required="required" name="email" class="form-control" id="email" data-personal-detail="true" aria-describedby="emailHelp" placeholder="Email">
-                <small id="emailHelp" class="form-text text-muted"><a href="about/terms-of-reference.html">Privacy statement</a></small>
+                <small id="emailHelp" class="d-none form-text text-muted"><a href="about/terms-of-reference.html">Privacy statement</a></small>
               </div>
               <div class="form-group">
                 <label for="password" hidden>Password</label>
