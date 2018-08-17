@@ -9,13 +9,13 @@ layout: default
 {% assign formAction = "/ac/userRequests" %}
 {% assign form_error_title = "Unable to process" %}
 {% assign form_error_message = "All fields are required" %}
-{% assign successURI = "/en/register/requestSubmitted.html"" %}
+{% assign successURI = "/en/register/requestSubmitted.html" %}
 
 <div id="stars"></div>
 <div class="container">
   <div class="py-3 pb-md-5">
     <div class="row">
-      <div class="col-md-7 mb-4 text-center">
+      <div class="col-md-12 mb-4 text-center">
         <h2 class="mt-5 h4 text-left font-weight-light">Canadian Advanced Network for Astronomical Research</h2>
         <div role="toolbar" aria-label="Action button toolbar" class="pt-2 text-left">
           <a href="docs/quick_start/" class="btn btn-outline-info mr-3 font-weight-bold">Take the tour</a>
@@ -78,7 +78,7 @@ layout: default
           </div>
         </div>
       </div>
-      <div class="col-md-4 offset-md-1 pl-1">
+      <div class="d-none col-md-4 offset-md-1 pl-1">
         <div class="border-bottom">
           <div class="mb-2">
             <h2 class="mt-3 font-weight-bold">Sign up</h2>
