@@ -103,7 +103,7 @@ vcp vos:VOSPACE/image.fits(10.25,10.25,0.1) .
 vcp --head vos:VOSPACE/image.fits .
 
 # or examine the headers of the FITS file
-vcap --head vos:VOSPACE/image.fits
+vcat --head vos:VOSPACE/image.fits
 
 # remove the bar file from VOSPACE
 vrm vos:VOSPACE/foo
