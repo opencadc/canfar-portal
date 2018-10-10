@@ -14,8 +14,8 @@ permalink: /en/about/governance
 <table class="table table-condensed">
 <caption class="h3">Science Management Committee Members</caption>
 <tbody>
-{% include __governance_item.md role="CC RAP Lead" name='Pauline Barmby' institutes='University of Waterloo' %}
-{% include __governance_item.md role="Canada France Imaging Survey" name='Alan McConnachie' institutes='National Research Council of Canada' %}
+{% include __governance_item.md role="CC RAP Lead" name='Pauline Barmby' institutes='University of Western Ontario' %}
+{% include __governance_item.md role="Canada France Imaging Survey" name='Alan McConnachie' institutes='National Research Council of Canada and Adjunct Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
 {% include __governance_item.md role="Canadian Initiative for Radio Astronomy Data Analysis" name='Erik Rosolowsky' institutes='Associate Professor University of Alberta' %}
 {% include __governance_item.md role="JWST NIRISS Science Team" name='René Doyon' institutes='Professor, Institut de recherche sur les exoplanètes, Université de Montréal' %}
 {% include __governance_item.md role="NUGrid" name='Falk Herwig' institutes='Professor, Dept. Of Physics and Astronomy, University of Victoria' %}
@@ -35,7 +35,6 @@ permalink: /en/about/governance
 <table class="table table-condensed">
 <caption class="h3">Advisory Committee (provisional)</caption>
 <tbody>
-{% include __governance_item.md name='Pauline Barmby' institutes='University or Western Ontario' %}
 {% include __governance_item.md name='Ray Carlberg' institutes='University of Toronto' %}
 {% include __governance_item.md name='René Doyon' institutes='Université de Montréal' %}
 {% include __governance_item.md name='Sébastien Fabbro' institutes='National Research Council Canada and the Canadian Astronomy Data Centre' %}
