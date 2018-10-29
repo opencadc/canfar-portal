@@ -14,7 +14,7 @@ object</h5>
 
 <b>Purpose</b>
 
-Although CANFAR is able to "mint" a DOI linked to any type of digital object the primary purpose was defined by the community's need to provide a link from a published paper to the data products that were used to produce the scientific results of that paper. A link to "archival" data (the data in the form that are receivded by CADC from the observatories) is generally not sufficient because scientists typically do further processing that modifies those data to produce the data products used in their research. 
+Although CANFAR is able to "mint" a DOI linked to any type of digital object the primary purpose was defined by the community's need to provide a link from a published paper to the data products that were used to produce the scientific results of that paper. A link to "archival" data (the data in the form that are received by CADC from the observatories) is generally not sufficient because scientists typically do further processing that modifies those data to produce the data products used in their research. 
 
 CANFAR offers a simple process to satisify the need to link research data products to the publication that results from them. Research teams collect the data products into a VOSpace folder with explanatory material (typically a README file). When the folder is ready to publish it is copied into a readonly area of the CANFAR VOSpace so that it will remain perpetually static. A landing page is created and the DOI is "minted" pointing to that landing page, where the data are accessible. The authors of the publication would normally provide the DOI itself to the paper publisher to associate the paper with the data that were used to produce it.
 
