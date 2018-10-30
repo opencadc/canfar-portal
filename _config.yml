@@ -3,6 +3,7 @@ tagline: Processing and Storage on the cloud
 permalink: /news/:year/:month/:day/:title/
 relative_permalinks: false
 markdown: kramdown
+baseurl: ""
 future: true
 github_url: 'https://github.com/canfar/canfar.github.io'
 twitter_url: 'https://twitter.com/astro_canfar'
@@ -10,5 +11,3 @@ slack_url: '/slack'
 repository: 'canfar/canfar.github.io'
 exclude:
     - node_modules
-# plugins:
-#   - jekyll-redirect-from
