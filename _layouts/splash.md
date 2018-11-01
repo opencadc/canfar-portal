@@ -61,7 +61,7 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="http://arcade.canfar.net" class="text-secondary">
+              <a href="http://demo.canfar.net/en/arcade" class="text-secondary">
                 <i class="fas fa-desktop service-link"></i>
               </a>
               <div>

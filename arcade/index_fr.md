@@ -1,7 +1,7 @@
 ---
 layout: pages_no_left_nav_no_footer
-lang: en
-permalink: /en/databench/
+lang: fr
+permalink: /fr/arcade/
 ---
 
 <!-- Content starts -->
