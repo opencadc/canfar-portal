@@ -3,12 +3,20 @@ layout: default
 ---
 
 {% include _page_header.html %} {% include bs_maintenance_message_en.html %}
+{% assign pagetitle = "Account Request" %}
+{% assign LAST_MOD = "$LastChangeDate$" %}
+{% assign formName = "register" %}
+{% assign formAction = "/ac/userRequests" %}
+{% assign form_error_title = "Unable to process" %}
+{% assign form_error_message = "All fields are required" %}
+{% assign successURI = "/en/register/requestSubmitted.html" %}
 
 <div id="stars"></div>
 <div class="container">
   <div class="py-3 pb-md-5">
     <div class="row">
-      <div class="col-md-7 order-1 mb-4 text-center">
+      <!-- <div class="col-md-7 mb-4 text-center"> -->
+      <div class="col-md-12 order-1 mb-4 text-center">
         <h2 class="mt-5 h4 text-left font-weight-light">Canadian Advanced Network for Astronomical Research</h2>
         <div role="toolbar" aria-label="Action button toolbar" class="pt-2 text-left">
           <a href="docs/quick_start/" class="btn btn-outline-info mr-3 font-weight-bold">Take the tour</a>
@@ -22,7 +30,7 @@ layout: default
                 <i class="fas fa-hdd service-link"></i>
               </a>
               <div>
-                <span>Storage</span>
+                <span>Storage Management</span>
               </div>
             </div>
             <div class="mx-1 col">
@@ -34,16 +42,16 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/" class="text-secondary">
-                <i class="fas fa-archive service-link"></i>
+              <a href="http://apps.canfar.net/citation" class="text-secondary">
+                <i class="fas fa-link service-link"></i>
               </a>
               <div>
-                <span>CADC Search</span>
+                <span>DOI Management</span>
               </div>
             </div>
           </div>
           <br />
-          <div class="row text-center">
+          <div class="row text-center mb-3">
             <div class="mx-1 col">
               <a href="http://apps.canfar.net/processing/batchjobs" class="text-secondary">
                 <i class="fas fa-microchip service-link"></i>
@@ -53,11 +61,11 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="http://proto.canfar.net" class="text-secondary">
+              <a href="http://arcade.canfar.net" class="text-secondary">
                 <i class="fas fa-desktop service-link"></i>
               </a>
               <div>
-                <span>Data Bench</span>
+                <span>Arcade</span>
               </div>
             </div>
             <div class="mx-1 col">
@@ -69,46 +77,29 @@ layout: default
               </div>
             </div>
           </div>
+          <br />
+          <div class="row text-center mt-3">
+            <div class="mx-1 offset-mx-1 col">
+              <a href="http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/" class="text-secondary">
+                <i class="fas fa-archive service-link"></i>
+              </a>
+              <div>
+                <span>CADC Search</span>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-md-4 offset-md-1 order-md-2 pl-1">
-        <div class="border-bottom">
-          <div class="mb-2">
-            <h2 class="mt-3 font-weight-bold">Sign up</h2>
-            <form name="register" action="#">
-              <div class="form-group">
-                <label for="email" hidden>Email address</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email">
-                <small id="emailHelp" class="form-text text-muted"><a href="#">Privacy statement</a></small>
-              </div>
-              <div class="form-group">
-                <label for="password" hidden>Password</label>
-                <input type="password" class="form-control" id="password" aria-describedby="passwordHelp" placeholder="Password">
-              </div>
-              <div class="form-group">
-                <div class="form-row">
-                  <div class="col">
-                    <label for="firstName" hidden>First name</label>
-                    <input type="text" class="form-control" id="firstName" aria-describedby="firstNameHelp" placeholder="First name">
-                  </div>
-                  <div class="col">
-                    <label for="lastName" hidden>Last name</label>
-                    <input type="text" class="form-control" id="lastName" aria-describedby="firstNameHelp" placeholder="Last name">
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="institution" hidden>Institution</label>
-                <input type="institution" class="form-control" id="institution" aria-describedby="institutionHelp" placeholder="Institution name">
-                <small id="institutionHelp" class="form-text text-muted">Known university, research institute, or data centre.</small>
-              </div>
-              <input type="submit" class="btn btn-primary" value="Register" />
-            </form>
+        <div class="d-none" id="request_form_error">
+          <div class="card bg-transparent">
+            <p class="card-header bg-danger">{{ form_error_title }}<br></p>
+            <div class="card-body">
+              <small class="card-text"></small>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>  
+  </div>
   <footer class="my-md-5 pt-md-3 border-top">
     <div class="row">
       <div class="col-12 col-md">
@@ -157,3 +148,20 @@ layout: default
   </footer>
   {% include _page_footer.html %}
 </div>
+<!-- Internationalization libraries -->
+<script type="text/javascript" src="/js/jquery.i18n.js"></script>
+<script type="text/javascript" src="/js/jquery.i18n.messagestore.js"></script>
+<script type="text/javascript" src="/js/jquery.i18n.fallbacks.js"></script>
+<script type="text/javascript" src="/js/jquery.i18n.parser.js"></script>
+<script type="text/javascript" src="/js/jquery.i18n.emitter.js"></script>
+<script type="text/javascript" src="/js/jquery.i18n.language.js"></script>
+<script type="text/javascript" src="/js/cadc.auth.js"></script>
+<script type="text/javascript">
+  $(document).ready(function () {
+    var successURI = '{{ successURI }}';
+    var formName = '{{ formName }}';
+    new cadc.auth.UserDetailsForm($('#' + formName), false,
+      true, successURI);
+  });
+</script>
+
