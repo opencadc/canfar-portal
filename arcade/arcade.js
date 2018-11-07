@@ -61,7 +61,8 @@ $(document).ready(function() {
   })
 
   // From cadc.user.js. Listens for when user logs in
-  userManager.subscribe(cadc.web.events.onUserLoad, function(event, data) {
+  // userManager.subscribe(cadc.web.events.onUserLoad, function(event, data) {
+  $(document).on('onUserLoad', function(event, data) {
     // Check to see if user is logged in or not
     if (typeof data.error != 'undefined') {
       var errorMsg = ''
