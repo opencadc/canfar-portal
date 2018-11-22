@@ -10,6 +10,9 @@ layout: default
 {% assign form_error_title = "Unable to process" %}
 {% assign form_error_message = "All fields are required" %}
 {% assign successURI = "/en/register/requestSubmitted.html" %}
+{% assign cadc_url = site.env[site.site_env].cadc %}
+{% assign canfar_url = site.env[site.site_env].canfar %}
+{% assign apps_url = site.env[site.site_env].apps %}
 
 <div id="stars"></div>
 <div class="container">
@@ -26,7 +29,7 @@ layout: default
         <div class="mt-md-5">
           <div class="row text-center mb-3">
             <div class="mx-1 col">
-              <a href="http://apps.canfar.net/storage/list" class="text-secondary">
+              <a href="http://{{ apps_url }}/storage/list" class="text-secondary">
                 <i class="fas fa-hdd service-link"></i>
               </a>
               <div>
@@ -34,7 +37,7 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="http://apps.canfar.net/gmui" class="text-secondary">
+              <a href="http://{{ apps_url }}/gmui" class="text-secondary">
                 <i class="fas fa-users service-link"></i>
               </a>
               <div>
@@ -42,7 +45,7 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="http://apps.canfar.net/citation" class="text-secondary">
+              <a href="http://{{ apps_url }}/citation" class="text-secondary">
                 <i class="fas fa-link service-link"></i>
               </a>
               <div>
@@ -53,7 +56,7 @@ layout: default
           <br />
           <div class="row text-center mb-3">
             <div class="mx-1 col">
-              <a href="http://apps.canfar.net/processing/batchjobs" class="text-secondary">
+              <a href="http://{{ apps_url }}/processing/batchjobs" class="text-secondary">
                 <i class="fas fa-microchip service-link"></i>
               </a>
               <div>
@@ -69,7 +72,7 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="http://apps.canfar.net/processing/vmod" class="text-secondary">
+              <a href="http://{{ apps_url }}/processing/vmod" class="text-secondary">
                 <i class="fas fa-power-off service-link"></i>
               </a>
               <div>
@@ -80,7 +83,7 @@ layout: default
           <br />
           <div class="row text-center mt-3">
             <div class="mx-1 offset-mx-1 col">
-              <a href="http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/" class="text-secondary">
+              <a href="http://{{ cadc_url }}/en/search/" class="text-secondary">
                 <i class="fas fa-archive service-link"></i>
               </a>
               <div>
@@ -118,7 +121,7 @@ layout: default
           <a href="https://github.com/opencadc" class="social-link pl-sm-1" aria-label="Center Align">
             <i class="fab fa-github fa-3x" aria-hidden="true"></i>
           </a>
-          <a href="https://twitter.com/AstroCADC" class="social-link" aria-label="Center Align">
+          <a href="https://twitter.com/astro_canfar" class="social-link" aria-label="Center Align">
             <i class="fab fa-twitter fa-3x" aria-hidden="true"></i>
           </a>
           <a href="/en/slack" class="social-link" aria-label="Center Align">
@@ -129,10 +132,10 @@ layout: default
       <div class="col-6 col-md">
         <h5>About</h5>
         <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">CANFAR</a></li>
+          <li><a class="text-muted" href="about/">CANFAR</a></li>
           <li><a class="text-muted" href="#">Astronomy</a></li>
           <li><a class="text-muted" href="#">Privacy</a></li>
-          <li><a class="text-muted" href="#">Terms</a></li>
+          <li><a class="text-muted" href="about/terms-of-reference">Terms</a></li>
         </ul>
       </div>
       <div class="col-6 col-md">
@@ -143,7 +146,7 @@ layout: default
           <li><a class="text-muted" href="https://www.canarie.ca/">Canarie</a></li>
           <li><a class="text-muted" href="https://www.computecanada.ca/">Compute Canada</a></li>
         </ul>
-      </div>      
+      </div>
     </div>
   </footer>
   {% include _page_footer.html %}
@@ -164,4 +167,3 @@ layout: default
       true, successURI);
   });
 </script>
-

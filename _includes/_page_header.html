@@ -17,7 +17,7 @@
           <a class="p-2 text-dark" href="#">Download</a>
         </li>
         <li class="nav-item d-flex">
-          <a class="p-2 text-dark" href="#">Documentation</a>
+          <a class="p-2 text-dark" href="docs/">Documentation</a>
         </li>
         <li class="nav-item d-flex">
           <a class="p-2 text-dark" href="https://github.com/opencadc">Open Source</a>
@@ -28,23 +28,17 @@
           <ul class="dropdown-menu dropdown-menu-right list-unstyled">
             <li>
               <a href="/canfar/auth/update.html" tabindex="2" title="Update profile" class="dropdown-item account_access_info"
-                 id="updateProfile">Update profile
-              </a>
+                 id="updateProfile">Update profile</a>
             </li>
             <li>
               <a href="/canfar/auth/changePassword.shtml" tabindex="2" title="Change password" class="dropdown-item account_access_info"
-                 id="changePassword">Change password
-              </a>
+                 id="changePassword">Change password</a>
             </li>
             <li>
               <a id="logout" title="Logout." class="access-control dropdown-item account_access_info" href="/access/logout">
                 <span class="fas fa-sign-out-alt"></span> Logout</a>
             </li>
-          </ul><a title="User actions." class="dropdown-toggle access-actions user-actions btn btn-outline-primary"
-             data-toggle="dropdown">
-            <span class="canfar-auth-username"></span>
-            <span class="caret"></span>
-          </a>
+          </ul>
         </li>
 
         <li class="nav-item pl-4 dropdown canfar-access-control user-anonymous canfar-anonymous d-none">
@@ -74,19 +68,18 @@
         </li>
       </ul>
     </div>
+
   </nav>
 </header>
 
 <!-- todo: use min version when deploying - need to check link below however -->
-<!--<script src="https://code.jquery.com/jquery-3.3.1..min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"-->
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"-->
 <!--crossorigin="anonymous"></script>-->
 
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha384-fJU6sGmyn07b+uD1nMk7/iSb4yvaowcueiQhfVgQuD98rfva8mcr1eSvjchfpMrH"
         crossorigin="anonymous"></script>
 <script type="text/javascript" src="//apps.canfar.net/cadcJS/javascript/org.opencadc.js"></script>
 <script type="text/javascript" src="//apps.canfar.net/cadcJS/javascript/cadc.uri.js"></script>
-<script type="text/javascript" src="//apps.canfar.net/canfar/javascript/cadc.user.js"></script>
-<script type="text/javascript" src="//www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/cadc/bootstrap/js/login.js"></script>
 
 <script type="text/javascript">
   $(document).ready(function () {
@@ -94,5 +87,5 @@
       parent.history.back()
       return false
     })
-  });
+  })
 </script>
