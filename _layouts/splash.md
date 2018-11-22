@@ -29,7 +29,7 @@ layout: default
         <div class="mt-md-5">
           <div class="row text-center mb-3">
             <div class="mx-1 col">
-              <a href="http://{{ apps_url }}/storage/list" class="text-secondary">
+              <a href="http://{{ apps_url }}/storage/list" class="text-secondary" data-toggle="tooltip" data-placement="top" title="Manage your VOSpace">
                 <i class="fas fa-hdd service-link"></i>
               </a>
               <div>
@@ -37,7 +37,7 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="http://{{ apps_url }}/gmui" class="text-secondary">
+              <a href="http://{{ apps_url }}/gmui" class="text-secondary" data-toggle="tooltip" data-placement="top" title="Manage your CANFAR teams">
                 <i class="fas fa-users service-link"></i>
               </a>
               <div>
@@ -45,7 +45,7 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="http://{{ apps_url }}/citation" class="text-secondary">
+              <a href="http://{{ apps_url }}/citation" class="text-secondary" data-toggle="tooltip" data-placement="top" title="Manager your Digital Object Identifiers">
                 <i class="fas fa-link service-link"></i>
               </a>
               <div>
@@ -56,7 +56,7 @@ layout: default
           <br />
           <div class="row text-center mb-3">
             <div class="mx-1 col">
-              <a href="http://{{ apps_url }}/processing/batchjobs" class="text-secondary">
+              <a href="http://{{ apps_url }}/processing/batchjobs" class="text-secondary" data-toggle="tooltip" data-placement="top" title="Cloud processing on CANFAR resources">
                 <i class="fas fa-microchip service-link"></i>
               </a>
               <div>
@@ -64,7 +64,7 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="http://demo.canfar.net/en/arcade" class="text-secondary">
+              <a href="http://demo.canfar.net/en/arcade" class="text-secondary" data-toggle="tooltip" data-placement="top" title="Cloud user sessions">
                 <i class="fas fa-desktop service-link"></i>
               </a>
               <div>
@@ -72,7 +72,7 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="http://{{ apps_url }}/processing/vmod" class="text-secondary">
+              <a href="http://{{ apps_url }}/processing/vmod" class="text-secondary" data-toggle="tooltip" data-placement="top" title="Interactive Virtual Machines">
                 <i class="fas fa-power-off service-link"></i>
               </a>
               <div>
@@ -83,7 +83,7 @@ layout: default
           <br />
           <div class="row text-center mt-3">
             <div class="mx-1 offset-mx-1 col">
-              <a href="http://{{ cadc_url }}/en/search/" class="text-secondary">
+              <a href="http://{{ cadc_url }}/en/search/" class="text-secondary" data-toggle="tooltip" data-placement="right" title="Search data collections at the Canadian Astronomy Data Centre">
                 <i class="fas fa-archive service-link"></i>
               </a>
               <div>
