@@ -29,7 +29,7 @@ echo $*
 
 </div>
 
-Let's name the local script `myexec.bash`. We now have to choose a machine that will execute the transfered script. Let's assume a VM image is called `my_vm_image` has been created following the [tutorial]({{site.basepath}}/docs/tutorial). Now to execute the command `ls` we need the smallest possible resource flavour that can boot the `my_vm_image` VM, that is `c1-7.5gb-30`. Open your favorite editor, and write a job file `myjob.jdl`.
+Let's name the local script `myexec.bash`. We now have to choose a machine that will execute the transfered script. Let's assume a VM image is called `my_vm_image` has been created following the [tutorial]({{site.basepath}}/en/docs/quick_start/). Now to execute the command `ls` we need the smallest possible resource flavour that can boot the `my_vm_image` VM, that is `c1-7.5gb-30`. Open your favorite editor, and write a job file `myjob.jdl`.
 
 A typical job will be like this:
 
