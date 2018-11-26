@@ -8,4 +8,4 @@ sed -i -e 's/^site_env:.*$/site_env: '"${ENV}"'/' _config.yml
 docker pull ${DOCKER_IMAGE}
 PWD=$(pwd)
 echo "Mounting ${PWD} to /srv/jekyll"
-docker run --rm -t -v $(pwd):/srv/jekyll ${DOCKER_IMAGE} bash -c "bundle install && bundle exec jekyll build"
+docker run --rm -t -v $(pwd):/srv/jekyll -v /builds:/builds ${DOCKER_IMAGE} bash -c "bundle install && bundle exec jekyll build -d /builds"
