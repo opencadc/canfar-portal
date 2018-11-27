@@ -7,5 +7,13 @@ sed -i -e 's/^site_env:.*$/site_env: '"${ENV}"'/' _config.yml
 
 docker pull ${DOCKER_IMAGE}
 PWD=$(pwd)
-echo "Mounting ${PWD} to /srv/jekyll"
-docker run --rm -t -v $(pwd):/srv/jekyll ${DOCKER_IMAGE} bash -c "bundle install && bundle exec jekyll build"
+OUTPUT_DIR="${PWD}/_site"
+echo "Building into ${OUTPUT_DIR}"
+docker run --rm -t -v ${PWD}:/srv/jekyll ${DOCKER_IMAGE} bash -c "bundle install && bundle exec jekyll build"
+
+if [[ -d "${OUTPUT_DIR}" ]];
+then
+  rsync -avc ${OUTPUT_DIR}/* ${RPS}/www/
+else
+  echo "Nothing built in ${OUTPUT_DIR}"
+fi
