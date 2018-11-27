@@ -9,7 +9,7 @@ docker pull ${DOCKER_IMAGE}
 PWD=$(pwd)
 OUTPUT_DIR="${PWD}/_site"
 echo "Building into ${OUTPUT_DIR}"
-docker run --rm -t -v ${PWD}:/srv/jekyll ${DOCKER_IMAGE} bash -c "bundle install && bundle exec jekyll build"
+docker run --rm -t -v ${PWD}:/srv/jekyll ${DOCKER_IMAGE} bash -c "bundle clean --force && bundle install && bundle exec jekyll build"
 
 if [[ -d "${OUTPUT_DIR}" ]];
 then
