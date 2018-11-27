@@ -93,8 +93,17 @@ vcp ${HOME}/bar vos:VOSPACE
 # wildcards also work
 vcp vos:VOSPACE/foo/*.txt .
 
-# Our you can do FITS cutouts at the service side
+# Or you can do FITS cutouts at the service side in pixels
 vcp vos:VOSPACE/image.fits[1:100,1:100] .
+
+# or coordinates
+vcp vos:VOSPACE/image.fits(10.25,10.25,0.1) .
+
+# copy just the headers of the FITS file ...
+vcp --head vos:VOSPACE/image.fits .
+
+# or examine the headers of the FITS file
+vcat --head vos:VOSPACE/image.fits
 
 # remove the bar file from VOSPACE
 vrm vos:VOSPACE/foo
