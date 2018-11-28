@@ -17,7 +17,7 @@
           <a class="p-2 text-dark" href="#">Download</a>
         </li>
         <li class="nav-item d-flex">
-          <a class="p-2 text-dark" href="docs/">Documentation</a>
+          <a class="p-2 text-dark" href="{{ page_lang_link }}/docs/">Documentation</a>
         </li>
         <li class="nav-item d-flex">
           <a class="p-2 text-dark" href="https://github.com/opencadc">Open Source</a>
@@ -80,12 +80,3 @@
         crossorigin="anonymous"></script>
 <script type="text/javascript" src="//apps.canfar.net/cadcJS/javascript/org.opencadc.js"></script>
 <script type="text/javascript" src="//apps.canfar.net/cadcJS/javascript/cadc.uri.js"></script>
-
-<script type="text/javascript">
-  $(document).ready(function () {
-    $("#cancel_login_button").click(function () {
-      parent.history.back()
-      return false
-    })
-  })
-</script>

@@ -3,7 +3,7 @@ layout: pages_left_nav
 
 namespace: about.terms_of_reference
 lang: en
-permalink: /en/about/terms-of-reference
+permalink: /en/about/terms-of-reference/
 ---
 
 <!-- Content start -->
