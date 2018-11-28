@@ -44,7 +44,7 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="http://{{ apps_url }}/citation" class="text-secondary" data-toggle="tooltip" data-placement="top" title="Manager your Digital Object Identifiers">
+              <a href="http://{{ apps_url }}/citation" class="text-secondary disabled" data-toggle="tooltip" data-placement="top" title="Manager your Digital Object Identifiers" disabled="disabled">
                 <i class="fas fa-link service-link"></i>
               </a>
               <div>
@@ -63,7 +63,7 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="http://demo.canfar.net/en/arcade" class="text-secondary" data-toggle="tooltip" data-placement="top" title="Cloud user sessions">
+              <a href="http://{{ canfar_url }}/en/arcade" class="text-secondary disabled" data-toggle="tooltip" data-placement="top" title="Cloud user sessions" disabled="disabled">
                 <i class="fas fa-desktop service-link"></i>
               </a>
               <div>
