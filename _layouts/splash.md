@@ -111,7 +111,7 @@ layout: default
       <div class="col-6 col-md">
         <h5>Download</h5>
         <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="https://pypi.org/search/?q=cadc">Python applications</a></li>
+          <li><a class="text-muted" href="https://pypi.org/search/?q=caom2%7Ccadc">Python applications</a></li>
           <!-- <li><a class="text-muted" href="#">Web services</a></li> -->
         </ul>
       </div>
