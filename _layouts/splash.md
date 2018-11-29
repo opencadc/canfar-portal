@@ -10,9 +10,6 @@ layout: default
 {% assign form_error_title = "Unable to process" %}
 {% assign form_error_message = "All fields are required" %}
 {% assign successURI = "/en/register/requestSubmitted.html" %}
-{% assign cadc_url = site.env[site.site_env].cadc %}
-{% assign canfar_url = site.env[site.site_env].canfar %}
-{% assign apps_url = site.env[site.site_env].apps %}
 
 <div id="stars"></div>
 <div class="container">
@@ -28,11 +25,11 @@ layout: default
         <div class="mt-md-5">
           <div class="row text-center mb-3">
             <div class="mx-1 col">
-              <a href="{{ apps_url }}/storage/list" class="text-secondary" data-toggle="tooltip" data-placement="top" title="Manage your VOSpace">
+              <a href="{{ apps_url }}{{ t['services']['storage'].link }}" class="text-secondary" data-toggle="tooltip" data-placement="top" title="Manage your VOSpace">
                 <i class="fas fa-hdd service-link"></i>
               </a>
               <div>
-                <span>Storage Management</span>
+                <span>{{ t['services']['storage'].name }}</span>
               </div>
             </div>
             <div class="mx-1 col">
@@ -117,13 +114,13 @@ layout: default
       <div class="col-6 col-md">
         <h5 hidden>Resources</h5>
         <div class="social-link-toolbar" role="toolbar">
-          <a href="https://github.com/opencadc" class="social-link pl-sm-1" aria-label="Center Align">
+          <a href="https://github.com/opencadc" class="social-link pl-sm-1" aria-label="Center Align" data-toggle="tooltip" data-placement="top" title="See the OpenCADC GitHub page">
             <i class="fab fa-github fa-3x" aria-hidden="true"></i>
           </a>
-          <a href="https://twitter.com/astro_canfar" class="social-link" aria-label="Center Align">
+          <a href="https://twitter.com/astro_canfar" class="social-link" aria-label="Center Align" data-toggle="tooltip" data-placement="top" title="See the latest CANFAR tweets">
             <i class="fab fa-twitter fa-3x" aria-hidden="true"></i>
           </a>
-          <a href="/en/slack" class="social-link" aria-label="Center Align">
+          <a href="/en/slack" class="social-link" aria-label="Center Align" data-toggle="tooltip" data-placement="top" title="Join our Slack channel">
             <i class="fab fa-slack fa-3x" aria-hidden="true"></i>
           </a>
         </div>

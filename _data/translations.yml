@@ -156,7 +156,7 @@ en:
       capacity: 'Default is 10 VMs sharing 20 CPUs, 50GB RAM, 1TB disk and 1 public IP'
     caom_query_service:
       name: 'CADC Data Collections'
-      link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/'
+      link: '/en/search/'
       api_link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/tap/'
       description: 'CADC Data Discovery and Access'
   resources:
