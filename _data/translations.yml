@@ -124,34 +124,36 @@ en:
   _services:
     name: 'Services'
   services:
-    openstack_cloud_portal:
-      name: 'OpenStack Cloud'
-      link: '/processing/vmod/'
-      description: 'Run your own virtual machines on Compute Canada cloud'
-      capacity: 'Default is 10 VMs sharing 20 CPUs, 50GB RAM, 1TB disk and 1 public IP'
-    digital_object_identifiers:
-      name: 'Digital Object Identifiers'
-      link: '/citation'
-      description: 'Manage your digital object identifiers'
-    arcade:
-      name: 'Arcade'
-      link: '/en/arcade'
-      description: 'Cloud user sessions'
     storage:
       name: 'Storage Management'
       link: '/storage/list/'
       api_link: 'http://www.canfar.phys.uvic.ca/vospace/'
       description: 'Manage your own large storage for astronomy data'
-    batch_processing:
-      name: 'Batch Processing'
-      link: '/processing/batchjobs'
-      api_link: 'http://www.canfar.phys.uvic.ca/proc/'
-      description: 'Access large resources for batch processing on the cloud'
     group_management:
       name: 'Group Management'
       link: '/gmui'
       api_link: 'http://www.canfar.phys.uvic.ca/ac/'
       description: 'Manage access permissions to your managed Storage'
+    digital_object_identifiers:
+      disabled: true
+      name: 'Digital Object Identifiers'
+      link: '/citation'
+      description: 'Manage your digital object identifiers'
+    batch_processing:
+      name: 'Batch Processing'
+      link: '/processing/batchjobs'
+      api_link: 'http://www.canfar.phys.uvic.ca/proc/'
+      description: 'Access large resources for batch processing on the cloud'
+    arcade:
+      disabled: true
+      name: 'Arcade'
+      link: '/en/arcade'
+      description: 'Cloud user sessions'
+    openstack_cloud_portal:
+      name: 'OpenStack Cloud'
+      link: '/processing/vmod/'
+      description: 'Run your own virtual machines on Compute Canada cloud'
+      capacity: 'Default is 10 VMs sharing 20 CPUs, 50GB RAM, 1TB disk and 1 public IP'
     caom_query_service:
       name: 'CADC Data Collections'
       link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/'
@@ -371,9 +373,9 @@ fr:
     euclid:
       name: 'Euclid'
       link: '/euclid'
-  services:
+  _services:
     name: 'Services'
-    link: '/services'
+  services:
     openstack_cloud_portal:
       name: 'Portail de cloud OpenStack'
       link: '/processing/vmod/'
