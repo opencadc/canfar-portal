@@ -83,7 +83,7 @@ layout: default
           <div class="row text-center mt-3">
             <div class="mx-1 offset-mx-1 col">
               <a href="{{ cadc_url }}/en/search/" class="text-secondary" data-toggle="tooltip" data-placement="right" title="Search data collections at the Canadian Astronomy Data Centre">
-                <i class="fas fa-archive service-link"></i>
+                <i class="fas fa-star service-link"></i>
               </a>
               <div>
                 <span>CADC Search</span>

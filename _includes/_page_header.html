@@ -13,11 +13,18 @@
     </button>
     <div class="navbar-collapse collapse" id="collapse_nav">
       <ul class="navbar-nav mr-auto">
-        {% comment %} <li class="nav-item d-flex">
-          <a class="p-2 text-dark" href="#">Download</a>
-        </li> {% endcomment %}
         <li class="nav-item d-flex">
           <a class="p-2 text-dark" href="{{ page_lang_link }}{{ t['docs'].link }}{{ t['docs']['quick_start'].link }}">{{ t['docs'].name }}</a>
+        </li>
+        <li class="nav-item d-flex dropdown">
+          <a title="Services" id="services_dropdown" class="dropdown-toggle p-2 text-dark" data-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="">{{ t['_services'].name }}</a>
+          <div class="dropdown-menu" aria-labelledby="services_dropdown">
+          {% for service in t['services'] %}
+            {% assign service_key = service[0] %}
+            {% assign service_configuration = t['services'][service_key] %}
+            <a class="dropdown-item" href="{{ service_configuration.link }}">{{ service_configuration.name }}</a>
+          {% endfor %}
+          </div>
         </li>
         <li class="nav-item d-flex">
           <a class="p-2 text-dark" href="{{ page_lang_link }}{{ t['about'].link }}{{ t['about']['organization'].link }}">{{ t['about'].name }}</a>
@@ -52,7 +59,7 @@
              href="#">Login</a>
           <ul class="dropdown-menu dropdown-menu-right list-unstyled login-container">
             <li>
-              <form class="form-inline access-control" id="loginForm" role="form" method="post" action="//apps.canfar.net/access/login">
+              <form class="form-inline access-control" id="loginForm" role="form" method="post" action="/access/login">
                 <span id="login_fail" class="help-block text-danger"></span>
                 <label for="username" class="sr-only" id="usernameLabel">Username</label>
                 <input type="text" id="username" name="username" class="form-control mb-2 mr-sm-2 ml-sm-2" tabindex="1"

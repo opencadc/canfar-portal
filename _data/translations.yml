@@ -121,6 +121,42 @@ en:
     euclid:
       name: 'Euclid'
       link: '/euclid'
+  _services:
+    name: 'Services'
+  services:
+    openstack_cloud_portal:
+      name: 'OpenStack Cloud'
+      link: '/processing/vmod/'
+      description: 'Run your own virtual machines on Compute Canada cloud'
+      capacity: 'Default is 10 VMs sharing 20 CPUs, 50GB RAM, 1TB disk and 1 public IP'
+    digital_object_identifiers:
+      name: 'Digital Object Identifiers'
+      link: '/citation'
+      description: 'Manage your digital object identifiers'
+    arcade:
+      name: 'Arcade'
+      link: '/en/arcade'
+      description: 'Cloud user sessions'
+    storage:
+      name: 'Storage Management'
+      link: '/storage/list/'
+      api_link: 'http://www.canfar.phys.uvic.ca/vospace/'
+      description: 'Manage your own large storage for astronomy data'
+    batch_processing:
+      name: 'Batch Processing'
+      link: '/processing/batchjobs'
+      api_link: 'http://www.canfar.phys.uvic.ca/proc/'
+      description: 'Access large resources for batch processing on the cloud'
+    group_management:
+      name: 'Group Management'
+      link: '/gmui'
+      api_link: 'http://www.canfar.phys.uvic.ca/ac/'
+      description: 'Manage access permissions to your managed Storage'
+    caom_query_service:
+      name: 'CADC Data Collections'
+      link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/'
+      api_link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/tap/'
+      description: 'CADC Data Discovery and Access'
   resources:
     name: 'Resources'
     link: '/resources'
@@ -203,40 +239,6 @@ en:
       quick_start:
         label: 'Get started with CANFAR!'
         link: '/quick-start/'
-    services:
-      name: 'Services'
-      link: '/services/'
-      openstack_cloud_portal:
-        name: 'OpenStack Cloud'
-        link: 'http://apps.canfar.net/processing/vmod/'
-        description: 'Run your own virtual machines on Compute Canada cloud'
-        capacity: 'Default is 10 VMs sharing 20 CPUs, 50GB RAM, 1TB disk and 1 public IP'
-      digital_object_identifiers:
-        name: 'Digital Object Identifiers'
-        link: '/digital-object-identifiers'
-        description: 'Set a Digital Object Identifier for your data'
-      storage:
-        name: 'Storage'
-        link: 'http://apps.canfar.net/storage/list/'
-        api_link: 'http://www.canfar.phys.uvic.ca/vospace/'
-        description: 'Manage your own large storage for astronomy data'
-        capacity: 'Default is 500GB, can accomodate up to 100TB per project'
-      batch_processing:
-        name: 'Batch Processing'
-        link: 'http://apps.canfar.net/processing/batchjobs'
-        api_link: 'http://www.canfar.phys.uvic.ca/proc/'
-        description: 'Access large resources for batch processing on the cloud'
-        capacity: 'Up to 16 CPUs, 120GB RAM per VM and up to 2,000 VMs'
-      group_management:
-        name: 'Group Management'
-        link: 'http://apps.canfar.net/gmui'
-        api_link: 'http://www.canfar.phys.uvic.ca/ac/'
-        description: 'Manage access permission to your data or data located with the Storage service'
-      caom_query_service:
-        name: 'CADC Data Collections'
-        link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/'
-        api_link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/tap/'
-        description: 'CADC Data Discovery and Access'
   footer_github: 'on GitHub'
   toggle_navigation: 'Toggle navigation'
   showcase_taglines:
@@ -299,6 +301,10 @@ fr:
     digital_object_identifiers:
       name: "Identificateurs d'objects digitale"
       link: '/identificateurs_objets_digitale/'
+    arcade:
+      name: 'Arcade'
+      link: '/fr/arcade'
+      description: 'Sessions de calcul en nuage'
     storage:
       name: 'Stockage'
       link: '/stockage/'
@@ -365,6 +371,37 @@ fr:
     euclid:
       name: 'Euclid'
       link: '/euclid'
+  services:
+    name: 'Services'
+    link: '/services'
+    openstack_cloud_portal:
+      name: 'Portail de cloud OpenStack'
+      link: '/processing/vmod/'
+      description: 'La description de Partail de cloud'
+    digital_object_identifiers:
+      name: "Identificateurs d'objects digitale"
+      link: '/identificateurs-objets-digitale'
+      description: "La description d'Identificateurs d'objects digitale"
+    storage:
+      name: 'Gestion de stockage'
+      link: '/storage/list/'
+      api_link: 'http://www.canfar.phys.uvic.ca/vospace/'
+      description: 'La description de Stockage'
+    batch_processing:
+      name: 'Le traitement par lots'
+      link: '/processing/batchjobs'
+      api_link: 'http://www.canfar.phys.uvic.ca/proc/'
+      description: 'La description du traitement par lots'
+    group_management:
+      name: 'Gestion de groupes'
+      link: '/gmui'
+      api_link: 'http://www.canfar.phys.uvic.ca/ac/'
+      description: 'La description de Gestion de groupes'
+    caom_query_service:
+      name: 'Les collections de données du CCDA'
+      link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/fr/recherche/'
+      api_link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/tap/'
+      description: "Service de découverte et d'accès aux données"
   resources:
     name: 'Ressources'
     link: '/ressources'
@@ -447,37 +484,6 @@ fr:
       quick_start:
         label: 'Commencer immediatement!'
         link: '/commencer/'
-    services:
-      name: 'Services'
-      link: '/services'
-      openstack_cloud_portal:
-        name: 'Portail de cloud OpenStack'
-        link: 'http://apps.canfar.net/processing/vmod/'
-        description: 'La description de Partail de cloud'
-      digital_object_identifiers:
-        name: "Identificateurs d'objects digitale"
-        link: '/identificateurs-objets-digitale'
-        description: "La description d'Identificateurs d'objects digitale"
-      storage:
-        name: 'Stockage'
-        link: 'http://apps.canfar.net/storage/list/'
-        api_link: 'http://www.canfar.phys.uvic.ca/vospace/'
-        description: 'La description de Stockage'
-      batch_processing:
-        name: 'Le traitement par lots'
-        link: 'http://apps.canfar.net/processing/batchjobs'
-        api_link: 'http://www.canfar.phys.uvic.ca/proc/'
-        description: 'La description du traitement par lots'
-      group_management:
-        name: 'Gestion de groupes'
-        link: 'http://apps.canfar.net/gmui'
-        api_link: 'http://www.canfar.phys.uvic.ca/ac/'
-        description: 'La description de Gestion de groupes'
-      caom_query_service:
-        name: 'Les collections de données du CCDA'
-        link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/fr/recherche/'
-        api_link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/tap/'
-        description: "Service de découverte et d'accès aux données"
     user_guide:
       name: "Guide d'utilisateur"
       link: '/guide-dutilisateur'
