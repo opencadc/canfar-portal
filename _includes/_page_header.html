@@ -17,10 +17,17 @@
           <a class="p-2 text-dark" href="#">Download</a>
         </li> {% endcomment %}
         <li class="nav-item d-flex">
-          <a class="p-2 text-dark" href="{{ page_lang_link }}/docs/">Documentation</a>
+          <a class="p-2 text-dark" href="{{ page_lang_link }}{{ t['docs'].link }}{{ t['docs']['quick_start'].link }}">{{ t['docs'].name }}</a>
         </li>
         <li class="nav-item d-flex">
-          <a class="p-2 text-dark" href="https://github.com/opencadc">Open Source</a>
+          <a class="p-2 text-dark" href="{{ page_lang_link }}{{ t['about'].link }}{{ t['about']['organization'].link }}">{{ t['about'].name }}</a>
+        </li>
+        <li class="nav-item d-flex">
+          <a class="p-2 text-dark" href="{{ t['open_source'].link }}" ref="external">{{ t['open_source'].name }}</a>
+        </li>
+        <li class="nav-item d-flex">
+          <a href="mailto:{{ t['support']['link'] }}" class="p-2">
+            <i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a>
         </li>
         <li class="nav-item pl-4 dropdown canfar-access-control user-authenticated canfar-authenticated d-none">
           <a title="User actions" class="dropdown-toggle access-actions login-form btn btn-outline-primary" data-toggle="dropdown"
@@ -40,8 +47,7 @@
             </li>
           </ul>
         </li>
-
-        <li class="nav-item pl-4 dropdown canfar-access-control user-anonymous canfar-anonymous d-none">
+        <li class="nav-item pl-4 dropdown canfar-access-control user-anonymous canfar-anonymous">
           <a title="Login form" class="dropdown-toggle access-actions login-form btn btn-outline-primary" data-toggle="dropdown"
              href="#">Login</a>
           <ul class="dropdown-menu dropdown-menu-right list-unstyled login-container">
@@ -51,7 +57,6 @@
                 <label for="username" class="sr-only" id="usernameLabel">Username</label>
                 <input type="text" id="username" name="username" class="form-control mb-2 mr-sm-2 ml-sm-2" tabindex="1"
                        required="required" placeholder="Username">
-
                 <label for="password" class="sr-only" id="passwordLabel">Password</label>
                 <input type="password" id="password" name="password" class="form-control mb-2 mr-sm-2 ml-sm-2" tabindex="2"
                        required="required" placeholder="Password">
@@ -73,10 +78,9 @@
 </header>
 
 <!-- todo: use min version when deploying - need to check link below however -->
-<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"-->
-<!--crossorigin="anonymous"></script>-->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
 
-<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha384-fJU6sGmyn07b+uD1nMk7/iSb4yvaowcueiQhfVgQuD98rfva8mcr1eSvjchfpMrH"
-        crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha384-fJU6sGmyn07b+uD1nMk7/iSb4yvaowcueiQhfVgQuD98rfva8mcr1eSvjchfpMrH"
+        crossorigin="anonymous"></script> -->
 <script type="text/javascript" src="//apps.canfar.net/cadcJS/javascript/org.opencadc.js"></script>
 <script type="text/javascript" src="//apps.canfar.net/cadcJS/javascript/cadc.uri.js"></script>

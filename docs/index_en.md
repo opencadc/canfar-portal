@@ -10,8 +10,4 @@ permalink: /en/docs/
 
 <!-- Content starts -->
 
-<ul id="nostyle" class="list-unstyled">
-  {% include _menudata_list.md namespace=page.namespace %}
-</ul>
-
 <!-- Content ends -->

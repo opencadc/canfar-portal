@@ -5,45 +5,46 @@ namespace: docs.quick_start
 lang: en
 permalink: /en/docs/quick_start/
 ---
+
 # Quick Start: Build a star detection pipeline
 
 This quick start guide will demonstrate how to:
 
-* create, configure, and interact with OpenStack cloud and Virtual Machines (VMs)
-* store files with the CANFAR VOSpace storage
-* launch batch processing jobs from the CANFAR batch host, using VMs created in the previous step
+- create, configure, and interact with OpenStack cloud and Virtual Machines (VMs)
+- store files with the CANFAR VOSpace storage
+- launch batch processing jobs from the CANFAR batch host, using VMs created in the previous step
 
 Before starting this example, you will need to have a CANAR/CADC account ([register](http://apps.canfar.net/canfar/auth/request.html)) and you will need to request a CANFAR resource allocation. The CANFAR team will take care of your registration to Compute Canada infrastructure.
 
 ## Resource Allocation
 
-email support@canfar.net include your account name, the amount of resource require (storage volume and processing capacity) and a a few sentences of justification.  Your request will be reviewed and you will be contacted by our support group. 
+email support@canfar.net include your account name, the amount of resource require (storage volume and processing capacity) and a a few sentences of justification. Your request will be reviewed and you will be contacted by our support group.
 
 ## Create your interactive Virtual Machine
 
-To manage the VMs with OpenStack, we suggest using the  dashboard at Compute Canada. [Log into the dashboard](https://west.cloud.computecanada.ca). Provide your CANFAR username, adding a ```-canfar``` suffix, e.g, ```janesmith-canfar```, and your usual CANFAR password. We will refer the CANFAR username (excluding the ```-canfar``` suffix which is only used for logging into the dashboard) as ```[username]``` throughout this document.
+To manage the VMs with OpenStack, we suggest using the dashboard at Compute Canada. [Log into the dashboard](https://west.cloud.computecanada.ca). Provide your CANFAR username, adding a `-canfar` suffix, e.g, `janesmith-canfar`, and your usual CANFAR password. We will refer the CANFAR username (excluding the `-canfar` suffix which is only used for logging into the dashboard) as `[username]` throughout this document.
 
 Each resource allocation corresponds to an OpenStack **tenant** or **project** (these two names are used interchangeably). A user may be a member of multiple tenants, and a tenant usually has multiple users. A pull-down menu near the top-left allows you to select between the different tenants that you are a member of.
 
 ### Allow ssh access to your VM
 
-* Click on **Access & Security** (left column of page), and then the **Security Groups** tab.
-* Click on the **Manage Rules** button next to the default group. If you see a rule with **Ingress** direction, **22(SSH)** Port Range and **0.0.0.0/0 (CIDR)** , then that means someone in your tenant already  opened the ssh port for you. If you don't see it, add a new rule following step.
-* Click on the **+ Add Rule** button near the top-right. Select **SSH** at the bottom of the **Rule** pull-down menu, and then click on **Add** at the bottom-right. **This operation is only required once for the initial setup of the tenant**.
+- Click on **Access & Security** (left column of page), and then the **Security Groups** tab.
+- Click on the **Manage Rules** button next to the default group. If you see a rule with **Ingress** direction, **22(SSH)** Port Range and **0.0.0.0/0 (CIDR)** , then that means someone in your tenant already opened the ssh port for you. If you don't see it, add a new rule following step.
+- Click on the **+ Add Rule** button near the top-right. Select **SSH** at the bottom of the **Rule** pull-down menu, and then click on **Add** at the bottom-right. **This operation is only required once for the initial setup of the tenant**.
 
 ### Import an ssh public key
 
 Access to VMs is facilitated by SSH key pairs rather than less secure user name / password. A private key resides on your own computer, and the public key is copied to all machines that you wish to connect to.
 
-* If you have not yet created a key pair on your system, run **ssh-keygen** on this local machine to generate one or follow this [documentation](https://help.github.com/articles/generating-ssh-keys/) for example.
-* Click on **Access & Security**, switch to the **Key Pairs** tab and click on the **Import Key Pair** button at the top-right.
-* Choose a meaningful name for the key, and then copy and paste the contents of ```~/.ssh/id_rsa.pub``` from the machine you plan to ssh from into the **Public Key** window.
+- If you have not yet created a key pair on your system, run **ssh-keygen** on this local machine to generate one or follow this [documentation](https://help.github.com/articles/generating-ssh-keys/) for example.
+- Click on **Access & Security**, switch to the **Key Pairs** tab and click on the **Import Key Pair** button at the top-right.
+- Choose a meaningful name for the key, and then copy and paste the contents of `~/.ssh/id_rsa.pub` from the machine you plan to ssh from into the **Public Key** window.
 
 ### Allocate a public IP address
 
 You will need to connect to your VM via a public IP.
 
-* Click on the **Floating IPs** tab. If there are no IPs listed, click on the **Allocate IP to Project** button at the top-right.
+- Click on the **Floating IPs** tab. If there are no IPs listed, click on the **Allocate IP to Project** button at the top-right.
 
 Each tenant/project will typically have one public IP. If you have already allocated all of your IPs, this button will read "Quota Exceeded".
 
@@ -51,21 +52,21 @@ Each tenant/project will typically have one public IP. If you have already alloc
 
 We will now launch a VM with Ubuntu 16.04.
 
-* Switch to the **Images** window (left-hand column), and then click on the **Public** button at top right (it might be already selected.
-* Select ```ubuntu-server-16.04-amd64``` and click on the **Launch Instance** button on the right.
-* In the **Details** tab choose a meaningful **Instance Name**. **Flavor** is the hardware profile for the VM. ```c2-7.5gb-80``` provides the minimal requirements of 2 cores, 7.5GB or RAM for most VMs. Note that it provides an 80 GB *ephemeral disk* that will be used as scratch space for batch processing. **Availability Zone** should be left empty, and **Instance Count** 1.
-* In the **Access & Security** tab ensure that your public key is selected, and the ```default``` security group (with ssh rule added) is selected.
-* Finally, click the **Launch** button.
+- Switch to the **Images** window (left-hand column), and then click on the **Public** button at top right (it might be already selected.
+- Select `ubuntu-server-16.04-amd64` and click on the **Launch Instance** button on the right.
+- In the **Details** tab choose a meaningful **Instance Name**. **Flavor** is the hardware profile for the VM. `c2-7.5gb-80` provides the minimal requirements of 2 cores, 7.5GB or RAM for most VMs. Note that it provides an 80 GB _ephemeral disk_ that will be used as scratch space for batch processing. **Availability Zone** should be left empty, and **Instance Count** 1.
+- In the **Access & Security** tab ensure that your public key is selected, and the `default` security group (with ssh rule added) is selected.
+- Finally, click the **Launch** button.
 
 ### Connect to the VM
 
 After launching the VM you are returned to the **Instances** window. You can check the VM status once booted by clicking on its name (the **Console** tab of this window provides a basic console in which you can monitor the boot process).
 Before being able to ssh to your instance, you will need to attach the public IP address to it.
 
-* Select **Associate Floating IP** from the **More** pull-down menu.
-* Select the address that was allocated and the new VM instance in the **Port to be associated** menu, and click on **Associate**.
+- Select **Associate Floating IP** from the **More** pull-down menu.
+- Select the address that was allocated and the new VM instance in the **Port to be associated** menu, and click on **Associate**.
 
-Your ssh public key will have been injected into a **generic account** with a name like ```centos```, or ```ubuntu```, depending on the Linux distribution. To discover the name of this account, first attempt to connect as root:
+Your ssh public key will have been injected into a **generic account** with a name like `centos`, or `ubuntu`, depending on the Linux distribution. To discover the name of this account, first attempt to connect as root:
 
 <div class="shell">
 
@@ -116,8 +117,8 @@ ssh [username]@[floating_ip]
 
 The VM operating system has only a minimal set of packages. For this example, we will use:
 
-* the [SExtractor](http://www.astromatic.net/software/sextractor) package to create catalogues of stars and galaxies.
-* We also need to read FITS images. Most FITS images from CADC come Rice-compressed with an `fz` extension. SExtractor only reads uncompressed images, so we also need the ```funpack``` utility to uncompress the incoming data. The ```funpack``` executable is included in the package ```libcfitsio-bin```.
+- the [SExtractor](http://www.astromatic.net/software/sextractor) package to create catalogues of stars and galaxies.
+- We also need to read FITS images. Most FITS images from CADC come Rice-compressed with an `fz` extension. SExtractor only reads uncompressed images, so we also need the `funpack` utility to uncompress the incoming data. The `funpack` executable is included in the package `libcfitsio-bin`.
 
 Let's install them both system wide after a fresh update of the Ubuntu repositories:
 
@@ -151,7 +152,7 @@ Next, enter the directory, copy an astronomical image there, and run SExtractor 
 
 {% highlight bash %}
 cd /ephemeral/work
-cp /usr/share/sextractor/default* .
+cp /usr/share/sextractor/default\* .
 rm default.param
 echo 'NUMBER
 MAG_AUTO
@@ -180,7 +181,7 @@ sudo pip install vos
 
 </div>
 
- For an automated procedure to access VOSpace on your behalf, your proxy authorization must be present on the VM. You can accomplish this using a `.netrc` file that contains your CANFAR user name and password, and the command **getCert** can obtain an *X509 Proxy Certificate* using that username/password combination without any further user interaction. The commands below will create the file and install the VOSpace utilities.
+For an automated procedure to access VOSpace on your behalf, your proxy authorization must be present on the VM. You can accomplish this using a `.netrc` file that contains your CANFAR user name and password, and the command **getCert** can obtain an _X509 Proxy Certificate_ using that username/password combination without any further user interaction. The commands below will create the file and install the VOSpace utilities.
 
 <div class="shell">
 
@@ -206,7 +207,7 @@ Verify that the file is properly uploaded by pointing your browser to the [VOSpa
 
 ## Automate all the above and run it in batch
 
-Now we want to automate the whole procedure above in a single script, in preparation for batch processing. Paste the following commands into one BASH script named ```~/do_catalog.bash``` on your VM:
+Now we want to automate the whole procedure above in a single script, in preparation for batch processing. Paste the following commands into one BASH script named `~/do_catalog.bash` on your VM:
 
 <div class="shell">
 
@@ -219,9 +220,9 @@ echo 'NUMBER
 MAG_AUTO
 X_IMAGE
 Y_IMAGE' > default.param
-sextractor ${1}.fits -CATALOG_NAME ${1}.cat
+sextractor${1}.fits -CATALOG_NAME ${1}.cat
 getCert
-vcp ${1}.cat vos:[username]
+vcp${1}.cat vos:[username]
 {% endhighlight %}
 
 </div>
@@ -238,7 +239,7 @@ chmod +x ~/do_catalog.bash
 
 </div>
 
-Now let's test the newly created script with a different file ID. The ```do_catalog.bash``` script will run on the local directory where it is launched from. Let's emulate a batch job and launch it from the ephemeral disk:
+Now let's test the newly created script with a different file ID. The `do_catalog.bash` script will run on the local directory where it is launched from. Let's emulate a batch job and launch it from the ephemeral disk:
 
 <div class="shell">
 
@@ -278,12 +279,11 @@ sudo bash canfar_batch_setup.bash
 
 Now we want to save our work. Return to your browser on the OpenStack dashboard.
 
-* Save the state of your VM by navigating to the **Instances** window of the dashboard, and click on the **Create Snapshot** button to the right of your VM instance's name. After selecting a name for the snapshot of the VM instance, e.g., ```my_vm_image```, click the **Create Snapshot** button. It will eventually be saved and listed in the VM **Images** window, and will be available next time you launch an instance of that VM image.
+- Save the state of your VM by navigating to the **Instances** window of the dashboard, and click on the **Create Snapshot** button to the right of your VM instance's name. After selecting a name for the snapshot of the VM instance, e.g., `my_vm_image`, click the **Create Snapshot** button. It will eventually be saved and listed in the VM **Images** window, and will be available next time you launch an instance of that VM image.
 
 ### Shutdown the VM Instance
 
-* In the **Instances** window, select ```Terminate Instance``` in the **More** pull-down menu, and confirm.
-
+- In the **Instances** window, select `Terminate Instance` in the **More** pull-down menu, and confirm.
 
 We are now are ready to launch batch processing jobs creating catalogues of many CFHT Megacam images and uploading the catalogues to VOSpace.
 
@@ -305,7 +305,7 @@ Let's write a submission file that will transfer the `do_catalog.bash` script to
 <div class="shell">
 
 {% highlight text %}
-Universe   = vanilla
+Universe = vanilla
 should_transfer_files = YES
 when_to_transfer_output = ON_EXIT_OR_EVICT
 environment = "HOME=/home/[username]"
@@ -342,7 +342,7 @@ Queue
 
 </div>
 
-Again, be sure to substitue the correct value for `[username]`. It is important to set this ```HOME``` environment variable so that the running job will be able to locate the ```.netrc``` file with VOSpace credentials.
+Again, be sure to substitue the correct value for `[username]`. It is important to set this `HOME` environment variable so that the running job will be able to locate the `.netrc` file with VOSpace credentials.
 
 Save the submission file as `myjobs.sub`.
 
@@ -371,7 +371,7 @@ canfar_submit myjobs.sub my_vm_image c4-15gb-83
 
 </div>
 
-```my_vm_image``` is the name of the snapshot you used during the VM configuration above, and ```c4-15gb-83``` is the flavor for the VM(s) that will execute the jobs. If you wish to use a different flavor, they are visible through the dashboard when [launching an instance](#launch-a-vm-instance), or using the [nova command-line client](../cli/#launch-the-instance).
+`my_vm_image` is the name of the snapshot you used during the VM configuration above, and `c4-15gb-83` is the flavor for the VM(s) that will execute the jobs. If you wish to use a different flavor, they are visible through the dashboard when [launching an instance](#launch-a-vm-instance), or using the [nova command-line client](../cli/#launch-the-instance).
 
 After submitting, wait a couple of minutes. Check where your jobs stand in the queue:
 
@@ -396,4 +396,3 @@ condor_status -submitter
 Once you have no more jobs in the queue, check the logs and output files `myjobs.*` on the batch host, and check on your VOSpace browser. All 4 of the generated catalogues should have been uploaded.
 
 You are done!
-

@@ -13,6 +13,12 @@ en:
   home:
     name: 'Home'
     link: '/'
+  contact:
+    name: 'Contact'
+    link: '/contact/'
+  open_source:
+    name: 'Open Source'
+    link: 'https://github.com/opencadc'
   partners:
     csa:
       size: '2'
@@ -63,28 +69,25 @@ en:
       link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/about.html#mandate'
     jcmt_starlink:
       name: 'JCMT Starlink'
-      link: '/jcmt_starlink'
+      link: '/jcmt_starlink/'
   about:
     name: 'About'
     link: '/about'
     organization:
       name: 'Organization'
-      link: '/organization'
+      link: '/organization/'
     terms_of_reference:
-       name: 'Terms of Reference'
-       link: '/terms-of-reference'
+      name: 'Terms of Reference'
+      link: '/terms-of-reference/'
     governance:
-       name: 'Governance'
-       link: '/governance'
+      name: 'Governance'
+      link: '/governance/'
     processes:
-       name: 'Processes'
-       link: '/processes'
+      name: 'Processes'
+      link: '/processes/'
     partners:
-       name: 'Partners'
-       link: '/partners'
-    contact:
-       name: 'Contact'
-       link: '/contact'
+      name: 'Partners'
+      link: '/partners/'
   nodes:
     name: 'Nodes'
     link: '/nodes'
@@ -109,9 +112,9 @@ en:
     vlass:
       name: 'VLASS'
       link: '/vlass'
-#    taos_ii:
-#     name: 'TAOS-II'
-#      link: '/taos-ii'
+    #    taos_ii:
+    #     name: 'TAOS-II'
+    #      link: '/taos-ii'
     inaf-oat:
       name: 'INAF-OAT'
       link: '/inaf-oat'
@@ -196,7 +199,7 @@ en:
           expertise: 'Nuclear structure and reaction theory, nuclear astrophysics/Nucleosynthetic uncertainty quantification, machine learning algorithm design and implementation, deep learning and online-learning methods, big data and machine learning organizational deployments and capability development'
           responsibilities: ''
     docs:
-      link: '/docs'
+      link: '/docs/'
       quick_start:
         label: 'Get started with CANFAR!'
         link: '/quick-start/'
@@ -234,9 +237,6 @@ en:
         link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/'
         api_link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/tap/'
         description: 'CADC Data Discovery and Access'
-    open_source:
-      name: 'Open Source'
-      link: '/open-source/'
   footer_github: 'on GitHub'
   toggle_navigation: 'Toggle navigation'
   showcase_taglines:
@@ -251,7 +251,7 @@ fr:
     link: 'support@canfar.net'
   slack:
     name: 'Slack'
-    link: '/slack/'    
+    link: '/slack/'
   login:
     name: 'Connexion'
     link: '/ac/login'
@@ -260,6 +260,12 @@ fr:
   home:
     name: 'Acceuil'
     link: '/'
+  contact:
+    name: 'Contacte'
+    link: '/contacte/'
+  open_source:
+    name: 'Open source'
+    link: 'https://github.com/opencadc'
   partners:
     csa:
       size: '2'
@@ -286,12 +292,12 @@ fr:
     link: '/enregistrer'
   docs:
     name: 'Documentation'
-    link: '/docs'
+    link: '/docs/'
     openstack_cloud_portal:
       name: 'Portail de cloud OpenStack'
       link: '/portail_de_cloud_openstack/'
     digital_object_identifiers:
-      name: 'Identificateurs d''objects digitale'
+      name: "Identificateurs d'objects digitale"
       link: '/identificateurs_objets_digitale/'
     storage:
       name: 'Stockage'
@@ -321,14 +327,11 @@ fr:
       name: 'Gouvernance'
       link: '/gouvernance'
     processes:
-       name: 'Processus'
-       link: '/processus'
+      name: 'Processus'
+      link: '/processus'
     partenaires:
       name: 'Partenaires'
       link: '/partenaires'
-    contact:
-      name: 'Contact'
-      link: '/contact'
   nodes:
     name: 'Nodes'
     link: '/nodes'
@@ -353,9 +356,9 @@ fr:
     vlass:
       name: 'VLASS'
       link: '/vlass'
-#    taos_ii:
-#      name: 'TAOS-II'
-#      link: '/taos-ii'
+    #    taos_ii:
+    #      name: 'TAOS-II'
+    #      link: '/taos-ii'
     inaf-oat:
       name: 'INAF-OAT'
       link: '/inaf-oat'
@@ -452,9 +455,9 @@ fr:
         link: 'http://apps.canfar.net/processing/vmod/'
         description: 'La description de Partail de cloud'
       digital_object_identifiers:
-        name: 'Identificateurs d''objects digitale'
+        name: "Identificateurs d'objects digitale"
         link: '/identificateurs-objets-digitale'
-        description: 'La description d''Identificateurs d''objects digitale'
+        description: "La description d'Identificateurs d'objects digitale"
       storage:
         name: 'Stockage'
         link: 'http://apps.canfar.net/storage/list/'
@@ -474,19 +477,16 @@ fr:
         name: 'Les collections de données du CCDA'
         link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/fr/recherche/'
         api_link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/tap/'
-        description: 'Service de découverte et d''accès aux données'
+        description: "Service de découverte et d'accès aux données"
     user_guide:
-      name: 'Guide d''utilisateur'
+      name: "Guide d'utilisateur"
       link: '/guide-dutilisateur'
-    open_source:
-      name: 'Open Source'
-      link: '/open-source/'
   footer_github: 'sur GitHub'
   toggle_navigation: 'Verser la navigation'
   showcase_taglines:
     - 'Traitements de données massives du NGVS'
     - 'Les découvertes fantastiques du OSSOS'
-    - 'Les pistes d''évolution stéllaire de NUGRID'
+    - "Les pistes d'évolution stéllaire de NUGRID"
   next: 'Prochain'
   previous: 'Précédent'
   events:

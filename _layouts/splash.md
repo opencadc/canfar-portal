@@ -28,7 +28,7 @@ layout: default
         <div class="mt-md-5">
           <div class="row text-center mb-3">
             <div class="mx-1 col">
-              <a href="http://{{ apps_url }}/storage/list" class="text-secondary" data-toggle="tooltip" data-placement="top" title="Manage your VOSpace">
+              <a href="{{ apps_url }}/storage/list" class="text-secondary" data-toggle="tooltip" data-placement="top" title="Manage your VOSpace">
                 <i class="fas fa-hdd service-link"></i>
               </a>
               <div>
@@ -36,15 +36,15 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="http://{{ apps_url }}/gmui" class="text-secondary" data-toggle="tooltip" data-placement="top" title="Manage your CANFAR teams">
+              <a href="{{ apps_url }}/gmui" class="text-secondary" data-toggle="tooltip" data-placement="top" title="Manage your CANFAR groups">
                 <i class="fas fa-users service-link"></i>
               </a>
               <div>
-                <span>Team Management</span>
+                <span>Group Management</span>
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="http://{{ apps_url }}/citation" class="text-secondary disabled" data-toggle="tooltip" data-placement="top" title="Manager your Digital Object Identifiers" disabled="disabled">
+              <a href="{{ apps_url }}/citation" class="text-secondary disabled" data-toggle="tooltip" data-placement="top" title="Manager your Digital Object Identifiers">
                 <i class="fas fa-link service-link"></i>
               </a>
               <div>
@@ -55,7 +55,7 @@ layout: default
           <br />
           <div class="row text-center mb-3">
             <div class="mx-1 col">
-              <a href="http://{{ apps_url }}/processing/batchjobs" class="text-secondary" data-toggle="tooltip" data-placement="top" title="Cloud processing on CANFAR resources">
+              <a href="{{ apps_url }}/processing/batchjobs" class="text-secondary" data-toggle="tooltip" data-placement="top" title="Cloud processing on CANFAR resources">
                 <i class="fas fa-microchip service-link"></i>
               </a>
               <div>
@@ -63,7 +63,7 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="http://{{ canfar_url }}/en/arcade" class="text-secondary disabled" data-toggle="tooltip" data-placement="top" title="Cloud user sessions" disabled="disabled">
+              <a href="{{ canfar_url }}/en/arcade" class="text-secondary disabled" data-toggle="tooltip" data-placement="top" title="Cloud user sessions" disabled="disabled">
                 <i class="fas fa-desktop service-link"></i>
               </a>
               <div>
@@ -71,7 +71,7 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="http://{{ apps_url }}/processing/vmod" class="text-secondary" data-toggle="tooltip" data-placement="top" title="Interactive Virtual Machines">
+              <a href="{{ apps_url }}/processing/vmod" class="text-secondary" data-toggle="tooltip" data-placement="top" title="Interactive Virtual Machines">
                 <i class="fas fa-power-off service-link"></i>
               </a>
               <div>
@@ -82,7 +82,7 @@ layout: default
           <br />
           <div class="row text-center mt-3">
             <div class="mx-1 offset-mx-1 col">
-              <a href="http://{{ cadc_url }}/en/search/" class="text-secondary" data-toggle="tooltip" data-placement="right" title="Search data collections at the Canadian Astronomy Data Centre">
+              <a href="{{ cadc_url }}/en/search/" class="text-secondary" data-toggle="tooltip" data-placement="right" title="Search data collections at the Canadian Astronomy Data Centre">
                 <i class="fas fa-archive service-link"></i>
               </a>
               <div>
@@ -131,7 +131,7 @@ layout: default
       <div class="col-6 col-md">
         <h5>About</h5>
         <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="about/">CANFAR</a></li>
+          <li><a class="text-muted" href="{{ page_lang_link }}{{ t['about'].link }}{{ t['about']['organization'].link }}">CANFAR</a></li>
           <!-- <li><a class="text-muted" href="#">Astronomy</a></li> -->
           <li><a class="text-muted" href="https://www.nrc-cnrc.gc.ca/eng/notices/index.html#pr">Privacy</a></li>
           <li><a class="text-muted" href="about/terms-of-reference">Terms</a></li>
