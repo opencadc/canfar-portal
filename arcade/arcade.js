@@ -62,26 +62,50 @@ $(document).ready(function() {
 
   // From cadc.user.js. Listens for when user logs in
   // userManager.subscribe(cadc.web.events.onUserLoad, function(event, data) {
-  $(document).on('onUserLoad', function(event, data) {
-    // Check to see if user is logged in or not
-    if (typeof data.error != 'undefined') {
-      var errorMsg = ''
-      if (data.errorStatus === 401) {
-        errorMsg =
-          '<em>' +
-          data.errorStatus +
-          ' ' +
-          data.error +
-          '</em>. Please log in to use Databench.'
-      } else {
-        errorMsg =
-          'Unable to list sessions: ' + data.errorStatus + ' ' + data.error
-      }
-      setInfoPanel(errorMsg)
-    } else {
-      setSessionPanel()
-    }
+  //$(document).on('onUserLoad', function(event, data) {
+  //  // Check to see if user is logged in or not
+  //  if (typeof data.error != 'undefined') {
+  //    var errorMsg = ''
+  //    if (data.errorStatus === 401) {
+  //      errorMsg =
+  //        '<em>' +
+  //        data.errorStatus +
+  //        ' ' +
+  //        data.error +
+  //        '</em>. Please log in to use Databench.'
+  //    } else {
+  //      errorMsg =
+  //        'Unable to list sessions: ' + data.errorStatus + ' ' + data.error
+  //    }
+  //    setInfoPanel(errorMsg)
+  //  } else {
+  //    setSessionPanel()
+  //  }
+  //})
+
+  $(document).ready(function () {
+    //checkAuthentication()
+
   })
+
+  function checkAuthentication() {
+    userManager = new cadc.web.UserManager()
+
+    // From cadc.user.js. Listens for when user logs in
+    userManager.subscribe(cadc.web.events.onUserLoad,
+        function (event, data) {
+          // Check to see if user is logged in or not
+          if (typeof(data.error) != 'undefined') {
+            setNotAuthenticated()
+          } else {
+            setAuthenticated()
+          }
+        })
+
+  }
+
+
+
 
   $('.table-refresh').click(function() {
     $('#refreshButton').click(function() {
@@ -112,6 +136,28 @@ $(document).ready(function() {
     false
   })
 }) // end $(document).ready...
+
+
+
+// ---------------- Page load functions ---------------
+// #auth_modal is in _page_header.html
+// the other items are expected to be in index_en.md
+function setNotAuthenticated() {
+  $('#authen_modal').modal('show')
+  $('.arcade-authenticated').addClass('hidden')
+  $('.arcade-not-authenticated').removeClass('hidden')
+
+  $('#arcade_login_button').click(function() {
+    $('#authen_modal').modal('show')}
+  )
+}
+
+function setAuthenticated() {
+  // adding a comment... to see how this code is cached during build...
+  $('.arcade-authenticated').removeClass('hidden')
+  $('.arcade-not-authenticated').addClass('hidden')
+  trigger(_selfCitationPage, cadc.web.citation.events.onAuthenticated, {})
+}
 
 // ---------------- arcade.canfar.net ajax functions & response handlers ---------------
 
@@ -150,13 +196,15 @@ function handleAjaxFail(callType, message) {
   var errorMsg = ''
   switch (message.status) {
     case 401:
-      errorMsg =
-        '<em>' +
-        message.status +
-        ' ' +
-        message.responseText +
-        '</em>. Please log in to use Databench.'
-      setInfoPanel(errorMsg)
+    case 403:
+      //errorMsg =
+      //  '<em>' +
+      //  message.status +
+      //  ' ' +
+      //  message.responseText +
+      //  '</em>. Please log in to use Databench.'
+      //setInfoPanel(errorMsg)
+      setNotAuthenticated()
       break
     default:
       errorMsg =

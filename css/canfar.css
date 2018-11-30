@@ -560,3 +560,7 @@ a.btn.btn-default.social-button:hover {
   background: rgba(0, 0, 0, 0.85);
   color: #fff;
 }
+
+.canfar-left-align {
+  display: block;
+}
