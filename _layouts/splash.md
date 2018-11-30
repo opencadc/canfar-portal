@@ -120,7 +120,7 @@ layout: default
           <a href="https://twitter.com/astro_canfar" class="social-link" aria-label="Center Align" data-toggle="tooltip" data-placement="top" title="See the latest CANFAR tweets">
             <i class="fab fa-twitter fa-3x" aria-hidden="true"></i>
           </a>
-          <a href="/en/slack" class="social-link" aria-label="Center Align" data-toggle="tooltip" data-placement="top" title="Join our Slack channel">
+          <a href="/slack" class="social-link" aria-label="Center Align" data-toggle="tooltip" data-placement="top" title="Join our Slack channel">
             <i class="fab fa-slack fa-3x" aria-hidden="true"></i>
           </a>
         </div>
