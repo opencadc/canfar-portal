@@ -3,20 +3,24 @@ tagline: Processing and Storage on the cloud
 permalink: /news/:year/:month/:day/:title/
 relative_permalinks: false
 markdown: kramdown
-site_env: prod
+site_env: vm
 env:
     demo:
-        cadc: 'demo.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
-        canfar: 'demo.canfar.net'
-        apps: 'demo.canfar.net'
+        cadc: 'http://demo.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
+        canfar: 'http://demo.canfar.net'
+        apps: 'http://demo.canfar.net'
     rc:
-        cadc: 'rc.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
-        canfar: 'rc.canfar.net'
-        apps: 'rcapps.canfar.net'
+        cadc: 'http://rc.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
+        canfar: 'http://rc.canfar.net'
+        apps: 'http://rcapps.canfar.net'
     prod:
-        cadc: 'www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
-        canfar: 'www.canfar.net'
-        apps: 'apps.canfar.net'
+        cadc: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
+        canfar: 'http://www.canfar.net'
+        apps: 'http://apps.canfar.net'
+    docker:
+        cadc: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
+        canfar: ''
+        apps: ''
 baseurl: ''
 future: true
 github_url: 'https://github.com/canfar/canfar.github.io'

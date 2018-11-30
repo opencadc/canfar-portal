@@ -2,7 +2,9 @@ version: '3.2'
 services:
   canfar:
     hostname: ${HOSTNAME:-localhost}
-    build: ./
+    build:
+      context: ./
+      dockerfile: Dockerfile.run
     image: canfar/canfar-site
     command: bash -c "bundle install && bundle exec jekyll s --incremental --host ${HOSTNAME}"
     ports:

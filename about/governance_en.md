@@ -3,7 +3,7 @@ layout: pages_left_nav
 
 namespace: about.governance
 lang: en
-permalink: /en/about/governance
+permalink: /en/about/governance/
 ---
 
 <!--  For a three column layout, add the role attribute. -->
@@ -11,8 +11,6 @@ permalink: /en/about/governance
 <div class="table-responsive">
 <p>(PROVISIONAL) The CANFAR project is opperated by the Canadian Astronomy Data Centre on behalf of the Canadian astronomy research community. Enhancement and allocation of the capacity of CANFAR (both opperational and resource related) are overseen by the Science Management Committee (SMC).  The SMC is composed of Canadian researchers who are leading projects that make significant use of the cababilities of the CANFAR platform. The chair of the SMC rotates between the SMC members and responsible to organize SMC meetings as needed and reporting the decisions of the SMC to the opperator (CADC). In addition, one member of the SMC serves as the lead of the Compute Canada resource allocation request, which is the cyber-infrastruction resource that makes CANFAR possible.  The SMC meets periodically, nominally once per year at the CASCA meeting and at other times via teleconference, when issues arrise, such as the opperator (CADC) requesting direction on significant technology choices.</p>
 </div>
-
-
 
 <div class="table-responsive">
 
@@ -43,6 +41,5 @@ permalink: /en/about/governance
 </tbody>
 </table>
 </div>
-
 
 <!-- Content end -->

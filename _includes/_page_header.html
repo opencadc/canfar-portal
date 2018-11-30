@@ -1,4 +1,7 @@
 {% include __vars.md %}
+{% assign cadc_url = site.env[site.site_env].cadc %}
+{% assign canfar_url = site.env[site.site_env].canfar %}
+{% assign apps_url = site.env[site.site_env].apps %}
 
 <header class="fixed-top d-flex flex-md-row align-items-center p-2 px-md-4 mb-2 bg-white border-bottom">
   <h5 class="my-0 mr-md-auto font-weight-normal">
@@ -13,16 +16,32 @@
     </button>
     <div class="navbar-collapse collapse" id="collapse_nav">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item d-flex">
-          <a class="p-2 text-dark" href="#">Download</a>
+        <li class="nav-item d-flex pt-2">
+          <a class="p-2 text-dark" href="{{ page_lang_link }}{{ t['docs'].link }}{{ t['docs']['quick_start'].link }}">{{ t['docs'].name }}</a>
         </li>
-        <li class="nav-item d-flex">
-          <a class="p-2 text-dark" href="docs/">Documentation</a>
+        <li class="nav-item d-flex dropdown pt-2">
+          <a title="Services" id="services_dropdown" class="dropdown-toggle p-2 text-dark" data-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="">{{ t['_services'].name }}</a>
+          <div class="dropdown-menu" aria-labelledby="services_dropdown">
+            <a href="{{ apps_url }}{{ t['services']['storage'].link }}" class="dropdown-item">{{ t['services']['storage'].name }}</a>
+            <a href="{{ apps_url }}{{ t['services']['group_management'].link }}" class="dropdown-item">{{ t['services']['group_management'].name }}</a>
+            {%comment%}<a href="{{ apps_url }}{{ t['services']['digital_object_identifiers'].link }}" class="dropdown-item">{{ t['services']['digital_object_identifiers'].name }}</a>{%endcomment%}
+            <a href="{{ apps_url }}{{ t['services']['batch_processing'].link }}" class="dropdown-item">{{ t['services']['batch_processing'].name }}</a>
+            {%comment%}<a href="{{ apps_url }}{{ t['services']['arcade'].link }}" class="dropdown-item">{{ t['services']['arcade'].name }}</a>{%endcomment%}
+            <a href="{{ apps_url }}{{ t['services']['openstack_cloud_portal'].link }}" class="dropdown-item">{{ t['services']['openstack_cloud_portal'].name }}</a>
+            <a href="{{ cadc_url }}{{ t['services']['caom_query_service'].link }}" class="dropdown-item">{{ t['services']['caom_query_service'].name }}</a>
+          </div>
         </li>
-        <li class="nav-item d-flex">
-          <a class="p-2 text-dark" href="https://github.com/opencadc">Open Source</a>
+        <li class="nav-item d-flex pt-2">
+          <a class="p-2 text-dark" href="{{ page_lang_link }}{{ t['about'].link }}{{ t['about']['organization'].link }}">{{ t['about'].name }}</a>
         </li>
-        <li class="nav-item pl-4 dropdown canfar-access-control user-authenticated canfar-authenticated d-none">
+        <li class="nav-item d-flex pt-2">
+          <a class="p-2 text-dark" href="{{ t['open_source'].link }}" ref="external">{{ t['open_source'].name }}</a>
+        </li>
+        <li class="nav-item d-flex pt-1">
+          <a href="mailto:{{ t['support']['link'] }}" class="p-2">
+            <i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a>
+        </li>
+        <li class="nav-item pl-4 dropdown canfar-access-control user-authenticated canfar-authenticated d-none pt-2">
           <a title="User actions" class="dropdown-toggle access-actions login-form btn btn-outline-primary" data-toggle="dropdown"
             href="#"><span class='auth-username'></span></a>
           <ul class="dropdown-menu dropdown-menu-right list-unstyled">
@@ -35,23 +54,25 @@
                  id="changePassword">Change password</a>
             </li>
             <li>
+              <a title="Obtain certificate" class="dropdown-item account_access_info"
+                href="http://www.canfar.phys.uvic.ca/cred/priv?daysValid=30" id="obtainCertificate">Obtain a certificate</a>
+            </li>
+            <li>
               <a id="logout" title="Logout." class="access-control dropdown-item account_access_info" href="/access/logout">
                 <span class="fas fa-sign-out-alt"></span> Logout</a>
             </li>
           </ul>
         </li>
-
-        <li class="nav-item pl-4 dropdown canfar-access-control user-anonymous canfar-anonymous d-none">
+        <li class="nav-item pl-4 dropdown canfar-access-control user-anonymous canfar-anonymous d-none pt-2">
           <a title="Login form" class="dropdown-toggle access-actions login-form btn btn-outline-primary" data-toggle="dropdown"
              href="#">Login</a>
           <ul class="dropdown-menu dropdown-menu-right list-unstyled login-container">
             <li>
-              <form class="form-inline access-control" id="loginForm" role="form" method="post" action="//apps.canfar.net/access/login">
+              <form class="form-inline access-control" id="loginForm" role="form" method="post" action="/access/login">
                 <span id="login_fail" class="help-block text-danger"></span>
                 <label for="username" class="sr-only" id="usernameLabel">Username</label>
                 <input type="text" id="username" name="username" class="form-control mb-2 mr-sm-2 ml-sm-2" tabindex="1"
                        required="required" placeholder="Username">
-
                 <label for="password" class="sr-only" id="passwordLabel">Password</label>
                 <input type="password" id="password" name="password" class="form-control mb-2 mr-sm-2 ml-sm-2" tabindex="2"
                        required="required" placeholder="Password">
@@ -81,13 +102,7 @@
 </header>
 
 <!-- todo: use min version when deploying - need to check link below however -->
-<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"-->
-<!--crossorigin="anonymous"></script>-->
-
-<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha384-fJU6sGmyn07b+uD1nMk7/iSb4yvaowcueiQhfVgQuD98rfva8mcr1eSvjchfpMrH"
-        crossorigin="anonymous"></script>
-<!--<script type="text/javascript" src="//apps.canfar.net/cadcJS/javascript/org.opencadc.js"></script>-->
-<!--<script type="text/javascript" src="//apps.canfar.net/cadcJS/javascript/cadc.uri.js"></script>-->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
 
 <script type="text/javascript" src="http://apps.canfar.net/cadcJS/javascript/org.opencadc.js"></script>
 <script type="text/javascript" src="http://apps.canfar.net/cadcJS/javascript/cadc.uri.js"></script>
@@ -95,7 +110,6 @@
 <script type="text/javascript" src="//apps.canfar.net/cadcJS/javascript/cadc.registry-client.js"></script>
 <script type="text/javascript" src="//www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/cadc/bootstrap/js/cadc.user.js"></script>
 <script type="text/javascript" src="//www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/cadc/bootstrap/js/login.js"></script>
-
 
 
 <script type="text/javascript">
@@ -106,3 +120,4 @@
     })
   })
 </script>
+
