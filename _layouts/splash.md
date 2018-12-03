@@ -25,24 +25,24 @@ layout: default
         <div class="mt-md-5">
           <div class="row text-center mb-3">
             <div class="mx-1 col">
-              <a href="{{ apps_url }}{{ t['services']['storage'].link }}" class="text-secondary" data-toggle="tooltip" data-placement="top" title="Manage your VOSpace">
-                <i class="fas fa-hdd service-link"></i>
+              <a href="{{ apps_url }}{{ t['services']['storage'].link }}" class="text-secondary">
+                <i class="fas fa-hdd service-link" data-toggle="tooltip" data-placement="top" title="Manage your VOSpace"></i>
               </a>
               <div>
                 <span>{{ t['services']['storage'].name }}</span>
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="{{ apps_url }}/gmui" class="text-secondary" data-toggle="tooltip" data-placement="top" title="Manage your CANFAR groups">
-                <i class="fas fa-users service-link"></i>
+              <a href="{{ apps_url }}/gmui" class="text-secondary">
+                <i class="fas fa-users service-link" data-toggle="tooltip" data-placement="top" title="Manage your CANFAR groups"></i>
               </a>
               <div>
                 <span>Group Management</span>
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="{{ apps_url }}/citation" class="text-secondary disabled" data-toggle="tooltip" data-placement="top" title="Manager your Digital Object Identifiers">
-                <i class="fas fa-link service-link"></i>
+              <a href="{{ apps_url }}/citation" class="text-secondary disabled">
+                <i class="fas fa-link service-link" data-toggle="tooltip" data-placement="top" title="Manager your Digital Object Identifiers"></i>
               </a>
               <div>
                 <span>DOI Management</span>
@@ -52,24 +52,24 @@ layout: default
           <br />
           <div class="row text-center mb-3">
             <div class="mx-1 col">
-              <a href="{{ apps_url }}/processing/batchjobs" class="text-secondary" data-toggle="tooltip" data-placement="top" title="Cloud processing on CANFAR resources">
-                <i class="fas fa-microchip service-link"></i>
+              <a href="{{ apps_url }}/processing/batchjobs" class="text-secondary">
+                <i class="fas fa-microchip service-link" data-toggle="tooltip" data-placement="top" title="Cloud processing on CANFAR resources"></i>
               </a>
               <div>
                 <span>Batch Processing</span>
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="{{ canfar_url }}/en/arcade" class="text-secondary disabled" data-toggle="tooltip" data-placement="top" title="Cloud user sessions" disabled="disabled">
-                <i class="fas fa-desktop service-link"></i>
+              <a href="{{ canfar_url }}/en/arcade" class="text-secondary disabled">
+                <i class="fas fa-desktop service-link" data-toggle="tooltip" data-placement="top" title="Cloud user sessions" disabled="disabled"></i>
               </a>
               <div>
                 <span>Arcade</span>
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="{{ apps_url }}/processing/vmod" class="text-secondary" data-toggle="tooltip" data-placement="top" title="Interactive Virtual Machines">
-                <i class="fas fa-power-off service-link"></i>
+              <a href="{{ apps_url }}/processing/vmod" class="text-secondary">
+                <i class="fas fa-power-off service-link" data-toggle="tooltip" data-placement="top" title="Interactive Virtual Machines"></i>
               </a>
               <div>
                 <span>Open Stack</span>
@@ -79,8 +79,8 @@ layout: default
           <br />
           <div class="row text-center mt-3">
             <div class="mx-1 offset-mx-1 col">
-              <a href="{{ cadc_url }}/en/search/" class="text-secondary" data-toggle="tooltip" data-placement="right" title="Search data collections at the Canadian Astronomy Data Centre">
-                <i class="fas fa-star service-link"></i>
+              <a href="{{ cadc_url }}/en/search/" class="text-secondary">
+                <i class="fas fa-star service-link" data-toggle="tooltip" data-placement="right" title="Search data collections at the Canadian Astronomy Data Centre"></i>
               </a>
               <div>
                 <span>CADC Search</span>
@@ -114,14 +114,14 @@ layout: default
       <div class="col-6 col-md">
         <h5 hidden>Resources</h5>
         <div class="social-link-toolbar" role="toolbar">
-          <a href="https://github.com/opencadc" class="social-link pl-sm-1" aria-label="Center Align" data-toggle="tooltip" data-placement="top" title="See the OpenCADC GitHub page">
-            <i class="fab fa-github fa-3x" aria-hidden="true"></i>
+          <a href="https://github.com/opencadc" class="social-link pl-sm-1" aria-label="Center Align">
+            <i class="fab fa-github fa-3x" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="See the OpenCADC GitHub page"></i>
           </a>
-          <a href="https://twitter.com/astro_canfar" class="social-link" aria-label="Center Align" data-toggle="tooltip" data-placement="top" title="See the latest CANFAR tweets">
-            <i class="fab fa-twitter fa-3x" aria-hidden="true"></i>
+          <a href="https://twitter.com/astro_canfar" class="social-link" aria-label="Center Align">
+            <i class="fab fa-twitter fa-3x" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="See the latest CANFAR tweets"></i>
           </a>
-          <a href="/en/slack" class="social-link" aria-label="Center Align" data-toggle="tooltip" data-placement="top" title="Join our Slack channel">
-            <i class="fab fa-slack fa-3x" aria-hidden="true"></i>
+          <a href="/slack" class="social-link" aria-label="Center Align">
+            <i class="fab fa-slack fa-3x" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Join our Slack channel"></i>
           </a>
         </div>
       </div>
