@@ -1,10 +1,50 @@
 <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"-->
 <!--crossorigin="anonymous"></script>-->
+
+<!-- Login Modal -->
+<div class="modal fade" id="authen_modal" tabindex="-1" role="dialog" aria-labelledby="auth_modal_label">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header canfar-left-align">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title" id="auth_modal_label">Authentication required
+                </h5>
+            </div>
+            <div class="modal-body">
+                <form class="access-control" id="modalloginForm" role="form" method="post" action="/access/login">
+                    <div class="modal-body">
+                        <span id="modal_login_fail" class="text-danger help-block pull-left"></span>
+                        <div class="form-group">
+                            <label for="modalUsername" class="d-none" id="modalUsernameLabel">Username</label>
+                            <input type="text" id="modalUsername" name="username" class="form-control" tabindex="1" required="required" placeholder="Username"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="modalPassword" class="d-none" id="modalPasswordLabel">Password</label>
+                            <input type="password" id="modalPassword" name="password" class="form-control" tabindex="2" required="required" placeholder="Password"
+                            />
+                        </div>
+                        <a href="/canfar/auth/forgot.html" tabindex="5" class="account_access_info" title="Forgot Username" id="forgot_username_2">
+                            Forgot your Account information?</a>
+                        <br/>
+                        <a href="/canfar/auth/request.html" tabindex="6" class="account_access_info" title="Register" id="register_cadc_2">
+                            Request an Account</a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">
+                            <span class="fa fa-sign-in-alt"></span> Login
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/cadcJS/javascript/cadc.registry-client.js"></script>
-<script type="text/javascript" src="/cadcJS/javascript/cadc.user.js"></script>
-<script type="text/javascript" src="/cadcJS/javascript/login.js"></script>
 
 <script type="text/javascript">
   $(document).ready(function () {

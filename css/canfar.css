@@ -564,3 +564,16 @@ a.btn.btn-default.social-button:hover {
 .canfar-left-align {
   display: block;
 }
+
+.arcade-modal-title {
+  margin-top: 7px;
+  margin-left: 15px;
+}
+
+.forwarded {
+  margin: 15px;
+}
+
+.arcade-spinner {
+  margin-left: 15px;
+}
