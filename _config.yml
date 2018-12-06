@@ -3,7 +3,7 @@ tagline: Processing and Storage on the cloud
 permalink: /news/:year/:month/:day/:title/
 relative_permalinks: false
 markdown: kramdown
-site_env: vm
+site_env: prod
 env:
     demo:
         cadc: 'http://demo.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
@@ -21,10 +21,6 @@ env:
         cadc: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
         canfar: ''
         apps: ''
-    vm:
-        cadc: 'http://jeevesh.cadc.dao.nrc.ca'
-        canfar: 'http://jeevesh.cadc.dao.nrc.ca'
-        apps: 'http://jeevesh.cadc.dao.nrc.ca'
 baseurl: ''
 future: true
 github_url: 'https://github.com/canfar/canfar.github.io'
