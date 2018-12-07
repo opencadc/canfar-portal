@@ -228,8 +228,6 @@ ul.login-container > li > a:focus {
   color: #337ab7;
 }
 
-/* Databench progress bar  */
-
 div.progress {
   background-color: #5cb85c;
   height: 10px;
@@ -258,5 +256,19 @@ div.progress {
   height: 34px;
 }
 
+.canfar-left-align {
+  display: block;
+}
 
+.arcade-modal-title {
+  margin-top: 7px;
+  margin-left: 15px;
+}
 
+.forwarded {
+  margin: 15px;
+}
+
+.arcade-spinner {
+  margin-left: 15px;
+}
