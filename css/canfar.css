@@ -560,3 +560,20 @@ a.btn.btn-default.social-button:hover {
   background: rgba(0, 0, 0, 0.85);
   color: #fff;
 }
+
+.canfar-left-align {
+  display: block;
+}
+
+.arcade-modal-title {
+  margin-top: 7px;
+  margin-left: 15px;
+}
+
+.forwarded {
+  margin: 15px;
+}
+
+.arcade-spinner {
+  margin-left: 15px;
+}

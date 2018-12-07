@@ -258,23 +258,5 @@ div.progress {
   height: 34px;
 }
 
-.session-add-control {
-  height: 34px;
-  margin-left: 10px;
-}
 
-.databench-authenticated .row {
-  padding-top: 0px;
-}
 
-.databench-title {
-  margin-top: 7px;
-}
-
-.session-add {
-  margin-right: 10px;
-}
-
-.fa-ban {
-  color: red;
-}
