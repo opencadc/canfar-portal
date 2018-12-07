@@ -34,7 +34,7 @@ permalink: /en/arcade/
           <i>Try reloading page to refresh session, or contact a CANFAR adminitrator.</i>
         </div>
       </div>
-    </div>     
+    </div>
 </section>
 </div>
 
@@ -63,16 +63,5 @@ permalink: /en/arcade/
 <!-- Content ends -->
 
 {% include _page_footer.html %}
-
-<!-- fontawesome *should* be included in the header -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-<link rel="stylesheet" href="/css/canfar.css">
-
-<script type="text/javascript" src="http://apps.canfar.net/cadcJS/javascript/org.opencadc.js"></script>
-<script type="text/javascript" src="http://apps.canfar.net/cadcJS/javascript/cadc.uri.js"></script>
-<script type="text/javascript" src="http://apps.canfar.net/canfar/javascript/cadc.user.js"></script>
-
-<script type="text/javascript" src="//www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/cadc/bootstrap/js/cadc.user.js"></script>
-<script type="text/javascript" src="//www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/cadc/bootstrap/js/login.js"></script>
 
 <script type="text/javascript" src="/arcade/arcade.js"></script>
