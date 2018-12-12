@@ -12,7 +12,7 @@ env:
     rc:
         cadc: 'http://rc.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
         canfar: 'http://rc.canfar.net'
-        apps: 'http://rcapps.canfar.net'
+        apps: 'http://rc.canfar.net'
     prod:
         cadc: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
         canfar: 'http://www.canfar.net'
