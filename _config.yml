@@ -7,16 +7,12 @@ site_env: prod
 env:
     demo:
         cadc: 'http://demo.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
-        canfar: 'http://demo.canfar.net'
     rc:
         cadc: 'http://rc.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
-        canfar: 'http://rc.canfar.net'
     prod:
         cadc: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
-        canfar: 'http://www.canfar.net'
     docker:
         cadc: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
-        canfar: ''
 baseurl: ''
 future: true
 github_url: 'https://github.com/canfar/canfar.github.io'

@@ -1,6 +1,5 @@
 {% include __vars.md %}
 {% assign cadc_url = site.env[site.site_env].cadc %}
-{% assign canfar_url = site.env[site.site_env].canfar %}
 
 <header class="fixed-top d-flex flex-md-row align-items-center p-2 px-md-4 mb-2 bg-white border-bottom">
   <h5 class="my-0 mr-md-auto font-weight-normal">
@@ -21,12 +20,12 @@
         <li class="nav-item d-flex dropdown pt-2">
           <a title="Services" id="services_dropdown" class="dropdown-toggle p-2 text-dark" data-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="">{{ t['_services'].name }}</a>
           <div class="dropdown-menu" aria-labelledby="services_dropdown">
-            <a href="{{ canfar_url }}{{ t['services']['storage'].link }}" class="dropdown-item">{{ t['services']['storage'].name }}</a>
-            <a href="{{ canfar_url }}{{ t['services']['group_management'].link }}" class="dropdown-item">{{ t['services']['group_management'].name }}</a>
-            {%comment%}<a href="{{ canfar_url }}{{ t['services']['digital_object_identifiers'].link }}" class="dropdown-item">{{ t['services']['digital_object_identifiers'].name }}</a>{%endcomment%}
-            <a href="{{ canfar_url }}{{ t['services']['batch_processing'].link }}" class="dropdown-item">{{ t['services']['batch_processing'].name }}</a>
-            {%comment%}<a href="{{ canfar_url }}{{ t['services']['arcade'].link }}" class="dropdown-item">{{ t['services']['arcade'].name }}</a>{%endcomment%}
-            <a href="{{ canfar_url }}{{ t['services']['openstack_cloud_portal'].link }}" class="dropdown-item">{{ t['services']['openstack_cloud_portal'].name }}</a>
+            <a href="{{ t['services']['storage'].link }}" class="dropdown-item">{{ t['services']['storage'].name }}</a>
+            <a href="{{ t['services']['group_management'].link }}" class="dropdown-item">{{ t['services']['group_management'].name }}</a>
+            {%comment%}<a href="{{ t['services']['digital_object_identifiers'].link }}" class="dropdown-item">{{ t['services']['digital_object_identifiers'].name }}</a>{%endcomment%}
+            <a href="{{ t['services']['batch_processing'].link }}" class="dropdown-item">{{ t['services']['batch_processing'].name }}</a>
+            {%comment%}<a href="{{ t['services']['arcade'].link }}" class="dropdown-item">{{ t['services']['arcade'].name }}</a>{%endcomment%}
+            <a href="{{ t['services']['openstack_cloud_portal'].link }}" class="dropdown-item">{{ t['services']['openstack_cloud_portal'].name }}</a>
             <a href="{{ cadc_url }}{{ t['services']['caom_query_service'].link }}" class="dropdown-item">{{ t['services']['caom_query_service'].name }}</a>
           </div>
         </li>
@@ -99,6 +98,6 @@
 
 <!-- <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha384-fJU6sGmyn07b+uD1nMk7/iSb4yvaowcueiQhfVgQuD98rfva8mcr1eSvjchfpMrH"
         crossorigin="anonymous"></script> -->
-<script type="text/javascript" src="{{ canfar_url }}/cadcJS/javascript/org.opencadc.js"></script>
-<script type="text/javascript" src="{{ canfar_url }}/cadcJS/javascript/cadc.uri.js"></script>
+<script type="text/javascript" src="/cadcJS/javascript/org.opencadc.js"></script>
+<script type="text/javascript" src="/cadcJS/javascript/cadc.uri.js"></script>
 
