@@ -25,7 +25,7 @@ layout: default
         <div class="mt-md-5">
           <div class="row text-center mb-3">
             <div class="mx-1 col">
-              <a href="{{ apps_url }}{{ t['services']['storage'].link }}" class="text-secondary">
+              <a href="{{ canfar_url }}{{ t['services']['storage'].link }}" class="text-secondary">
                 <i class="fas fa-hdd service-link" data-toggle="tooltip" data-placement="top" title="Manage your VOSpace"></i>
               </a>
               <div>
@@ -33,7 +33,7 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="{{ apps_url }}/gmui" class="text-secondary">
+              <a href="{{ canfar_url }}/gmui" class="text-secondary">
                 <i class="fas fa-users service-link" data-toggle="tooltip" data-placement="top" title="Manage your CANFAR groups"></i>
               </a>
               <div>
@@ -41,18 +41,19 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="{{ apps_url }}/citation" class="text-secondary disabled">
-                <i class="fas fa-link service-link" data-toggle="tooltip" data-placement="top" title="Manager your Digital Object Identifiers"></i>
-              </a>
+              <!-- <a href="{{ canfar_url }}/citation" class="text-secondary disabled"> -->
+                <!-- <i class="fas fa-link service-link disabled" data-toggle="tooltip" data-placement="top" title="Manager your Digital Object Identifiers"></i> -->
+                <i class="fas fa-link service-link disabled" data-placement="top" title="Manager your Digital Object Identifiers"></i>
+              <!-- </a> -->
               <div>
-                <span>DOI Management</span>
+                <span class="disabled">DOI Management</span>
               </div>
             </div>
           </div>
           <br />
           <div class="row text-center mb-3">
             <div class="mx-1 col">
-              <a href="{{ apps_url }}/processing/batchjobs" class="text-secondary">
+              <a href="{{ canfar_url }}/processing/batchjobs" class="text-secondary">
                 <i class="fas fa-microchip service-link" data-toggle="tooltip" data-placement="top" title="Cloud processing on CANFAR resources"></i>
               </a>
               <div>
@@ -60,15 +61,16 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="{{ canfar_url }}/en/arcade" class="text-secondary disabled">
-                <i class="fas fa-desktop service-link" data-toggle="tooltip" data-placement="top" title="Cloud user sessions" disabled="disabled"></i>
-              </a>
+              <!-- <a href="{{ canfar_url }}/en/arcade" class="text-secondary disabled"> -->
+                <!-- <i class="fas fa-desktop service-link disabled" data-toggle="tooltip" data-placement="top" title="Cloud user sessions" disabled="disabled"></i> -->
+                <i class="fas fa-desktop service-link disabled" data-placement="top" title="Cloud user sessions" disabled="disabled"></i>
+              <!-- </a> -->
               <div>
-                <span>Arcade</span>
+                <span class="disabled">Arcade</span>
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="{{ apps_url }}/processing/vmod" class="text-secondary">
+              <a href="{{ canfar_url }}/processing/vmod" class="text-secondary">
                 <i class="fas fa-power-off service-link" data-toggle="tooltip" data-placement="top" title="Interactive Virtual Machines"></i>
               </a>
               <div>

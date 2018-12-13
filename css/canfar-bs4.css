@@ -272,3 +272,8 @@ div.progress {
 .arcade-spinner {
   margin-left: 15px;
 }
+
+.disabled {
+  opacity: 0.3 !important;
+  cursor: not-allowed;
+}
