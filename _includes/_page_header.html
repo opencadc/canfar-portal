@@ -1,81 +1,103 @@
 {% include __vars.md %}
+{% assign cadc_url = site.env[site.site_env].cadc %}
 
-<nav id="top_nav" class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#canfar_navbar_collapse" aria-expanded="false">
-        <span class="sr-only">{{ t.toggle_navigation }}</span>
-      </button>
-      <a class="navbar-brand" href="{{ page_lang_link }}">
-        <img src="{{ '/css/images/logo.png' | prepend: site.baseurl }}">
-      </a>
-    </div>
-
-    <div id="canfar_navbar_collapse" class="collapse navbar-collapse">
-      <ul id="navbar_list" class="nav navbar-nav pull-right">
-        <!-- Uncomment this to have a language switcher. -->
-        <!--<li class="dropdown">-->
-        <!--<a href="{{ page_lang_link }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="text-success">{{ page.lang }}</span> <span class="caret"></span></a>-->
-        <!--<ul class="dropdown-menu list-unstyled">-->
-        <!--{% comment %}-->
-        <!--{% for lang in site.data.translations %}-->
-        <!--{% assign this_lang = lang[0] %}-->
-        <!--{% if this_lang != page.lang %}-->
-        <!--{% assign tx = site.data.translations[this_lang] %}-->
-        <!--{% assign child_item_x = tx %}-->
-
-        <!--{% if page_namespace_items.size > 0 %}-->
-        <!--{% for hier_item in page_namespace_items %}-->
-        <!--{% assign child_item_x = child_item_x[hier_item] %}-->
-        <!--{% capture child_url_x %}{{child_url_x}}{{child_item_x.link}}{% endcapture %}-->
-        <!--{% endfor %}-->
-        <!--{% else %}-->
-        <!--{% assign child_item_x = tx[parent_namespace] %}-->
-        <!--{% endif %}-->
-
-        <!--{% capture this_lang_link %}/{{this_lang}}{% endcapture %}-->
-        <!--<li><a href="{{ this_lang_link | prepend: site.baseurl }}{{ child_url_x }}" lang="{{ this_lang }}">{{ this_lang }}</a></li>-->
-        <!--{% endif %}-->
-        <!--{% endfor %}-->
-        <!--{% endcomment %}-->
-        <!--</ul>-->
-        <!--</li>-->
-        {% include __top_menu_pulldown.md name='nodes' %} {% include __top_menu_pulldown.md name='resources' %} {% include __top_menu_pulldown.md
-        name='docs' %} {% include __top_menu_pulldown.md name='about' %}
-        {% include _link_item.md namespace='register' %}
-        <li>
-          <div class="btn-toolbar social-btn-toolbar" role="toolbar">
-            <div class="btn-group">
-              <a href="{{ site.github_url }}" type="button" class="btn btn-default social-button" aria-label="Center Align">
-                <i class="fa fa-github fa-2x" aria-hidden="true"></i>
-              </a>
-              <a href="{{ site.twitter_url }}" type="button" class="btn btn-default social-button" aria-label="Center Align">
-                <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
-              </a>
-              <a href="{{ site.slack_url }}" type="button" class="btn btn-default social-button" aria-label="Center Align">
-                <i class="fa fa-slack fa-2x" aria-hidden="true"></i>
-              </a>
-            </div>
+<header class="fixed-top d-flex flex-md-row align-items-center p-2 px-md-4 mb-2 bg-white border-bottom">
+  <h5 class="my-0 mr-md-auto font-weight-normal">
+    <a class="navbar-brand" href="{{ page_lang_link }}">
+      <img src="{{ '/css/images/logo.png' | prepend: site.baseurl }}">
+    </a>
+  </h5>
+  <nav class="navbar navbar-expand-sm navbar-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapse_nav" aria-controls="navbarsExample03"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="collapse_nav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item d-flex pt-2">
+          <a class="p-2 text-dark" href="{{ page_lang_link }}{{ t['docs'].link }}{{ t['docs']['quick_start'].link }}">{{ t['docs'].name }}</a>
+        </li>
+        <li class="nav-item d-flex dropdown pt-2">
+          <a title="Services" id="services_dropdown" class="dropdown-toggle p-2 text-dark" data-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="">{{ t['_services'].name }}</a>
+          <div class="dropdown-menu" aria-labelledby="services_dropdown">
+            <a href="{{ t['services']['storage'].link }}" class="dropdown-item">{{ t['services']['storage'].name }}</a>
+            <a href="{{ t['services']['group_management'].link }}" class="dropdown-item">{{ t['services']['group_management'].name }}</a>
+            {%comment%}<a href="{{ t['services']['digital_object_identifiers'].link }}" class="dropdown-item">{{ t['services']['digital_object_identifiers'].name }}</a>{%endcomment%}
+            <a href="{{ t['services']['batch_processing'].link }}" class="dropdown-item">{{ t['services']['batch_processing'].name }}</a>
+            {%comment%}<a href="{{ t['services']['arcade'].link }}" class="dropdown-item">{{ t['services']['arcade'].name }}</a>{%endcomment%}
+            <a href="{{ t['services']['openstack_cloud_portal'].link }}" class="dropdown-item">{{ t['services']['openstack_cloud_portal'].name }}</a>
+            <a href="{{ cadc_url }}{{ t['services']['caom_query_service'].link }}" class="dropdown-item">{{ t['services']['caom_query_service'].name }}</a>
           </div>
-          <!-- <ul class="nav navbar-nav community-links">
+        </li>
+        <li class="nav-item d-flex pt-2">
+          <a class="p-2 text-dark" href="{{ page_lang_link }}{{ t['about'].link }}{{ t['about']['organization'].link }}">{{ t['about'].name }}</a>
+        </li>
+        <li class="nav-item d-flex pt-2">
+          <a class="p-2 text-dark" href="{{ t['open_source'].link }}" ref="external">{{ t['open_source'].name }}</a>
+        </li>
+        <li class="nav-item d-flex pt-1">
+          <a href="mailto:{{ t['support']['link'] }}" class="p-2">
+            <i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a>
+        </li>
+        <li class="nav-item pl-4 dropdown canfar-access-control user-authenticated canfar-authenticated d-none pt-2">
+          <a title="User actions" class="dropdown-toggle access-actions login-form btn btn-outline-primary" data-toggle="dropdown"
+            href="#"><span class='auth-username'></span></a>
+          <ul class="dropdown-menu dropdown-menu-right list-unstyled">
             <li>
-              <a href="https://twitter.com/astro_canfar" class="community-icon-link">
-                <img src="{{ '/css/images/Twitter_Social_Icon_Circle_Color.png' | prepend: site.baseurl }}" alt="" width="34" height="34"
-                  border="0" class="community-icon" />
-              </a>
+              <a href="/canfar/auth/update.html" tabindex="2" title="Update profile" class="dropdown-item account_access_info"
+                 id="updateProfile">Update profile</a>
             </li>
             <li>
-              <a href="{{ t.slack.link | prepend: site.baseurl }}" class="community-icon-link">
-                <img src="{{ '/css/images/Slack_Mark_Web.png' | prepend: site.baseurl }}" alt="" width="62" height="62" border="0" class="slack-icon community-icon"
-                />
-              </a>
+              <a href="/canfar/auth/changePassword.shtml" tabindex="2" title="Change password" class="dropdown-item account_access_info"
+                 id="changePassword">Change password</a>
             </li>
-          </ul> -->
+            <li>
+              <a title="Obtain certificate" class="dropdown-item account_access_info"
+                href="http://www.canfar.phys.uvic.ca/cred/priv?daysValid=30" id="obtainCertificate">Obtain a certificate</a>
+            </li>
+            <li>
+              <a id="logout" title="Logout." class="access-control dropdown-item account_access_info" href="/access/logout">
+                <span class="fas fa-sign-out-alt"></span> Logout</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item pl-4 dropdown canfar-access-control user-anonymous canfar-anonymous d-none pt-2">
+          <a title="Login form" class="dropdown-toggle access-actions login-form btn btn-outline-primary" data-toggle="dropdown"
+             href="#">Login</a>
+          <ul class="dropdown-menu dropdown-menu-right list-unstyled login-container">
+            <li>
+              <form class="form-inline access-control" id="loginForm" role="form" method="post" action="/access/login">
+                <span id="login_fail" class="help-block text-danger"></span>
+                <label for="username" class="sr-only" id="usernameLabel">Username</label>
+                <input type="text" id="username" name="username" class="form-control mb-2 mr-sm-2 ml-sm-2" tabindex="1"
+                       required="required" placeholder="Username">
+                <label for="password" class="sr-only" id="passwordLabel">Password</label>
+                <input type="password" id="password" name="password" class="form-control mb-2 mr-sm-2 ml-sm-2" tabindex="2"
+                       required="required" placeholder="Password">
+                <button type="submit" id="submitLogin" class="btn btn-success ml-sm-2 mb-2">
+                  <i class="fa fa-sign-in"></i>Login
+                </button>
+              </form>
+              <a href="/en/auth/forgot.html" class="dropdown-item account_access_info" tabindex="5" title="Forgot Username"
+                 id="forgot_username_1">Forgot your Account information?</a>
+              <a href="/en" class="dropdown-item account_access_info" tabindex="6" title="Register" id="register_cadc_1">Request
+                an Account</a>
+            </li>
+          </ul>
         </li>
       </ul>
     </div>
-    <!-- end .navbar-collapse -->
-  </div>
-  <!-- end .conatiner -->
-</nav>
+
+  </nav>
+  <!--End navbar-->
+
+</header>
+
+<!-- todo: use min version when deploying - need to check link below however -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha384-fJU6sGmyn07b+uD1nMk7/iSb4yvaowcueiQhfVgQuD98rfva8mcr1eSvjchfpMrH"
+        crossorigin="anonymous"></script> -->
+<script type="text/javascript" src="/cadcJS/javascript/org.opencadc.js"></script>
+<script type="text/javascript" src="/cadcJS/javascript/cadc.uri.js"></script>
+

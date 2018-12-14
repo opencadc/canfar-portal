@@ -1,3 +1,5 @@
-FROM jekyll/jekyll:pages
+FROM nginx:alpine
 
-RUN apk --no-cache add make g++ libxml2-dev libxslt-dev pkgconfig
+ADD _site/ /usr/share/nginx/html/
+COPY docker/nginx/config /usr/share/nginx/html/config
+COPY docker/nginx/default.conf /etc/nginx/conf.d/default.conf

@@ -1,0 +1,45 @@
+---
+sitemap: false
+lang: en
+permalink: /redirect/
+redirect_endpoint: http://www.canfar.net
+---
+
+{% assign redirect_endpoint = page.redirect_endpoint %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="canonical" href="{{ redirect_endpoint }}"/>
+</head>
+<body>
+  <h1>Redirecting to www.canfar.net</h1>
+  <a id="redirect_link" href="{{ redirect_endpoint }}">Update your bookmarks, please.  Click here if you are not redirected.<a>
+  <script>
+    function setLinkRedirect() {
+      var redirectLocation = '{{ redirect_endpoint }}'
+      var search = window.location.search
+      if (search && search.indexOf('?') === 0) {
+        var searchTerms = search.substring(1).split('&')
+        for (var i = 0, sl = searchTerms.length; i < sl; i++) {
+          var term = searchTerms[i].split('=')
+          if ((term.length === 2) && (term[0] === 'path')) {
+            var p = term[1]
+            if (p.indexOf('/') === 0) {
+              redirectLocation += p
+            } else {
+              redirectLocation += '/' + p
+            }
+          }
+        }
+      }
+      document.getElementById('redirect_link').href = redirectLocation
+      setTimeout(function() {
+        window.location.replace(redirectLocation)
+      }, 5000)
+    }
+    setLinkRedirect()
+  </script>
+</body>
+</html>
