@@ -41,12 +41,12 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <!-- <a href="/citation" class="text-secondary disabled"> -->
-                <!-- <i class="fas fa-link service-link disabled" data-toggle="tooltip" data-placement="top" title="Manager your Digital Object Identifiers"></i> -->
-                <i class="fas fa-link service-link disabled" data-placement="top" title="Manager your Digital Object Identifiers"></i>
-              <!-- </a> -->
+              <a href="/citation" class="text-secondary">
+                <i class="fas fa-link service-link" data-toggle="tooltip" data-placement="top" title="Manager your Digital Object Identifiers"></i>
+                <!-- <i class="fas fa-link service-link disabled" data-placement="top" title="Manager your Digital Object Identifiers"></i> -->
+              </a>
               <div>
-                <span class="disabled">DOI Management</span>
+                <span>DOI Management</span>
               </div>
             </div>
           </div>
@@ -61,12 +61,12 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <!-- <a href="/en/arcade" class="text-secondary disabled"> -->
-                <!-- <i class="fas fa-desktop service-link disabled" data-toggle="tooltip" data-placement="top" title="Cloud user sessions" disabled="disabled"></i> -->
-                <i class="fas fa-desktop service-link disabled" data-placement="top" title="Cloud user sessions" disabled="disabled"></i>
-              <!-- </a> -->
+              <a href="/en/arcade" class="text-secondary">
+                <i class="fas fa-desktop service-link" data-toggle="tooltip" data-placement="top" title="Cloud user sessions"></i>
+                <!-- <i class="fas fa-desktop service-link disabled" data-placement="top" title="Cloud user sessions"></i> -->
+              </a>
               <div>
-                <span class="disabled">Arcade</span>
+                <span>Arcade</span>
               </div>
             </div>
             <div class="mx-1 col">
