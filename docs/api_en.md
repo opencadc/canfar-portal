@@ -3,7 +3,7 @@ layout: pages_left_nav
 
 namespace: resources.docs.api
 lang: en
-permalink: /en/docs/api
+permalink: /en/docs/api/
 ---
 
 ## Introduction

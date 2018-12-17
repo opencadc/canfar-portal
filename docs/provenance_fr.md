@@ -3,7 +3,7 @@ layout: default
 
 lang: fr
 namespace: docs.provenance
-permalink: /fr/docs/provenance
+permalink: /fr/docs/provenance/
 ---
 
 ### CANFAR Provenance

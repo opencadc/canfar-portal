@@ -3,7 +3,7 @@ layout: pages_left_nav
 
 namespace: docs.cloud_portal
 lang: en
-permalink: /en/docs/cloud_portal
+permalink: /en/docs/cloud_portal/
 ---
 
 ##  Introduction
