@@ -15,7 +15,6 @@ layout: default
 <div class="container">
   <div class="py-3 pb-md-5">
     <div class="row">
-      <!-- <div class="col-md-7 mb-4 text-center"> -->
       <div class="col-md-12 order-1 mb-4 text-center">
         <h2 class="mt-5 h4 text-left font-weight-light">Canadian Advanced Network for Astronomical Research</h2>
         <div role="toolbar" aria-label="Action button toolbar" class="pt-2 text-left">
@@ -41,13 +40,19 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <!-- <a href="/citation" class="text-secondary disabled"> -->
-                <!-- <i class="fas fa-link service-link disabled" data-toggle="tooltip" data-placement="top" title="Manager your Digital Object Identifiers"></i> -->
-                <i class="fas fa-link service-link disabled" data-placement="top" title="Manager your Digital Object Identifiers"></i>
-              <!-- </a> -->
+              {% if site.site_env == 'demo' %}
+              <a href="/citation" class="text-secondary">
+                <i class="fas fa-link service-link" data-toggle="tooltip" data-placement="top" title="Manager your Digital Object Identifiers"></i>
+              </a>
+              <div>
+                <span>DOI Management</span>
+              </div>
+              {% else %}
+              <i class="fas fa-link service-link disabled" title="Manager your Digital Object Identifiers" disabled="disabled"></i>
               <div>
                 <span class="disabled">DOI Management</span>
               </div>
+              {% endif %}
             </div>
           </div>
           <br />
@@ -61,13 +66,19 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <!-- <a href="/en/arcade" class="text-secondary disabled"> -->
-                <!-- <i class="fas fa-desktop service-link disabled" data-toggle="tooltip" data-placement="top" title="Cloud user sessions" disabled="disabled"></i> -->
-                <i class="fas fa-desktop service-link disabled" data-placement="top" title="Cloud user sessions" disabled="disabled"></i>
-              <!-- </a> -->
+            {% if site.site_env == 'demo' %}
+              <a href="/en/arcade" class="text-secondary">
+                <i class="fas fa-desktop service-link " data-toggle="tooltip" data-placement="top" title="Cloud user sessions"></i>
+              </a>
+              <div>
+                <span>Arcade</span>
+              </div>
+            {% else %}
+              <i class="fas fa-desktop service-link disabled" title="Cloud user sessions" disabled="disabled"></i>
               <div>
                 <span class="disabled">Arcade</span>
               </div>
+            {% endif %}
             </div>
             <div class="mx-1 col">
               <a href="/processing/vmod" class="text-secondary">
@@ -110,7 +121,6 @@ layout: default
         <h5>Download</h5>
         <ul class="list-unstyled text-small">
           <li><a class="text-muted" href="https://pypi.org/search/?q=caom2%7Ccadc">Python applications</a></li>
-          <!-- <li><a class="text-muted" href="#">Web services</a></li> -->
         </ul>
       </div>
       <div class="col-6 col-md">
@@ -131,7 +141,6 @@ layout: default
         <h5>About</h5>
         <ul class="list-unstyled text-small">
           <li><a class="text-muted" href="{{ page_lang_link }}{{ t['about'].link }}{{ t['about']['organization'].link }}">CANFAR</a></li>
-          <!-- <li><a class="text-muted" href="#">Astronomy</a></li> -->
           <li><a class="text-muted" href="https://www.nrc-cnrc.gc.ca/eng/notices/index.html#pr">Privacy</a></li>
           <li><a class="text-muted" href="about/terms-of-reference">Terms</a></li>
         </ul>
