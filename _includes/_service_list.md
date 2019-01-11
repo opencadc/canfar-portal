@@ -6,7 +6,7 @@
         {% assign mod_check = 1 %}
       {% else %}
         {% assign mod_check = 0 %}
-      {% endif %}    
+      {% endif %}
       {% assign mod = forloop.index | modulo: 2 %}
       {% if mod == mod_check %}
         {% capture service_name %}{{ page.namespace }}.{{ service_key }}{% endcapture %}

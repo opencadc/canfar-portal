@@ -1,7 +1,7 @@
 <div class="col-sm-12">
   <div class="card">
     <p class="card-header bg-warning">
-      {{ forgot_passwd_instructions }} 
+      {{ forgot_passwd_instructions }}
     </p>
     <div class="card-body">
       <form name="forgotForm" id="forgotForm" method="post" action="#" class="form-horizontal">

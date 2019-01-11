@@ -13,7 +13,7 @@ namespace: auth
 {% assign forgot_passwd_submit_button_label = "Request your account information" %}
 {% assign forgot_passwd_page_language = "en" %}
 
-{% assign requestAccountURI = "/en" %}
+{% assign requestAccountURI = "/en/register/" %}
 
 {% include _page_top.html %}
 

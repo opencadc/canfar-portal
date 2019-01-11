@@ -1,8 +1,8 @@
 ---
 layout: pages_no_left_nav
 lang: en
-permalink: /en/auth/emailSent.html         
-namespace: auth    
+permalink: /en/auth/emailSent.html
+namespace: auth
 ---
 
 {% assign pagetitle = "Email sent" %}
