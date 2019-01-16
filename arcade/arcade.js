@@ -62,7 +62,7 @@ function forwardTo(sessionName) {
     $('.session-starting').addClass('d-none')
     $('.session-started').removeClass('d-none')
     setProgressBar('okay')
-    window.open(sessionName, '_blank')
+    window.open(sessionName, '_self')
   }
 }
 
