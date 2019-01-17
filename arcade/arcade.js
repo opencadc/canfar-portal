@@ -133,9 +133,7 @@ function getSession() {
       true,
       false
   )
-  // page sits at this info modal forever in some cases, as is when the person is not logged in.
-  // ideally capturing the 'close' from the login prompt would be best.
-
+  
   return new Promise(function (resolve, reject) {
     var request = new XMLHttpRequest()
 
