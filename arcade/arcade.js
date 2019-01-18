@@ -13,20 +13,37 @@ $(document).ready(function() {
 // #auth_modal is in _page_header.html
 // the other items are expected to be in index_en.md
 function setNotAuthenticated() {
-  $('#authen_modal').modal('show')
+
+  // parameters here prevent closing the modal by clicking on the background
+  // or using esc key
+  $('#authen_modal').modal({
+    backdrop: 'static',
+    keyboard: false
+  })
+
   $('.arcade-authenticated').addClass('d-none')
   $('.arcade-not-authenticated').removeClass('d-none')
 
   $('#arcade_login_button').click(function() {
     $('#authen_modal').modal('show')}
   )
+
+  // hide and disable the close button on the authentication
+  // modal because authentication
+  // is required for using this page
+  $('#authen_modal button.close').addClass('disabled')
+  $('#authen_modal button.close').addClass('d-none')
+
 }
 
 // ---------------- arcade.canfar.net ajax functions & response handlers ---------------
 
 function handleAjaxFail(message) {
   setProgressBar(false)
+  // Clear entire modal plus backdrop so they don't stack
   $('#infoModal').modal('hide')
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
   $('.session-failed').removeClass('d-none')
   $('.session-started').addClass('d-none')
   $('.session-starting').addClass('d-none')
@@ -62,7 +79,7 @@ function forwardTo(sessionName) {
     $('.session-starting').addClass('d-none')
     $('.session-started').removeClass('d-none')
     setProgressBar('okay')
-    window.open(sessionName, '_blank')
+    window.open(sessionName, '_self')
   }
 }
 
@@ -116,7 +133,7 @@ function getSession() {
       true,
       false
   )
-
+  
   return new Promise(function (resolve, reject) {
     var request = new XMLHttpRequest()
 
