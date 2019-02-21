@@ -138,7 +138,7 @@ en:
       disabled: true
       name: 'Digital Object Identifiers'
       link: '/citation'
-      description: 'Manage your digital object identifiers'
+      description: 'Publish your digital object identifiers'
     batch_processing:
       name: 'Batch Processing'
       link: '/processing/batchjobs'
