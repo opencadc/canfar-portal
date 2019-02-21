@@ -148,7 +148,8 @@ function getSession() {
               // how that will play out with the outer ones, though. :(
 
               var params = new FormData()
-              params.append( 'name', 'hjeeves-test')
+              // Use a generic name to flag this session is created by the ui
+              params.append( 'name', 'canfar-net')
               postSession(params).then(sessionName => forwardTo(sessionName))
                   .catch(message => handleAjaxFail(message))
             } else {
