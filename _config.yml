@@ -21,3 +21,4 @@ slack_url: '/slack'
 repository: 'canfar/canfar.github.io'
 exclude:
     - node_modules
+    - vendor
