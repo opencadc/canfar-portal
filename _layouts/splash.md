@@ -45,12 +45,12 @@ layout: default
                 <i class="fas fa-link service-link" data-toggle="tooltip" data-placement="top" title="Manage your Digital Object Identifier publications"></i>
               </a>
               <div>
-                <span>DOI Publishing</span>
+                <span>DOI Management</span>
               </div>
               {% else %}
               <i class="fas fa-link service-link disabled" title="Manage your Digital Object Identifier publications" disabled="disabled"></i>
               <div>
-                <span class="disabled">DOI Publishing</span>
+                <span class="disabled">DOI Management</span>
               </div>
               {% endif %}
             </div>
