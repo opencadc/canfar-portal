@@ -40,19 +40,12 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              {% if site.site_env == 'demo' %}
               <a href="/citation" class="text-secondary">
-                <i class="fas fa-link service-link" data-toggle="tooltip" data-placement="top" title="Manage your Digital Object Identifier publications"></i>
+                <i class="fas fa-link service-link" data-toggle="tooltip" data-placement="top" title="Manage your Digital Object Identifiers"></i>
               </a>
               <div>
                 <span>DOI Management</span>
               </div>
-              {% else %}
-              <i class="fas fa-link service-link disabled" title="Manage your Digital Object Identifier publications" disabled="disabled"></i>
-              <div>
-                <span class="disabled">DOI Management</span>
-              </div>
-              {% endif %}
             </div>
           </div>
           <br />
