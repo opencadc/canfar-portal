@@ -16,7 +16,6 @@
               <span id="email_help_block" class="help-block text-danger"></span>
             </div>
           </div>
-
           <!-- Hidden items that need to be carried to the server. -->
           <div class="d-none form-group">
             <input class="form-input" type="d-none" id="loginURI" name="loginURI" tabindex="-1" value="{{ forgot_passwd_login_uri }}" />
@@ -24,7 +23,6 @@
             <input class="form-input" type="d-none" id="pageLanguage" name="pageLanguage" tabindex="-1" value="{{ forgot_passwd_page_language }}" />
           </div>
           <!-- End hidden items. -->
-
           <div class="form-group col-sm-12">
             <div class="offset-sm-2 col-sm-9">
               <input type="submit" name="forgot" id="forgot_button"
@@ -32,7 +30,6 @@
               class="btn btn-primary"/>
             </div>
           </div>
-
           <div class="col-sm-12">
             <div class="offset-sm-2 col-sm-9 ">
               <a href="{{ requestAccountURI }}" tabindex="6"
