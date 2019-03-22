@@ -34,5 +34,5 @@ This document summarizes what you need to do to migrate your project on the CANF
 
 ## Finalizing the Migration
 - If you want us to migrate everything else for you, send us an [email](mailto:support@canfar.net) containing "Project \<*your_project_name*\> is ready for final migration." We will do the rest!
-- If you really know what you are doing and want to migrate everything yourself, please let us know via [email](mailto:support@canfar.net), and then refer to [this guide](https://docs.computecanada.ca/wiki/Arbutus_Migration_Guide).
-- In either case, feel free to hop in the [slack channel](http://www.canfar.net/slack) to get help.
+- If you really know what you are doing and want to migrate everything yourself, please let us know via [email](mailto:support@canfar.net), and then refer to [this guide](https://docs.computecanada.ca/wiki/Arbutus_Migration_Guide)
+- In either case, feel free to hop in the [slack channel](http://www.canfar.net/slack) to get help
