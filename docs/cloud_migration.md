@@ -4,35 +4,33 @@ This document summarizes what you need to do to migrate your project on the CANF
 
 ## Cleanup the old cloud
    - Login into  [west.cloud](https://west.cloud.computecanada.ca/).
-   - For each project (upper-left next to the west cloud logo):
-	   - Go to Volumes
+   - For each project (upper-left next to the west cloud logo), navigate to:
+	   - **Volumes**
 		   - Delete all volumes not attached that you do not need anymore
-		   - Go to the Volume Snapshots tab, and delete snapshots you do not need anymore
-		   - All volumes saying Attached to <name> on /dev/vda are volume-based images. You may want to rename them something associated with the <name> if you have not already, such as <name>-root to specify this is the root partition of your image.
+		   - All volumes  *Attached to instance_name on /dev/vda* are volume-based images. You may want to rename them something associated with the *instance_name* if you have not already.
+		   - In the **Volume Snapshots** tab delete snapshots you do not need anymore
 
-
-	   - Go to Images
+	   - **Images**
 		   - Select all VM images / snapshots you do not need anymore, and delete them
 
-	   - Go to Instances
-		   - Snapshot the other instances, then terminate them
-		   - Terminate all your instances associated to a volume
+	   - **Instances**
+		   - Terminate all your instances associated to a volume if you have any.
+		   - Snapshot all the other instances, and terminate them
 
 ## Check the new cloud
    - Login into [arbutus](https://arbutus-canfar.cloud.computecanada.ca/).
-   - For each project:
-	 - Check your quotas in Compute->Overview as similar as in the old cloud
-	 - Check your security groups in Network->Security Groups are similar as in the old cloud which was under Compute->Access & Security
+   - For each project, navigate to:
+	 - **Compute -> Overview** and check your quotas as similar as in the old cloud
+	 - **Network->Security Groups** and check your security groups are similar as in the west cloud which was under **Compute -> Access & Security**
 	 
-   - Check your ssh keys:
-	 - Go to  Compute -> Key Pairs
-	 - The easiest and safest is to recreate ssh keys in the new cloud:  Create Key Pair or Import Public Key.
+   - Navigate to **Compute -> Key Pairs**
+	 - The easiest and safest is to recreate ssh keys in the new cloud: **Create Key Pair** or **Import Public Key**.
 	 - If you want to use the old ones:
-		 - On west.cloud go to Compute -> Access & Security -> Key Pairs. Click on the name of the key pair you want and copy the public key value.
-		 - On arbutus, click Import Public Key: give your Key Pair a name and paste in the public key from west cloud.
+		 - On west.cloud go to **Compute -> Access & Security -> Key Pairs**. Click on the name of the key pair you want and copy the public key value.
+		 - On arbutus, click **Import Public Key**: give your Key Pair a name and paste in the public key from west cloud.
 		 - Your Key Pair should now be imported into Arbutus Cloud. Repeat the above steps for as many keys as you need.
 
 ## Inform us
-Send us an (email)[mailto:support@canfar.net] with : project <name> is ready for finalizing migration. We will migrate everything else for you.
+Send us an [email](mailto:support@canfar.net) with : project <name> is ready for finalizing migration. We will migrate everything else for you.
 If you really know what you are doing, check [this guide](https://docs.computecanada.ca/wiki/Arbutus_Migration_Guide).
-In any case, feel free to hop in the slack channel
+In any case, feel free to hop in the [slack channel](http://www.canfar.net/slack) to get help.
