@@ -1,8 +1,8 @@
-If you are in sync how CC does stuff and know what you are doing, follow the [CC migraton guide](https://docs.computecanada.ca/wiki/Arbutus_Migration_Guide)
+# Cloud Migration
 
-If not, follow this guide
+This document summarizes what you need to do to migrate your project on the CANFAR OpenStack cloud hosted on Compute Canada.
 
-1. Cleanup the old cloud
+## Cleanup the old cloud
    - Login into  [west.cloud](https://west.cloud.computecanada.ca/).
    - For each project (upper-left next to the west cloud logo):
 	   - Go to Volumes
@@ -18,7 +18,7 @@ If not, follow this guide
 		   - Snapshot the other instances, then terminate them
 		   - Terminate all your instances associated to a volume
 
-2. Check the new cloud
+## Check the new cloud
    - Login into [arbutus](https://arbutus-canfar.cloud.computecanada.ca/).
    - For each project:
 	 - Check your quotas in Compute->Overview as similar as in the old cloud
@@ -32,5 +32,7 @@ If not, follow this guide
 		 - On arbutus, click Import Public Key: give your Key Pair a name and paste in the public key from west cloud.
 		 - Your Key Pair should now be imported into Arbutus Cloud. Repeat the above steps for as many keys as you need.
 
-3. Send us an (email)[mailto:support@canfar.net] with : project <name> is ready for finalizing migration.
-4. If you really know what you are doing, check [this guide](https://docs.computecanada.ca/wiki/Arbutus_Migration_Guide).
+## Inform us
+Send us an (email)[mailto:support@canfar.net] with : project <name> is ready for finalizing migration. We will migrate everything else for you.
+If you really know what you are doing, check [this guide](https://docs.computecanada.ca/wiki/Arbutus_Migration_Guide).
+In any case, feel free to hop in the slack channel
