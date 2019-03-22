@@ -7,7 +7,7 @@ This document summarizes what you need to do to migrate your project on the CANF
    - For each project (upper-left next to the west cloud logo), navigate to:
 	   - **Volumes**
 		   - Delete all volumes not attached that you do not need anymore
-		   - All volumes  *Attached to instance_name on /dev/vda* are volume-based images. You may want to rename them something associated with the *instance_name* if you have not already.
+		   - All volumes  *Attached to instance_name on /dev/vda* are volume-based images. You may want to rename them something associated with the *instance_name* if you have not already
 		   - In the **Volume Snapshots** tab delete snapshots you do not need anymore
 
 	   - **Images**
