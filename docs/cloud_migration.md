@@ -32,7 +32,7 @@ This document summarizes what you need to do to migrate your project on the CANF
 		 - On arbutus, click **Import Public Key**: give your Key Pair a name and paste in the public key from west cloud
 		 - Your Key Pair should now be imported into Arbutus Cloud. Repeat the above steps for as many keys as you need
 
-## Finalizing the Migration- Inform us
-If you want us to migrate everything else for you, send us an [email](mailto:support@canfar.net) containing "Project \<*your_project_name*\> is ready for final migration." We will do the rest!
-If you really know what you are doing and want to migrate everything yourself, please let us know via [email](mailto:support@canfar.net), and then refer to [this guide](https://docs.computecanada.ca/wiki/Arbutus_Migration_Guide).
+## Finalizing the Migration - Inform us
+- If you want us to migrate everything else for you, send us an [email](mailto:support@canfar.net) containing "Project \<*your_project_name*\> is ready for final migration." We will do the rest!
+- If you really know what you are doing and want to migrate everything yourself, please let us know via [email](mailto:support@canfar.net), and then refer to [this guide](https://docs.computecanada.ca/wiki/Arbutus_Migration_Guide).
 In either case, feel free to hop in the [slack channel](http://www.canfar.net/slack) to get help.
