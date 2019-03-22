@@ -41,10 +41,10 @@ layout: default
             </div>
             <div class="mx-1 col">
               <a href="/citation" class="text-secondary">
-                <i class="fas fa-link service-link" data-toggle="tooltip" data-placement="top" title="Manage your Digital Object Identifiers"></i>
+                <i class="fas fa-link service-link" data-toggle="tooltip" data-placement="top" title="Publish your data using VOSpace and Digital Object Identifiers"></i>
               </a>
               <div>
-                <span>DOI Management</span>
+                <span>Data Publication</span>
               </div>
             </div>
           </div>
