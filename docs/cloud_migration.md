@@ -33,6 +33,6 @@ This document summarizes what you need to do to migrate your project on the CANF
 		 - Your Key Pair should now be imported into Arbutus Cloud. Repeat the above steps for as many keys as you need
 
 ## Inform us
-Send us an [email](mailto:support@canfar.net) with "project <name> is ready for finalizing migration" in the subject line or body. We will migrate everything else for you.
+Send us an [email](mailto:support@canfar.net) with "project \<name\> is ready for finalizing migration" in the subject line or body. We will migrate everything else for you.
 If you really know what you are doing, check [this guide](https://docs.computecanada.ca/wiki/Arbutus_Migration_Guide).
 In either case, feel free to hop in the [slack channel](http://www.canfar.net/slack) to get help.
