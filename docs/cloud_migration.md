@@ -7,7 +7,7 @@ This document summarizes what you need to do to migrate your project on the CANF
    - For each project (upper-left next to the west cloud logo), navigate to:
 	   - **Volumes**
 		   - Delete all volumes not attached that you do not need anymore
-		   - All volumes claiming *Attached to instance_name on /dev/vda* are volume-based images. You may want to rename them something associated with the *instance_name* if you have not already
+		   - All volumes  *Attached to instance_name on /dev/vda* are volume-based images. You may want to rename them something associated with the *instance_name* if you have not already
 		   - In the **Volume Snapshots** tab delete snapshots you do not need anymore
 
 	   - **Images**
@@ -18,7 +18,7 @@ This document summarizes what you need to do to migrate your project on the CANF
 		   - Snapshot all the other instances, and terminate them
 
 ## Check the new cloud
-   - Login into [arbutus](https://arbutus-canfar.cloud.computecanada.ca/) with the CADC username password. You do not need the `-canfar` suffix anymore.
+   - Login into [arbutus](https://arbutus-canfar.cloud.computecanada.ca/)
    - For each project, navigate to:
 	 - **Compute -> Overview** 
 	 	- Check the new quotas are similar to quotas in the old cloud
@@ -32,7 +32,7 @@ This document summarizes what you need to do to migrate your project on the CANF
 		 - On arbutus, click **Import Public Key**: give your Key Pair a name and paste in the public key from west cloud
 		 - Your Key Pair should now be imported into Arbutus Cloud. Repeat the above steps for as many keys as you need
 
-## Inform us
-Send us an [email](mailto:support@canfar.net) with "project \<*your_project_name*\> is ready for final migration" in the subject line or body. We will migrate everything else for you.
-If you really know what you are doing, check [this guide](https://docs.computecanada.ca/wiki/Arbutus_Migration_Guide).
+## Finalizing the Migration- Inform us
+If you want us to migrate everything else for you, send us an [email](mailto:support@canfar.net) containing "Project \<*your_project_name*\> is ready for final migration." We will do the rest!
+If you really know what you are doing and want to migrate everything yourself, please let us know via [email](mailto:support@canfar.net), and then refer to [this guide](https://docs.computecanada.ca/wiki/Arbutus_Migration_Guide).
 In either case, feel free to hop in the [slack channel](http://www.canfar.net/slack) to get help.
