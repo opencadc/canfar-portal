@@ -21,9 +21,9 @@ This document summarizes what you need to do to migrate your project on the CANF
    - Login into [arbutus](https://arbutus-canfar.cloud.computecanada.ca/)
    - For each project, navigate to:
 	 - **Compute -> Overview** 
-	 	- check the new quotas are similar to quotas in the old cloud
+	 	- Check the new quotas are similar to quotas in the old cloud
 	 - **Network->Security Groups**
-	 	- check your security groups are similar to your old groups in the west cloud. You'll find them under **Compute -> Access & Security**
+	 	- Check your security groups are similar to your old groups in the west cloud. You'll find them under **Compute -> Access & Security**
 	 
    - Navigate to **Compute -> Key Pairs**
 	 - The easiest and safest is to recreate ssh keys in the new cloud: **Create Key Pair** or **Import Public Key**
