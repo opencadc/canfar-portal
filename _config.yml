@@ -3,7 +3,7 @@ tagline: Processing and Storage on the cloud
 permalink: /news/:year/:month/:day/:title/
 relative_permalinks: false
 markdown: kramdown
-site_env: hj
+site_env: prod
 env:
     hj:
         hj: 'http://jeevesh.cadc.dao.nrc.gc.ca'
