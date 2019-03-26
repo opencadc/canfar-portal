@@ -12,9 +12,9 @@ VOSpace is the CANFAR storage system , an implementation of	the [Virtual Observa
 It is intended to be used for storing the output of the CANFAR processing system and also for sharing files between members of a collaboration.
 If the data you want to process is not already on a CADC archive, you can stage it on a VOSpace for further processing. Files in VOSpace are mirrored in four physical locations, so they are secure against disk failure.
 
-You will need to [register](http://apps.canfar.net/canfar/auth/request.html).
+You will need to [register](https://www.canfar.net/canfar/auth/request.html).
 
-There are two ways to interact with VOspace. The first is with your browser via the [web user interface](http://apps.canfar.net/storage/list).
+There are two ways to interact with VOspace. The first is with your browser via the [web user interface](https://www.canfar.net/storage/list).
 The web interface is familiar for most people to use and interactive.
 To access your VOSpace in scripts, the Python based [vos](https://pypi.python.org/pypi/vos) modules and command line clients are available.
 Some users might also find the VOSpace filesystem [vofs](https://pypi.python.org/pypi/vofs), the FS view is based on FUSE and not recommended for serious data processing, but does provide a convenient interactive interface for exploring a respository.
@@ -120,7 +120,7 @@ vmv vos:VOSPACE/foo/bar vos:VOSPACE/foo/bar2
 # provide group write permission on a VOSpace location (can be a directory or file). Up-to 4 groups can be given assigned permission.
 vchmod g+w vos:VOSPACE/foo/bar.txt 'GROUP1, GROUP2, GROUP3'
 
-# List of GROUP names is availabe from the [Group Managemnet Service](http://www.canfar.phys.uvic.ca/canfar/groups/)
+# List of GROUP names is availabe from the [Group Managemnet Service](https://www.canfar.phys.uvic.ca/canfar/groups/)
 {% endhighlight %}
 
 </div>

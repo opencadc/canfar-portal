@@ -20,7 +20,7 @@ The CANFAR computing resources are currently provided as an [OpenStack](http://w
 
 ### Before you start
 
-You will need to [register](http://apps.canfar.net/canfar/login.html) to CANFAR. The CANFAR team will take care of your registration to Compute Canada infrastructure.
+You will need to [register](https://www.canfar.net/canfar/login.html) to CANFAR. The CANFAR team will take care of your registration to Compute Canada infrastructure.
 
 ### Managing your resources
 
