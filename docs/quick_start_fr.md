@@ -7,7 +7,7 @@ permalink: /fr/docs/commencer/
 ---
 
 
-Before starting this example, you will need to [register](https://www.canfar.net/canfar/login.html) to CANFAR. The CANFAR team will take care of your registration to Compute Canada infrastructure.
+Before starting this example, you will need to [register](https://www.canfar.net/en/register/) to CANFAR. The CANFAR team will take care of your registration to Compute Canada infrastructure.
 
 This quick start guide will demonstrate how to:
 
@@ -198,7 +198,7 @@ $ vcp 1056213p.cat vos:[username]
 
 </div>
 
-Verify that the file is properly uploaded by pointing your browser to the [VOSpace browser interface](https://www.canfar.phys.uvic.ca/vosui).
+Verify that the file is properly uploaded by pointing your browser to the [VOSpace browser interface](https://www.canfar.net/storage/list).
 
 # Automate all the above and run it in batch
 

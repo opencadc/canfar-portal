@@ -14,7 +14,7 @@ This quick start guide will demonstrate how to:
 - store files with the CANFAR VOSpace storage
 - launch batch processing jobs from the CANFAR batch host, using VMs created in the previous step
 
-Before starting this example, you will need to have a CANAR/CADC account ([register](https://www.canfar.net/canfar/auth/request.html)) and you will need to request a CANFAR resource allocation. The CANFAR team will take care of your registration to Compute Canada infrastructure.
+Before starting this example, you will need to have a CANFAR/CADC account ([register](https://www.canfar.net/en/register/)) and you will need to request a CANFAR resource allocation. The CANFAR team will take care of your registration to Compute Canada infrastructure.
 
 ## Resource Allocation
 
@@ -203,7 +203,7 @@ vcp 1056213p.cat vos:[username]
 
 </div>
 
-Verify that the file is properly uploaded by pointing your browser to the [VOSpace browser interface](https://www.canfar.phys.uvic.ca/vosui).
+Verify that the file is properly uploaded by pointing your browser to the [VOSpace browser interface](https://www.canfar.net/storage/list).
 
 ## Automate all the above and run it in batch
 

@@ -198,7 +198,7 @@ $ vcp 1056213p.cat vos:[username]
 
 </div>
 
-Verify that the file is properly uploaded by pointing your browser to the [VOSpace browser interface](https://www.canfar.phys.uvic.ca/vosui).
+Verify that the file is properly uploaded by pointing your browser to the [VOSpace browser interface](https://www.canfar.net/storage/list/).
 
 ## Automate all the above and run it in batch
 
