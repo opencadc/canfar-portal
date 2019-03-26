@@ -1,9 +1,17 @@
+---
+layout: pages_left_nav
+
+namespace: docs.cloud_migration
+lang: en
+permalink: /en/docs/cloud_migration/
+---
+
 # Cloud Migration
 
 This document summarizes what you need to do to migrate your project on the CANFAR OpenStack cloud hosted on Compute Canada.
 
 ## Cleanup the old cloud
-   - Login into [west.cloud](https://west.cloud.computecanada.ca/)
+   - Login into [West Cloud](https://west.cloud.computecanada.ca/)
    - For each project (upper-left next to the west cloud logo), navigate to:
 	   - **Volumes**
 		   - Delete all volumes not attached that you do not need anymore
@@ -22,7 +30,7 @@ This document summarizes what you need to do to migrate your project on the CANF
 
 
 ## Check the new cloud
-   - Login into [arbutus](https://arbutus-canfar.cloud.computecanada.ca/) with your CADC username and password. You do not need the `-canfar` suffix anymore
+   - Login into [Arbutus](https://arbutus-canfar.cloud.computecanada.ca/) with your CADC username and password. You do not need the `-canfar` suffix anymore
    - For each project, navigate to:
 	 - **Compute -> Overview** 
 	 	- Check the new quotas are similar to quotas in the old cloud
@@ -39,4 +47,4 @@ This document summarizes what you need to do to migrate your project on the CANF
 ## Finalizing the Migration
 - If you want us to migrate everything else for you, send us an [email](mailto:support@canfar.net) containing "Project \<*your_project_name*\> is ready for final migration." We will do the rest!
 - If you really know what you are doing and want to migrate everything yourself, please let us know via [email](mailto:support@canfar.net), and then refer to [this guide](https://docs.computecanada.ca/wiki/Arbutus_Migration_Guide)
-- In either case, feel free to hop in the [slack channel](http://www.canfar.net/slack) to get help
+- In either case, feel free to hop in the [Slack channel](https://www.canfar.net/slack) to get help

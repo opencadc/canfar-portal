@@ -49,6 +49,9 @@ en:
     openstack_cloud_portal:
       name: 'OpenStack Cloud'
       link: '/openstack_cloud_portal/'
+    cloud_migration:
+      name: 'Cloud Migration'
+      link: '/cloud_migration/'
     digital_object_identifiers:
       name: 'Digital Object Identifiers'
       link: '/digital_object_identifiers/'
@@ -131,7 +134,7 @@ en:
       description: 'Manage your own large storage for astronomy data'
     group_management:
       name: 'Group Management'
-      link: '/gmui'
+      link: '/gmui/'
       api_link: 'http://www.canfar.phys.uvic.ca/ac/'
       description: 'Manage access permissions to your managed Storage'
     digital_object_identifiers:
@@ -300,6 +303,9 @@ fr:
     openstack_cloud_portal:
       name: 'Portail de cloud OpenStack'
       link: '/portail_de_cloud_openstack/'
+    cloud_migration:
+      name: 'Migration nuage'
+      link: '/migration_nuage/'
     digital_object_identifiers:
       name: "Identificateurs d'objects digitale"
       link: '/identificateurs_objets_digitale/'
@@ -396,7 +402,7 @@ fr:
       description: 'La description du traitement par lots'
     group_management:
       name: 'Gestion de groupes'
-      link: '/gmui'
+      link: '/gmui/'
       api_link: 'http://www.canfar.phys.uvic.ca/ac/'
       description: 'La description de Gestion de groupes'
     caom_query_service:
