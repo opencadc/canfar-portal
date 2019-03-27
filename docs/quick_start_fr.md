@@ -7,7 +7,7 @@ permalink: /fr/docs/commencer/
 ---
 
 
-Before starting this example, you will need to [register](http://apps.canfar.net/canfar/login.html) to CANFAR. The CANFAR team will take care of your registration to Compute Canada infrastructure.
+Before starting this example, you will need to [register](https://www.canfar.net/en/register/) to CANFAR. The CANFAR team will take care of your registration to Compute Canada infrastructure.
 
 This quick start guide will demonstrate how to:
 
@@ -153,7 +153,7 @@ $ echo 'NUMBER
 MAG_AUTO
 X_IMAGE
 Y_IMAGE' > default.param
-$ curl -L http://www.canfar.phys.uvic.ca/data/pub/CFHT/1056213p | funpack -O 1056213p.fits -
+$ curl -L https://www.canfar.phys.uvic.ca/data/pub/CFHT/1056213p | funpack -O 1056213p.fits -
 $ sextractor 1056213p.fits -CATALOG_NAME 1056213p.cat
 {% endhighlight %}
 
@@ -198,7 +198,7 @@ $ vcp 1056213p.cat vos:[username]
 
 </div>
 
-Verify that the file is properly uploaded by pointing your browser to the [VOSpace browser interface](http://www.canfar.phys.uvic.ca/vosui).
+Verify that the file is properly uploaded by pointing your browser to the [VOSpace browser interface](https://www.canfar.net/storage/list).
 
 # Automate all the above and run it in batch
 
@@ -209,7 +209,7 @@ Now we want to automate the whole procedure above in a single script, in prepara
 {% highlight bash %}
 #!/bin/bash
 source /home/[username]/.bashrc
-curl -L http://www.canfar.phys.uvic.ca/data/pub/CFHT/${1} | funpack -O ${1}.fits -
+curl -L https://www.canfar.phys.uvic.ca/data/pub/CFHT/${1} | funpack -O ${1}.fits -
 cp /usr/share/sextractor/default* .
 echo 'NUMBER
 MAG_AUTO
