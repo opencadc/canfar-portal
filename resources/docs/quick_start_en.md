@@ -176,14 +176,14 @@ $ sudo pip install vos
 
 </div>
 
- For an automated procedure to access VOSpace on your behalf, your proxy authorization must be present on the VM. You can accomplish this using a `.netrc` file that contains your CANFAR user name and password, and the command **getCert** can obtain an *X509 Proxy Certificate* using that username/password combination without any further user interaction. The commands below will create the file and install the VOSpace utilities.
+ For an automated procedure to access VOSpace on your behalf, your proxy authorization must be present on the VM. You can accomplish this using a `.netrc` file that contains your CANFAR user name and password, and the command **cadc-get-cert** can obtain an *X509 Proxy Certificate* using that username/password combination without any further user interaction. The commands below will create the file and install the VOSpace utilities.
 
 <div class="shell">
 
 {% highlight bash %}
 $ echo "machine www.canfar.phys.uvic.ca login [username] password [password]" > ~/.netrc
 $ chmod 600 ~/.netrc
-$ getCert
+$ cadc-get-cert
 {% endhighlight %}
 
 </div>
@@ -216,7 +216,7 @@ MAG_AUTO
 X_IMAGE
 Y_IMAGE' > default.param
 sextractor ${1}.fits -CATALOG_NAME ${1}.cat
-getCert
+cadc-get-cert
 vcp ${1}.cat vos:[username]
 {% endhighlight %}
 
