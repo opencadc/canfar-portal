@@ -8,9 +8,11 @@ permalink: /en/docs/digital_object_identifiers/
 
 <!-- Content start -->
 
-<h5>A Digitial Object Identifier is a string that is associated perpetually (at least in theory) with a particular digital object.
-CANFAR registers Digital Object Identifiers (DOIs) with DataCite. A number of services will resolved the DOI directly to the digital
-object</h5>
+<h5>Using CANFAR's Data Publication service, researchers can publish data that is associated with a journal paper.  
+VOSpace is used to generate a data publication folder, where a data set will be archived and protected after
+publication. A unique Digitial Object Identifier (DOI)is assigned to the data set at publication time. 
+A number of services (including doi.org) will resolve the DOI directly to the landing page with links to both the data set 
+and the related journal. CANFAR registers Digital Object Identifiers (DOIs) with DataCite. </h5>
 
 <b>Purpose</b>
 
