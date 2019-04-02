@@ -53,10 +53,10 @@ en:
       name: 'Cloud Migration'
       link: '/cloud_migration/'
     digital_object_identifiers:
-      name: 'Digital Object Identifiers'
+      name: 'Data Publication'
       link: '/digital_object_identifiers/'
     storage:
-      name: 'Storage'
+      name: 'Storage Management'
       link: '/storage/'
     quick_start:
       name: 'Quick Start'
@@ -68,8 +68,8 @@ en:
       name: 'Group Management'
       link: '/group_management/'
     caom_query_service:
-      name: 'CADC Data Collections'
-      link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/about.html#mandate'
+      name: 'CADC Search'
+      link: 'https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/doc/advancedsearch/'
     jcmt_starlink:
       name: 'JCMT Starlink'
       link: '/jcmt_starlink/'
@@ -130,22 +130,23 @@ en:
     storage:
       name: 'Storage Management'
       link: '/storage/list/'
-      api_link: 'http://www.canfar.phys.uvic.ca/vospace/'
+      api_link: 'https://www.canfar.phys.uvic.ca/vospace/'
       description: 'Manage your own large storage for astronomy data'
     group_management:
       name: 'Group Management'
       link: '/gmui/'
-      api_link: 'http://www.canfar.phys.uvic.ca/ac/'
+      api_link: 'https://www.canfar.phys.uvic.ca/ac/'
       description: 'Manage access permissions to your managed Storage'
     digital_object_identifiers:
       disabled: true
-      name: 'Digital Object Identifiers'
-      link: '/citation'
-      description: 'Manage your digital object identifiers'
+      name: 'Data Publication'
+      link: '/citation/'
+      api_link: 'https://www.canfar.phys.uvic.ca/doi/'
+      description: 'Publish your data using VOSpace and Digital Object Identifiers'
     batch_processing:
       name: 'Batch Processing'
       link: '/processing/batchjobs'
-      api_link: 'http://www.canfar.phys.uvic.ca/proc/'
+      api_link: 'https://www.canfar.phys.uvic.ca/proc/'
       description: 'Access large resources for batch processing on the cloud'
     arcade:
       disabled: true
@@ -158,9 +159,9 @@ en:
       description: 'Run your own virtual machines on Compute Canada cloud'
       capacity: 'Default is 10 VMs sharing 20 CPUs, 50GB RAM, 1TB disk and 1 public IP'
     caom_query_service:
-      name: 'CADC Data Collections'
+      name: 'CADC Search'
       link: '/en/search/'
-      api_link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/tap/'
+      api_link: 'https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/tap/'
       description: 'CADC Data Discovery and Access'
   resources:
     name: 'Resources'
