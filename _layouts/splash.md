@@ -151,14 +151,7 @@ layout: default
   </footer>
   {% include _page_footer.html %}
 </div>
-<!-- Internationalization libraries -->
-<script type="text/javascript" src="/js/jquery.i18n.js"></script>
-<script type="text/javascript" src="/js/jquery.i18n.messagestore.js"></script>
-<script type="text/javascript" src="/js/jquery.i18n.fallbacks.js"></script>
-<script type="text/javascript" src="/js/jquery.i18n.parser.js"></script>
-<script type="text/javascript" src="/js/jquery.i18n.emitter.js"></script>
-<script type="text/javascript" src="/js/jquery.i18n.language.js"></script>
-<script type="text/javascript" src="/js/cadc.auth.js"></script>
+
 <script type="text/javascript">
   $(document).ready(function () {
     var successURI = '{{ successURI }}';
