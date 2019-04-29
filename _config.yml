@@ -3,7 +3,7 @@ tagline: Processing and Storage on the cloud
 permalink: /news/:year/:month/:day/:title/
 relative_permalinks: false
 markdown: kramdown
-site_env: hj
+site_env: prod
 env:
     demo:
         cadc: 'http://demo.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
