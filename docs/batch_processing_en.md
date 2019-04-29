@@ -83,7 +83,7 @@ You can also add a different request parameter per job. The VMs will be dynamica
 ## Managing Batch Jobs on the submission host
 
 ### Job Submission
-In this case, the submission files and the executable will have to reside on the CANFAR batch login node. Connect to the batch node with your CANFAR username (refered as`[username]`):
+In this case, the submission files and the executable will have to reside on the CANFAR batch login node. Connect to the batch node with your CADC username (refered as`[username]`):
 
 <div class="shell">
 
@@ -93,17 +93,17 @@ ssh [username]@batch.canfar.net
 
 </div>
 
-Then you will need to source your credentials to access your tenant's VMs:
+Then you will need to source your credentials to access your project's VMs:
 
 <div class="shell">
 
 {% highlight bash %}
-. canfar-[tenant]-openrc.sh
+. [project]-openrc.sh
 {% endhighlight %}
 
 </div>
 
-This file is the same as the one you can download from your tenant, when clicking in the **API Access** tab from your [dashboard](https://west.cloud.computecanada.ca/dashboard/project/access_and_security/). It should download it for you, then replace `[tenant]` by your tenant name.
+This file is the same as the one you can download from your project, when clicking in the **API Access** tab from your [dashboard](https://west.cloud.computecanada.ca/dashboard/project/access_and_security/). It should download it for you, then replace `[project]` by your project name.
 Now to submit the job, there is a special wrapper script that will share your VM with CANFAR, add some boiler plate lines for the cloud-scheduler, validate and submit the job. Instead of running `condor_submit`, you would run `canfar_submit`. For our simple example, you would do:
 <div class="shell">
 

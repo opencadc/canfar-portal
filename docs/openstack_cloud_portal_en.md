@@ -12,5 +12,5 @@ We strongly encourage the user to refer to the [Compute Canada cloud documentati
 
 The Compute Canada allocation resources are currently shared between all CANFAR users. Currently the only difference are:
 
-* a CANFAR user on the OpenStack CC cloud is ```[CADC username]-canfar```, with initially the password as used with the CADC.
-* a CANFAR project/tenant on the OpenStack CC cloud is named ```[project]-canfar```
+* a CANFAR user on the OpenStack CC cloud is ```[CADC username]```, with initially the password as used with the CADC.
+* a CANFAR project on the OpenStack CC cloud is named ```[project]```

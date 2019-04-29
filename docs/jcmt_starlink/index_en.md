@@ -49,7 +49,7 @@ ssh ubuntu@your.ip.address.here -i Path_to_your_private_ssh_key_here
 
 Now, create a new user using the Create User script from the quick start tutoral, repeated here:
 
-You might need to create a different user than the default one, and for batch processing to work, it is presently necessary for you to create a user on the VM with your CANFAR username. You can use a wrapper script for this:
+You might need to create a different user than the default one, and for batch processing to work, it is presently necessary for you to create a user on the VM with your CADC username. You can use a wrapper script for this:
 
 <div class="shell">
 

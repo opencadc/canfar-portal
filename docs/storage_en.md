@@ -342,7 +342,7 @@ mv cadcproxy.pem ${HOME}/.ssl/
 #### Insecure but slight less complicated
 
 Use the cadc-get-cert script at the start of every job.  To avoid cadc-get-cert from
-asking for your CANFAR username/password, add a `$HOME/.netrc` file containing these lines:
+asking for your CADC username/password, add a `$HOME/.netrc` file containing these lines:
 
 <div class="shell">
 {% highlight bash %}

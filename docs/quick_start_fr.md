@@ -6,8 +6,7 @@ lang: fr
 permalink: /fr/docs/commencer/
 ---
 
-
-Before starting this example, you will need to [register](https://www.canfar.net/en/register/) to CANFAR. The CANFAR team will take care of your registration to Compute Canada infrastructure.
+Before starting this example, you will need to [register](https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/auth/request.html) with CADC. The CADC team will take care of your registration to Compute Canada infrastructure.
 
 This quick start guide will demonstrate how to:
 
@@ -17,15 +16,15 @@ This quick start guide will demonstrate how to:
 
 # Create your interactive Virtual Machine
 
-To manage the VMs with OpenStack, we suggest using the  dashboard at Compute Canada. [Log into the dashboard](https://west.cloud.computecanada.ca). Provide your CANFAR username, adding a ```-canfar``` suffix, e.g, ```janesmith-canfar```, and your usual CANFAR password. We will refer the CANFAR username (excluding the ```-canfar``` suffix which is only used for logging into the dashboard) as ```[username]``` throughout this document.
+To manage the VMs with OpenStack, we suggest using the  dashboard at Compute Canada. [Log into the dashboard](https://west.cloud.computecanada.ca). Provide your CADC username and your usual password. We will refer the CADC username as ```[username]``` throughout this document.
 
-Each resource allocation corresponds to an OpenStack **tenant** or **project** (these two names are used interchangeably). A user may be a member of multiple tenants, and a tenant usually has multiple users. A pull-down menu near the top-left allows you to select between the different tenants that you are a member of.
+Each resource allocation corresponds to an OpenStack **project**. A user may be a member of multiple projects, and a project usually has multiple users. A pull-down menu near the top-left allows you to select between the different projects that you are a member of.
 
 ## Allow ssh access to your VM
 
 * Click on **Access & Security** (left column of page), and then the **Security Groups** tab.
-* Click on the **Manage Rules** button next to the default group. If you see a rule with **Ingress** direction, **22(SSH)** Port Range and **0.0.0.0/0 (CIDR)** , then that means someone in your tenant already  opened the ssh port for you. If you don't see it, add a new rule following step.
-* Click on the **+ Add Rule** button near the top-right. Select **SSH** at the bottom of the **Rule** pull-down menu, and then click on **Add** at the bottom-right. **This operation is only required once for the initial setup of the tenant**.
+* Click on the **Manage Rules** button next to the default group. If you see a rule with **Ingress** direction, **22(SSH)** Port Range and **0.0.0.0/0 (CIDR)** , then that means someone in your project already  opened the ssh port for you. If you don't see it, add a new rule following step.
+* Click on the **+ Add Rule** button near the top-right. Select **SSH** at the bottom of the **Rule** pull-down menu, and then click on **Add** at the bottom-right. **This operation is only required once for the initial setup of the project**.
 
 ## Import an ssh public key
 
@@ -41,7 +40,7 @@ You will need to connect to your VM via a public IP.
 
 * Click on the **Floating IPs** tab. If there are no IPs listed, click on the **Allocate IP to Project** button at the top-right.
 
-Each tenant/project will typically have one public IP. If you have already allocated all of your IPs, this button will read "Quota Exceeded".
+Each project will typically have one public IP. If you have already allocated all of your IPs, this button will read "Quota Exceeded".
 
 ## Launch a VM
 
@@ -85,8 +84,8 @@ $ ssh ubuntu@[floating ip]
 </div>
 
 ## Create a user on the VM
-
-You might need to create a different user than the default one, and for batch processing to work, it is presently necessary for you to create a user on the VM with your CANFAR username. You can use a wrapper script for this:
+c
+You might need to create a different user than the default one, and for batch processing to work, it is presently necessary for you to create a user on the VM with your CADC username. You can use a wrapper script for this:
 
 <div class="shell">
 
@@ -97,7 +96,7 @@ $ sudo bash canfar_create_user.bash [username]
 
 </div>
 
-Now, exit the VM, and re-connect with your CANFAR username instead of the standard ubuntu username:
+Now, exit the VM, and re-connect with your CADC username instead of the standard ubuntu username:
 
 <div class="shell">
 
@@ -198,7 +197,7 @@ $ vcp 1056213p.cat vos:[username]
 
 </div>
 
-Verify that the file is properly uploaded by pointing your browser to the [VOSpace browser interface](https://www.canfar.net/storage/list).
+Verify that the file is properly uploaded by pointing your browser to the [VOSpace browser interface](https://www.canfar.net/storage/list/).
 
 # Automate all the above and run it in batch
 
@@ -222,7 +221,7 @@ vcp ${1}.cat vos:[username]
 
 </div>
 
-Remember to substitute [username] with your CANFAR user account.
+Remember to substitute [username] with your CADC user account.
 
 This script runs all the commands, one after the other, and takes only one parameter represented by by the shell variable `${1}`, the file ID of the CFHT exposure. Save your script and set it as executable:
 
@@ -344,12 +343,12 @@ Save the submission file as `myjobs.sub`.
 
 ## Submit the batch jobs
 
-Source the OpenStack RC tenant file, and enter your CANFAR password. This sets environment variables used by OpenStack (only required once per login session):
+Source the OpenStack RC project file, and enter your CADC password. This sets environment variables used by OpenStack (only required once per login session):
 
 <div class="shell">
 
 {% highlight bash %}
-$ . canfar-[tenant]-openrc.sh
+$ . [project]-openrc.sh
 {% endhighlight %}
 
 <code class="output">
