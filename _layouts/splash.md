@@ -94,14 +94,6 @@ layout: default
             </div>
           </div>
         </div>
-        <div class="d-none" id="request_form_error">
-          <div class="card bg-transparent">
-            <p class="card-header bg-danger">{{ form_error_title }}<br></p>
-            <div class="card-body">
-              <small class="card-text"></small>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -151,12 +143,3 @@ layout: default
   </footer>
   {% include _page_footer.html %}
 </div>
-
-<script type="text/javascript">
-  $(document).ready(function () {
-    var successURI = '{{ successURI }}';
-    var formName = '{{ formName }}';
-    new cadc.auth.UserDetailsForm($('#' + formName), false,
-      true, successURI);
-  });
-</script>
