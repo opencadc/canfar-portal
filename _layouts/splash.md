@@ -94,14 +94,6 @@ layout: default
             </div>
           </div>
         </div>
-        <div class="d-none" id="request_form_error">
-          <div class="card bg-transparent">
-            <p class="card-header bg-danger">{{ form_error_title }}<br></p>
-            <div class="card-body">
-              <small class="card-text"></small>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -151,19 +143,3 @@ layout: default
   </footer>
   {% include _page_footer.html %}
 </div>
-<!-- Internationalization libraries -->
-<script type="text/javascript" src="/js/jquery.i18n.js"></script>
-<script type="text/javascript" src="/js/jquery.i18n.messagestore.js"></script>
-<script type="text/javascript" src="/js/jquery.i18n.fallbacks.js"></script>
-<script type="text/javascript" src="/js/jquery.i18n.parser.js"></script>
-<script type="text/javascript" src="/js/jquery.i18n.emitter.js"></script>
-<script type="text/javascript" src="/js/jquery.i18n.language.js"></script>
-<script type="text/javascript" src="/js/cadc.auth.js"></script>
-<script type="text/javascript">
-  $(document).ready(function () {
-    var successURI = '{{ successURI }}';
-    var formName = '{{ formName }}';
-    new cadc.auth.UserDetailsForm($('#' + formName), false,
-      true, successURI);
-  });
-</script>

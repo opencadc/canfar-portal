@@ -44,43 +44,56 @@
             href="#"><span class='auth-username'></span></a>
           <ul class="dropdown-menu dropdown-menu-right list-unstyled">
             <li>
-              <a href="/canfar/auth/update.html" tabindex="2" title="Update profile" class="dropdown-item account_access_info"
+              <a href=""
+                 class="dropdown-item cadc-acct-update account_access_info"
+                 data-uri="ivo://cadc.nrc.ca/acctupdate"
+                 tabindex="2" title="Update profile" class=""
                  id="updateProfile">Update profile</a>
             </li>
             <li>
-              <a href="/canfar/auth/changePassword.shtml" tabindex="2" title="Change password" class="dropdown-item account_access_info"
-                 id="changePassword">Change password</a>
+               <a href=""
+                 class="dropdown-item account_access_info cadc-pass-chg"
+                 data-uri="ivo://cadc.nrc.ca/passchg"
+                 tabindex="3" title="Change password" id="changePassword" >Change password</a>
             </li>
             <li>
               <a title="Obtain certificate" class="dropdown-item account_access_info"
-                href="https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/cred/priv?daysValid=30" id="obtainCertificate">Obtain a certificate</a>
+                 href="https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/cred/priv?daysValid=30"
+                 tabindex="4" id="obtainCertificate">Obtain a certificate</a>
             </li>
             <li>
-              <a id="logout" title="Logout." class="access-control dropdown-item account_access_info" href="/access/logout">
+              <a id="logout" title="Logout." tabindex="5"
+                 class="access-control dropdown-item account_access_info" href="/access/logout">
                 <span class="fas fa-sign-out-alt"></span> Logout</a>
             </li>
           </ul>
         </li>
         <li class="nav-item pl-4 dropdown canfar-access-control user-anonymous canfar-anonymous d-none pt-2">
           <a title="Login form" class="dropdown-toggle access-actions login-form btn btn-outline-primary" data-toggle="dropdown"
-             href="#">Login</a>
+             href="">Login</a>
           <ul class="dropdown-menu dropdown-menu-right list-unstyled login-container">
             <li>
               <form class="form-inline access-control" id="loginForm" role="form" method="post" action="/access/login">
                 <span id="login_fail" class="help-block text-danger"></span>
                 <label for="username" class="sr-only" id="usernameLabel">Username</label>
                 <input type="text" id="username" name="username" class="form-control mb-2 mr-sm-2 ml-sm-2" tabindex="1"
-                       required="required" placeholder="Username">
+                       required="required" placeholder="CADC Username">
                 <label for="password" class="sr-only" id="passwordLabel">Password</label>
                 <input type="password" id="password" name="password" class="form-control mb-2 mr-sm-2 ml-sm-2" tabindex="2"
                        required="required" placeholder="Password">
-                <button type="submit" id="submitLogin" class="btn btn-success ml-sm-2 mb-2">
+                <button type="submit" id="submitLogin" class="btn btn-success ml-sm-2 mb-2" tabindex="3">
                   <i class="fa fa-sign-in"></i>Login
                 </button>
               </form>
-              <a href="/en/auth/forgot.html" class="dropdown-item account_access_info" tabindex="5" title="Forgot Username"
+              <a href=""
+                 class="dropdown-item cadc-pass-reset account_access_info"
+                 data-uri="ivo://cadc.nrc.ca/passreset"
+                 tabindex="5" title="Forgot Username"
                  id="forgot_username_1">Forgot your Account information?</a>
-              <a href="/en/register/" class="dropdown-item account_access_info" tabindex="6" title="Register" id="register_cadc_1">Request an Account</a>
+              <a href=""
+                 class="dropdown-item cadc-acct-request account_access_info"
+                 data-uri="ivo://cadc.nrc.ca/acctrequest"
+                 tabindex="6" title="Register" id="register_cadc_1">Request a CADC Account</a>
             </li>
           </ul>
         </li>
@@ -95,9 +108,10 @@
 <!-- todo: use min version when deploying - need to check link below however -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
 
-<script type="text/javascript" src="https://www.canfar.net/cadcJS/javascript/org.opencadc.js"></script>
-<script type="text/javascript" src="https://www.canfar.net/cadcJS/javascript/cadc.util.js"></script>
-<script type="text/javascript" src="https://www.canfar.net/cadcJS/javascript/cadc.uri.js"></script>
+<!-- Located in canfar-root.war, deployed in tomcat(-canfar)/webapps/ROOT -->
+<script type="text/javascript" src="/cadcJS/javascript/org.opencadc.js"></script>
+<script type="text/javascript" src="/cadcJS/javascript/cadc.util.js"></script>
+<script type="text/javascript" src="/cadcJS/javascript/cadc.uri.js"></script>
 
 {% comment %} <div class="card text-white bg-warning">
   <div class="card-header"></div>

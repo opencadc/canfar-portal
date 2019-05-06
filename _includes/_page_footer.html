@@ -13,8 +13,8 @@
                     <div class="modal-body">
                         <span id="modal_login_fail" class="text-danger help-block pull-left"></span>
                         <div class="form-group">
-                            <label for="modalUsername" class="d-none" id="modalUsernameLabel">Username</label>
-                            <input type="text" id="modalUsername" name="username" class="form-control" tabindex="1" required="required" placeholder="Username"
+                            <label for="modalUsername" class="d-none" id="modalUsernameLabel">CADC Username</label>
+                            <input type="text" id="modalUsername" name="username" class="form-control" tabindex="1" required="required" placeholder="CADC Username"
                             />
                         </div>
                         <div class="form-group">
@@ -22,11 +22,16 @@
                             <input type="password" id="modalPassword" name="password" class="form-control" tabindex="2" required="required" placeholder="Password"
                             />
                         </div>
-                        <a href="/canfar/auth/forgot.html" tabindex="5" class="account_access_info" title="Forgot Username" id="forgot_username_2">
-                            Forgot your Account information?</a>
+                        <a href=""
+                           class="dropdown-item cadc-pass-reset account_access_info"
+                           data-uri="ivo://cadc.nrc.ca/passreset"
+                           tabindex="5" title="Forgot Username"
+                           id="forgot_username_2">Forgot your Account information?</a>
                         <br/>
-                        <a href="/canfar/auth/request.html" tabindex="6" class="account_access_info" title="Register" id="register_cadc_2">
-                            Request an Account</a>
+                        <a href=""
+                           class="dropdown-item cadc-acct-request account_access_info"
+                           data-uri="ivo://cadc.nrc.ca/acctrequest"
+                           tabindex="6" title="Register" id="register_cadc_2">Request a CADC Account</a>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-success">
@@ -39,13 +44,14 @@
     </div>
 </div>
 
-<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"-->
-<!--crossorigin="anonymous"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+<!-- Located in canfar-root.war, deployed in tomcat(-canfar)/webapps/ROOT -->
 <script type="text/javascript" src="/cadcJS/javascript/cadc.registry-client.js"></script>
 <script type="text/javascript" src="/cadcJS/javascript/cadc.user.js"></script>
 <script type="text/javascript" src="/cadcJS/javascript/login.js"></script>
+<script type="text/javascript" src="/canfar/javascript/canfar.util.js"></script>
 
 <script type="text/javascript">
   $(document).ready(function () {
