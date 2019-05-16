@@ -3,6 +3,7 @@ tagline: Processing and Storage on the cloud
 permalink: /news/:year/:month/:day/:title/
 relative_permalinks: false
 markdown: kramdown
+highlighter: rouge
 site_env: prod
 env:
     demo:

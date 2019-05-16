@@ -86,6 +86,7 @@ ssh ubuntu@[floating ip]
 
 </div>
 
+
 ### Install software on the VM
 
 The VM operating system has only a minimal set of packages. For this example, we will use:
@@ -279,9 +280,8 @@ Source the OpenStack RC project file, and enter your CANFAR password. This sets 
 {% highlight bash %}
 . [project]-openrc.sh
 {% endhighlight %}
-<code class="output">
-Please enter your OpenStack Password:
-</code>
+
+    <code class="output">Please enter your OpenStack Password:</code>
 </div>
 
 Then create a certificate by running `getCert`. The submission process will propagate your generated certificate to the jobs at the proper locations on the VMs.
