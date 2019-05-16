@@ -68,9 +68,12 @@ By default, a batch scheduled VM will spawn the same amount of jobs as there are
 
 In some cases you may need the whole VM for your job. Multi-threaded programs will usually benefit from it. You will need extra resource requirements in your job submission file. For example, if you need a minimum of 8 cores, 16GB of RAM and 250GB of scratch space for your job, use the following parameters in your job submission file:
 
-- request_memory = 16000
-- request_cpus = 8
-- request_disk = 250000000
+{% highlight text %}
+request_memory = 16000
+request_cpus = 8
+request_disk = 250000000
+{% endhighlight %}
+
 
 You can also add a different request parameter per job. The VMs will be dynamically partioned into jobs to maximally fit the VM flavour. See the [submission manual page](http://research.cs.wisc.edu/htcondor/manual/current/condor_submit.html) for reference on the HTCondor request parameters.
 
