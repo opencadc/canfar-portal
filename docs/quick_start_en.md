@@ -35,7 +35,7 @@ Once registered, make note of your:
 
 ## Create a Virtual Machine
 
-To access and manage your VM with OpenStack, we suggest using the  dashboard at Compute Canada. [Log into the dashboard](https://arbutus.cloud.computecanada.ca). Provide your ```[username]```.
+To access and manage your VM with OpenStack, we suggest using the  dashboard at Compute Canada. [Log into the dashboard](https://arbutus-canfar.cloud.computecanada.ca). Provide your ```[username]```.
 
 Each resource allocation corresponds to an OpenStack ```[project]```. A user may be a member of multiple projects, and a project usually has multiple users. A pull-down menu near the top-left allows you to select between the different projects that you are a member of. You can go over [these instructions](https://docs.computecanada.ca/wiki/Creating_a_Linux_VM) which we summarize in the 4 next sections.
 
