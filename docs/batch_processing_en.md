@@ -36,12 +36,6 @@ A typical job will be like this:
 <div class="shell">
 
 {% highlight text %}
-Universe   = vanilla
-should_transfer_files = YES
-when_to_transfer_output = ON_EXIT_OR_EVICT
-RunAsOwner = True
-
-transfer_output_files = /dev/null
 
 executable = myexec.bash
 
@@ -72,7 +66,7 @@ Here are the explanations of the other parameters:
 
 By default, a batch scheduled VM will spawn the same amount of jobs as there are CPUs in the requested flavour. A c8-30gb-380 flavour will launch an 8 cores VM, thus launch 8 jobs per VM. Most of the time it is more efficient to request fairly large flavours to spawn multiple concurrent jobs per VM. Imagine a bare metal node with 16 cores: the overhead of running two 8 cores VMs (2 hypervisors + 2 HTCondor + 16 jobs) vs running 16 one core VMs (16 hypervisors + 16 HTCondor + 16 jobs).
 
-However in some cases you need the whole VM for your job. Multi-threaded programs will usually benefit from it. You will need extra resource requirements in your job submission file. For example, if you need a minimum of 8 cores, 16GB of RAM and 250GB of scratch space for your job, use the following parameters in your job submission file:
+In some cases you may need the whole VM for your job. Multi-threaded programs will usually benefit from it. You will need extra resource requirements in your job submission file. For example, if you need a minimum of 8 cores, 16GB of RAM and 250GB of scratch space for your job, use the following parameters in your job submission file:
 
 - request_memory = 16000
 - request_cpus = 8
@@ -165,6 +159,14 @@ Check to see if your VMs are joining the pool of execution hosts:
 
 {% highlight bash %}
 condor_status
+{% endhighlight %}
+
+Login to the worker that is executing job 11.3 to inspect what it is doing:
+
+<div class="shell">
+
+{% highlight bash %}
+condor_ssh_to_job 11.3
 {% endhighlight %}
 
 </div>
