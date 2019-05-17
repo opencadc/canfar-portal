@@ -20,16 +20,17 @@ The purpose of the CANFAR Data Publication Service (DPS) is to allow researchers
 
 The author of the paper will need to have a CADC account. This will allow you to access the CANFAR Data Publication Service (DPS) interface and, later, to access the user-managed storage service where the author will deposit the data to be published.
 
+
 #### Author, Title information for the paper
 
-The DPS page at https://www.canfar.net/citation/request allows the author to enter Title and Author information for the paper. The DOI will be automatically assigned later by the system. The journal reference information (journal name, volume page) can be entered but is typically not know initially. It can be entered later when it is fully known.
+The DPS page at https://www.canfar.net/citation/request allows the author to enter Title and Author information for the paper. The DOI will be automatically assigned later by the system. The journal reference information (journal name, volume page) can be entered but is typically not known initially. It can be entered later when it is fully known.
 
  Once the information is entered, please push the Request button.
 
 
 ####  Upload the data package
 
-The Request button takes the author to a page that includes both the DOI that will ultimately be “minted” (it has not been minted at this point) and the folder to which the data package should be uploaded (for example, /storage/list/AstroDataCitationDOI/CISTI.CANFAR/19.00nn/data).  The author should no upload the data package to the DPS folder. 
+The Request button takes the author to a page that includes both the DOI that will ultimately be “minted” (it has not been minted at this point) and the folder to which the data package should be uploaded (for example, /storage/list/AstroDataCitationDOI/CISTI.CANFAR/19.00nn/data).  The author should now upload the data package to the DPS folder. 
 
  This page also reveals a link to the DOI landing page (for example, /citation/landing?doi=19.00nn). This is the public facing page that the DOI points to.
 
@@ -48,6 +49,7 @@ There are three buttons on this page:
 Related publication information can be added manually after this step. (Contact support.)
 The Publish button should not be pushed until the author wants the DOI to be live and the data package to be visible to the public.
 
+
 #### Content of the data package
 
 The purpose of the DPS is to link a research paper to the actual data that were used to produce the conclusions of that paper. The author has complete control of the content of the data package. It may contain data, figures, software, or any other material that is important to the paper. We recommend that a README file be placed at the top-level directory that explains the content of the data package.
@@ -60,11 +62,15 @@ Authors should contact the CADC to obtain a user name and password for an accoun
 
 The referee and journal editor can examine the data package and may require revisions to the data prior to publication.
 
+
+
 #### Revising the Content of the data package
 
 The author retains the ability to modify the data package and may do so at this stage.
 
 The journal editor and referee may examine and approve the revisions or modifications.
+
+
 
 #### Minting the Digital Object Identifier
 
