@@ -8,56 +8,86 @@ permalink: /en/docs/digital_object_identifiers/
 
 <!-- Content start -->
 
-<h5>Using CANFAR's Data Publication service, researchers can publish data that is associated with a journal paper.  
-VOSpace is used to generate a data publication folder, where a data set will be archived and protected after
-publication. A unique Digitial Object Identifier (DOI)is assigned to the data set at publication time. 
-A number of services (including doi.org) will resolve the DOI directly to the landing page with links to both the data set 
-and the related journal. CANFAR registers Digital Object Identifiers (DOIs) with DataCite. </h5>
 
-<b>Purpose</b>
-
-Although CANFAR is able to "mint" a DOI linked to any type of digital object the primary purpose was defined by the community's need to provide a link from a published paper to the data products that were used to produce the scientific results of that paper. A link to "archival" data (the data in the form that are received by CADC from the observatories) is generally not sufficient because scientists typically do further processing that modifies those data to produce the data products used in their research. 
-
-CANFAR offers a simple process to satisify the need to link research data products to the publication that results from them. Research teams collect the data products into a VOSpace folder with explanatory material (typically a README file). When the folder is ready to publish it is copied into a readonly area of the CANFAR VOSpace so that it will remain perpetually static. A landing page is created and the DOI is "minted" pointing to that landing page, where the data are accessible. The authors of the publication would normally provide the DOI itself to the paper publisher to associate the paper with the data that were used to produce it.
-
-The material that within the published folder may contain software, graphs, or any other material that is relevant to the scientific results of the paper. THe authors have flexibility to decide what should be included.
-
-CANFAR is willing to issue DOIs for any research material where publication is useful to the community even in the case where no publication is directly associated with those data. 
-
-CANFAR invites any researcher to contact us to discuss using the DOI process and long-term storage capability that we offer.
+### The CANFAR Data Publication Service
 
 
-<b>Recommended process to associate data and digital objects with a refereed publication</b>
+#### Purpose
 
-The authors should create a folder in the CANFAR VOSpace that contains the material to be published associated with a Digital Object Identifier (DOI). 
+The purpose of the CANFAR Data Publication Service (DPS) is to allow researchers to publish data that is associated with a journal paper.  The DPS will provide the storage space and the ability to mint a Digital Object Identifier (DOI) with the DataCite system. That DOI will point to the published data on a permanent basis.
 
-It is feasible to include the data in the refereeing process by giving permission to the publisher and the referee to access the VOSpace folder containing the data. The referee or publisher can examine tha material and can suggest or require changes to be made to that material. The author can make the required changes before the paper is accepted or published.
+#### Account
 
-Once all of the changes are made to the material to be published, the auther should contact CADC and ask us to take over curation of the VOSpace folder. CADC will copy that folder into a read-only location in VOSpace. The material is then ready to publish. The author should proved publication infromation (author list, journal and volume, etc.) that is as complete as possible.
+The author of the paper will need to have a CADC account. This will allow you to access the CANFAR Data Publication Service (DPS) interface and, later, to access the user-managed storage service where the author will deposit the data to be published.
 
-The DOI is normally "minted" at this time in the process. When a DOI is "minted" a small set of metadata is entered into the DataCite system along with the location that the DOI refers to. That data is entered and the process is complete.
 
-Normally, once a DOI is "minted", no changes can be made to the published folder. Trivial exceptions may be made. For example, modifying the README files to include journal information that was unavailable previously might be allowed.
+#### Author, Title information for the paper
 
-A DOI can be reserved at any time ahead of the minting process. CADC can tell the authors the exact DOI that will be "minted" because the choice of the exact DOI at the time of "minting" is under the control of CADC. So if the DOI is needed, for example, to give to the publisher before or after the paper is accepted, but before it is time to "mint" a DOI, that can be done by contacting CADC.
+The DPS page at https://www.canfar.net/citation/request allows the author to enter Title and Author information for the paper. The DOI will be automatically assigned later by the system. The journal reference information (journal name, volume page) can be entered but is typically not known initially. It can be entered later when it is fully known.
 
-#### TO-DO list for requesting a DOI
+ Once the information is entered, please push the Request button.
 
-1. **BEFORE** submitting a DOI request, you should have the following information:
-   *  **Required** Full title
-   *  **Required** Full author list
-   *  **Required** Journal name 
-      +  Full journal reference can be provided after the DOI is minted, but it is your responsibility to contact the CADC with the full reference if it is not provided with the initial DOI request.
-   *  **Required** (if applicable) The full VOSpace path to your data.
-      +  As outlined above, the data will not be moved/copied until you confirm that the data is final.
-   *  **Required** Journal submission date
-   *  **Optional with _initial_ request** Journal acceptance date
-      +  Must be provided with the full journal reference, when available
-   *  **Optional** Journal article DOI
-1. Send an email to `cadc@nrc-cnrc.gc.ca` requesting a DOI
-   *  Include the above information in your request
-1. **AFTER** your article is accepted, you should provide the following:
-   * Full journal reference
-   * Acceptance date
-   * Article DOI (if provided by Journal)
+
+####  Upload the data package
+
+The Request button takes the author to a page that includes both the DOI that will ultimately be “minted” (it has not been minted at this point) and the folder to which the data package should be uploaded (for example, /storage/list/AstroDataCitationDOI/CISTI.CANFAR/19.00nn/data).  The author should now upload the data package to the DPS folder. 
+
+ This page also reveals a link to the DOI landing page (for example, /citation/landing?doi=19.00nn). This is the public facing page that the DOI points to.
+
+There are three buttons on this page:
+
+<i>New</i>
+* Begin a new DOI
+
+<i>Delete</i>
+* This will delete all DOI information, the directory where the data resides and the DOI itself. You will start from scratch
+
+<i>Publish</i>
+* Register the DOI and associated landing page with DataCite. The DOI will be publicly available.
+* <em>Caution:</em> The data directory will be locked so that no further changes can be made. Be sure the dataset and DOI information are finalized and refereeing is finished. 
+* Note:
+Related publication information can be added manually after this step. (Contact support.)
+The Publish button should not be pushed until the author wants the DOI to be live and the data package to be visible to the public.
+
+
+#### Content of the data package
+
+The purpose of the DPS is to link a research paper to the actual data that were used to produce the conclusions of that paper. The author has complete control of the content of the data package. It may contain data, figures, software, or any other material that is important to the paper. We recommend that a README file be placed at the top-level directory that explains the content of the data package.
+
+Sharing the data package with the journal editor and referee
+
+Sharing the data package with the science community enhances and supplements the journal publication process. Furthermore, evaluation and assessment of the data package by the journal editors and referees is an additional enhancement to the value of data publication.
+
+Authors should contact the CADC to obtain a user name and password for an account that can access (in readonly mode) the folder hosting the data package. The author can share this account information with the journal editor. The editor can then pass that account information on to the referee. 
+
+The referee and journal editor can examine the data package and may require revisions to the data prior to publication.
+
+
+
+#### Revising the Content of the data package
+
+The author retains the ability to modify the data package and may do so at this stage.
+
+The journal editor and referee may examine and approve the revisions or modifications.
+
+
+
+#### Minting the Digital Object Identifier
+
+Once the refereeing process is complete and the paper is accepted the author can use the Publish button to “mint” (register the DOI with DataCite). This will lock the folder hosting the data package so that the author can no longer make changes. The data will be visible by the world using the DOI. The data will be discoverable through the DataCite search interface (with very limited discovery metadata).
+
+Revising and finalising publication and data package information
+
+The final steps are to link the data package DOI with the journal DOI. 
+
+The author should contact CADC to include the journal paper DOI in the data package information. This is not currently automated.
+
+The author should contact CADC to include a complete journal reference (title, volume, page) along with the data package.
+
+The author should provide the data package DOI to the journal editor to have it included in the journal paper.
+ 
+
+This concludes the data publication workflow. Comments and feedback from users is greatly valued.
+
+
 <!-- Content end -->
