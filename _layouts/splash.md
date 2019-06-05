@@ -32,8 +32,8 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="/gmui" class="text-secondary">
-                <i class="fas fa-users service-link" data-toggle="tooltip" data-placement="top" title="Manage your CANFAR groups"></i>
+              <a href="" id="gmui_link" class="text-secondary">
+                <i class="fas fa-users service-link" data-toggle="tooltip" data-placement="top" title="Manage your CADC groups"></i>
               </a>
               <div>
                 <span>Group Management</span>
@@ -143,3 +143,11 @@ layout: default
   </footer>
   {% include _page_footer.html %}
 </div>
+<script>
+  $(document).ready(function() {
+    // Change the user-related menu items to point to
+    // URLs provided via /reg/applications
+    var redirectUtil = new ca.nrc.cadc.RedirectUtil()
+    redirectUtil.setHrefToUri(ca.nrc.cadc.accountURI.gmui, ['gmui_link'])
+  })
+</script>

@@ -120,7 +120,7 @@ vmv vos:VOSPACE/foo/bar vos:VOSPACE/foo/bar2
 # provide group write permission on a VOSpace location (can be a directory or file). Up-to 4 groups can be given assigned permission.
 vchmod g+w vos:VOSPACE/foo/bar.txt 'GROUP1, GROUP2, GROUP3'
 
-# List of GROUP names is availabe from the [Group Managemnet Service](https://www.canfar.phys.uvic.ca/canfar/groups/)
+# List of GROUP names is availabe from the [Group Managemnet Service](https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/groups/)
 {% endhighlight %}
 
 </div>
