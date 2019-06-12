@@ -13,7 +13,7 @@ The Group Management system is a CADC service providing the ability to limit acc
 
 ### Creating a new group
 
-* Go to the [Group Management](https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/groups/) page and click the **Create Group** button
+* Go to the [Group Management](https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/groups/) page and click the **New Group** button
 * Fill in the dialog.  Adding a description can help keep you group names organized.
 * Click **Create**
 
@@ -23,9 +23,7 @@ To add a CADC users to a group to allow them access privileges associated with t
 
 * Go to the [Group Management](https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/groups/) page and find the desired group or create a new one.  Note that the the text boxes at the top of the table listing all the groups you are in can provide text based pattern filtering on the table contents.
 * Click the **View** link in the 'Members' column. A modal dialog will be displayed with a list of current group members. The bottom of the panel may have input boxes to enter user and group names. <em>If no textboxes appear then you do not have permission to add members to this group.</em>
-* <em>To add a user to the group</em>: type the name of the user in the appropriate text box, then click **Add user**.   
-* <em>To add a group of users to the group</em>: start typing the name of the group in the appropriate text box, then select the group name from the autocomplete list provided. 
-Once you have selected the group you want to add, click the **Add group** button.
+* Start typing the name of the CADC user or group you want to add into the input box. After 2 characters a list of possible matches is displayed. Select one, then click **Add member**.
 * Add additional members if needed.
 * Click the **X** (close) button in the upper right of the dialog when you have finished adding members. You will be returned to the main list of your groups.
 
