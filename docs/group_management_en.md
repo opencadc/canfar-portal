@@ -35,8 +35,9 @@ To add a CADC users to a group to allow them access role-based privileges associ
 
 ### Adding and Removing Administrators
 
-Group owners and group administrators may add and remove CADC users group the groups member listing and the groups administrators listing. Administrators are added and removed in the same way as group members are added and removed.
-
+Group owners and group administrators may add and remove group administrators. Administrators are added and removed in a similar way to how group members are added and removed, using links in the 'Administrators'
+ column in the main list of groups.
+ 
 ### Groups of Groups
 
 The [Group Management](https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/groups/) system allows you to add groups as members of other groups.  This can be a useful aid in efficient management of groups.  For example, you might create a group that is allowed to have write access to a VOSpace and another group that is allowed to have read access.  You can then add the 'write' group to the 'read' group so that any files that the 'read' group is given access to the 'write' group will automatically also have read access to. Where ever the term 'CADC User' is used in the description of management task below, a Group Name could be substituted.
