@@ -59,7 +59,6 @@ Access to the group list is through the **Edit** links in both the 'Members' and
 
 Any user can create a new group, provided that the group name is unique in the CADC group space.  These user created groups can have members added to them and those groups of users can be granted privilege access to particular files within VOSpace.
 
-
 ### Granting VOSpace Access
 
 To assign privileged access to a directory of file within VOSpace the users must do the following:
@@ -70,10 +69,10 @@ To assign privileged access to a directory of file within VOSpace the users must
 
 To assign READ or READ/WRITE access to a VOSpace file or directory use the VOSpace browser to select the object (checkbox next to the file or directory of interest) then click **Edit Permissions** and then click **Add Group** in the permissions dialog box.
 
+
 ## Archive Groups
 
 For each Program/Run ID within a telescope data collection a special group with a name matching the pattern ${ARCHIVE}-${PROGRAMID} is created.  For example JCMT-M02AC32 group members have access to all JCMT observations registered against the M02AC32 Program ID.  Archive groups are automatically created and are owned by the telescope organization that is providing the data
-
 
 ### Granting Data Access
 
