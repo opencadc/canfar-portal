@@ -35,8 +35,7 @@ To add a CADC users to a group to allow them access role-based privileges associ
 
 ### Adding and Removing Administrators
 
-Group owners and group administrators may add and remove group administrators. Administrators are added and removed in a similar way to how group members are added and removed, using links in the 'Administrators'
- column in the main list of groups.
+Group owners and group administrators may add and remove group administrators. Administrators are added and removed in a similar way to how group members are added and removed, using instead links in the 'Administrators' column in the main list of groups.
  
 ### Groups of Groups
 
