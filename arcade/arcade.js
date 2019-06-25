@@ -115,7 +115,7 @@ function postSession(formData) {
         false
     )
     request.withCredentials = true
-    request.open('POST', 'http://arcade.canfar.net/quarry/session')
+    request.open('POST', 'https://arcade.canfar.net/quarry/session')
     request.send(formData)
   })
 }
@@ -177,7 +177,7 @@ function getSession() {
         false
         )
     request.withCredentials = true
-    request.open('GET', 'http://arcade.canfar.net/quarry/session')
+    request.open('GET', 'https://arcade.canfar.net/quarry/session')
     request.send(null)
   })
 }
