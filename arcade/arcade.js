@@ -8,6 +8,9 @@ $(document).ready(function() {
   getDatabenchSession()
 })
 
+// ---------------- Constants ---------------
+var ARCADE_ENDPOINT = 'https://arcade.canfar.net/platform/session'
+
 // ---------------- Page load functions ---------------
 
 // #auth_modal is in _page_header.html
@@ -115,7 +118,7 @@ function postSession(formData) {
         false
     )
     request.withCredentials = true
-    request.open('POST', 'https://arcade.canfar.net/quarry/session')
+    request.open('POST', ARCADE_ENDPOINT)
     request.send(formData)
   })
 }
@@ -177,7 +180,7 @@ function getSession() {
         false
         )
     request.withCredentials = true
-    request.open('GET', 'https://arcade.canfar.net/quarry/session')
+    request.open('GET', ARCADE_ENDPOINT)
     request.send(null)
   })
 }
