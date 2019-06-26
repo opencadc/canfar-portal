@@ -177,7 +177,7 @@ function getSession() {
         false
         )
     request.withCredentials = true
-    request.open('GET', 'https://arcade.canfar.net/quarry/session')
+    request.open('GET', 'https://arcade.canfar.net/platform/session')
     request.send(null)
   })
 }
