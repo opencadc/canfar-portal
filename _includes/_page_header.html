@@ -21,7 +21,7 @@
           <a title="Services" id="services_dropdown" class="dropdown-toggle p-2 text-dark" data-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="">{{ t['_services'].name }}</a>
           <div class="dropdown-menu" aria-labelledby="services_dropdown">
             <a href="{{ t['services']['storage'].link }}" class="dropdown-item">{{ t['services']['storage'].name }}</a>
-            <a href="{{ t['services']['group_management'].link }}" class="dropdown-item">{{ t['services']['group_management'].name }}</a>
+            <a href="{{ t['services']['group_management'].link }}" class="dropdown-item" id="gmui_redirect">{{ t['services']['group_management'].name }}</a>
             <a href="{{ t['services']['digital_object_identifiers'].link }}" class="dropdown-item">{{ t['services']['digital_object_identifiers'].name }}</a>
             <a href="{{ t['services']['batch_processing'].link }}" class="dropdown-item">{{ t['services']['batch_processing'].name }}</a>
             {%comment%}<a href="{{ t['services']['arcade'].link }}" class="dropdown-item">{{ t['services']['arcade'].name }}</a>{%endcomment%}
@@ -117,3 +117,12 @@
   <p class="card-text">On December 23rd, between 0600 and 1200 PST, there will be two periods of up to ten (10) minutes each during which services running at UVic will be unavailable due to on-site network maintenance.</p>
   </div>
 </div> {% endcomment %}
+
+<script>
+  $(document).ready(function() {
+    // Change the user-related menu items to point to
+    // URLs provided via /reg/applications
+    var redirectUtil = new ca.nrc.cadc.RedirectUtil()
+    redirectUtil.setHrefToUri(ca.nrc.cadc.accountURI.gmui, ['gmui_redirect'])
+  })
+</script>
