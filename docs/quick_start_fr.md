@@ -162,7 +162,7 @@ The image `1056213p.fits` is a Multi-Extension FITS file with 36 extensions, eac
 
 # Store results on the CANFAR VOSpace
 
-All data stored on the VM and ephemeral disk since the last time it was saved are normally **wiped out** when the VM shuts down). We will use the [CANFAR VOSpace](/docs/vospace/) to store the result.
+All data stored on the VM and ephemeral disk since the last time it was saved are normally **wiped out** when the VM shuts down). We will use the [CANFAR VOSpace](/en/docs/storage/) to store the result.
 We want to store the output catalogue `1056213p.cat` at a persistent, externally-accessible location. We will use the CANFAR VOSpace for this purpose. To store anything on the CANFAR VOSpace from a command line, you will need the CANFAR VOSpace client.
 
 <div class="shell">

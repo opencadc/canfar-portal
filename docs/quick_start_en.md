@@ -144,7 +144,7 @@ The resulting catalogue is stored under `1056213p.cat`.
 ### Store results on the CANFAR VOSpace
 
 All data stored on ephemeral disk are **wiped out** when the VM terminates.
-We only want to store the output catalogue `1056213p.cat` at a persistent, externally-accessible location. We will use the CADC [VOSpace](/docs/vospace/) for this purpose. To store files on the VOSpace from a command line, you will use the CADC python VOSpace client which is already installed on your VM.
+We only want to store the output catalogue `1056213p.cat` at a persistent, externally-accessible location. We will use the CADC [VOSpace](/en/docs/storage/) for this purpose. To store files on the VOSpace from a command line, you will use the CADC python VOSpace client which is already installed on your VM.
 
 For an automated procedure to access the VOSpace on your behalf, your proxy authorization must be present on the VM. You can accomplish this using a `.netrc` file that contains your CANFAR user name and password, and the command **getCert** can obtain an *X509 Proxy Certificate* using that username/password combination without any further user interaction. The commands below will create the file and get a proxy certificate.
 
