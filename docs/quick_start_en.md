@@ -167,7 +167,7 @@ vcp 1056213p.cat vos:[VOSpace]
 
 </div>
 
-Verify that the file is properly uploaded by pointing your browser to the [VOSpace browser interface](http://www.canfar.net/vosui).
+Verify that the file is properly uploaded by pointing your browser to the [VOSpace browser interface](https://www.canfar.net/storage/list).
 
 ### Snapshot (save) the VM Instance
 

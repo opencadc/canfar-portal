@@ -2,4 +2,4 @@ FROM jekyll/jekyll:pages
 
 RUN apk --no-cache add gcc g++ pkgconfig make libxml2-dev libxslt-dev musl-dev
 
-RUN gem install rouge
+RUN gem install rouge bundler
