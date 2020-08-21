@@ -5,11 +5,11 @@
 //
 
 $(document).ready(function() {
-  getDatabenchSession()
+  getDesktopSession()
 })
 
 // ---------------- Constants ---------------
-var ARCADE_ENDPOINT = 'https://arcade.canfar.net/platform/session'
+var ARCADE_ENDPOINT = 'https://proto.canfar.net/arcade/session'
 
 // ---------------- Page load functions ---------------
 
@@ -68,9 +68,9 @@ function handleAjaxFail(message) {
   }
 }
 
-function forwardTo(sessionName) {
+function forwardTo(sessionURL) {
   // Forward to the session
-  if (typeof sessionName !== 'undefined' && sessionName !== '') {
+  if (typeof sessionURL !== 'undefined' && sessionURL !== '') {
     setInfoModal(
         'Forwarded to session ',
         'Please refresh page to access...',
@@ -82,7 +82,7 @@ function forwardTo(sessionName) {
     $('.session-starting').addClass('d-none')
     $('.session-started').removeClass('d-none')
     setProgressBar('okay')
-    window.open(sessionName, '_self')
+    window.open(sessionURL, '_self')
   }
 }
 
@@ -123,7 +123,7 @@ function postSession(formData) {
   })
 }
 
-function getDatabenchSession() {
+function getDesktopSession() {
   getSession().then(sessionURL => forwardTo(sessionURL))
       .catch(message => handleAjaxFail(message))
 }
@@ -136,7 +136,7 @@ function getSession() {
       true,
       false
   )
-  
+
   return new Promise(function (resolve, reject) {
     var request = new XMLHttpRequest()
 
@@ -153,7 +153,8 @@ function getSession() {
               var params = new FormData()
               // Use a generic name to flag this session is created by the ui
               params.append( 'name', 'canfar-net')
-              postSession(params).then(sessionName => forwardTo(sessionName))
+              params.append( 'type', 'desktop')
+              postSession(params).then(sessionURL => forwardTo(sessionURL))
                   .catch(message => handleAjaxFail(message))
             } else {
               // Get URL to forward to
@@ -162,7 +163,9 @@ function getSession() {
               var sessionURL = ''
               for (i = 0; i < dataArray.length - 1; i++) {
                 var rowData = dataArray[i].split('\t')
-                sessionURL = rowData[2]
+                if (rowData[1] == 'desktop' && rowData[2] == 'Running') {
+                  sessionURL = rowData[4]
+                }
               }
 
               setInfoModal(

@@ -59,19 +59,19 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-            <!-- {% if site.site_env == 'demo' %}
+            {% if site.site_env == 'demo' %}
               <a href="/en/arcade" class="text-secondary">
                 <i class="fas fa-desktop service-link " data-toggle="tooltip" data-placement="top" title="Cloud user sessions"></i>
               </a>
               <div>
                 <span>Arcade</span>
               </div>
-            {% else %} -->
+            {% else %}
               <i class="fas fa-desktop service-link disabled" title="Cloud user sessions" disabled="disabled"></i>
               <div>
                 <span class="disabled">Arcade</span>
               </div>
-            <!-- {% endif %} -->
+            {% endif %} 
             </div>
             <div class="mx-1 col">
               <a href="/processing/vmod" class="text-secondary">
