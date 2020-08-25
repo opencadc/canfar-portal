@@ -8,13 +8,13 @@ permalink: /en/about/organization/
 
 <!-- Content start -->
 
-The CANFAR consortium is represented by the [Science Management Committee]({{ site.baseurl }}/en/about/governance) who represent that network of university researchers that participate in determining directions and emphasis of the consortium.
+The CANFAR consortium is represented by a network of university researchers that participate in determining directions and emphasis of the consortium and form the [Science Management Committee]({{ site.baseurl }}/en/about/governance).
 
 The day-to-day operation of the consortium is coordinated by the management team which consists of:
 
 - The lead of the Compute Canada Research Platforms and Portals (RPP) competition: Pauline Barmby (UWO)
-- Opperations Lead : John Oullette (CADC)
-- Software Development Lead: Severin Gaudet (CADC)
+- Operations Lead : John Ouellette (CADC)
+- Software Development Lead: S&eacute;verin Gaudet (CADC)
 - Management Lead: Unfilled
 
 The consortium has an advisory committee that has both scientific and
