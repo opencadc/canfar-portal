@@ -71,7 +71,22 @@ layout: default
               <div>
                 <span class="disabled">Arcade</span>
               </div>
-            {% endif %} 
+            {% endif %}
+            </div>
+            <div class="mx-1 col">
+            {% if site.site_env != 'www' %}
+              <a href="/en/carta" class="text-secondary">
+                <i class="fas fa-cube service-link " data-toggle="tooltip" data-placement="top" title="Arcade CARTA sessions"></i>
+              </a>
+              <div>
+                <span>CARTA</span>
+              </div>
+            {% else %}
+              <i class="fas fa-cube service-link disabled" title="Arcade CARTA sessions" disabled="disabled"></i>
+              <div>
+                <span class="disabled">CARTA</span>
+              </div>
+            {% endif %}
             </div>
             <div class="mx-1 col">
               <a href="/processing/vmod" class="text-secondary">
