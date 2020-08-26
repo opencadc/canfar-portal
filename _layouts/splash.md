@@ -64,15 +64,6 @@ layout: default
               </div>
             </div>
 
-            <div class="mx-1 offset-mx-1 col">
-              <a href="{{ cadc_url }}/en/search/" class="text-secondary">
-                <i class="fas fa-star service-link" data-toggle="tooltip" data-placement="right" title="Search data collections at the Canadian Astronomy Data Centre"></i>
-              </a>
-              <div>
-                <span>CADC Search</span>
-              </div>
-            </div>
-
             <div class="mx-1 col">
             {% if site.site_env != 'www' %}
               <a href="/en/arcade" class="text-secondary">
@@ -108,6 +99,15 @@ layout: default
           </div>
           <br />
           <div class="row text-center mt-3">
+
+            <div class="mx-1 offset-mx-1 col">
+              <a href="{{ cadc_url }}/en/search/" class="text-secondary">
+                <i class="fas fa-star service-link" data-toggle="tooltip" data-placement="right" title="Search data collections at the Canadian Astronomy Data Centre"></i>
+              </a>
+              <div>
+                <span>CADC Search</span>
+              </div>
+            </div>
 
           </div>
         </div>
