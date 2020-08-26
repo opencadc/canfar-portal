@@ -23,6 +23,7 @@ layout: default
         <br />
         <div class="mt-md-5">
           <div class="row text-center mb-3">
+
             <div class="mx-1 col">
               <a href="{{ t['services']['storage'].link }}" class="text-secondary">
                 <i class="fas fa-hdd service-link" data-toggle="tooltip" data-placement="top" title="Manage your VOSpace"></i>
@@ -31,6 +32,7 @@ layout: default
                 <span>{{ t['services']['storage'].name }}</span>
               </div>
             </div>
+
             <div class="mx-1 col">
               <a href="" target="_blank" id="gmui_link" class="text-secondary">
                 <i class="fas fa-users service-link" data-toggle="tooltip" data-placement="top" title="Manage your CADC groups"></i>
@@ -39,6 +41,7 @@ layout: default
                 <span>Group Management</span>
               </div>
             </div>
+
             <div class="mx-1 col">
               <a href="/citation" class="text-secondary">
                 <i class="fas fa-link service-link" data-toggle="tooltip" data-placement="top" title="Publish your data using VOSpace and Digital Object Identifiers"></i>
@@ -47,17 +50,10 @@ layout: default
                 <span>Data Publication</span>
               </div>
             </div>
+
           </div>
           <br />
           <div class="row text-center mb-3">
-            <div class="mx-1 col">
-              <a href="/processing/batchjobs" class="text-secondary">
-                <i class="fas fa-microchip service-link" data-toggle="tooltip" data-placement="top" title="Cloud processing on CANFAR resources"></i>
-              </a>
-              <div>
-                <span>Batch Processing</span>
-              </div>
-            </div>
 
             <div class="mx-1 col">
               <a href="/processing/vmod" class="text-secondary">
@@ -67,6 +63,7 @@ layout: default
                 <span>Open Stack</span>
               </div>
             </div>
+
             <div class="mx-1 offset-mx-1 col">
               <a href="{{ cadc_url }}/en/search/" class="text-secondary">
                 <i class="fas fa-star service-link" data-toggle="tooltip" data-placement="right" title="Search data collections at the Canadian Astronomy Data Centre"></i>
@@ -75,9 +72,7 @@ layout: default
                 <span>CADC Search</span>
               </div>
             </div>
-          </div>
-          <br />
-          <div class="row text-center mt-3">
+
             <div class="mx-1 col">
             {% if site.site_env != 'www' %}
               <a href="/en/arcade" class="text-secondary">
@@ -93,6 +88,7 @@ layout: default
               </div>
             {% endif %}
             </div>
+
             <div class="mx-1 col">
             {% if site.site_env != 'www' %}
               <a href="/en/carta" class="text-secondary">
@@ -108,6 +104,11 @@ layout: default
               </div>
             {% endif %}
             </div>
+
+          </div>
+          <br />
+          <div class="row text-center mt-3">
+
           </div>
         </div>
       </div>
