@@ -58,6 +58,26 @@ layout: default
                 <span>Batch Processing</span>
               </div>
             </div>
+
+            <div class="mx-1 col">
+              <a href="/processing/vmod" class="text-secondary">
+                <i class="fas fa-power-off service-link" data-toggle="tooltip" data-placement="top" title="Interactive Virtual Machines"></i>
+              </a>
+              <div>
+                <span>Open Stack</span>
+              </div>
+            </div>
+            <div class="mx-1 offset-mx-1 col">
+              <a href="{{ cadc_url }}/en/search/" class="text-secondary">
+                <i class="fas fa-star service-link" data-toggle="tooltip" data-placement="right" title="Search data collections at the Canadian Astronomy Data Centre"></i>
+              </a>
+              <div>
+                <span>CADC Search</span>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="row text-center mt-3">
             <div class="mx-1 col">
             {% if site.site_env != 'www' %}
               <a href="/en/arcade" class="text-secondary">
@@ -71,26 +91,22 @@ layout: default
               <div>
                 <span class="disabled">Arcade</span>
               </div>
-            {% endif %} 
+            {% endif %}
             </div>
             <div class="mx-1 col">
-              <a href="/processing/vmod" class="text-secondary">
-                <i class="fas fa-power-off service-link" data-toggle="tooltip" data-placement="top" title="Interactive Virtual Machines"></i>
+            {% if site.site_env != 'www' %}
+              <a href="/en/carta" class="text-secondary">
+                <i class="fas fa-cube service-link " data-toggle="tooltip" data-placement="top" title="Arcade CARTA sessions"></i>
               </a>
               <div>
-                <span>Open Stack</span>
+                <span>CARTA</span>
               </div>
-            </div>
-          </div>
-          <br />
-          <div class="row text-center mt-3">
-            <div class="mx-1 offset-mx-1 col">
-              <a href="{{ cadc_url }}/en/search/" class="text-secondary">
-                <i class="fas fa-star service-link" data-toggle="tooltip" data-placement="right" title="Search data collections at the Canadian Astronomy Data Centre"></i>
-              </a>
+            {% else %}
+              <i class="fas fa-cube service-link disabled" title="Arcade CARTA sessions" disabled="disabled"></i>
               <div>
-                <span>CADC Search</span>
+                <span class="disabled">CARTA</span>
               </div>
+            {% endif %}
             </div>
           </div>
         </div>

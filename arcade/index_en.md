@@ -7,7 +7,7 @@ permalink: /en/arcade/
 <!-- Content starts -->
 
 <section>
-  <h2 class="arcade-title">Arcade</h2>
+  <h2 class="arcade-title">Arcade Desktop</h2>
 </section>
 <div class="arcade-authenticated">
 <section id="main_section">

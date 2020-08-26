@@ -163,9 +163,7 @@ function getSession() {
               var sessionURL = ''
               for (i = 0; i < dataArray.length - 1; i++) {
                 var rowData = dataArray[i].split('\t')
-                if (rowData[1] == 'desktop' && rowData[2] == 'Running') {
-                  sessionURL = rowData[4]
-                }
+                sessionURL = rowData[4]
               }
 
               setInfoModal(
@@ -183,7 +181,7 @@ function getSession() {
         false
         )
     request.withCredentials = true
-    request.open('GET', ARCADE_ENDPOINT)
+    request.open('GET', ARCADE_ENDPOINT + '?type=desktop&status=Running')
     request.send(null)
   })
 }
