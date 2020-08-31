@@ -65,7 +65,7 @@ layout: default
             </div>
 
             <div class="mx-1 col">
-            {% if site.site_env != 'www' %}
+            {% if site.site_env == 'demo' or site.site_env == 'rc' %}
               <a href="/en/arcade" class="text-secondary">
                 <i class="fas fa-desktop service-link " data-toggle="tooltip" data-placement="top" title="Arcade desktop sessions"></i>
               </a>
@@ -81,7 +81,7 @@ layout: default
             </div>
 
             <div class="mx-1 col">
-            {% if site.site_env != 'www' %}
+            {% if site.site_env == 'demo' or site.site_env == 'rc' %}
               <a href="/en/carta" class="text-secondary">
                 <i class="fas fa-cube service-link " data-toggle="tooltip" data-placement="top" title="Arcade CARTA sessions"></i>
               </a>
