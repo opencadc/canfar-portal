@@ -73,6 +73,9 @@ en:
     jcmt_starlink:
       name: 'JCMT Starlink'
       link: '/jcmt_starlink/'
+    science_portal:
+      name: 'Science Portal'
+      link: '/science-portal/'
   about:
     name: 'About'
     link: '/about'
@@ -163,6 +166,11 @@ en:
       link: '/en/search/'
       api_link: 'https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/tap/'
       description: 'CADC Data Discovery and Access'
+    science_portal:
+      name: 'Science Portal'
+      link: '/science-portal/launch'
+      api_link: '/science-portal/launch'
+      description: 'Virtual sessions for Jupyter notebooks'
   resources:
     name: 'Resources'
     link: '/resources'
@@ -329,6 +337,9 @@ fr:
     caom_query_service:
       name: 'Les collections de données du CCDA'
       link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/fr/apropos.html#mandat'
+    science_portal:
+      name: 'Science Portal'
+      link: '/science-portal/'
   about:
     name: 'À propos'
     link: '/a-propos'
@@ -411,6 +422,11 @@ fr:
       link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/fr/recherche/'
       api_link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/tap/'
       description: "Service de découverte et d'accès aux données"
+    science_portal:
+      name: 'Science Portal'
+      link: '/science-portal/launch'
+      api_link: '/science-portal/launch'
+      description: 'Virtual sessions for Jupyter notebooks'
   resources:
     name: 'Ressources'
     link: '/ressources'
