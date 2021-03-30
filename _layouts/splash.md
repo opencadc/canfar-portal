@@ -65,58 +65,17 @@ layout: default
             </div>
 
             <div class="mx-1 col">
-            {% if site.site_env == 'demo' or site.site_env == 'rc' %}
-              <a href="/en/arcade" class="text-secondary">
-                <i class="fas fa-desktop service-link " data-toggle="tooltip" data-placement="top" title="Arcade desktop sessions"></i>
-              </a>
-              <div>
-                <span>Arcade</span>
-              </div>
-            {% else %}
-              <i class="fas fa-desktop service-link disabled" title="Arcade desktop sessions" disabled="disabled"></i>
-              <div>
-                <span class="disabled">Arcade</span>
-              </div>
-            {% endif %}
+                <a href="{{ cadc_url }}/en/search/" class="text-secondary">
+                  <i class="fas fa-star service-link" data-toggle="tooltip" data-placement="right" title="Search data collections at the Canadian Astronomy Data Centre"></i>
+                </a>
+                <div>
+                  <span>CADC Search</span>
+                </div>
             </div>
-
-            <div class="mx-1 col">
-            {% if site.site_env == 'demo' or site.site_env == 'rc' %}
-              <a href="/en/carta" class="text-secondary">
-                <i class="fas fa-cube service-link " data-toggle="tooltip" data-placement="top" title="Arcade CARTA sessions"></i>
-              </a>
-              <div>
-                <span>CARTA</span>
-              </div>
-            {% else %}
-              <i class="fas fa-cube service-link disabled" title="Arcade CARTA sessions" disabled="disabled"></i>
-              <div>
-                <span class="disabled">CARTA</span>
-              </div>
-            {% endif %}
-            </div>
-
-          </div>
-          <br />
-          <div class="row text-center mb-3">
-            <div class="mx-1 col">
-              <div>
-        
-              </div>
-            </div>
-
-          <div class="mx-1 col">
-            <a href="{{ cadc_url }}/en/search/" class="text-secondary">
-              <i class="fas fa-star service-link" data-toggle="tooltip" data-placement="right" title="Search data collections at the Canadian Astronomy Data Centre"></i>
-            </a>
-            <div>
-              <span>CADC Search</span>
-            </div>
-          </div>
 
             <div class="mx-1 col">
               {% if site.site_env == 'demo' or site.site_env == 'rc' or site.site_env == 'dev' %}
-                <a href="/science-portal/launch" class="text-secondary">
+                <a href="/science-portal" class="text-secondary">
                   <i class="fas fa-cubes service-link " data-toggle="tooltip" data-placement="top" title="Science Portal sessions"></i>
                 </a>
                 <div>
