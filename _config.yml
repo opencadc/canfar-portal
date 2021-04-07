@@ -4,10 +4,8 @@ permalink: /news/:year/:month/:day/:title/
 relative_permalinks: false
 markdown: kramdown
 highlighter: rouge
-site_env: demo
+site_env: prod
 env:
-    hj:  
-        cadc: 'http://jeevesh.cadc.dao.nrc.ca'
     demo:
         cadc: 'http://demo.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
     rc:
