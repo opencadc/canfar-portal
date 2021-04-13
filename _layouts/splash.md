@@ -74,19 +74,12 @@ layout: default
             </div>
 
             <div class="mx-1 col">
-              {% if site.site_env == 'demo' or site.site_env == 'rc' or site.site_env == 'dev' %}
                 <a href="/science-portal" class="text-secondary">
                   <i class="fas fa-cubes service-link " data-toggle="tooltip" data-placement="top" title="Science Portal sessions"></i>
                 </a>
                 <div>
                   <span>Science Portal</span>
                 </div>
-              {% else %}
-                <i class="fas fa-cubes service-link disabled" title="Science Portal sessions" disabled="disabled"></i>
-                <div>
-                  <span class="disabled">Science Portal</span>
-                </div>
-              {% endif %}
               </div>
             </div>
            </div>
