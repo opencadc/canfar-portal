@@ -7,16 +7,19 @@ highlighter: rouge
 site_env: prod
 env:
     demo:
-        cadc: 'http://demo.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
+        cadc: 'https://demo.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
     rc:
-        cadc: 'http://rc.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
+        cadc: 'https://rc.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
     prod:
-        cadc: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
+        cadc: 'https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
     docker:
-        cadc: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
+        cadc: 'https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
+    dev:
+        # replace with your dev host.
+        cadc: 'https://localhost'
 baseurl: ''
 future: true
-github_url: 'https://github.com/canfar/canfar.github.io'
+github_url: 'https://github.com/opencadc/canfar-portal.git'
 twitter_url: 'https://twitter.com/astro_canfar'
 slack_url: '/slack'
 repository: 'canfar/canfar.github.io'
