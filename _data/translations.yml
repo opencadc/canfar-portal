@@ -1,10 +1,13 @@
 en:
   support:
-    name: 'email'
+    name: 'Support'
     link: 'support@canfar.net'
-  slack:
-    name: 'Slack Channel'
-    link: '/slack/'
+    slack:
+      name: 'Join us on Slack'
+      link: '/slack/'
+    help_desk:
+      name: 'Help Desk'
+      link: 'support@canfar.net'
   login:
     name: 'Login'
     link: '/ac/login'

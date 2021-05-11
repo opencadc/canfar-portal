@@ -26,9 +26,7 @@
             <a href="{{ t['services']['batch_processing'].link }}" class="dropdown-item">{{ t['services']['batch_processing'].name }}</a>
             {%comment%}<a href="{{ t['services']['arcade'].link }}" class="dropdown-item">{{ t['services']['arcade'].name }}</a>{%endcomment%}
             <a href="{{ t['services']['openstack_cloud_portal'].link }}" class="dropdown-item">{{ t['services']['openstack_cloud_portal'].name }}</a>
-            {% if site.site_env == 'demo' or site.site_env == 'rc' or site.site_env == 'dev' %}
             <a href="{{ t['services']['science_portal'].link }}" class="dropdown-item">{{ t['services']['science_portal'].name }}</a>
-            {% endif %}
             <a href="{{ cadc_url }}{{ t['services']['caom_query_service'].link }}" class="dropdown-item">{{ t['services']['caom_query_service'].name }}</a>
           </div>
         </li>
@@ -38,9 +36,12 @@
         <li class="nav-item d-flex pt-2">
           <a class="p-2 text-dark" href="{{ t['open_source'].link }}" ref="external">{{ t['open_source'].name }}</a>
         </li>
-        <li class="nav-item d-flex pt-1">
-          <a href="mailto:{{ t['support']['link'] }}" class="p-2">
-            <i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a>
+        <li class="nav-item d-flex dropdown pt-2">
+          <a title="Support" id="support_dropdown" class="dropdown-toggle p-2 text-dark" data-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="">{{ t['support'].name }}</a>
+          <div class="dropdown-menu" aria-labelledby="support_dropdown">
+            <a href="mailto:{{ t['support']['help_desk'].link }}" class="dropdown-item">{{ t['support']['help_desk'].name }}</a>
+            <a href="{{ t['support']['slack'].link }}" class="dropdown-item">{{ t['support']['slack'].name }}</a>
+          </div>
         </li>
         <li class="nav-item pl-4 dropdown canfar-access-control user-authenticated canfar-authenticated d-none pt-2">
           <a title="User actions" class="dropdown-toggle access-actions login-form btn btn-outline-primary" data-toggle="dropdown"

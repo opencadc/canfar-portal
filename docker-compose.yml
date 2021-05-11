@@ -6,7 +6,7 @@ services:
       context: ./
       dockerfile: Dockerfile.run
     image: canfar/canfar-site
-    command: bash -c "bundle install && bundle exec jekyll s --incremental --host ${HOSTNAME}"
+    command: bash -c "bundle install && jekyll serve 0.0.0.0"
     ports:
       - 4000:4000
     volumes:
