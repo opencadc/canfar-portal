@@ -26,9 +26,7 @@
             <a href="{{ t['services']['batch_processing'].link }}" class="dropdown-item">{{ t['services']['batch_processing'].name }}</a>
             {%comment%}<a href="{{ t['services']['arcade'].link }}" class="dropdown-item">{{ t['services']['arcade'].name }}</a>{%endcomment%}
             <a href="{{ t['services']['openstack_cloud_portal'].link }}" class="dropdown-item">{{ t['services']['openstack_cloud_portal'].name }}</a>
-            {% if site.site_env == 'demo' or site.site_env == 'rc' or site.site_env == 'dev' %}
             <a href="{{ t['services']['science_portal'].link }}" class="dropdown-item">{{ t['services']['science_portal'].name }}</a>
-            {% endif %}
             <a href="{{ cadc_url }}{{ t['services']['caom_query_service'].link }}" class="dropdown-item">{{ t['services']['caom_query_service'].name }}</a>
           </div>
         </li>
