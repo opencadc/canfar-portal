@@ -9,7 +9,7 @@ permalink: /en/docs/quick_start/
 
 ## Introduction
 
-This quick start guide will demonstrate how to create a basic source detection pipeline operating on CFHT Megacam images within the CANFAR Virtual Machine (VM), fast access to the CADC archive and storage. It will go over the following steps:
+This quick start guide will demonstrate how to create a basic source detection pipeline operating on CFHT Megacam images within the CANFAR Virtual Machine (VM), with fast access to the CADC archive and storage. It will go over the following steps:
 
 * create, configure, and interact with Compute Canada OpenStack cloud, and CANFAR VMs
 * access CADC VOSpace storage
@@ -194,7 +194,7 @@ Now you want to save the VM with your software installed. Return to your browser
 
 While the system is taking a snapshot of your VM, avoid doing anything on your VM.
 
-```IMPORTANT``` : if you do not create a snapshot of the VM, your work of this VM will be lost if the VM is deleted. Volume-based VMs do not need snapshots and will persist the files directly on a persistent disk, but Volume-based VM can not be used for batch processing.
+```IMPORTANT``` : if you do not create a snapshot of the VM, you will loase all of your work when the VM is deleted. Volume-based VMs do not need snapshots and will persist the files directly on a persistent disk, but Volume-based VM can not be used for batch processing.
 
 If you do not need batch processing, you are done. If you want to use batch, carry on.
 
