@@ -94,20 +94,24 @@ ssh ubuntu@[floating ip]
 
 </div>
 
-Once you are connected, we recommend to create a user with your CADC ```[username]```, which will likely be easier to deal if you have software that you will install in the home directory. Create your own user, using your CADC ```[username]```, with the following command:
+Once you are connected, we recommend to create a user on the VM with your CADC ```[username]```. It will likely be easier to manage if you have software that you will install in the home directory. Create a user, using your CADC ```[username]```, with the following command:
+
+<div class="shell">
 
 {% highlight bash %}
 sudo canfar_create_user [username]
 {% endhighlight %}
 
-You can now logout from the VM and ssh back in with ```ssh [username]@[floating ip]```, and have the same privileges as the default user.
+</div>
+
+You can now logout from the VM and ssh back in with ```ssh [username]@[floating ip]```, and have the same privileges as the default `ubuntu` user.
 
 ### Install software on the VM
 
 The VM operating system has only a minimal set of packages. For this example, we will use:
 
 - the [SExtractor](https://sextractor.readthedocs.io/) package to detect astronomical sources in FITS images, resulting in catalogues of stars and galaxies.
-- We also need to read FITS images. Most FITS images from CADC come Rice-compressed with an `fz` extension. SExtractor only reads uncompressed images, so we also need the `funpack` utility to uncompress the incoming data. The `funpack` executable is included in the package `libcfitsio-bin`.
+- [funpack](https://heasarc.gsfc.nasa.gov/fitsio/fpack/) a file decompressor. We also need to read FITS images. Most FITS images from CADC come Rice-compressed with an `fz` extension. `SExtractor` only reads uncompressed images, so we also need the `funpack` utility to uncompress the incoming data. In Debian/Ubuntu, the `funpack` executable is included in the package `libcfitsio-bin`.
 
 Let's install them both system wide since they are available in Ubuntu, after a fresh update of the Ubuntu repositories:
 
@@ -274,6 +278,8 @@ You will need two authorizations to run the batch jobs:
 * to give the scheduler access to the VM snapshot on the [project]
 * to write files to [VOSpace]
 
+In your home directory on the batch submission, you will find one or more `*-openrc.sh` file(s), corresponding to the OpenStack projects you belong to. 
+
 Source the OpenStack RC project file, and enter your CADC password. This sets environment variables used by OpenStack (only required once per login session):
 
 <div class="shell">
@@ -282,7 +288,6 @@ Source the OpenStack RC project file, and enter your CADC password. This sets en
 . [project]-openrc.sh
 {% endhighlight %}
 
-    <code class="output">Please enter your OpenStack Password:</code>
 </div>
 
 You can then submit your jobs to the condor job pool with our wrapper command:
@@ -299,6 +304,8 @@ where:
 * ```do_catalogue.sub```: is the path of your submission file
 * ```image-reduction-2021-06-26```: is the name of the snapshot VM used to install all the software 
 * ```c2-7.5gb-36```: is the flavor for the VM(s) that will execute the jobs. If you wish to use a different flavor, they are visible through the dashboard when [launching an instance](#launch-a-vm-instance), or using the command line ```openstack flavor list```.
+
+In the background, your VM is shared with the batch processing system, and it will be replicated on all the free nodes.
 
 After submitting, wait a couple of minutes. Check where your jobs stand in the queue:
 
@@ -329,12 +336,12 @@ You are done!
 
 Once your VM is built, the responsibility is yours to maintain and update software. You may want to run `sudo yum update` or `sudo apt dist-upgrade` to make sure you get the latest security updates from the Linux distributions.
 
-There are a few scripts to help out with CANFAR related activities, all of them come with a ```--help```:
+On the CANFAR pre-built VMs (`canfar-ubuntu-20.04` and `canfar-rocky-8), there are a few scripts to help out with CANFAR related activities, all of them come with a ```--help```:
 
-* ```cadc_cert -u [username]```: try to get a CADC proxy certificate by various methods to access CADC VOSpace
-* ```cadc_dotnetrc```: update / create a ```${HOME}/.netrc``` file to ease out with VOSpace access
+* ```cadc_cert -u [username]```:  get a CADC proxy certificate by various methods to access CADC VOSpace (legacy script)
+* ```cadc_dotnetrc```: update / create a ```${HOME}/.netrc``` file to ease out with CADC VOSpace access
 * ```canfar_setup_scratch```: simple script to authorize a scratch space when in interactive mode on ```/mnt/scratch```
 * ```canfar_create_user [user]```: create a user with a name ```[user]``` on the VM and propagate ssh public key, and give sudo access
-* ```canfar_update```: update all the CANFAR scripts and CADC clients on the VM
+* ```canfar_update```: update all the CANFAR scripts and CADC clients on the VM with the latest versions.
 
 You can find all these commands on ```/usr/local/bin```, or at the [GitHub source](https://github.com/canfar/canfarproc/tree/master/worker/bin).
