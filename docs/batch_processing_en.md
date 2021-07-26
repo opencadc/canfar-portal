@@ -76,7 +76,7 @@ request_disk = 250000000
 {% endhighlight %}
 </div>
 
-You can also add a different request parameter per job. The VMs will be dynamically partioned into jobs to maximally fit the VM flavour. See the [submission manual page](http://research.cs.wisc.edu/htcondor/manual/current/condor_submit.html) for reference on the HTCondor request parameters.
+You can also add a different request parameter per job. The VMs will be dynamically partioned into jobs to maximally fit the VM flavour. See the [submission examples](https://htcondor.readthedocs.io/en/latest/users-manual/submitting-a-job.html) for reference on the HTCondor request parameters.
 
 ## Managing Batch Jobs on the submission host
 
@@ -101,7 +101,7 @@ Then you will need to source your credentials to access your project's VMs:
 
 </div>
 
-This file is the same as the one you can download from your project, when clicking in the **API Access** tab from your [dashboard](https://west.cloud.computecanada.ca/dashboard/project/access_and_security/). It should download it for you, then replace `[project]` by your project name.
+This file is the same as the one you can download from your project, when clicking in the **API Access** tab from your [dashboard](https://arbutus-canfar.cloud.computecanada.ca/dashboard/project/access_and_security/). It should download it for you, then replace `[project]` by your project name.
 Now to submit the job, there is a special wrapper script that will share your VM with CANFAR, add some boiler plate lines for the cloud-scheduler, validate and submit the job. Instead of running `condor_submit`, you would run `canfar_submit`. For our simple example, you would do:
 <div class="shell">
 
@@ -113,14 +113,14 @@ canfar_submit myjob.jdl my_vm_image c8-30gb-380
 
 
 ### Checking Job Status
-`HTCondor` offers a great deal of command line tools to check the status of the VM and the job. Below is a basic list of typical HTCondor commands for job management. For a more exhaustive list of commands, we refere the reader to the official [HTCondor user documentation](http://research.cs.wisc.edu/htcondor/manual/v8.4/2_Users_Manual.html) or a good overview and cheat sheet on [SIEpedia](http://www.iac.es/sieinvens/siepedia/pmwiki.php?n=HOWTOs.Condor).
+`HTCondor` offers a great deal of command line tools to check the status of the VM and the job. Below is a basic list of typical HTCondor commands for job management. For a more exhaustive list of commands, we refere the reader to the official [HTCondor user documentation](https://htcondor.readthedocs.io/en/latest/users-manual/) or a good overview and cheat sheet on [SIEpedia](http://www.iac.es/sieinvens/siepedia/pmwiki.php?n=HOWTOs.Condor).
 
 Check the status of the global queue:
 
 <div class="shell">
 
 {% highlight bash %}
-condor_status -submitter
+condor_q -all
 {% endhighlight %}
 
 </div>
