@@ -5,7 +5,7 @@
         "title": "Access Control",
         "description": "The CANFAR access control web service.\n\n\nThe following operations are available in the Access Control (AC) web service:\n\n\n- Group Management\n- Group Searching\n- User Management\n- User Login\n- Password Changes\n- Who Am I (Logged-in user info)\n- Service Availability\n\n\nA CANFAR user can be identified in multiple ways, including:\n\n\n- Their distinguished name (DN) as described on their client certificate\n- Their CANFAR userID\n\n\nIn the cases where clients of the web service need to identify a user through the REST API, either in the URL or in a posted document, it is done using two fields:\n\n\nidType - Describes the type of identity being provided in field userID. Accepted values of idType are:\n\n\n\n  - x509 - Indicates value of userID is in DN format.\n\n\n\n  - http - Indicates value of userID is in http-basic authorization userid\nformat.\n\n\nid - The value identifying the user in the format specified by idType\n\n\nGroups have an owner, a list of administrators and a list of members. The list of members and administrators can be composed of groups and users. The following describes the role of these properties of a group. The API sometimes requires the role to be specified in parameter 'role':\n\n\n- owner - Can modify administrators list and members list. Can delete the group.\n\n\n- admin - Can modify the administrators and members list.\n\n\n- member - Are granted access to the resources the group is associated with.\n"
     },
-    "host": "www.canfar.phys.uvic.ca",
+    "host": "ws-cadc.canfar.net",
     "paths": {
         "/ac/groups": {
             "get": {

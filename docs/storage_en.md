@@ -346,7 +346,7 @@ asking for your CADC username/password, add a `$HOME/.netrc` file containing the
 
 <div class="shell">
 {% highlight bash %}
-machine www.canfar.phys.uvic.ca USER password PASSWORD
+machine www.canfar.net USER password PASSWORD
 {% endhighlight %}
 and do:
 {% highlight bash %}

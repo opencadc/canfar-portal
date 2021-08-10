@@ -5,7 +5,7 @@
         "title": "Credential Delegation web service",
         "description": "The credential delegation web service.\n\n\nThe credential delegation web service is used by the CANFAR web service ecosystem to perform secondary web service operations on behalf of the user. By default, it uses X509 certificates signed by CANFAR and recognized only within CANFAR, but the service also allows users to delegate their own certificates signed by other authorities.\n"
     },
-    "host": "www.canfar.phys.uvic.ca",
+    "host": "www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca",
     "paths": {
         "/cred": {
             "post": {

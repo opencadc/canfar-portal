@@ -153,7 +153,7 @@ $ echo 'NUMBER
 MAG_AUTO
 X_IMAGE
 Y_IMAGE' > default.param
-$ curl -L https://www.canfar.phys.uvic.ca/data/pub/CFHT/1056213p | funpack -O 1056213p.fits -
+$ curl -L https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/data/pub/CFHT/1056213p | funpack -O 1056213p.fits -
 $ sextractor 1056213p.fits -CATALOG_NAME 1056213p.cat
 {% endhighlight %}
 
@@ -181,7 +181,7 @@ $ sudo pip install vos
 <div class="shell">
 
 {% highlight bash %}
-$ echo "machine www.canfar.phys.uvic.ca login [username] password [password]" > ~/.netrc
+$ echo "machine www.canfar.net login [username] password [password]" > ~/.netrc
 $ chmod 600 ~/.netrc
 $ cadc-get-cert
 {% endhighlight %}
@@ -209,7 +209,7 @@ Now we want to automate the whole procedure above in a single script, in prepara
 {% highlight bash %}
 #!/bin/bash
 source /home/[username]/.bashrc
-curl -L https://www.canfar.phys.uvic.ca/data/pub/CFHT/${1} | funpack -O ${1}.fits -
+curl -L https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/data/pub/CFHT/${1} | funpack -O ${1}.fits -
 cp /usr/share/sextractor/default* .
 echo 'NUMBER
 MAG_AUTO

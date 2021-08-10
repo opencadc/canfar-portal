@@ -136,23 +136,23 @@ en:
     storage:
       name: 'Storage Management'
       link: '/storage/list/'
-      api_link: 'https://www.canfar.phys.uvic.ca/vospace/'
+      api_link: 'https://ws-cadc.canfar.net/vospace/'
       description: 'Manage your own large storage for astronomy data'
     group_management:
       name: 'Group Management'
       link: '/gmui/'
-      api_link: 'https://www.canfar.phys.uvic.ca/ac/'
+      api_link: 'https://ws-cadc.canfar.net/ac/'
       description: 'Manage access permissions to your managed Storage'
     digital_object_identifiers:
       disabled: true
       name: 'Data Publication'
       link: '/citation/'
-      api_link: 'https://www.canfar.phys.uvic.ca/doi/'
+      api_link: 'https://ws-cadc.canfar.net/doi/'
       description: 'Publish your data using VOSpace and Digital Object Identifiers'
     batch_processing:
       name: 'Batch Processing'
       link: '/processing/batchjobs'
-      api_link: 'https://www.canfar.phys.uvic.ca/proc/'
+      api_link: 'https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/proc/'
       description: 'Access large resources for batch processing on the cloud'
     arcade:
       disabled: true
@@ -408,17 +408,17 @@ fr:
     storage:
       name: 'Gestion de stockage'
       link: '/storage/list/'
-      api_link: 'http://www.canfar.phys.uvic.ca/vospace/'
+      api_link: 'http://ws-cadc.canfar.net/vospace/'
       description: 'La description de Stockage'
     batch_processing:
       name: 'Le traitement par lots'
       link: '/processing/batchjobs'
-      api_link: 'http://www.canfar.phys.uvic.ca/proc/'
+      api_link: 'https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/proc/'
       description: 'La description du traitement par lots'
     group_management:
       name: 'Gestion de groupes'
       link: '/gmui/'
-      api_link: 'http://www.canfar.phys.uvic.ca/ac/'
+      api_link: 'http://ws-cadc.canfar.net/ac/'
       description: 'La description de Gestion de groupes'
     caom_query_service:
       name: 'Les collections de données du CCDA'
