@@ -135,8 +135,8 @@ en:
   services:
     storage:
       name: 'Storage Management'
-      link: '/storage/list/'
-      api_link: 'https://ws-cadc.canfar.net/vospace/'
+      link: '/storage/vault/list/'
+      api_link: 'https://ws-cadc.canfar.net/vault/'
       description: 'Manage your own large storage for astronomy data'
     group_management:
       name: 'Group Management'
@@ -407,8 +407,8 @@ fr:
       description: "La description d'Identificateurs d'objects digitale"
     storage:
       name: 'Gestion de stockage'
-      link: '/storage/list/'
-      api_link: 'http://ws-cadc.canfar.net/vospace/'
+      link: '/storage/vault/list/'
+      api_link: 'http://ws-cadc.canfar.net/vault/'
       description: 'La description de Stockage'
     batch_processing:
       name: 'Le traitement par lots'
