@@ -5,7 +5,7 @@
         "title": "VOSpace",
         "description": "The CANFAR VOSpace web service.\n\nVOSpace is the IVOA (International Virtual Observatory Aliance) standard interface to distributed storage.  This VOSpace web service is an access point for a distributed storage network.  There are three main functions of the VOSpace service:\n1. Add, replace, or delete data objects in a tree data structure.\n2. Manipulate the metadata for the data objects.\n3. Obtain URIs through which the content of the data objects can be accessed.\n\nPlease see the specification for full details: <a href=\"http://ivoa.net/documents/VOSpace\" target=\"_blank\">VOSpace 2.1 Specification</a>\n\nInteraction with the synchronous and asynchronous data object transfer endpoints use the job management patterns defined in the IVOA Universal Worker Service (UWS) specification: <a href=\"http://www.ivoa.net/documents/UWS\" target=\"_blank\">UWS 1.1 Specification</a>\n"
     },
-    "host": "www.canfar.phys.uvic.ca",
+    "host": "www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca",
     "paths": {
         "/vospace/protocols": {
             "get": {

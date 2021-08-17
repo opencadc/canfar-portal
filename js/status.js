@@ -77,7 +77,7 @@
      * document.
      *
      * param: serviceURL - a URL containing the name of the service
-     *        e.g. http://canfar.phys.uvic.ca/ac/capabilities
+     *        e.g. http://ws-cadc.canfar.net/ac/capabilities
      * @private
      */
     this._extractServiceName = function(serviceURL) {

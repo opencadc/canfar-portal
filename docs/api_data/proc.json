@@ -5,7 +5,7 @@
         "title": "Batch processing web service",
         "description": "The batch processing web service.\n\nThis service provides a RESTful web service interface to the CANFAR condor processing system.\n\n\nTo receive access to The CANFAR Processing Web Service, users must request a home directory from CANFAR. Please go to CANFAR (www.canfar.net) to gain access.\n"
     },
-    "host": "www.canfar.phys.uvic.ca",
+    "host": "www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca",
     "paths": {
         "/proc/job": {
             "get": {
