@@ -14,20 +14,14 @@ If the data you want to process is not already on a CADC archive, you can stage 
 
 You will need to [register](https://www.canfar.net/en/register/).
 
-There are two ways to interact with VOspace. The first is with your browser via the [web user interface](https://www.canfar.net/storage/list).
+There are two ways to interact with VOspace. The first is with your browser via the [web user interface](https://www.canfar.net/storage/vault/list).
 The web interface is familiar for most people to use and interactive.
 To access your VOSpace in scripts, the Python based [vos](https://pypi.python.org/pypi/vos) modules and command line clients are available.
 Some users might also find the VOSpace filesystem [vofs](https://pypi.python.org/pypi/vofs), the FS view is based on FUSE and not recommended for serious data processing, but does provide a convenient interactive interface for exploring a respository.
 
 ## The web user interface
 
-The web user interface should be fairly easy to use. The only part that is not completely obvious to a new user might be the permissions system.
-
-- To upload a file, click on **Upload File**. In the pop-up, click on **Browse**. Navigate to the file you want to upload and click on it (this behavior is slightly browser dependent). Click **Upload**. After a pause (expect about 2 seconds + 1 second per MB of file size) the screen will refresh and your file will uploaded.
-- To download one file, click on a link and save it like you would a normal link.
-- To download multiple files, tick off on the appropriate boxes on the leftmost column, or click on the top box to select all the files. Click on **Download**. You will be redirected to CADC download manager. You can now use a Java interface to download files simultaneously.
-- To delete files, tick off their boxes and click on **Delete**.
-- To set permissions on files tick off their boxes and click on **Set Permissions**.
+- [https://www.canfar.net/storage/vault/list](https://www.canfar.net/storage/vault/list)
 
 ## The *vos* Python module and command line client
 
