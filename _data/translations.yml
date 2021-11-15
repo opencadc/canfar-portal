@@ -64,9 +64,6 @@ en:
     quick_start:
       name: 'Quick Start'
       link: '/quick_start/'
-    batch_processing:
-      name: 'Batch Processing'
-      link: '/batch_processing/'
     group_management:
       name: 'Group Management'
       link: '/group_management/'
@@ -149,11 +146,6 @@ en:
       link: '/citation/'
       api_link: 'https://ws-cadc.canfar.net/doi/'
       description: 'Publish your data using VOSpace and Digital Object Identifiers'
-    batch_processing:
-      name: 'Batch Processing'
-      link: '/processing/batchjobs'
-      api_link: 'https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/proc/'
-      description: 'Access large resources for batch processing on the cloud'
     arcade:
       disabled: true
       name: 'Arcade'
@@ -161,7 +153,7 @@ en:
       description: 'Cloud user sessions'
     openstack_cloud_portal:
       name: 'OpenStack Cloud'
-      link: '/processing/vmod/'
+      link: 'https://arbutus-canfar.cloud.computecanada.ca'
       description: 'Run your own virtual machines on Compute Canada cloud'
       capacity: 'Default is 10 VMs sharing 20 CPUs, 50GB RAM, 1TB disk and 1 public IP'
     caom_query_service:
@@ -331,9 +323,6 @@ fr:
     quick_start:
       name: 'Commencer'
       link: '/commencer'
-    batch_processing:
-      name: 'Le traitement par lot'
-      link: '/batch_processing/'
     group_management:
       name: 'Gestion de groupes'
       link: '/gestion_de_groupes/'
@@ -399,7 +388,7 @@ fr:
   services:
     openstack_cloud_portal:
       name: 'Portail de cloud OpenStack'
-      link: '/processing/vmod/'
+      link: 'https://arbutus-canfar.cloud.computecanada.ca'
       description: 'La description de Partail de cloud'
     digital_object_identifiers:
       name: "Identificateurs d'objects digitale"
@@ -410,11 +399,6 @@ fr:
       link: '/storage/vault/list/'
       api_link: 'http://ws-cadc.canfar.net/vault/'
       description: 'La description de Stockage'
-    batch_processing:
-      name: 'Le traitement par lots'
-      link: '/processing/batchjobs'
-      api_link: 'https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/proc/'
-      description: 'La description du traitement par lots'
     group_management:
       name: 'Gestion de groupes'
       link: '/gmui/'

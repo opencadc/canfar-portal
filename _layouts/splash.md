@@ -23,7 +23,6 @@ layout: default
         <br />
         <div class="mt-md-5">
           <div class="row text-center mb-3">
-
             <div class="mx-1 col">
               <a href="{{ t['services']['storage'].link }}" class="text-secondary">
                 <i class="fas fa-hdd service-link" data-toggle="tooltip" data-placement="top" title="Manage your VOSpace"></i>
@@ -32,7 +31,6 @@ layout: default
                 <span>{{ t['services']['storage'].name }}</span>
               </div>
             </div>
-
             <div class="mx-1 col">
               <a href="" target="_blank" id="gmui_link" class="text-secondary">
                 <i class="fas fa-users service-link" data-toggle="tooltip" data-placement="top" title="Manage your CADC groups"></i>
@@ -41,7 +39,6 @@ layout: default
                 <span>Group Management</span>
               </div>
             </div>
-
             <div class="mx-1 col">
               <a href="/citation" class="text-secondary">
                 <i class="fas fa-link service-link" data-toggle="tooltip" data-placement="top" title="Publish your data using VOSpace and Digital Object Identifiers"></i>
@@ -50,20 +47,17 @@ layout: default
                 <span>Data Publication</span>
               </div>
             </div>
-
           </div>
           <br />
           <div class="row text-center mb-3">
-
             <div class="mx-1 col">
-              <a href="/processing/vmod" class="text-secondary">
+              <a href="https://arbutus-canfar.cloud.computecanada.ca" class="text-secondary" rel="external">
                 <i class="fas fa-power-off service-link" data-toggle="tooltip" data-placement="top" title="Interactive Virtual Machines"></i>
               </a>
               <div>
                 <span>Open Stack</span>
               </div>
             </div>
-
             <div class="mx-1 col">
                 <a href="{{ cadc_url }}/en/search/" class="text-secondary">
                   <i class="fas fa-star service-link" data-toggle="tooltip" data-placement="right" title="Search data collections at the Canadian Astronomy Data Centre"></i>
@@ -72,7 +66,6 @@ layout: default
                   <span>CADC Search</span>
                 </div>
             </div>
-
             <div class="mx-1 col">
                 <a href="/science-portal" class="text-secondary">
                   <i class="fas fa-cubes service-link " data-toggle="tooltip" data-placement="top" title="Science Portal sessions"></i>
@@ -83,7 +76,6 @@ layout: default
               </div>
             </div>
            </div>
-           
         </div>
       </div>
     </div>
@@ -91,7 +83,7 @@ layout: default
   <footer class="my-md-5 pt-md-3 border-top">
     <div class="row">
       <div class="col-12 col-md">
-        <small class="d-block mb-3 text-muted">© 2018-2019</small>
+        <small class="d-block mb-3 text-muted">© 2021-2022</small>
       </div>
       <div class="col-6 col-md">
         <h5>Download</h5>
