@@ -1,4 +1,4 @@
 about: ['organization', 'partners', 'terms_of_reference']
 nodes: ['cadc', 'euclid', 'inaf-oat', 'jcmt_gbs', 'jwst', 'ngvs', 'nugrid', 'uvic', 'vlass']
-docs: ['quick_start', 'storage', 'group_management', 'digital_object_identifiers', 'batch_processing', 'openstack_cloud_portal', 'cloud_migration', 'caom_query_service', 'jcmt_starlink']
+docs: ['quick_start', 'storage', 'group_management', 'digital_object_identifiers', 'openstack_cloud_portal', 'cloud_migration', 'caom_query_service', 'jcmt_starlink']
 resources: ['expertise', 'services', 'open_source']

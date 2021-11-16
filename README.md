@@ -24,7 +24,7 @@ env:
         apps: 'demo.canfar.net'
     rc:
         cadc: 'rc.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
-        canfar: 'rc.canfar.net'
+        canfar: 'rc-www.canfar.net'
         apps: 'rcapps.canfar.net'
     prod:
         cadc: 'www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'

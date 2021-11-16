@@ -1,107 +1,87 @@
-{% include __vars.md %}
-{% assign cadc_url = site.env[site.site_env].cadc %}
+{% include __vars.md %} {% assign cadc_url = site.env[site.site_env].cadc %}
 
 <header class="fixed-top d-flex flex-md-row align-items-center p-2 px-md-4 mb-2 bg-white border-bottom">
-  <h5 class="my-0 mr-md-auto font-weight-normal">
-    <a class="navbar-brand" href="{{ page_lang_link }}">
-      <img src="{{ '/css/images/logo.png' | prepend: site.baseurl }}">
-    </a>
-  </h5>
-  <nav class="navbar navbar-expand-sm navbar-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapse_nav" aria-controls="navbarsExample03"
-            aria-expanded="false" aria-label="Toggle navigation">
+    <h5 class="my-0 mr-md-auto font-weight-normal">
+        <a class="navbar-brand" href="{{ page_lang_link }}">
+            <img src="{{ '/css/images/logo.png' | prepend: site.baseurl }}">
+        </a>
+    </h5>
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapse_nav" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="navbar-collapse collapse" id="collapse_nav">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item d-flex pt-2">
-          <a class="p-2 text-dark" href="{{ page_lang_link }}{{ t['docs'].link }}{{ t['docs']['quick_start'].link }}">{{ t['docs'].name }}</a>
-        </li>
-        <li class="nav-item d-flex dropdown pt-2">
-          <a title="Services" id="services_dropdown" class="dropdown-toggle p-2 text-dark" data-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="">{{ t['_services'].name }}</a>
-          <div class="dropdown-menu" aria-labelledby="services_dropdown">
-            <a href="{{ t['services']['storage'].link }}" class="dropdown-item">{{ t['services']['storage'].name }}</a>
-            <a href="{{ t['services']['group_management'].link }}" class="dropdown-item" id="gmui_redirect">{{ t['services']['group_management'].name }}</a>
-            <a href="{{ t['services']['digital_object_identifiers'].link }}" class="dropdown-item">{{ t['services']['digital_object_identifiers'].name }}</a>
-            <a href="{{ t['services']['batch_processing'].link }}" class="dropdown-item">{{ t['services']['batch_processing'].name }}</a>
-            {%comment%}<a href="{{ t['services']['arcade'].link }}" class="dropdown-item">{{ t['services']['arcade'].name }}</a>{%endcomment%}
-            <a href="{{ t['services']['openstack_cloud_portal'].link }}" class="dropdown-item">{{ t['services']['openstack_cloud_portal'].name }}</a>
-            <a href="{{ t['services']['science_portal'].link }}" class="dropdown-item">{{ t['services']['science_portal'].name }}</a>
-            <a href="{{ cadc_url }}{{ t['services']['caom_query_service'].link }}" class="dropdown-item">{{ t['services']['caom_query_service'].name }}</a>
-          </div>
-        </li>
-        <li class="nav-item d-flex pt-2">
-          <a class="p-2 text-dark" href="{{ page_lang_link }}{{ t['about'].link }}{{ t['about']['organization'].link }}">{{ t['about'].name }}</a>
-        </li>
-        <li class="nav-item d-flex pt-2">
-          <a class="p-2 text-dark" href="{{ t['open_source'].link }}" ref="external">{{ t['open_source'].name }}</a>
-        </li>
-        <li class="nav-item d-flex dropdown pt-2">
-          <a title="Support" id="support_dropdown" class="dropdown-toggle p-2 text-dark" data-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="">{{ t['support'].name }}</a>
-          <div class="dropdown-menu" aria-labelledby="support_dropdown">
-            <a href="mailto:{{ t['support']['help_desk'].link }}" class="dropdown-item">{{ t['support']['help_desk'].name }}</a>
-            <a href="{{ t['support']['slack'].link }}" class="dropdown-item">{{ t['support']['slack'].name }}</a>
-          </div>
-        </li>
-        <li class="nav-item pl-4 dropdown canfar-access-control user-authenticated canfar-authenticated d-none pt-2">
-          <a title="User actions" class="dropdown-toggle access-actions login-form btn btn-outline-primary" data-toggle="dropdown"
-            href="#"><span class='auth-username'></span></a>
-          <ul class="dropdown-menu dropdown-menu-right list-unstyled">
-            <li>
-              <a href=""
-                 class="dropdown-item account_access_info"
-                 tabindex="2" title="Update profile" class=""
-                 id="updateProfile">Update profile</a>
-            </li>
-            <li>
-               <a href=""
-                 class="dropdown-item account_access_info"
-                 tabindex="3" title="Reset password" id="changePassword" >Reset password</a>
-            </li>
-            <li>
-              <a title="Obtain certificate" class="dropdown-item account_access_info"
-                 href="https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/cred/priv?daysValid=30"
-                 tabindex="4" id="obtainCertificate">Obtain a certificate</a>
-            </li>
-            <li>
-              <a id="logout" title="Logout." tabindex="5"
-                 class="access-control dropdown-item account_access_info" href="/access/logout">
-                <span class="fas fa-sign-out-alt"></span> Logout</a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item pl-4 dropdown canfar-access-control user-anonymous canfar-anonymous d-none pt-2">
-          <a title="Login form" class="dropdown-toggle access-actions login-form btn btn-outline-primary" data-toggle="dropdown"
-             href="">Login</a>
-          <ul class="dropdown-menu dropdown-menu-right list-unstyled login-container">
-            <li>
-              <form class="form-inline access-control" id="loginForm" role="form" method="post" action="/access/login">
-                <span id="login_fail" class="help-block text-danger"></span>
-                <label for="username" class="sr-only" id="usernameLabel">Username</label>
-                <input type="text" id="username" name="username" class="form-control mb-2 mr-sm-2 ml-sm-2" tabindex="1"
-                       required="required" placeholder="CADC Username">
-                <label for="password" class="sr-only" id="passwordLabel">Password</label>
-                <input type="password" id="password" name="password" class="form-control mb-2 mr-sm-2 ml-sm-2" tabindex="2"
-                       required="required" placeholder="Password">
-                <button type="submit" id="submitLogin" class="btn btn-success ml-sm-2 mb-2" tabindex="3">
+        <div class="navbar-collapse collapse" id="collapse_nav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item d-flex pt-2">
+                    <a class="p-2 text-dark" href="{{ page_lang_link }}{{ t['docs'].link }}{{ t['docs']['quick_start'].link }}">{{ t['docs'].name }}</a>
+                </li>
+                <li class="nav-item d-flex dropdown pt-2">
+                    <a title="Services" id="services_dropdown" class="dropdown-toggle p-2 text-dark" data-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="">{{ t['_services'].name }}</a>
+                    <div class="dropdown-menu" aria-labelledby="services_dropdown">
+                        <a href="{{ t['services']['storage'].link }}" class="dropdown-item">{{ t['services']['storage'].name }}</a>
+                        <a href="{{ t['services']['group_management'].link }}" class="dropdown-item" id="gmui_redirect">{{ t['services']['group_management'].name }}</a>
+                        <a href="{{ t['services']['digital_object_identifiers'].link }}" class="dropdown-item">{{ t['services']['digital_object_identifiers'].name }}</a> {%comment%}
+                        <a href="{{ t['services']['arcade'].link }}" class="dropdown-item">{{ t['services']['arcade'].name }}</a>{%endcomment%}
+                        <a href="{{ t['services']['openstack_cloud_portal'].link }}" class="dropdown-item">{{ t['services']['openstack_cloud_portal'].name }}</a>
+                        <a href="{{ t['services']['science_portal'].link }}" class="dropdown-item">{{ t['services']['science_portal'].name }}</a>
+                        <a href="{{ cadc_url }}{{ t['services']['caom_query_service'].link }}" class="dropdown-item">{{ t['services']['caom_query_service'].name }}</a>
+                    </div>
+                </li>
+                <li class="nav-item d-flex pt-2">
+                    <a class="p-2 text-dark" href="{{ page_lang_link }}{{ t['about'].link }}{{ t['about']['organization'].link }}">{{ t['about'].name }}</a>
+                </li>
+                <li class="nav-item d-flex pt-2">
+                    <a class="p-2 text-dark" href="{{ t['open_source'].link }}" ref="external">{{ t['open_source'].name }}</a>
+                </li>
+                <li class="nav-item d-flex dropdown pt-2">
+                    <a title="Support" id="support_dropdown" class="dropdown-toggle p-2 text-dark" data-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="">{{ t['support'].name }}</a>
+                    <div class="dropdown-menu" aria-labelledby="support_dropdown">
+                        <a href="mailto:{{ t['support']['help_desk'].link }}" class="dropdown-item">{{ t['support']['help_desk'].name }}</a>
+                        <a href="{{ t['support']['slack'].link }}" class="dropdown-item">{{ t['support']['slack'].name }}</a>
+                    </div>
+                </li>
+                <li class="nav-item pl-4 dropdown canfar-access-control user-authenticated canfar-authenticated d-none pt-2">
+                    <a title="User actions" class="dropdown-toggle access-actions login-form btn btn-outline-primary" data-toggle="dropdown" href="#"><span class='auth-username'></span></a>
+                    <ul class="dropdown-menu dropdown-menu-right list-unstyled">
+                        <li>
+                            <a href="" class="dropdown-item account_access_info" tabindex="2" title="Update profile" class="" id="updateProfile">Update profile</a>
+                        </li>
+                        <li>
+                            <a href="" class="dropdown-item account_access_info" tabindex="3" title="Reset password" id="changePassword">Reset password</a>
+                        </li>
+                        <li>
+                            <a title="Obtain certificate" class="dropdown-item account_access_info" href="https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/cred/priv?daysValid=30" tabindex="4" id="obtainCertificate">Obtain a certificate</a>
+                        </li>
+                        <li>
+                            <a id="logout" title="Logout." tabindex="5" class="access-control dropdown-item account_access_info" href="/access/logout">
+                                <span class="fas fa-sign-out-alt"></span> Logout</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item pl-4 dropdown canfar-access-control user-anonymous canfar-anonymous d-none pt-2">
+                    <a title="Login form" class="dropdown-toggle access-actions login-form btn btn-outline-primary" data-toggle="dropdown" href="">Login</a>
+                    <ul class="dropdown-menu dropdown-menu-right list-unstyled login-container">
+                        <li>
+                            <form class="form-inline access-control" id="loginForm" role="form" method="post" action="/access/login">
+                                <span id="login_fail" class="help-block text-danger"></span>
+                                <label for="username" class="sr-only" id="usernameLabel">Username</label>
+                                <input type="text" id="username" name="username" class="form-control mb-2 mr-sm-2 ml-sm-2" tabindex="1" required="required" placeholder="CADC Username">
+                                <label for="password" class="sr-only" id="passwordLabel">Password</label>
+                                <input type="password" id="password" name="password" class="form-control mb-2 mr-sm-2 ml-sm-2" tabindex="2" required="required" placeholder="Password">
+                                <button type="submit" id="submitLogin" class="btn btn-success ml-sm-2 mb-2" tabindex="3">
                   <i class="fa fa-sign-in"></i>Login
                 </button>
-              </form>
-              <a href=""
-                 class="dropdown-item account_access_info"
-                 tabindex="5" title="Forgot Username"
-                 id="forgot_username_1">Forgot your Account information?</a>
-              <a href=""
-                 class="dropdown-item account_access_info"
-                 tabindex="6" title="Register" id="register_cadc_1">Request a CADC Account</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
+                            </form>
+                            <a href="" class="dropdown-item account_access_info" tabindex="5" title="Forgot Username" id="forgot_username_1">Forgot your Account information?</a>
+                            <a href="" class="dropdown-item account_access_info" tabindex="6" title="Register" id="register_cadc_1">Request a CADC Account</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
 
-  </nav>
-  <!--End navbar-->
+    </nav>
+    <!--End navbar-->
 
 </header>
 
@@ -115,19 +95,20 @@
 <script type="text/javascript" src="/cadcJS/javascript/cadc.registry-client.js"></script>
 <script type="text/javascript" src="/canfar/javascript/cadc.redirect.util.js"></script>
 
-{% comment %} <div class="card text-white bg-warning">
-  <div class="card-header"></div>
-  <div class="card-body">
-    <h5 class="card-title">Warning card title</h5>
-  <p class="card-text">On December 23rd, between 0600 and 1200 PST, there will be two periods of up to ten (10) minutes each during which services running at UVic will be unavailable due to on-site network maintenance.</p>
-  </div>
+{% comment %}
+<div class="card text-white bg-warning">
+    <div class="card-header"></div>
+    <div class="card-body">
+        <h5 class="card-title">Warning card title</h5>
+        <p class="card-text">On December 23rd, between 0600 and 1200 PST, there will be two periods of up to ten (10) minutes each during which services running at UVic will be unavailable due to on-site network maintenance.</p>
+    </div>
 </div> {% endcomment %}
 
 <script>
-  $(document).ready(function() {
-    // Change the user-related menu items to point to
-    // URLs provided via /reg/applications
-    var redirectUtil = new ca.nrc.cadc.RedirectUtil()
-    redirectUtil.setHrefToUri(ca.nrc.cadc.accountURI.gmui, ['gmui_redirect'])
-  })
+    $(document).ready(function() {
+        // Change the user-related menu items to point to
+        // URLs provided via /reg/applications
+        var redirectUtil = new ca.nrc.cadc.RedirectUtil()
+        redirectUtil.setHrefToUri(ca.nrc.cadc.accountURI.gmui, ['gmui_redirect'])
+    })
 </script>

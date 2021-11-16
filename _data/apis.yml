@@ -31,6 +31,3 @@
 - title: Credential Delegation
   location: /swagger-ui/?url=/docs/api_data/cred.json
   description: Identity delegation system for extended service support (IVOA)
-- title: Processing
-  location: /swagger-ui/?url=/docs/api_data/proc.json
-  description: Batch Processing System
