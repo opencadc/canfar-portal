@@ -109,15 +109,14 @@ layout: default
         <h5>About</h5>
         <ul class="list-unstyled text-small">
           <li><a class="text-muted" href="{{ page_lang_link }}{{ t['about'].link }}{{ t['about']['organization'].link }}">CANFAR</a></li>
-          <li><a class="text-muted" href="https://www.nrc-cnrc.gc.ca/eng/notices/index.html#pr">Privacy</a></li>
           <li><a class="text-muted" href="about/terms-of-reference">Terms</a></li>
         </ul>
       </div>
       <div class="col-6 col-md">
         <h5>Acknowledgements</h5>
         <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="http://www.asc-csa.gc.ca/eng/">Canadian Space Agency</a></li>
-          <li><a class="text-muted" href="http://www.nrc-cnrc.gc.ca/eng/">National Research Council</a></li>
+          <li><a class="text-muted" href="https://www.asc-csa.gc.ca/eng/">Canadian Space Agency</a></li>
+          <li><a class="text-muted" href="https://nrc.canada.ca/en/">National Research Council Canada</a></li>
           <li><a class="text-muted" href="https://www.canarie.ca/language/?lang_default=en">Canarie</a></li>
           <li><a class="text-muted" href="https://www.computecanada.ca/">Compute Canada</a></li>
         </ul>

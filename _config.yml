@@ -9,14 +9,14 @@ env:
     demo:
         cadc: 'https://demo.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
     rc:
-        cadc: 'https://rc.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
+        cadc: 'https://rc-www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
     prod:
         cadc: 'https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
     docker:
         cadc: 'https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
     dev:
         # replace with your dev host.
-        cadc: 'https://localhost'
+        cadc: 'http://localhost'
 baseurl: ''
 future: true
 github_url: 'https://github.com/opencadc/canfar-portal.git'
