@@ -94,6 +94,9 @@ en:
     partners:
       name: 'Partners'
       link: '/partners/'
+    acknowledgement:
+      name: 'Acknowledgement'
+      link: '/acknowledgement'
   nodes:
     name: 'Nodes'
     link: '/nodes'
@@ -350,6 +353,9 @@ fr:
     partenaires:
       name: 'Partenaires'
       link: '/partenaires'
+    acknowledgement:
+      name: 'Mention'
+      link: '/mention'
   nodes:
     name: 'Nodes'
     link: '/nodes'
