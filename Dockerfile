@@ -1,3 +1,5 @@
+FROM jekyll/builder:4
+
 FROM nginx:alpine
 
 ADD _site/ /usr/share/nginx/html/
