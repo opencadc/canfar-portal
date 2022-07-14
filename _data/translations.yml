@@ -49,6 +49,9 @@ en:
   docs:
     name: 'Documentation'
     link: '/docs'
+    overview:
+      name: 'Overview'
+      link: '/Overview/'
     openstack_cloud_portal:
       name: 'OpenStack Cloud'
       link: '/openstack_cloud_portal/'
@@ -245,9 +248,9 @@ en:
           responsibilities: ''
     docs:
       link: '/docs/'
-      quick_start:
-        label: 'Get started with CANFAR!'
-        link: '/quick-start/'
+      overview:
+        label: 'Overview of CANFAR Services'
+        link: '/overview/'
   footer_github: 'on GitHub'
   toggle_navigation: 'Toggle navigation'
   showcase_taglines:
@@ -304,6 +307,9 @@ fr:
   docs:
     name: 'Documentation'
     link: '/docs/'
+    overview:
+      name: 'Aperçu de CANFAR'
+      link: '/apercu/'
     openstack_cloud_portal:
       name: 'Portail de cloud OpenStack'
       link: '/portail_de_cloud_openstack/'

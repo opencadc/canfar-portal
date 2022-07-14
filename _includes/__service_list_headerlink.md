@@ -1,4 +1,4 @@
-{% assign quick_start = t['resources']['docs']['quick_start'] %}
+{% assign overview = t['resources']['docs']['overview'] %}
 <div style="display: inline-block;">
-    {% include _link_item.md namespace='resources.docs.quick_start' link_only=true link_css='btn btn-sm btn-success' label=quick_start.label glyphicon='glyphicon-arrow-right' %}
+    {% include _link_item.md namespace='resources.docs.overview' link_only=true link_css='btn btn-sm btn-success' label=overview.label glyphicon='glyphicon-arrow-right' %}
 </div>
