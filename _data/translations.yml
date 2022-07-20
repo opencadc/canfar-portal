@@ -49,12 +49,12 @@ en:
   docs:
     name: 'Documentation'
     link: '/docs'
+    overview:
+      name: 'Overview'
+      link: '/Overview/'
     openstack_cloud_portal:
       name: 'OpenStack Cloud'
       link: '/openstack_cloud_portal/'
-    cloud_migration:
-      name: 'Cloud Migration'
-      link: '/cloud_migration/'
     digital_object_identifiers:
       name: 'Data Publication'
       link: '/digital_object_identifiers/'
@@ -248,9 +248,9 @@ en:
           responsibilities: ''
     docs:
       link: '/docs/'
-      quick_start:
-        label: 'Get started with CANFAR!'
-        link: '/quick-start/'
+      overview:
+        label: 'Overview of CANFAR Services'
+        link: '/overview/'
   footer_github: 'on GitHub'
   toggle_navigation: 'Toggle navigation'
   showcase_taglines:
@@ -307,12 +307,12 @@ fr:
   docs:
     name: 'Documentation'
     link: '/docs/'
+    overview:
+      name: 'Aperçu de CANFAR'
+      link: '/apercu/'
     openstack_cloud_portal:
       name: 'Portail de cloud OpenStack'
       link: '/portail_de_cloud_openstack/'
-    cloud_migration:
-      name: 'Migration nuage'
-      link: '/migration_nuage/'
     digital_object_identifiers:
       name: "Identificateurs d'objects digitale"
       link: '/identificateurs_objets_digitale/'
