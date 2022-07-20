@@ -51,7 +51,7 @@ en:
     link: '/docs'
     overview:
       name: 'Overview'
-      link: '/Overview/'
+      link: '/overview/'
     openstack_cloud_portal:
       name: 'OpenStack Cloud'
       link: '/openstack_cloud_portal/'

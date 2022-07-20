@@ -80,18 +80,18 @@ layout: default
       </div>
     </div>
   </div>
-  <footer class="my-md-5 pt-md-3 border-top">
+  <footer class="my-md-5 pt-md-3 border-top container">
     <div class="row">
-      <div class="col-12 col-md">
-        <small class="d-block mb-3 text-muted">© 2021-2022</small>
-      </div>
-      <div class="col-6 col-md">
+      <small class="d-block mb-3 text-muted col-md">&copy; 2022-2023</small>
+    </div>
+    <div class="row">
+      <div class="col-3 col-md">
         <h5>Download</h5>
         <ul class="list-unstyled text-small">
           <li><a class="text-muted" href="https://pypi.org/search/?q=caom2%7Ccadc">Python applications</a></li>
         </ul>
       </div>
-      <div class="col-6 col-md">
+      <div class="col-3 col-md">
         <h5 hidden>Resources</h5>
         <div class="social-link-toolbar" role="toolbar">
           <a href="https://github.com/opencadc" class="social-link pl-sm-1" aria-label="Center Align">
@@ -105,14 +105,14 @@ layout: default
           </a>
         </div>
       </div>
-      <div class="col-6 col-md">
+      <div class="col-3 col-md">
         <h5>About</h5>
         <ul class="list-unstyled text-small">
           <li><a class="text-muted" href="{{ page_lang_link }}{{ t['about'].link }}{{ t['about']['organization'].link }}">CANFAR</a></li>
           <li><a class="text-muted" href="about/terms-of-reference">Terms</a></li>
         </ul>
       </div>
-      <div class="col-6 col-md">
+      <div class="col-3 col-md">
         <h5>Acknowledgements</h5>
         <ul class="list-unstyled text-small">
           <li><a class="text-muted" href="https://www.asc-csa.gc.ca/eng/">Canadian Space Agency</a></li>
