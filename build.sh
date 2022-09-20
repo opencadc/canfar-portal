@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ENV=${1:-prod}
-DOCKER_IMAGE=${DOCKER_IMAGE:-"jekyll/builder:4"}
+DOCKER_IMAGE=${DOCKER_IMAGE:-"jekyll/builder:3"}
 echo "Building for ${ENV}"
 sed -i -e 's/^site_env:.*$/site_env: '"${ENV}"'/' _config.yml
 
