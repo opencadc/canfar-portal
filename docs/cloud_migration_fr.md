@@ -8,7 +8,7 @@ permalink: /fr/docs/migration_nuage/
 
 ## Introduction (Anglais)
 
-This document summarizes what you need to do to migrate your project on the CANFAR OpenStack cloud hosted on Compute Canada from the old cloud (west.cloud) to the new cloud (arbutus). It is also a good time for spring cleaning!
+This document summarizes what you need to do to migrate your project on the CANFAR OpenStack cloud hosted on Digital Research Alliance Canada from the old cloud (west.cloud) to the new cloud (arbutus). It is also a good time for spring cleaning!
 You may want to open two web windows or tab: one for for the old [West Cloud](https://west.cloud.computecanada.ca/), and one for the new [Arbutus Cloud](https://arbutus-canfar.cloud.computecanada.ca/) .
 
 ## Cleanup the old cloud
@@ -47,5 +47,5 @@ You may want to open two web windows or tab: one for for the old [West Cloud](ht
 
 ## Finalizing the Migration
 - If you want us to migrate everything else for you, send us an [email](mailto:support@canfar.net) containing "Project \<*your_project_name*\> is ready for final migration." We will do the rest!
-- If you really know what you are doing and want to migrate everything yourself, please let us know via [email](mailto:support@canfar.net), and then refer to [this guide](https://docs.computecanada.ca/wiki/Arbutus_Migration_Guide)
+- If you really know what you are doing and want to migrate everything yourself, please let us know via [email](mailto:support@canfar.net), and then refer to [this guide](https://docs.alliancecan.ca/wiki/Arbutus_Migration_Guide)
 - In either case, feel free to hop in the [Slack channel](https://www.canfar.net/slack) to get help

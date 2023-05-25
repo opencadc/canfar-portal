@@ -36,7 +36,7 @@ such as:
   would be directed to any of the Canadian agencies involved in Science,
   Innovation, Computing and Big Data, such as NSERC, CFI, Canarie or NRC.
 
-  - Interface on behalf of the astronomy community with Compute Canada to ensure
+  - Interface on behalf of the astronomy community with Digital Research Alliance Canada to ensure
   that services meet the astronomy domain specific needs.
 
   - Reduce barriers and accelerate adoption of new emerging technologies in Big
@@ -57,7 +57,7 @@ Consequently the following groups are eligible for membership in the CANFAR cons
   - Individual university researchers and their groups
   - University centers or institutions engaged in astronomy research
   - Multi-institutional or multi-investigator collaborations, including their international partners
-  - Individuals and teams from the CADC, or teams from Compute Canada, WestGrid
+  - Individuals and teams from the CADC, or teams from Digital Research Alliance Canada, WestGrid
   or other entities that provide computational and data resources and
   infrastructure
 

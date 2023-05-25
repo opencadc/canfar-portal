@@ -7,7 +7,7 @@ permalink: /fr/ressources/docs/commencer/
 ---
 
 
-Before starting this example, you will need to [register](https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/auth/request.html) with CADC. The CADC team will take care of your registration to Compute Canada infrastructure.
+Before starting this example, you will need to [register](https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/auth/request.html) with CADC. The CADC team will take care of your registration to Digital Research Alliance Canada infrastructure.
 
 This quick start guide will demonstrate how to:
 
@@ -17,7 +17,7 @@ This quick start guide will demonstrate how to:
 
 # Create your interactive Virtual Machine
 
-To manage the VMs with OpenStack, we suggest using the  dashboard at Compute Canada. [Log into the dashboard](https://west.cloud.computecanada.ca). Provide your CADC username and your usual password. We will refer the CADC username as ```[username]``` throughout this document.
+To manage the VMs with OpenStack, we suggest using the  dashboard at Digital Research Alliance Canada. [Log into the dashboard](https://west.cloud.computecanada.ca). Provide your CADC username and your usual password. We will refer the CADC username as ```[username]``` throughout this document.
 
 Each resource allocation corresponds to an OpenStack **project**. A user may be a member of multiple projects, and a project usually has multiple users. A pull-down menu near the top-left allows you to select between the different projects that you are a member of.
 

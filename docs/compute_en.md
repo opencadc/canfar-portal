@@ -14,19 +14,19 @@ Are you an astronomer and would like to perform reproducible research? With the 
 
 The CANFAR infrastructure uses Virtual Machines to deploy your software. A Virtual Machine is a computer system running inside another computing system. The primary (or real) computing system provides the link to the hardware on which the computation is being done and provides an environment in which the 'Virtual Machine' can be created. This extra level of abstraction comes with a small performance price which is easily overcome by considering the savings in development costs. Once your computation works in your VM you can be certain that the computation will work on the computers that your processing will execute on.
 
-### Compute Canada and OpenStack
+### Digital Research Alliance Canada and OpenStack
 
-The CANFAR computing resources are currently provided as an [OpenStack](http://www.openstack.org) cloud managed by [Compute Canada](http://computecanada.ca).
+The CANFAR computing resources are currently provided as an [OpenStack](http://www.openstack.org) cloud managed by [Digital Research Alliance Canada](https://alliancecan.ca).
 
 ### Before you start
 
-You will need to [register](https://www.canfar.net/canfar/login.html) to CANFAR. The CANFAR team will take care of your registration to Compute Canada infrastructure.
+You will need to [register](https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/auth/request.html) to CANFAR. The CANFAR team will take care of your registration to Digital Research Alliance Canada infrastructure.
 
 ### Managing your resources
 
 #### With the user interface
 The OpenStack dashboard is a web interface to manage your resources for your persistent computing resources.
-Compute Canada has a visual [quick start guide](https://www.westgrid.ca/support/quickstart/Nefos) to show you how to use it.
+Digital Research Alliance Canada has a visual [quick start guide](https://www.westgrid.ca/support/quickstart/Nefos) to show you how to use it.
 
 Some other tutorials that go into greater depth may be also be found at other OpenStack clouds, which all look similar.
 The [RAC documentation](http://www.cybera.ca/projects/cloud-resources/rapid-access-cloud/documentation) at Cybera is another good source.

@@ -11,11 +11,11 @@ permalink: /en/docs/quick_start/
 
 This quick start guide will demonstrate how to create a basic source detection pipeline operating on CFHT Megacam images within the CANFAR Virtual Machine (VM), with fast access to the CADC archive and storage. It will go over the following steps:
 
-* create, configure, and interact with Compute Canada OpenStack cloud, and CANFAR VMs
+* create, configure, and interact with Digital Research Alliance Canada OpenStack cloud, and CANFAR VMs
 * access CADC VOSpace storage
 * launch jobs running the pipeline installed on the VM with the CANFAR batch system
 
-This guide is mostly geared to do data processing. If you just want to access the regular Compute Canada cloud to build non-batch VMs, we suggest [this guide](https://docs.computecanada.ca/wiki/Cloud_Quick_Start), which also applies to CANFAR.
+This guide is mostly geared to do data processing. If you just want to access the regular Digital Research Alliance Canada cloud to build non-batch VMs, we suggest [this guide](https://docs.alliancecan.ca/wiki/Cloud_Quick_Start), which also applies to CANFAR.
 
 ## Registration and Resource Allocation
 
@@ -26,7 +26,7 @@ Once registered, send an email to [CANFAR support](mailto:support@canfar.net) an
 * a rough amount of required resources (storage capacity and processing capabilities), and if you need batch processing
 * a few sentences describing what you want to do.
 
-Your request will be reviewed and you will be contacted by the CANFAR team which will also take care of your registration to Compute Canada infrastructure.
+Your request will be reviewed and you will be contacted by the CANFAR team which will also take care of your registration to Digital Research Alliance Canada infrastructure.
 
 Once registered, make note of your:
 * ```[username]``` is your CADC username
@@ -35,19 +35,19 @@ Once registered, make note of your:
 
 ## Create a Virtual Machine
 
-To access and manage your VM with OpenStack, we suggest using the web dashboard at Compute Canada. 
+To access and manage your VM with OpenStack, we suggest using the web dashboard at Digital Research Alliance Canada. 
 
 * [Log into the dashboard](https://arbutus-canfar.cloud.computecanada.ca). Provide your CADC ```[username]``` and ```[password]```.
 
 Each CANFAR resource allocation corresponds to an OpenStack ```[project]```. A user may be a member of multiple projects, and a project usually has multiple users. A pull-down menu near the top-left allows you to select between the different projects that you are a member of. 
 
-To create a VM, you can go over [these instructions](https://docs.computecanada.ca/wiki/Creating_a_Linux_VM) which we summarize in the 4 next sections.
+To create a VM, you can go over [these instructions](https://docs.alliancecan.ca/wiki/Creating_a_Linux_VM) which we summarize in the 4 next sections.
 
 ### Import an ssh public key
 
-Access to VMs is facilitated by [SSH key pairs](https://docs.computecanada.ca/wiki/SSH_Keys) rather than less secure user name / password. A private key resides on your own computer, and the public key is copied to all machines that you wish to connect to.
+Access to VMs is facilitated by [SSH key pairs](https://docs.alliancecan.ca/wiki/SSH_Keys) rather than less secure user name / password. A private key resides on your own computer, and the public key is copied to all machines that you wish to connect to.
 
-- If you have not yet created a key pair on your system, run  the `ssh-keygen` command from a terminal on your local machine to generate one, or follow this [documentation](https://docs.computecanada.ca/wiki/SSH_Keys) for example.
+- If you have not yet created a key pair on your system, run  the `ssh-keygen` command from a terminal on your local machine to generate one, or follow this [documentation](https://docs.alliancecan.ca/wiki/SSH_Keys) for example.
 - On the dashboard, click on **Compute**, switch to the **Key Pairs** tab and click on the **Import Key Pair** button (top-right).
 - Choose a meaningful name for the key, and then copy and paste the contents of the public key. If you have not renamed your key, it will be on its default location at `$HOME/.ssh/id_rsa.pub` from the machine you plan to ssh from into the **Public Key** window.
 
@@ -82,7 +82,7 @@ Before being able to ssh to your instance, you will need to attach the public IP
 * Select **Associate Floating IP** from the pull-down menu on the right of **Create Snapshot** button.
 * Select an allocated IP address
 
-Your ssh public key will be injected into the VM under a [generic account](https://docs.computecanada.ca/wiki/Cloud_Quick_Start#Connecting_to_your_VM_with_SSH). The default username depends on the VM image you selected: an Ubuntu-based VM will have a default ```ubuntu``` user. A Rocky-Linux (open-srouce RedHat) based VM will have ```rocky``` as the default username. This user is not related to your CADC user.
+Your ssh public key will be injected into the VM under a [generic account](https://docs.alliancecan.ca/wiki/Cloud_Quick_Start#Connecting_to_your_VM_with_SSH). The default username depends on the VM image you selected: an Ubuntu-based VM will have a default ```ubuntu``` user. A Rocky-Linux (open-srouce RedHat) based VM will have ```rocky``` as the default username. This user is not related to your CADC user.
 
 You should be able to access your VM:
 

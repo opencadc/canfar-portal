@@ -12,7 +12,7 @@ The CANFAR consortium is represented by a network of university researchers that
 
 The day-to-day operation of the consortium is coordinated by the management team which consists of:
 
-- The lead of the Compute Canada Research Platforms and Portals (RPP) competition: Pauline Barmby (UWO)
+- The lead of the Digital Research Alliance Canada (DRAC) Platforms and Portals (RPP) competition: Pauline Barmby (UWO)
 - Operations Lead : John Ouellette (CADC)
 - Software Development Lead: S&eacute;verin Gaudet (CADC)
 - Management Lead: Unfilled
