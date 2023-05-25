@@ -38,11 +38,6 @@ en:
       name: 'CANARIE'
       img: '/css/images/CANARIE_48px.png'
       url: 'https://www.canarie.ca/en/'
-    compute_canada:
-      size: '3'
-      name: 'Compute Canada'
-      img: '/css/images/Compute_Canada_52px.png'
-      url: 'https://www.computecanada.ca/'
   register:
     name: 'Register'
     link: '/register'
@@ -157,7 +152,7 @@ en:
     openstack_cloud_portal:
       name: 'OpenStack Cloud'
       link: 'https://arbutus-canfar.cloud.computecanada.ca'
-      description: 'Run your own virtual machines on Compute Canada cloud'
+      description: 'Run your own virtual machines on DRAC cloud'
       capacity: 'Default is 10 VMs sharing 20 CPUs, 50GB RAM, 1TB disk and 1 public IP'
     caom_query_service:
       name: 'CADC Search'
@@ -189,14 +184,14 @@ en:
           member_role: 'Science Computing Specialist'
           canfar_role: 'User Support'
           expertise: 'Observational cosmology, supernovae, distributed computing, machine learning'
-          responsibilities: 'Processing, general operations, liaison with Compute Canada.'
+          responsibilities: 'Processing, general operations, liaison with DRAC.'
         john_ouellette:
           name: 'John Ouellette'
           member: 'NRC CADC'
           member_role: 'CADC Operations Manager'
           canfar_role: 'User Support'
           expertise: ''
-          responsibilities: 'Storage, accounts and group management, general operations, liaison with Compute Canada.'
+          responsibilities: 'Storage, accounts and group management, general operations, liaison with DRAC.'
         cadc_operations_team:
           name: 'CADC Operations Team'
           member: 'NRC CADC'
@@ -440,14 +435,14 @@ fr:
           member_role: 'Science Computing Specialist'
           canfar_role: 'User Support'
           expertise: 'Observational cosmology, supernovae, distributed computing, machine learning'
-          responsibilities: 'Processing, general operations, liaison with Compute Canada.'
+          responsibilities: 'Processing, general operations, liaison with DRAC.'
         john_ouellette:
           name: 'John Ouellette'
           member: 'CNRC CCDA'
           member_role: 'CADC Operations Manager'
           canfar_role: 'User Support'
           expertise: ''
-          responsibilities: 'Storage, accounts and group management, general operations, liaison with Compute Canada.'
+          responsibilities: 'Storage, accounts and group management, general operations, liaison with DRAC.'
         cadc_operations_team:
           name: 'CADC Operations Team'
           member: 'CNRC CCDA'

@@ -118,7 +118,7 @@ layout: default
           <li><a class="text-muted" href="https://www.asc-csa.gc.ca/eng/">Canadian Space Agency</a></li>
           <li><a class="text-muted" href="https://nrc.canada.ca/en/">National Research Council Canada</a></li>
           <li><a class="text-muted" href="https://www.canarie.ca/language/?lang_default=en">Canarie</a></li>
-          <li><a class="text-muted" href="https://www.computecanada.ca/">Compute Canada</a></li>
+          <li><a class="text-muted" href="https://alliancecan.ca/">Digital Research Alliance Canada</a></li>
         </ul>
       </div>
     </div>
