@@ -2,9 +2,6 @@ en:
   support:
     name: 'Support'
     link: 'support@canfar.net'
-    slack:
-      name: 'Join us on Slack'
-      link: '/slack/'
     help_desk:
       name: 'Help Desk'
       link: 'support@canfar.net'
@@ -258,9 +255,6 @@ fr:
   support:
     name: 'email'
     link: 'support@canfar.net'
-  slack:
-    name: 'Slack'
-    link: '/slack/'
   login:
     name: 'Connexion'
     link: '/ac/login'
@@ -407,8 +401,8 @@ fr:
       description: 'La description de Gestion de groupes'
     caom_query_service:
       name: 'Les collections de données du CCDA'
-      link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/fr/recherche/'
-      api_link: 'http://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/tap/'
+      link: 'https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/fr/recherche/'
+      api_link: 'https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/tap/'
       description: "Service de découverte et d'accès aux données"
     science_portal:
       name: 'Science Portal'

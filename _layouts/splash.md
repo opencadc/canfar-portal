@@ -100,9 +100,6 @@ layout: default
           <a href="https://twitter.com/astro_canfar" class="social-link" aria-label="Center Align">
             <i class="fab fa-twitter fa-3x" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="See the latest CANFAR tweets"></i>
           </a>
-          <a href="{{ t['support']['slack'].link }}" class="social-link" aria-label="Center Align">
-            <i class="fab fa-slack fa-3x" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="{{ t['support']['slack'].name }}"></i>
-          </a>
         </div>
       </div>
       <div class="col-3 col-md">
