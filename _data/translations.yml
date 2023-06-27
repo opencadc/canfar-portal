@@ -154,12 +154,12 @@ en:
     caom_query_service:
       name: 'CADC Search'
       link: '/en/search/'
-      api_link: 'https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/tap/'
+      api_link: 'https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/argus/'
       description: 'CADC Data Discovery and Access'
     science_portal:
       name: 'Science Portal'
-      link: '/science-portal/launch'
-      api_link: '/science-portal/launch'
+      link: '/science-portal/'
+      api_link: 'https://ws-uv.canfar.net/skaha/'
       description: 'Virtual sessions for Jupyter notebooks'
   resources:
     name: 'Resources'
@@ -252,6 +252,7 @@ en:
   next: 'Next'
   previous: 'Previous'
 fr:
+  ##### No longer maintained! #####
   support:
     name: 'email'
     link: 'support@canfar.net'
@@ -406,8 +407,8 @@ fr:
       description: "Service de découverte et d'accès aux données"
     science_portal:
       name: 'Science Portal'
-      link: '/science-portal/launch'
-      api_link: '/science-portal/launch'
+      link: '/science-portal/'
+      api_link: '/science-portal/'
       description: 'Virtual sessions for Jupyter notebooks'
   resources:
     name: 'Ressources'
