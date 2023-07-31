@@ -12,7 +12,7 @@ VOSpace is the CANFAR storage system , an implementation of	the [Virtual Observa
 It is intended to be used for storing the output of the CANFAR processing system and also for sharing files between members of a collaboration.
 If the data you want to process is not already on a CADC archive, you can stage it on a VOSpace for further processing. Files in VOSpace are mirrored in four physical locations, so they are secure against disk failure.
 
-You will need to [register](https://www.canfar.net/en/register/).
+You will need a CADC Account.  Please [register](https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/auth/request.html) for one if you haven't already.
 
 There are two ways to interact with VOspace. The first is with your browser via the [web user interface](https://www.canfar.net/storage/vault/list).
 The web interface is familiar for most people to use and interactive.
