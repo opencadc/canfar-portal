@@ -3,7 +3,7 @@ layout: pages_left_nav
 
 namespace: docs.science_portal
 lang: en
-permalink: /en/docs/science_portal/
+permalink: /en/docs/science-portal/
 ---
 
 ## GitHub documentation
