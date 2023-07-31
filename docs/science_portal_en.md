@@ -3,10 +3,10 @@ layout: pages_left_nav
 
 namespace: docs.science_portal
 lang: en
-permalink: /en/docs/science_portal/
+permalink: /en/docs/science-portal/
 ---
 
 ## GitHub documentation
 
-Instructinos for allocation requests and usage can be found on GitHub:
-https://github.com/opencadc/science-containers/blob/main/doc/README.md
+Instructions for allocation requests and usage can be found on the
+[GitHub Science Portal Containers](https://github.com/opencadc/science-containers/blob/main/doc/README.md) page.
