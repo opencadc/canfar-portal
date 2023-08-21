@@ -70,18 +70,19 @@ or add it into a `.env` file in this folder.
 Then starting the [Docker](http://www.docker.com) container using the supplied `docker-compose.yml` file:
 
 ```
-~$ mkdir $HOME/src && cd $HOME/src
-~$ git clone https://github.com/canfar/canfar.github.io canfar_site
-~$ cd canfar_site
-~$ docker-compose up -d
+mkdir $HOME/src && cd $HOME/src
+
+git clone https://github.com/opencadc/canfar-portal.git canfar_site
+cd canfar_site
+docker-compose up -d
 ```
 
 Or directly using the `docker` command:
 
 ```
-~$ mkdir $HOME/src && cd $HOME/src
-~$ git clone https://github.com/canfar/canfar.github.io canfar_site
-~$ docker run --rm --name canfar-site -p 4000:4000 -v $(pwd)/canfar_site:/srv/jekyll canfar/canfar-site bundle install && bundle exec jekyll s --incremental
+mkdir $HOME/src && cd $HOME/src
+git clone https://github.com/opencadc/canfar-portal.git canfar_site
+docker run --rm --name canfar-site -p 4000:4000 -v $(pwd)/canfar_site:/srv/jekyll canfar/canfar-site bundle install && bundle exec jekyll s --incremental
 ```
 
 Then point a browser to the [local site](http://localhost:4000/).
