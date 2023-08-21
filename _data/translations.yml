@@ -45,7 +45,7 @@ en:
       name: 'Overview'
       link: '/overview/'
     openstack_cloud_portal:
-      name: 'OpenStack Cloud'
+      name: 'Cloud Services'
       link: '/openstack_cloud_portal/'
     digital_object_identifiers:
       name: 'Data Publication'
@@ -141,7 +141,7 @@ en:
       link: '/en/arcade'
       description: 'Cloud user sessions'
     openstack_cloud_portal:
-      name: 'OpenStack Cloud'
+      name: 'Cloud Services'
       link: 'https://arbutus-canfar.cloud.computecanada.ca'
       description: 'Run your own virtual machines on DRAC cloud'
       capacity: 'Default is 10 VMs sharing 20 CPUs, 50GB RAM, 1TB disk and 1 public IP'
@@ -295,7 +295,7 @@ fr:
       name: 'Aperçu de CANFAR'
       link: '/apercu/'
     openstack_cloud_portal:
-      name: 'Portail de cloud OpenStack'
+      name: 'Services de Cloud'
       link: '/portail_de_cloud_openstack/'
     digital_object_identifiers:
       name: "Identificateurs d'objects digitale"
@@ -377,7 +377,7 @@ fr:
     name: 'Services'
   services:
     openstack_cloud_portal:
-      name: 'Portail de cloud OpenStack'
+      name: 'Services de Cloud'
       link: 'https://arbutus-canfar.cloud.computecanada.ca'
       description: 'La description de Partail de cloud'
     digital_object_identifiers:
