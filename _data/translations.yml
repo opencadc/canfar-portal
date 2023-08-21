@@ -53,18 +53,12 @@ en:
     storage:
       name: 'Storage Management'
       link: '/storage/'
-    quick_start:
-      name: 'Quick Start'
-      link: '/quick_start/'
     group_management:
       name: 'Group Management'
       link: '/group_management/'
     caom_query_service:
       name: 'CADC Search'
-      link: 'https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/doc/advancedsearch/'
-    jcmt_starlink:
-      name: 'JCMT Starlink'
-      link: '/jcmt_starlink/'
+      link: 'https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/'
     science_portal:
       name: 'Science Portal'
       link: '/science-portal/'
