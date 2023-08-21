@@ -53,9 +53,9 @@ en:
     storage:
       name: 'Storage Management'
       link: '/storage/'
-    quick_start:
+    openstack_quick_start:
       name: 'Quick Start'
-      link: '/quick_start/'
+      link: '/openstack_quick_start/'
     group_management:
       name: 'Group Management'
       link: '/group_management/'
