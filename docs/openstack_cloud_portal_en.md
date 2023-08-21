@@ -14,23 +14,18 @@ The Digital Research Alliance Canada allocation resources are currently shared b
 
 * access to the cloud portals are with the CADC ```[username]``` and password, not the Digital Research Alliance Canada
 * the access is with [arbutus-canfar](https://arbutus-canfar.cloud.computecanada.ca) instead of [arbutus](https://arbutus.cloud.computecanada.ca)
-* CANFAR will give you reasonable resources for interactive analysis and very large for batch processing on the clouds.
+* CANFAR will give reasonable resources for interactive analysis and very large for batch processing on the clouds.
 
 ## Registration and Resource Allocation
 
-You will need to have a CADC account ([register](https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/auth/request.html)).
+A CADC account ([register](https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/auth/request.html)) is required to access the cloud services.
 
 Once registered, send an email to [CANFAR support](mailto:support@canfar.net) and include:
 * a CADC account name
-* a rough amount of required resources (storage capacity and processing capabilities), and if you need batch processing
+* a rough amount of required resources (storage capacity and processing capabilities), and if batch processing is needed
 * a few sentences describing what you want to do.
 
-Your request will be reviewed and you will be contacted by the CANFAR team which will also take care of your registration to Digital Research Alliance Canada infrastructure.
-
-Once registered, make note of your:
-* ```[username]``` is your CADC username
-* ```[VOSpace]``` is the short name of the VOSpace you requested access to
-* ```[project]``` is the OpenStack project name you requested access to
+The request will be reviewed and you will be contacted by the CANFAR team which will also take care of the registration to Digital Research Alliance Canada infrastructure.
 
 Below we include a Quick Start tutorial describing a typical workflow using the OpenStack Cloud Services.
 
@@ -44,60 +39,66 @@ This guide will demonstrate how to create a basic source detection pipeline oper
 * access CADC VOSpace storage
 * launch jobs running the pipeline installed on the VM with the CANFAR batch system
 
-This guide is mostly geared to do data processing. If you just want to access the regular Digital Research Alliance Canada cloud to build non-batch VMs, we suggest [this guide](https://docs.alliancecan.ca/wiki/Cloud_Quick_Start), which also applies to CANFAR.
+This guide is mostly geared to do batch data processing. If only access to the Digital Research Alliance Canada cloud to build persistent (non-batch) VMs, we suggest [this guide](https://docs.alliancecan.ca/wiki/Cloud_Quick_Start), which also applies to CANFAR.
+
+In this guide:
+* ```[username]``` is the CADC username
+* ```[VOSpace]``` is the short VOSpace name
+* ```[project]``` is the OpenStack project name
+
 
 ### Create a Virtual Machine
 
-To access and manage your VM with OpenStack, we suggest using the web dashboard at Digital Research Alliance Canada. 
+To access and manage a VM with OpenStack, we suggest using the web dashboard at Digital Research Alliance Canada.
 
-* [Log into the dashboard](https://arbutus-canfar.cloud.computecanada.ca). Provide your CADC ```[username]``` and ```[password]```.
+* [Log into the dashboard](https://arbutus-canfar.cloud.computecanada.ca). Provide a CADC ```[username]``` and ```[password]```.
 
-Each CANFAR resource allocation corresponds to an OpenStack ```[project]```. A user may be a member of multiple projects, and a project usually has multiple users. A pull-down menu near the top-left allows you to select between the different projects that you are a member of. 
+Each CANFAR resource allocation corresponds to an OpenStack ```[project]```. A user may be a member of multiple projects, and a project usually has multiple users. A pull-down menu near the top-left allows a selection between the different projects. 
 
-To create a VM, you can go over [these instructions](https://docs.alliancecan.ca/wiki/Creating_a_Linux_VM) which we summarize in the 4 next sections.
+To create a VM we will follow [these instructions](https://docs.alliancecan.ca/wiki/Creating_a_Linux_VM), summarized in the 4 next sections.
 
 #### Import an SSH public key
 
-Access to VMs is facilitated by [SSH key pairs](https://docs.alliancecan.ca/wiki/SSH_Keys) rather than less secure user name / password. A private key resides on your own computer, and the public key is copied to all machines that you wish to connect to.
+Access to VMs is facilitated by [SSH key pairs](https://docs.alliancecan.ca/wiki/SSH_Keys) rather than less secure user name / password. A private key resides on the local computer, and the public key is copied to all remote machines.
 
-- If you have not yet created a key pair on your system, run  the `ssh-keygen` command from a terminal on your local machine to generate one, or follow this [documentation](https://docs.alliancecan.ca/wiki/SSH_Keys) for example.
+- If no SSH key pair exists on the local machine, run  the `ssh-keygen` command from a terminal on the local machine to generate one, or follow this [documentation](https://docs.alliancecan.ca/wiki/SSH_Keys).
 - On the dashboard, click on **Compute**, switch to the **Key Pairs** tab and click on the **Import Key Pair** button (top-right).
-- Choose a meaningful name for the key, and then copy and paste the contents of the public key. If you have not renamed your key, it will be on its default location at `$HOME/.ssh/id_rsa.pub` from the machine you plan to ssh from into the **Public Key** window.
+- Choose a meaningful name for the key, and then copy and paste the contents of the public key. The default location is at `$HOME/.ssh/id_rsa.pub` on the local machine, into the **Public Key** window.
 
 #### Allocate a public IP address
 
-You will need to connect to your VM via a public IP.
+To connect to the VM remotely, the VM needs a public IP address.
 
 - Click on the **Floating IPs** tab part of **Network**. If there are no IPs listed, click on the **Allocate IP to Project** button at the top-right.
 
-Each project will typically be given one public IP. If you have already allocated all of your IPs, this button will read "Quota Exceeded".
+Each project will typically be given one public IP. If all IPs were already allocated, this button will read "Quota Exceeded".
 
 #### Launch a VM instance
 
-We will now launch a VM. A VM comes with an operating system, and we support two Linux distributions: Ubuntu LTS and RedHat Enterprise Linux clone (Rocky Linux). For this tutorial, we will select Ubuntu 20.04 based VM, with some CANFAR specific pre-installed packages. 
+We will now launch a VM. A VM comes with an operating system, and we support two Linux distributions: Ubuntu LTS and RedHat Enterprise Linux clone (Rocky Linux). For this tutorial, we will select Ubuntu 20.04 based VM, which contains a few CANFAR specific pre-installed packages.
 
 Follow these steps to access and launch those pre-built VMs:
 
 * Switch to the **Compute** tab, then on **Instances**, click on the **Launch Instance** button on the right.
-* Fill up the form of your VM:
+* Fill up the form of the VM:
   * **Details**: choose a meaningful **Instance Name**
   * **Source**: select *Boot Source* as an *Instance Snapshot* and choose **canfar-ubuntu-20.04**. This is especially important to choose an **Image** or **Instance Snaphot** for batch processing. We 
   * **Flavor**: the resources of the VM. ```c2-7.5gb-30``` provides 2 CPU (equivalent), 7.5GB RAM, and a 31 GB *ephemeral disk* that will be used as scratch space. The flavours starting with **p** are persistent VMs, and do not have scratch space.
-  * **Key Pair**: ensure that your SSH public key is selected
+  * **Key Pair**: ensure the properr SSH public key is selected
 * Finally, click the **Launch** button.
 
 
 #### Connect to the VM instance
 
-After launching the VM you are returned to the **Instances** window. You can check the VM status once booted by clicking on its name, wait for the power state to say **Running**.
-Before being able to ssh to your instance, you will need to attach the public IP address to it.
+After launching the VM, the interface shows  the **Instances** window. Wait for the power state of the VM instance to say **Running**.
+Before being able to ssh to the instance, attach the public IP address to it.
 
 * Select **Associate Floating IP** from the pull-down menu on the right of **Create Snapshot** button.
 * Select an allocated IP address
 
-Your SSH public key will be injected into the VM under a [generic account](https://docs.alliancecan.ca/wiki/Cloud_Quick_Start#Connecting_to_your_VM_with_SSH). The default username depends on the VM image you selected: an Ubuntu-based VM will have a default ```ubuntu``` user. A Rocky-Linux (open-srouce RedHat) based VM will have ```rocky``` as the default username. This user is not related to your CADC user.
+The SSH public key will be injected into the VM instance under a [generic account](https://docs.alliancecan.ca/wiki/Cloud_Quick_Start#Connecting_to_your_VM_with_SSH). The default username depends on the initial selected VM image at launch time: an Ubuntu-based VM will have a default ```ubuntu``` user. A Rocky-Linux (equivalent RedHat Enterprise) based VM will have ```rocky``` as the default username. This user is not related to the CADC user.
 
-You should be able to access your VM:
+Try to access the running VM instance:
 
 <div class="shell">
 
@@ -107,7 +108,7 @@ ssh ubuntu@[floating ip]
 
 </div>
 
-Once you are connected, we recommend to create a user on the VM with your CADC ```[username]```. It will likely be easier to manage if you have software that you will install in the home directory. Create a user, using your CADC ```[username]```, with the following command:
+Once connected, create a user on the VM with a CADC ```[username]```. Create a user with the CADC ```[username]```, with the following command:
 
 <div class="shell">
 
@@ -117,16 +118,16 @@ sudo canfar_create_user [username]
 
 </div>
 
-You can now logout from the VM and ssh back in with ```ssh [username]@[floating ip]```, and have the same privileges as the default `ubuntu` user.
+Logout from the VM and ssh back in with ```ssh [username]@[floating ip]```.
 
 ### Install software on the VM
 
-The VM operating system has only a minimal set of packages. For this example, we will use:
+The VM operating system has only a minimal set of packages. For this example, we will add two packages:
 
 - the [Source EXtractor](https://sextractor.readthedocs.io/) software, to detect astronomical sources in FITS images, resulting in catalogues of stars and galaxies.
 - the [funpack](https://heasarc.gsfc.nasa.gov/fitsio/fpack/) software, a file decompressor. We also need to read FITS images. Most FITS images from CADC come Rice-compressed with an `fz` extension. `SExtractor` only reads uncompressed images, so we also need the `funpack` utility to uncompress the incoming data. In Debian/Ubuntu, the `funpack` executable is included in the package `libcfitsio-bin`.
 
-Let's install them both system wide since they are available in Ubuntu, after a fresh update of the Ubuntu repositories:
+Let's install them system wide since they are available in Ubuntu software repository, after a fresh update:
 
 <div class="shell">
 
@@ -150,10 +151,10 @@ sudo canfar_setup_scratch
 </div>
 
 Important notes concerning the scratch space:
-* You will need to run the ```canfar_setup_scratch``` command every time you launch a new VM instance from OpenStack.
+* The ```canfar_setup_scratch``` command needs to be run every time a new VM instance is launched
 * When the VM runs in batch mode, the scratch directory will be setup automatically in a different directory for each batch job, which is NOT `/mnt/scratch` (see below).
 
-Next, we enter the scratch directory, download an astronomical image from CADC of the CFHT Megaprime there, and detect the sources with `SExtractor`. Here we take the default configuration of `SExtractor` and decide to only output the positions and magnitudes of the detected sources.
+Next, enter the scratch directory, download an astronomical image from CADC of the CFHT Megaprime there, and detect the sources with our newly installed software. Here we take the default configuration of `SExtractor` and decide to only output the positions and magnitudes of the detected sources.
 
 <div class="shell">
 
@@ -176,20 +177,20 @@ The resulting catalogue of detected sources is stored under `1056213p.cat`.
 
 #### Store results on the CANFAR VOSpace
 
-All data stored on ephemeral disk are **wiped out** when the VM instance terminates.
-We only want to store the output catalogue `1056213p.cat` at a persistent, externally accessible location. We will use the CADC [VOSpace](/en/docs/storage/) for this purpose. To store files on the VOSpace from a command line, you will use the CADC python VOSpace client (`vos` python module) which is already installed on your VM.
+All data stored on ephemeral disk will be **wiped out** when the VM instance terminates.
+We only want to store the output catalogue `1056213p.cat` at a persistent, externally accessible location. We will use the CADC [VOSpace](/en/docs/storage/) for this purpose. To store files on the VOSpace from a command line, we will use the CADC python VOSpace client (`vos` python module) which is already installed on the VM.
 
-For an automated procedure to access the VOSpace on your behalf, your proxy authorization must be present on the VM. You can accomplish this using a `.netrc` file that contains your CANFAR user name and password, and the command `cadc-get-cert` can obtain an *X509 Proxy Certificate* using that username/password combination without any further user interaction. The commands below will create the file and get a proxy certificate. A proxy certificate is by default valid 10 days.
+For an automated procedure to access the VOSpace, a proxy authorization must be present on the VM. One way to accomplish this is with a `.netrc` file that contains the CADC user name and password, and the command `cadc-get-cert` can obtain an *X509 Proxy Certificate* using that username/password combination without any further user interaction. The commands below will create the file and get a proxy certificate. A proxy certificate is by default valid 10 days.
 
 <div class="shell">
 
 {% highlight bash %}
-cadc_dotnetrc # you only need this command once to create the file
-cadc-get-cert -n
+cadc_dotnetrc # only needed once to create the file
+cadc-get-cert -n # should generate a new proxy certificate
 {% endhighlight %}
 
 </div>
-If you use batch, a new proxy certificate will automatically be created and injected into all the VM clones which will be processing at submission time.
+During batch, a new proxy certificate will be created at submission and later injected into all the VM workers.
 
 Let's check that the VOSpace client works by uploading the output source catalogue:
 
@@ -201,19 +202,19 @@ vcp 1056213p.cat vos:[VOSpace]
 
 </div>
 
-Verify that the file is properly uploaded by pointing your browser to the [VOSpace browser interface](https://www.canfar.net/storage/list).
+Verify that the file is properly uploaded by pointing the browser to the [VOSpace browser interface](https://www.canfar.net/storage/list).
 
 #### Snapshot (save) the VM Instance
 
-Now you want to save the VM with your software installed. Return to your browser on the OpenStack dashboard.
+Now we want to save the VM with the new installed software. Return to the OpenStack dashboard on the browser.
 
-* Save the state of your VM by navigating to the **Instances** window of the dashboard. and click on the **Create Snapshot** button to the right of your VM instance's name. After selecting a meaningful name for the snapshot of the VM instance, e.g., ```image-reduction-2023-08-21```, click the **Create Snapshot** button. The VM instance will eventually be saved and listed in the VM **Images** window, and will be available next time you launch an instance of that VM image in a few minutes.
+* Save the state of the VM by navigating to the **Instances** window of the dashboard. and click on the **Create Snapshot** button to the right of the VM instance's name. After selecting a meaningful name for the snapshot of the VM instance, e.g., ```image-reduction-2023-08-21```, click the **Create Snapshot** button. The VM instance will eventually be saved and the snapshot whould be listed in the VM **Images** window. Next time, a new instance of that VM image snapshot can be launched.
 
-While the system is taking a snapshot of your VM, avoid doing anything on your VM.
+Note: while the system is taking a snapshot of the VM, avoid doing anything the VM instance.
 
-```IMPORTANT``` : if you do not create a snapshot of the VM, you will loase all of your work when the VM is deleted. Volume-based VMs do not need snapshots and will persist the files directly on a persistent disk, but Volume-based VM can not be used for batch processing.
+```IMPORTANT``` : if no snapshot of the VM, all work on the VM will be lost when the VM instance is deleted. Volume-based VMs do not need snapshots and will persist the files directly on a persistent disk, but Volume-based VM can not be used for batch processing.
 
-If you do not need batch processing, you are done. If you want to use batch, carry on.
+If batch processing is needed, carry on.
 
 
 ### Make a script to automate the  pipeline
@@ -255,7 +256,7 @@ The script will repeat the same commands as before with one image observation ID
 3. detect the sources
 4. save the resulting catalogue of detected sources to the VOSpace.
 
-Remember to substitute ```[VOSpace]``` with the VOSPace name that you requested (often this is your ```[username]```).
+Remember to substitute ```[VOSpace]``` with its name within the code snippets.
 
 #### Write a job submission file
 
@@ -292,7 +293,7 @@ We need two authorizations to run the batch jobs:
 
 In the home directory on the batch host, there is one or more `*-openrc.sh` file(s), corresponding to the OpenStack projects you belong to. 
 
-Source the OpenStack RC project file, and enter your CADC password. This sets environment variables used by OpenStack (only required once per batch host login session):
+Source the OpenStack RC project file, and enter the CADC password. This sets environment variables used by OpenStack (only required once per batch host login session):
 
 <div class="shell">
 
@@ -327,7 +328,7 @@ condor_q
 
 </div>
 
-Monitoring the queue, we should see your jobs going from idle (I) to running (R). Once no more jobs are in the queue, we can check the logs and output files `105621.*` on the batch host, and check the VOSpace browser that all 4 of the generated catalogues were properly uploaded.
+Monitoring the queue, we should see our jobs going from idle (I) to running (R). Once no more jobs are in the queue, we can check the logs and output files `105621.*` on the batch host, and check the VOSpace browser that all 4 of the generated catalogues were properly uploaded.
 
 We can also check the status of the VMs and jobs running on the cloud summarizing all users:
 
@@ -339,12 +340,11 @@ condor_q -all
 
 </div>
 
-If we do need your interactive VM instance anymore, you can terminate it from the OpenStack dashboard, by selecting the VM instance, clicking on **Delete Instances**.
-You are done!
+If access to the interactive VM instance is not needed for a while, terminate it from the OpenStack dashboard, by selecting the VM instance, clicking on **Delete Instances**.
 
 ## Extra: helpful CANFAR commands and VM maintenance
 
-Once your VM is built, the responsibility is yours to maintain and update software. You may want to run `sudo yum update` or `sudo apt dist-upgrade` to make sure you get the latest security updates from the Linux distributions.
+Once the VM is built, the responsibility is yours to maintain and update software.Running `sudo dnf update` or `sudo apt update` followed by a`sudo apt dist-upgrade` to apply the latest security updates from the Linux distributions is usually enough.
 
 On the CANFAR pre-built VMs (`canfar-ubuntu-20.04` and `canfar-rocky-8`), there are a few scripts to help out with CANFAR related activities, all of them come with a ```--help```:
 
@@ -354,5 +354,5 @@ On the CANFAR pre-built VMs (`canfar-ubuntu-20.04` and `canfar-rocky-8`), there 
 * ```canfar_create_user [user]```: create a user with a name ```[user]``` on the VM and propagate ssh public key, and give sudo access
 * ```canfar_update```: update all the CANFAR scripts and CADC clients on the VM with the latest versions.
 
-You can find all these commands on ```/usr/local/bin```, or at the [GitHub source](https://github.com/canfar/canfarproc/tree/master/worker/bin).
+All these commands reside on ```/usr/local/bin```, and can be found at the [GitHub source](https://github.com/canfar/canfarproc/tree/master/worker/bin).
 
