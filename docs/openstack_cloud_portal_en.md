@@ -27,9 +27,9 @@ Once registered, send an email to [CANFAR support](mailto:support@canfar.net) an
 
 The request will be reviewed and you will be contacted by the CANFAR team which will also take care of the registration to Digital Research Alliance Canada infrastructure.
 
-Below we include a Quick Start tutorial describing a typical workflow using the OpenStack Cloud Services.
+Below we include a tutorial describing a typical workflow using the OpenStack Cloud Services and batch with CANFAR.
 
-## Batch Quick Start
+## Batch Tutorial
 
 ### Introduction
 
@@ -101,21 +101,17 @@ The SSH public key will be injected into the VM instance under a [generic accoun
 Try to access the running VM instance:
 
 <div class="shell">
-
 {% highlight bash %}
 ssh ubuntu@[floating ip]
 {% endhighlight %}
-
 </div>
 
 Once connected, create a user on the VM with a CADC ```[username]```. Create a user with the CADC ```[username]```, with the following command:
 
 <div class="shell">
-
 {% highlight bash %}
 sudo canfar_create_user [username]
 {% endhighlight %}
-
 </div>
 
 Logout from the VM and ssh back in with ```ssh [username]@[floating ip]```.
@@ -130,12 +126,10 @@ The VM operating system has only a minimal set of packages. For this example, we
 Let's install them system wide since they are available in Ubuntu software repository, after a fresh update:
 
 <div class="shell">
-
 {% highlight bash %}
 sudo apt update -y
 sudo apt install -y source-extractor libcfitsio-bin
 {% endhighlight %}
-
 </div>
 
 #### Test the Software on the VM instance
@@ -143,11 +137,9 @@ sudo apt install -y source-extractor libcfitsio-bin
 We are now ready to do our basic pipeline. Let’s download a FITS image to the scratch space. When we instantiated the VM, we selected a flavour with an ephemeral disk. The disk was automatically mounted on ```/mnt```. We want to access the ephemeral disk as a non-root user. This simple command will create a scratch directory on `/mnt/scratch`, and give the proper permissions:
 
 <div class="shell">
-
 {% highlight bash %}
 sudo canfar_setup_scratch
 {% endhighlight %}
-
 </div>
 
 Important notes concerning the scratch space:
@@ -157,7 +149,6 @@ Important notes concerning the scratch space:
 Next, enter the scratch directory, download an astronomical image from CADC of the CFHT Megaprime there, and detect the sources with our newly installed software. Here we take the default configuration of `SExtractor` and decide to only output the positions and magnitudes of the detected sources.
 
 <div class="shell">
-
 {% highlight bash %}
 cd /mnt/scratch
 cp /usr/share/source-extractor/default* .
@@ -169,7 +160,6 @@ cadcget cadc:CFHT/1056213p.fits.fz
 funpack -D 1056213p.fits.fz
 source-extractor 1056213p.fits -CATALOG_NAME 1056213p.cat
 {% endhighlight %}
-
 </div>
 
 The image `1056213p.fits` is a Multi-Extension FITS file with 36 extensions, each containing data from one CCD from the CFHT Megacam camera. The `cadcget` command downloads the FITS image from CADC and stores it on the current directory and is already installed on the VM (`cadcdata` python module)
@@ -183,23 +173,19 @@ We only want to store the output catalogue `1056213p.cat` at a persistent, exter
 For an automated procedure to access the VOSpace, a proxy authorization must be present on the VM. One way to accomplish this is with a `.netrc` file that contains the CADC user name and password, and the command `cadc-get-cert` can obtain an *X509 Proxy Certificate* using that username/password combination without any further user interaction. The commands below will create the file and get a proxy certificate. A proxy certificate is by default valid 10 days.
 
 <div class="shell">
-
 {% highlight bash %}
 cadc_dotnetrc # only needed once to create the file
 cadc-get-cert -n # should generate a new proxy certificate
 {% endhighlight %}
-
 </div>
-During batch, a new proxy certificate will be created at submission and later injected into all the VM workers.
 
+During batch, a new proxy certificate will be created at submission and later injected into all the VM workers.
 Let's check that the VOSpace client works by uploading the output source catalogue:
 
 <div class="shell">
-
 {% highlight bash %}
 vcp 1056213p.cat vos:[VOSpace]
 {% endhighlight %}
-
 </div>
 
 Verify that the file is properly uploaded by pointing the browser to the [VOSpace browser interface](https://www.canfar.net/storage/list).
@@ -224,17 +210,14 @@ Batch jobs in CANFAR are scheduled and launched  with the [HTCondor](http://www.
 Now we want to automate the whole procedure as a batch script. ssh into the CANFAR batch cluster:
 
 <div class="shell">
-
 {% highlight bash %}
 ssh [username]@batch.canfar.net
 {% endhighlight %}
-
 </div>
 
 We need to recreate and automate the same procedure done interactively. We can simply put all the necessary command into a pipeline script. Paste the following commands into one BASH script named ```~/do_catalogue.bash```:
 
 <div class="shell">
-
 {% highlight bash %}
 #!/bin/bash
 id=$1
@@ -248,8 +231,8 @@ Y_IMAGE' > default.param
 source-extractor ${id}.fits -CATALOG_NAME ${id}.cat
 vcp ${id}.cat vos:[VOSpace]/
 {% endhighlight %}
-
 </div>
+
 The script will repeat the same commands as before with one image observation ID as an argument:
 1. download the compressed FITS file corresponding to the ID from CADC
 2. uncompress the file
@@ -263,7 +246,6 @@ Remember to substitute ```[VOSpace]``` with its name within the code snippets.
 We now want to apply this pipeline to a few images. We need to write a submission file to tell the job scheduler to launch all necessary jobs, in this case one per Megacam image. We need to transfer the `do_catalogue.bash` script to a worker VM. The worker VM will be an instance of the frozen snapshot VM image. For each given observation ID, a job will run on the worker. Let's take the following image IDs: 1056215p, 1056216p, 1056217p, and 1056218p. Paste the following text into a submission file with an editor on the batch login node:
 
 <div class="shell">
-
 {% highlight text %}
 
 executable = do_catalogue.bash
@@ -278,9 +260,7 @@ queue arguments from (
   1056217p
   1056218p
 )
-
 {% endhighlight %}
-
 </div>
 
 Let's save the submission file as `do_catalogue.sub`. Each job will execute with an output and an error file. At the end of each job, all the log files will be transferred to the directory on batch.canfar.net where the job was submitted.
@@ -296,21 +276,17 @@ In the home directory on the batch host, there is one or more `*-openrc.sh` file
 Source the OpenStack RC project file, and enter the CADC password. This sets environment variables used by OpenStack (only required once per batch host login session):
 
 <div class="shell">
-
 {% highlight bash %}
 . [project]-openrc.sh
 {% endhighlight %}
-
 </div>
 
 Now we can submit the jobs to the condor job pool with the following command:
 
 <div class="shell">
-
 {% highlight bash %}
 canfar_submit do_catalogue.sub catalogue-software-2023-08-21 c2-7.5gb-30
 {% endhighlight %}
-
 </div>
 
 where:
@@ -321,11 +297,9 @@ where:
 After submission, we can check where the jobs stand in the queue:
 
 <div class="shell">
-
 {% highlight bash %}
 condor_q
 {% endhighlight %}
-
 </div>
 
 Monitoring the queue, we should see our jobs going from idle (I) to running (R). Once no more jobs are in the queue, we can check the logs and output files `105621.*` on the batch host, and check the VOSpace browser that all 4 of the generated catalogues were properly uploaded.
@@ -333,11 +307,9 @@ Monitoring the queue, we should see our jobs going from idle (I) to running (R).
 We can also check the status of the VMs and jobs running on the cloud summarizing all users:
 
 <div class="shell">
-
 {% highlight bash %}
 condor_q -all
 {% endhighlight %}
-
 </div>
 
 If access to the interactive VM instance is not needed for a while, terminate it from the OpenStack dashboard, by selecting the VM instance, clicking on **Delete Instances**.

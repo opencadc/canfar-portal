@@ -7,10 +7,11 @@ permalink: /en/docs/science-portal/
 ---
 
 
-CANFAR offers access to a Science Platform through its portal to allow full science case to be performed remotely, including interactive analysis from the browser.
+The CANFAR portal gives access to a Science Platform, a contained solution to perform science analysis remotely, including interactive analysis from the browser.
 
-### Documentation
-Access to the CANFAR Science Platform is usually self-explainatory, the access to data and analysis is through familiar Jupyter Notebooks and legacy Desktops.
+Access to the CANFAR Science Platform is usually self-explainatory, the access is through familiar Jupyter Notebooks and Linux desktops.
+
+#### Documentation
 
 - General user documentation can be found [here](https://canfar-scienceportal.readthedocs.io/)
 - Instructions for allocation requests and usage can be found on the
