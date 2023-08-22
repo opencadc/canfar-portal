@@ -6,72 +6,45 @@ lang: en
 permalink: /en/docs/storage/
 ---
 
-## Introduction
+### Introduction
 
 VOSpace is the CANFAR storage system , an implementation of	the [Virtual Observatory Specification](http://www.ivoa.net/Documents/VOSpace/).
 It is intended to be used for storing the output of the CANFAR processing system and also for sharing files between members of a collaboration.
-If the data you want to process is not already on a CADC archive, you can stage it on a VOSpace for further processing. Files in VOSpace are mirrored in four physical locations, so they are secure against disk failure.
+If the data to be processed is not already on a CADC archive,  it can be staged on a VOSpace for faster access. Files in VOSpace are also mirrored in four physical locations, so they are secure against disk failure, and designed for long term.
 
-You will need a CADC Account.  Please [register](https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/auth/request.html) for one if you haven't already.
+Access to VOSpace requires a CADC account ([registration](https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/auth/request.html)).
 
 There are two ways to interact with VOspace. The first is with your browser via the [web user interface](https://www.canfar.net/storage/vault/list).
 The web interface is familiar for most people to use and interactive.
-To access your VOSpace in scripts, the Python based [vos](https://pypi.python.org/pypi/vos) modules and command line clients are available.
+To access a VOSpace in scripts, the Python based [vos](https://pypi.python.org/pypi/vos) module and command line clients are available.
 Some users might also find the VOSpace filesystem [vofs](https://pypi.python.org/pypi/vofs), the FS view is based on FUSE and not recommended for serious data processing, but does provide a convenient interactive interface for exploring a respository.
 
-## The web user interface
+### The web user interface
 
 - [https://www.canfar.net/storage/vault/list](https://www.canfar.net/storage/vault/list)
 
-## The *vos* Python module and command line client
+### The *vos* Python module and command line client
 
 The VOspace can also be accessed via some commands on a terminal or a script. They are part of the [vos](https://github.com/canfar/vos) command line client.
 
-### Installation
+#### Installation
 
-Below are the installation steps.  (NOTE:  `vos` is installed on the CANFAR batch host)
-
-Steps:
-- Ensure Python is up-to-date
-- Install the `vos` module using `pip` or `easy_install`
-
-
-#### Python
-
-For Python we recommend that users download and install the [Anaconda](https://www.anaconda.com/download/#download) Python distribution,  and the [astroconda](https://astroconda.readthedocs.io/en/latest/#) channel is particularly useful.  The `vos` package has been extensively tested with this python distribution.  Regardless, you will need a least Python 2.7.2, `vos` also works with Python-3.4 and higher.
-
-#### pip / easy_install
-
-The `vos` command line client is part of [PyPi](https://pypi.python.org/pypi/vos).
-PyPI packages can be installed using either `pip` (recommend) or `easy_install` depending on your Python distribution.
-
-If you have a recent distribution of Python (eg. anaconda) installed the `pip` tool is the most direct way to install `vos`.
+Below are the installation steps.
+- Ensure Python is up-to-date (at least 3.7)
+- Install the `vos` module using `pip`, see [PyPi](https://pypi.python.org/pypi/vos).
 
 <div class="shell">
-
 {% highlight bash %}
-# anaconda install
 pip install -U vos
 
-# If you didn't use anaconda a user install is required (you still need pip):
+# or if you didn't use conda or a user install is required (you still need pip):
 pip install --user -U vos
 # You might also need to update your path:
 export PATH="${HOME}/.local/bin:${PATH}"
 {% endhighlight %}
 </div>
 
-If you don't have `pip` installed with your Python distribution you can attempt to use `easy_install`:
-
-<div class="shell">
-
-{% highlight bash %}
-sudo easy_install -U vos
-{% endhighlight %}
-
-</div>
-
-
-### Using the client command line tools (recommended)
+#### Using the client command line tools (recommended)
 
 Try the following commands, substituting your CANFAR VOSpace in for VOSPACE (most CANFAR users have VOSpace that is the same name as their CANFAR user name. There are also project VOSpaces):
 
@@ -131,7 +104,7 @@ pydoc vos.comamnds
 {% endhighlight %}
 </div>
 
-### Using the **vos** python module directly
+#### Using the **vos** python module API
 
 There is documentation built into the libary `pydoc vos`.  Here we provide a very basic example usage.
 
@@ -145,21 +118,20 @@ python
 </div>
 
 
-## The VOSpace FUSE based file system
+### The VOSpace FUSE based file system
 
 VOSpace can also be accessed as a remote filesystem using the [vofs](https://pypi.python.org/pypi/vofs) python module.
 This technique uses a [FUSE](http://en.wikipedia.org/wiki/Filesystem_in_Userspace) layer between file-system actions and the VOSpace storage system. Using **vofs** makes your VOSpace appear like a regular filesystem.
 
 **vofs is not recommended for batch processing or i/o heavy applications**
 
-### Installation
+#### Installation
 
  - Follow the instructions for installing `vos`.  Then follow the instructions below.
- - Install the FUSE system extention (seperate instructions for Linux and OS-X)
  - install the `vofs` python module.
 
-#### FUSE
-##### Linux
+##### FUSE
+###### Linux
 
 * On some ditros (RHEL 5, CentOS 5, Scientific Linux 5) you may need to add the fuse library:
 
@@ -171,7 +143,7 @@ sudo yum install fuse fuse-devel
 
 </div>
 
-* On all distros you will also need to add your account to the 'fuse' group of users, to be allowed to make filesystem mounts work:
+* On all distros you will also need to add your account to the `fuse` group of users, to be allowed to make filesystem mounts work:
 
 <div class="shell">
 
@@ -190,18 +162,14 @@ sudo /usr/sbin/usermod -a  -G fuse `whoami`
 
 The `vofs` python module is dtributed via [PyPi](https://pypi.python.org/pypi/vofs).
 
-
-
 <div class="shell">
 {% highlight bash %}
-# If you have an anaconda install
 pip install -U vofs
 {% endhighlight %}
 </div>
 
-
 <div class="shell">
-# If you don't have anaconda (but you still need pip):
+# or user based
 {% highlight bash %}
 pip install --user -U vofs
 # You might need to add the install area to your path
@@ -231,7 +199,6 @@ export DYLD_FALLBACK_LIBRARY_PATH=/usr/local/lib
 
 </div>
 
-
 Now looking in `/tmp/vospace` you should see a listing of all available VOSpaces that you have read access.
 
 * List the root of vospace
@@ -252,7 +219,6 @@ umount /tmp/vospace          # OS-X
 {% endhighlight %}
 
 </div>
-
 
 * Mount a specific VOSpace:
 
@@ -281,34 +247,34 @@ mountvofs --help
 
 </div>
 
+### Retrieving CANFAR X509 certificates
 
-### Retrieving your CANFAR X509 certificates
-
-To access a VOSpace, the command line client needs a certificate. These certificates are created for you when you request an account, and you can get a short-lived proxy of this certificate to access your data with the `cadc-get-cert` command line, distributed with the cadc-utils library that was automatically installed as part of the `vos` installation process above.
+To access a VOSpace, the command line client needs a certificate. These certificates are created when a CADC account is created, and a short-lived proxy of this certificate can be obtained. One easy way is with the `cadc-get-cert` command line, distributed with the `cadcutils`  library that was automatically installed as part of the `vos` installation process above.
 
 <div class="shell">
 
 {% highlight bash %}
-cadc-get-cert
+cadc-get-cert -u USER
 {% endhighlight %}
 
 </div>
 
-### Using on your batch processing VM
+### Using vos with batch processing VM
 
-In batch processing you might require that the cadcproxy certificate is available on your batch VM.  There are two approaches:
+In batch processing, the CADC proxy certificate will be transferred automatically to the batch VMs, ensuring the certificate is valid at submission time. 
+If this does not happen, there are two approaches:
 
 #### Secure but slightly complicated
 
-- On the CANFAR batch submission host, batch.canfar.net, run the command cadc-get-cert.
+- On the CANFAR batch submission host, batch.canfar.net, run the command `cadc-get-cert`.
 
 <div class="shell">
  {% highlight bash %}
-cadc-get-cert
+cadc-get-cert -u USER
 {% endhighlight %}
 </div>
 
-- Copy the file .ssl/cadcproxy.pem to the directory where you are submitting your jobs from.
+- Copy the file `$HOME/.ssl/cadcproxy.pem` to the directory where you are submitting your jobs from.
 
 <div class="shell">
  {% highlight bash %}
@@ -317,14 +283,14 @@ cp ${HOME}/.ssl/cadcproxy.pem .
 </div>
 
 
-- Add cadcproxy.pem to the list of files to transfer when the job executes (this is the done by adding these lines your submission file).
+- Add cadcproxy.pem to the list of files to transfer when the job executes (this is the done by adding these lines the submission file).
 
 <div class="shell">
 should_transfer_files = YES
 transfer_input_files = cadcproxy.pem
 </div>
 
- - Add this line to the start of your batch script
+ - Add this line to the start of the batch script
 
  <div class="shell">
  {% highlight bash %}
@@ -335,8 +301,8 @@ mv cadcproxy.pem ${HOME}/.ssl/
 
 #### Insecure but slight less complicated
 
-Use the cadc-get-cert script at the start of every job.  To avoid cadc-get-cert from
-asking for your CADC username/password, add a `$HOME/.netrc` file containing these lines:
+Use the `cadc-get-cert` script at the start of every job.  To avoid `cadc-get-cert` from
+asking for a password, ensures there is a valid `$HOME/.netrc` file on the snapshotted VM, containing these lines:
 
 <div class="shell">
 {% highlight bash %}
@@ -349,6 +315,3 @@ chmod 600 $HOME/.netrc
 </div>
 
 *WARNING: this is not a fully secure solution.*
-
-
-
