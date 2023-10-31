@@ -97,9 +97,6 @@ layout: default
           <a href="https://github.com/opencadc" class="social-link pl-sm-1" aria-label="Center Align">
             <i class="fab fa-github fa-3x" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="See the OpenCADC GitHub page"></i>
           </a>
-          <a href="https://twitter.com/astro_canfar" class="social-link" aria-label="Center Align">
-            <i class="fab fa-twitter fa-3x" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="See the latest CANFAR tweets"></i>
-          </a>
         </div>
       </div>
       <div class="col-3 col-md">
