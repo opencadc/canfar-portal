@@ -20,7 +20,6 @@ env:
 baseurl: ''
 future: true
 github_url: 'https://github.com/opencadc/canfar-portal.git'
-twitter_url: 'https://twitter.com/astro_canfar'
 repository: 'canfar/canfar.github.io'
 exclude:
     - node_modules
