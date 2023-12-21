@@ -62,7 +62,12 @@
         $messageContainer.show()
       }
 
-      var frameIDTypeDictionary = { 'X': 9, 'Y': 8 }
+      // The XY ID doesn't appear to actually show up anywhere, but leaving it here
+      // in case this page is used elsewhere.
+      // jenkinsd 2023.12.21
+      //
+      var frameIDTypeDictionary = { 'Y': 8 }
+      
       var query = window.location.search.replace('?', '')
       var queryItems = query.split('&')
 
