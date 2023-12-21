@@ -1,111 +1,118 @@
 <html>
+  <head>
+    <title>SUBARU Download Request</title>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+  </head>
 
-<head>
-  <title>SUBARU Download Request</title>
-  <meta http-equiv="pragma" content="no-cache">
-  <meta http-equiv="cache-control" content="no-cache">
-  <meta http-equiv="expires" content="0">
+  <body>
+    <main class="container">
+      <div id="message_container" style="display: none;">
+        <p><em id="message_en" lang="en" class="message"></em></p>
+        <p><em id="message_fr" lang="fr" class="message"></em></p>
+        <br />
+      </div>
+      <form action="https://smoka.nao.ac.jp/datarequest" name="datarequest_form" id="smoka_form" method="POST" style="display: none;">
+        <input type="hidden" name="action" value="Datarequest (for 1-100)" />
+        <input type="hidden" name="search_type" value />
+        <!-- Script below will add inputs to the form. -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </main>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
-</head>
-
-<body>
-  <main class="container">
-    <div id="message_container" style="display: none;">
-      <em id="message_en" lang="en" class="message"></em>
-      <br />
-      <em id="message_fr" lang="fr" class="message"></em>
-    </div>
-    <form action="https://smoka.nao.ac.jp/datarequest" name="datarequest_form" id="smoka_form" method="POST" style="display: none;">
-      <input type="hidden" name="action" value="Datarequest (for 1-100)" />
-      <input type="hidden" name="search_type" value />
-      <!-- Script below will add inputs to the form. -->
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-
-  </main>
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-  <script type="application/javascript">
-    var messageDictionary = {
-      en: {
-        submission_success: 'Submitting your request to SUBARU...',
-        bad_frameinfo: 'The frameinfo parameter needs to be in the format <YYYY-MM-DD>/<FRAMEID>',
-        input_missing: 'Request this page with ?frameinfo=<YYYY-MM-DD>/<FRAMEID>'
-      },
-      fr: {
-        submission_success: 'Soumettre votre demande à SUBARU...',
-        bad_frameinfo: 'Le paramètre frameinfo doit être au format <YYYY-MM-DD>/<FRAMEID>',
-        input_missing: 'Demander cette page avec ?frameinfo=<YYYY-MM-DD>/<FRAMEID>'
-      }
-    }
-
-    $(document).ready(function () {
-      var $form = $("#smoka_form")
-      var $messageContainer = $("#message_container")
-
-      function appendInput(val) {
-        var $input = $('<input type="hidden" name="frameinfo" />').appendTo($form)
-        $input.val(val)
-      }
-
-      function setMessage(key) {
-        $messageContainer.find('.message').each(function (index, item) {
-          var $item = $(item)
-          var lang = $item.attr('lang')
-          $item.text(messageDictionary[lang][key])
-        })
-        $messageContainer.show()
+    <script type="application/javascript">
+      const messageDictionary = {
+        en: {
+          submission_success: 'Submitting your request to SUBARU...',
+          bad_frameinfo: 'The frameinfo parameter needs to be in the format <YYYY-MM-DD>/<FRAMEID>',
+          input_missing: 'Request this page with ?frameinfo=<YYYY-MM-DD>/<FRAMEID>'
+        },
+        fr: {
+          submission_success: 'Soumettre votre demande &agrave; SUBARU...',
+          bad_frameinfo: 'Le param&egrave;tre frameinfo doit &ecirc;tre au format <YYYY-MM-DD>/<FRAMEID>',
+          input_missing: 'Demander cette page avec ?frameinfo=<YYYY-MM-DD>/<FRAMEID>'
+        }
       }
 
       // The XY ID doesn't appear to actually show up anywhere, but leaving it here
       // in case this page is used elsewhere.
       // jenkinsd 2023.12.21
       //
-      var frameIDTypeDictionary = { 'Y': 8 }
-      
-      var query = window.location.search.replace('?', '')
-      var queryItems = query.split('&')
+      const frameIDTypeDictionary = { 'Y': 8 }
 
-      for (var i = 0, ql = queryItems.length; i < ql; i++) {
-        var nextItem = queryItems[i].split('=')
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('smoka_form')
+        const messageContainer = document.getElementById('message_container')
+        const queryItems = new URLSearchParams(window.location.search)
+        const debugFlag = queryItems.get('debug') === 'true'
 
-        if ((nextItem.length === 2) && (nextItem[0] === 'frameinfo')) {
-          var paramItems = decodeURIComponent(nextItem[1]).split('/')
+        if (debugFlag === true) {
+          const header1 = document.createElement('h1')
+          header1.textContent = 'DEBUG OUTPUT - NOT SUBMITTING'
+
+          for (let m of document.getElementsByTagName('main')) {
+            m.appendChild(header1)
+          }
+        }
+        
+        function appendInput(val) {
+          const hiddenFrameInfo = document.createElement('input')
+          hiddenFrameInfo.setAttribute('type', 'hidden')
+          hiddenFrameInfo.setAttribute('name', 'frameinfo')
+          hiddenFrameInfo.value = val
+
+          form.appendChild(hiddenFrameInfo)
+        }
+
+        function setMessage(key) {
+          for (let messageEM of document.getElementsByClassName('message')) {
+            const lang = messageEM.getAttribute('lang')
+            messageEM.innerHTML = messageDictionary[lang][key]
+          }
+
+          messageContainer.style.display = 'block'
+        }
+
+        for (let queryParam of queryItems.getAll('frameinfo')) {
+          const paramItems = decodeURIComponent(queryParam).split('/')
 
           if (paramItems.length === 2) {
-            var date = paramItems[0]
-            var frameIDDesc = paramItems[1]
-            var frameIDType = frameIDDesc.slice(-1) // Last character
-            var maxIndex = frameIDTypeDictionary[frameIDType]
+            const date = paramItems[0]
+            const frameIDDesc = paramItems[1]
+            const frameIDType = frameIDDesc.slice(-1) // Last character
+            const maxIndex = frameIDTypeDictionary[frameIDType]
 
             // May not end in one of the dictionary values.
             if (maxIndex) {
-              for (var j = 0; j <= maxIndex; j++) {
-                var s = frameIDDesc
-                appendInput(decodeURIComponent(s.replace(frameIDType, j)) + ' ' + date)
+              for (let j = 0; j <= maxIndex; j++) {
+                appendInput(`${decodeURIComponent(frameIDDesc.replace(frameIDType, j))} ${date}`)
               }
             } else {
-              appendInput(frameIDDesc + ' ' + date)
+              appendInput(`${frameIDDesc} ${date}`)
             }
           } else {
             setMessage('bad_frameinfo')
           }
         }
-      }
 
-      if ($form.find('input[name="frameinfo"]').length > 0) {
-        setMessage('submission_success')
-        $form.submit()
-      } else {
-        setMessage('input_missing')
-      }
-    })
-  </script>
-</body>
+        const frameInfoInputs = document.getElementsByTagName('input')
 
+        if (frameInfoInputs.length > 0) {
+          setMessage('submission_success')
+          if (debugFlag === true) {
+            for (let input of frameInfoInputs) {
+              const nextDebugInput = document.createElement('p')
+              nextDebugInput.textContent = input.value
+              messageContainer.appendChild(nextDebugInput)
+            }
+          } else {
+            form.submit()
+          }
+        } else {
+          setMessage('input_missing')
+        }
+      })
+    </script>
+  </body>
 </html>
