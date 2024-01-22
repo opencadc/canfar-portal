@@ -95,7 +95,10 @@ layout: default
         <h5 hidden>Resources</h5>
         <div class="social-link-toolbar" role="toolbar">
           <a href="https://github.com/opencadc" class="social-link pl-sm-1" aria-label="Center Align">
-            <i class="fab fa-github fa-3x" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="See the OpenCADC GitHub page"></i>
+            <i class="fab fa-brands fa-github fa-3x" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="See the OpenCADC GitHub page"></i>
+          </a>
+          <a href="https://discord.gg/vcCQ8QBvBa" class="social-link pl-sm-1" aria-label="Center Align">
+            <i class="fab fa-brands fa-discord fa-3x" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Join the CANFAR Discord"></i>
           </a>
         </div>
       </div>
