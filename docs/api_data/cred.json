@@ -146,7 +146,7 @@
                 ]
             }
         },
-        "/cred/priv/{idType}/{id}": {
+        "/cred/generate/{idType}/{id}": {
             "get": {
                 "description": "Get a proxy certificate for a particular user or for the authenticated user making the call.  For a proxy certificate to be created, the user must have delegated their certificate first.\n",
                 "tags": [
