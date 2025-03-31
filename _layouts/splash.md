@@ -75,11 +75,22 @@ layout: default
                 </div>
               </div>
             </div>
+            <div class="row text-center mb-3">
+            <div class="mx-1 col">
+                <a href="/rafts" class="text-secondary">
+                  <img class="service-link-image" src="/images/RAFTSIcon.png" alt="rafts" data-toggle="tooltip" data-placement="top" title="Research Announcements for The
+Solar System">
+                </a>
+                <div>
+                  <span>RAFTS</span>
+                </div>
+              </div>
+            </div>
+            </div>
            </div>
         </div>
       </div>
     </div>
-  </div>
   <footer class="my-md-5 pt-md-3 border-top container">
     <div class="row">
       <small class="d-block mb-3 text-muted col-md">&copy; 2022-2023</small>
