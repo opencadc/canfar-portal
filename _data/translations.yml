@@ -40,28 +40,28 @@ en:
     link: '/register'
   docs:
     name: 'Documentation'
-    link: '/docs'
+    link: 'https://www.opencadc.org/canfar/latest/'
     overview:
       name: 'Overview'
-      link: '/overview/'
+      link: '/docs/overview/'
     openstack_cloud_portal:
       name: 'Cloud Services'
-      link: '/openstack_cloud_portal/'
+      link: '/docs/openstack_cloud_portal/'
     digital_object_identifiers:
       name: 'Data Publication'
-      link: '/digital_object_identifiers/'
+      link: '/docs/digital_object_identifiers/'
     storage:
       name: 'Storage Management'
-      link: '/storage/'
+      link: '/docs/storage/'
     group_management:
       name: 'Group Management'
-      link: '/group_management/'
+      link: '/docs/group_management/'
     caom_query_service:
       name: 'CADC Search'
       link: 'https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/'
     science_portal:
       name: 'Science Portal'
-      link: '/science-portal/'
+      link: '/docs/science_portal/'
   about:
     name: 'About'
     link: '/about'

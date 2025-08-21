@@ -82,13 +82,14 @@ layout: default
   </div>
   <footer class="my-md-5 pt-md-3 border-top container">
     <div class="row">
-      <small class="d-block mb-3 text-muted col-md">&copy; 2022-2023</small>
+      <small class="d-block mb-3 text-muted col-md">&copy; 2022-{{ 'now' | date: "%Y" }}</small>
     </div>
     <div class="row">
       <div class="col-3 col-md">
         <h5>Download</h5>
         <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="https://pypi.org/search/?q=caom2%7Ccadc">Python applications</a></li>
+          <li><a class="text-muted" href="https://www.opencadc.org/canfar/latest/client/home/">Science Platform Client</a></li>
+          <li><a class="text-muted" href="https://www.opencadc.org/canfar/latest/platform/guides/storage/vospace-api/">VOSpace Client</a></li>
         </ul>
       </div>
       <div class="col-3 col-md">
@@ -107,15 +108,6 @@ layout: default
         <ul class="list-unstyled text-small">
           <li><a class="text-muted" href="{{ page_lang_link }}{{ t['about'].link }}{{ t['about']['organization'].link }}">CANFAR</a></li>
           <li><a class="text-muted" href="about/terms-of-reference">Terms</a></li>
-        </ul>
-      </div>
-      <div class="col-3 col-md">
-        <h5>Acknowledgements</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="https://www.asc-csa.gc.ca/eng/">Canadian Space Agency</a></li>
-          <li><a class="text-muted" href="https://nrc.canada.ca/en/">National Research Council Canada</a></li>
-          <li><a class="text-muted" href="https://www.canarie.ca/language/?lang_default=en">Canarie</a></li>
-          <li><a class="text-muted" href="https://alliancecan.ca/">Digital Research Alliance Canada</a></li>
         </ul>
       </div>
     </div>
