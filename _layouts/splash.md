@@ -31,7 +31,7 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="" target="_blank" id="gmui_link" class="text-secondary">
+              <a href="{{ cadc_url }}/en/groups/" target="_blank" id="gmui_link" class="text-secondary">
                 <i class="fas fa-users service-link" data-toggle="tooltip" data-placement="top" title="Manage your CADC groups"></i>
               </a>
               <div>
