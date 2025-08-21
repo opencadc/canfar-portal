@@ -11,17 +11,16 @@ layout: default
 {% assign form_error_message = "All fields are required" %}
 {% assign successURI = "/en/register/requestSubmitted.html" %}
 
-<div id="stars"></div>
 <div class="container">
-  <div class="py-3 pb-md-5">
+  <div class="py-3">
     <div class="row">
       <div class="col-md-12 order-1 mb-4 text-center">
-        <h2 class="mt-5 h4 text-left font-weight-light">Canadian Advanced Network for Astronomical Research</h2>
+        <h1 class="mt-3 text-left font-weight-light">Canadian Advanced Network for Astronomical Research</h1>
         <div role="toolbar" aria-label="Action button toolbar" class="pt-2 text-left">
-          <a href="docs/overview/" class="btn btn-outline-info mr-3 font-weight-bold">Check what CANFAR offers</a>
+          <a href="https://www.opencadc.org/canfar/latest/platform/home/" class="btn btn-outline-info mr-3 font-weight-bold">Check what CANFAR offers</a>
         </div>
         <br />
-        <div class="mt-md-5">
+        <div class="mt-md-5 border-top border-bottom border-info p-4">
           <div class="row text-center mb-3">
             <div class="mx-1 col">
               <a href="{{ t['services']['storage'].link }}" class="text-secondary">
@@ -78,9 +77,14 @@ layout: default
            </div>
         </div>
       </div>
+      <div class="row mt-5">
+        <h3 class="h4">Acknowledgement</h3>
+        <p>If you use this software for your research, please include an acknowledgement in your publications. This helps us secure continued funding and improve the software.</p>
+        <a href="https://www.opencadc.org/canfar/latest/about/acknowledgement/">Acknowledgement Guidelines</a>
+      </div>
     </div>
   </div>
-  <footer class="my-md-5 pt-md-3 border-top container">
+  <footer class="my-md-3 pt-md-3 border-top container">
     <div class="row">
       <small class="d-block mb-3 text-muted col-md">&copy; 2022-{{ 'now' | date: "%Y" }}</small>
     </div>
@@ -104,10 +108,10 @@ layout: default
         </div>
       </div>
       <div class="col-3 col-md">
-        <h5>About</h5>
+        <h5>{{ t['about'].name }}</h5>
         <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="{{ page_lang_link }}{{ t['about'].link }}{{ t['about']['organization'].link }}">CANFAR</a></li>
-          <li><a class="text-muted" href="about/terms-of-reference">Terms</a></li>
+          <li><a class="text-muted" href="{{ t['organization'].link }}">{{ t['organization'].name }}</a></li>
+          <li><a class="text-muted" href="{{ t['terms'].link }}">{{ t['terms'].name }}</a></li>
         </ul>
       </div>
     </div>
