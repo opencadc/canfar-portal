@@ -11,17 +11,16 @@ layout: default
 {% assign form_error_message = "All fields are required" %}
 {% assign successURI = "/en/register/requestSubmitted.html" %}
 
-<div id="stars"></div>
 <div class="container">
-  <div class="py-3 pb-md-5">
+  <div class="py-3">
     <div class="row">
       <div class="col-md-12 order-1 mb-4 text-center">
-        <h2 class="mt-5 h4 text-left font-weight-light">Canadian Advanced Network for Astronomical Research</h2>
+        <h1 class="mt-3 text-left font-weight-light">Canadian Advanced Network for Astronomical Research</h1>
         <div role="toolbar" aria-label="Action button toolbar" class="pt-2 text-left">
-          <a href="docs/overview/" class="btn btn-outline-info mr-3 font-weight-bold">Check what CANFAR offers</a>
+          <a href="https://www.opencadc.org/canfar/latest/platform/home/" class="btn btn-outline-info mr-3 font-weight-bold">Check what CANFAR offers</a>
         </div>
         <br />
-        <div class="mt-md-5">
+        <div class="mt-md-5 border-top border-bottom border-info p-4">
           <div class="row text-center mb-3">
             <div class="mx-1 col">
               <a href="{{ t['services']['storage'].link }}" class="text-secondary">
@@ -32,7 +31,7 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="" target="_blank" id="gmui_link" class="text-secondary">
+              <a href="{{ cadc_url }}/en/groups/" target="_blank" id="gmui_link" class="text-secondary">
                 <i class="fas fa-users service-link" data-toggle="tooltip" data-placement="top" title="Manage your CADC groups"></i>
               </a>
               <div>
@@ -78,17 +77,23 @@ layout: default
            </div>
         </div>
       </div>
+      <div class="row mt-5">
+        <h3 class="h4">Acknowledgement</h3>
+        <p>If you use this software for your research, please include an acknowledgement in your publications. This helps us secure continued funding and improve the software.</p>
+        <a href="https://www.opencadc.org/canfar/latest/about/acknowledgement/">Acknowledgement Guidelines</a>
+      </div>
     </div>
   </div>
-  <footer class="my-md-5 pt-md-3 border-top container">
+  <footer class="my-md-3 pt-md-3 border-top container">
     <div class="row">
-      <small class="d-block mb-3 text-muted col-md">&copy; 2022-2023</small>
+      <small class="d-block mb-3 text-muted col-md">&copy; 2022-{{ 'now' | date: "%Y" }}</small>
     </div>
     <div class="row">
       <div class="col-3 col-md">
         <h5>Download</h5>
         <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="https://pypi.org/search/?q=caom2%7Ccadc">Python applications</a></li>
+          <li><a class="text-muted" href="https://www.opencadc.org/canfar/latest/client/home/">Science Platform Client</a></li>
+          <li><a class="text-muted" href="https://www.opencadc.org/canfar/latest/platform/guides/storage/vospace-api/">VOSpace Client</a></li>
         </ul>
       </div>
       <div class="col-3 col-md">
@@ -103,19 +108,10 @@ layout: default
         </div>
       </div>
       <div class="col-3 col-md">
-        <h5>About</h5>
+        <h5>{{ t['about'].name }}</h5>
         <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="{{ page_lang_link }}{{ t['about'].link }}{{ t['about']['organization'].link }}">CANFAR</a></li>
-          <li><a class="text-muted" href="about/terms-of-reference">Terms</a></li>
-        </ul>
-      </div>
-      <div class="col-3 col-md">
-        <h5>Acknowledgements</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="https://www.asc-csa.gc.ca/eng/">Canadian Space Agency</a></li>
-          <li><a class="text-muted" href="https://nrc.canada.ca/en/">National Research Council Canada</a></li>
-          <li><a class="text-muted" href="https://www.canarie.ca/language/?lang_default=en">Canarie</a></li>
-          <li><a class="text-muted" href="https://alliancecan.ca/">Digital Research Alliance Canada</a></li>
+          <li><a class="text-muted" href="{{ t['organization'].link }}">{{ t['organization'].name }}</a></li>
+          <li><a class="text-muted" href="{{ t['terms'].link }}">{{ t['terms'].name }}</a></li>
         </ul>
       </div>
     </div>

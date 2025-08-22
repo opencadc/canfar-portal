@@ -40,49 +40,16 @@ en:
     link: '/register'
   docs:
     name: 'Documentation'
-    link: '/docs'
-    overview:
-      name: 'Overview'
-      link: '/overview/'
-    openstack_cloud_portal:
-      name: 'Cloud Services'
-      link: '/openstack_cloud_portal/'
-    digital_object_identifiers:
-      name: 'Data Publication'
-      link: '/digital_object_identifiers/'
-    storage:
-      name: 'Storage Management'
-      link: '/storage/'
-    group_management:
-      name: 'Group Management'
-      link: '/group_management/'
-    caom_query_service:
-      name: 'CADC Search'
-      link: 'https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/'
-    science_portal:
-      name: 'Science Portal'
-      link: '/science-portal/'
+    link: 'https://www.opencadc.org/canfar/latest/'
   about:
     name: 'About'
-    link: '/about'
-    organization:
-      name: 'Organization'
-      link: '/organization/'
-    terms_of_reference:
-      name: 'Terms of Reference'
-      link: '/terms-of-reference/'
-    governance:
-      name: 'Governance'
-      link: '/governance/'
-    processes:
-      name: 'Processes'
-      link: '/processes/'
-    partners:
-      name: 'Partners'
-      link: '/partners/'
-    acknowledgement:
-      name: 'Acknowledgement'
-      link: '/acknowledgement'
+    link: 'https://www.opencadc.org/canfar/latest/about/home/'
+  organization:
+    name: 'CANFAR Organization'
+    link: 'https://www.opencadc.org/canfar/latest/about/home/'
+  terms:
+    name: 'Terms of Reference'
+    link: 'https://www.opencadc.org/canfar/latest/about/terms/'
   nodes:
     name: 'Nodes'
     link: '/nodes'

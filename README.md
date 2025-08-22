@@ -122,7 +122,3 @@ For example, the `Services` dropdown menu is made up of first level and second l
 Which will look in the [translations.yml](./tree/gh-pages/_data/translations.yml) file for:
 
 `%PAGE_LANGUAGE%/services` to get the name to display (`Service`), then, for each item, will look for `%PAGE_LANGUAGE%/services/%ITEM_PATH%` to get their links and names to display.
-
-#### [showcases.yml](./tree/gh-pages/_data/showcases.yml)
-
-This is just a configurable way to set the looping showcase images on the front page.
