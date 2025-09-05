@@ -111,14 +111,31 @@
 <script type="text/javascript" src="/cadcJS/javascript/cadc.registry-client.js"></script>
 <script type="text/javascript" src="/canfar/javascript/cadc.redirect.util.js"></script>
 
-<div class="card bg-warning">
-    <div class="card-header"></div>
-    <div class="card-body">
-        <h5 class="card-title">Service Notice</h5>
-        <h5 class="card-title">Subject: CADC/CANFAR authentication downtime — Saturday, Sept 13 (12:00–8:00 pm PT)</h5>
-        <p class="card-text">Essential network maintenance in Victoria will take place on Saturday, Sept 13, from 12:00–8:00 pm Pacific Time. During this window, any CADC/CANFAR service that requires authentication will be unavailable (e.g., logins to portals, token issuance, authenticated APIs/Python Client/CLI jobs). Please plan accordingly and avoid starting jobs that need credentials during the outage. Other service access may also be affected. Thank you for your patience.</p>
+
+<div class="card bg-warning" style="position: relative;">
+    <div
+            style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; padding: 1rem;
+           background-color: #00000090; z-index: 9999; color: #ffffff;
+           display: flex; justify-content: center; align-items: flex-start; overflow: auto;">
+        <div class="card-header" style="display: none"></div>
+        <div class="card-body" role="alert" aria-live="assertive"
+             style="margin-top: 300px; width: 60%; max-width: 900px;
+                background-color: #b91c1c; color: #ffffff; padding: 1.25rem;
+                border: 3px solid #ffffff; border-radius: 12px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.35); line-height: 1.5;">
+            <h3 class="card-title" style="color: #ffffff; margin: 0 0 0.25rem 0;">Service Notice</h3>
+            <h4 class="card-title" style="color: #ffffff; margin: 0 0 0.75rem 0;">
+                Subject: CADC/CANFAR is down — Saturday, Sept 13 (12:00–8:00 pm PT)
+            </h4>
+            <p class="card-text" style="margin: 0;">
+                Scheduled maintenance in Victoria, BC is taking place today, Saturday, Sept 13, from 12:00–8:00 pm Pacific Time.
+                During this window, CADC and CANFAR services are unavailable. Please avoid starting new jobs or workflows until the maintenance window ends. We’ll post an update when services are restored.
+            </p>
+            <h6 style="text-align: center; margin-top: 10px;">Thank you for your patience.</h6>
+        </div>
     </div>
 </div>
+
 
 <script>
     $(document).ready(function() {
