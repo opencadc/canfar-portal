@@ -77,10 +77,9 @@ layout: default
            </div>
         </div>
       </div>
-      <div class="row mt-5">
-        <h3 class="h4">Acknowledgement</h3>
-        <p>If you use this software for your research, please include an acknowledgement in your publications. This helps us secure continued funding and improve the software.</p>
-        <a href="https://www.opencadc.org/canfar/latest/about/acknowledgement/">Acknowledgement Guidelines</a>
+      <div class="row mt-5 p-2">
+        <h3 class="h4" style="font-size: 14px;">IF YOU USE CANFAR, ADD AN ACKNOWLEDGEMENT TO YOUR PAPERS, THESES, AND OTHER RESEARCH OUTPUTS.</h3>
+        <p style="font-family: 'Roboto Mono', monospace; font-size: 12px; font-style: italic;">The authors acknowledge the use of the Canadian Advanced Network for Astronomy Research (CANFAR) Science Platform operated by the Canadian Astronomy Data Center (CADC) and the Digital Research Alliance of Canada (DRAC), with support from the National Research Council of Canada (NRC), the Canadian Space Agency (CSA), CANARIE, and the Canadian Foundation for Innovation (CFI).</p>
       </div>
     </div>
   </div>
