@@ -4,7 +4,7 @@ permalink: /news/:year/:month/:day/:title/
 relative_permalinks: false
 markdown: kramdown
 highlighter: rouge
-site_env: prod
+site_env: rc
 env:
     demo:
         cadc: 'https://demo.cadc-ccda.hia-iha.nrc-cnrc.gc.ca'
@@ -24,4 +24,6 @@ repository: 'canfar/canfar.github.io'
 exclude:
     - node_modules
     - vendor
+outage:
+    enabled: false
 

@@ -111,7 +111,7 @@
 <script type="text/javascript" src="/cadcJS/javascript/cadc.registry-client.js"></script>
 <script type="text/javascript" src="/canfar/javascript/cadc.redirect.util.js"></script>
 
-
+{% if site.outage.enabled %}
 <div class="card bg-warning" style="position: relative;">
     <div
             style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; padding: 1rem;
@@ -125,17 +125,17 @@
                 box-shadow: 0 10px 25px rgba(0,0,0,0.35); line-height: 1.5;">
             <h3 class="card-title" style="color: #ffffff; margin: 0 0 0.25rem 0;">Service Notice</h3>
             <h4 class="card-title" style="color: #ffffff; margin: 0 0 0.75rem 0;">
-                Subject: CADC/CANFAR is down — Saturday, Sept 13 (12:00–8:00 pm PT)
+                Subject: CADC/CANFAR is down — Saturday, Sept 13 (12:00-8:00 pm PT)
             </h4>
             <p class="card-text" style="margin: 0;">
-                Scheduled maintenance in Victoria, BC is taking place today, Saturday, Sept 13, from 12:00–8:00 pm Pacific Time.
-                During this window, CADC and CANFAR services are unavailable. Please avoid starting new jobs or workflows until the maintenance window ends. We’ll post an update when services are restored.
+                Scheduled maintenance in Victoria, BC is taking place today, Saturday, Sept 13, from 12:00-8:00 pm Pacific Time.
+                During this window, CADC and CANFAR services are unavailable. Please avoid starting new jobs or workflows until the maintenance window ends. We'll post an update when services are restored.
             </p>
             <h6 style="text-align: center; margin-top: 10px;">Thank you for your patience.</h6>
         </div>
     </div>
 </div>
-
+{% endif %}
 
 <script>
     $(document).ready(function() {
