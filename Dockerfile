@@ -1,8 +1,9 @@
-FROM jekyll/builder:4
+FROM ruby:3.4 AS builder
 
-FROM nginx:alpine
+COPY . /app
+WORKDIR /app
+RUN bundle install && bundle exec jekyll build
 
-ADD _site/ /usr/share/nginx/html/
-COPY docker/nginx/config /usr/share/nginx/html/config
+FROM nginx:alpine AS production
 
-ADD docker/nginx/*.conf /etc/nginx/conf.d/
+COPY --from=builder /app/_site/ /usr/share/nginx/html/
