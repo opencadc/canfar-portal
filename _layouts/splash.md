@@ -114,9 +114,9 @@ layout: default
         </ul>
       </div>
       <div class="col-3 col-md">
-        <h5>Status Page</h5>
+        <h5>Support Info</h5>
         <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="https://canfar.statuspage.io/">Status</a></li>
+          <li><a class="text-muted" href="https://canfar.statuspage.io/">Status page</a></li>
         </ul>
       </div>
     </div>
