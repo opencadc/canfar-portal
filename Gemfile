@@ -15,6 +15,18 @@ gem "minima", "~> 2.5"
 
 gem "rexml", "~> 3.3.9"
 
+# Ruby 3.4 removed base64 from stdlib; safe_yaml (transitive dep of Jekyll 3.x)
+# does `require "base64"` without declaring it, so we add it explicitly.
+gem "base64"
+
+# Ruby 3.4 also removed bigdecimal from stdlib; liquid 4.0.4 does
+# `require "bigdecimal"` without declaring it, so we add it explicitly.
+gem "bigdecimal"
+
+# Jekyll defaults kramdown's input parser to GFM, which since kramdown 2.0
+# lives in a separate gem.
+gem "kramdown-parser-gfm"
+
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 # gem "github-pages", group: :jekyll_plugins
