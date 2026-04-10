@@ -17,7 +17,7 @@ layout: default
       <div class="col-md-12 order-1 mb-4 text-center">
         <h1 class="mt-3 text-left font-weight-light">Canadian Advanced Network for Astronomical Research</h1>
         <div role="toolbar" aria-label="Action button toolbar" class="pt-2 text-left">
-          <a href="https://www.opencadc.org/canfar/latest/platform/home/" class="btn btn-outline-info mr-3 font-weight-bold">Check what CANFAR offers</a>
+          <a href="https://www.opencadc.org/canfar/latest/" class="btn btn-outline-info mr-3 font-weight-bold">Check what CANFAR offers</a>
         </div>
         <br />
         <div class="mt-md-5 border-top border-bottom border-info p-4">
@@ -92,7 +92,7 @@ layout: default
         <h5>Download</h5>
         <ul class="list-unstyled text-small">
           <li><a class="text-muted" href="https://www.opencadc.org/canfar/latest/client/home/">Science Platform Client</a></li>
-          <li><a class="text-muted" href="https://www.opencadc.org/canfar/latest/platform/guides/storage/vospace-api/">VOSpace Client</a></li>
+          <li><a class="text-muted" href="https://www.opencadc.org/canfar/latest/platform/storage/vospace/">VOSpace Client</a></li>
         </ul>
       </div>
       <div class="col-3 col-md">
@@ -111,6 +111,12 @@ layout: default
         <ul class="list-unstyled text-small">
           <li><a class="text-muted" href="{{ t['organization'].link }}">{{ t['organization'].name }}</a></li>
           <li><a class="text-muted" href="{{ t['terms'].link }}">{{ t['terms'].name }}</a></li>
+        </ul>
+      </div>
+      <div class="col-3 col-md">
+        <h5>Status Page</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="https://canfar.statuspage.io/">Status</a></li>
         </ul>
       </div>
     </div>
