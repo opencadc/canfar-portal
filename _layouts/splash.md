@@ -131,3 +131,4 @@ layout: default
     redirectUtil.setHrefToUri(ca.nrc.cadc.accountURI.gmui, ['gmui_link'])
   })
 </script>
+<script src="https://canfar.statuspage.io/embed/script.js"></script>
