@@ -17,7 +17,7 @@ layout: default
       <div class="col-md-12 order-1 mb-4 text-center">
         <h1 class="mt-3 text-left font-weight-light">Canadian Advanced Network for Astronomical Research</h1>
         <div role="toolbar" aria-label="Action button toolbar" class="pt-2 text-left">
-          <a href="https://www.opencadc.org/canfar/latest/" class="btn btn-outline-info mr-3 font-weight-bold">Check what CANFAR offers</a>
+          <a href="https://www.opencadc.org/canfar/latest/" class="btn btn-outline-info mr-3 font-weight-bold">Discover CANFAR's capabilities</a>
         </div>
         <br />
         <div class="mt-md-5 border-top border-bottom border-info p-4">
