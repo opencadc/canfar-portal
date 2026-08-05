@@ -1,4 +1,4 @@
-{% include __vars.md %} {% assign cadc_url = site.env[site.site_env].cadc %}
+{% include __vars.md %}
 
 <header class="fixed-top d-flex flex-md-row align-items-center p-2 px-md-4 mb-2 bg-white border-bottom">
     <h5 class="my-0 mr-md-auto font-weight-normal">
@@ -28,11 +28,11 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="services_dropdown">
                         <li><a href="{{ t['services']['storage'].link }}" class="dropdown-item">{{ t['services']['storage'].name }}</a></li>
-                        <li><a href="{{ t['services']['group_management'].link }}" class="dropdown-item" id="gmui_redirect">{{ t['services']['group_management'].name }}</a></li>
+                        <li><a href="#" class="dropdown-item group-management-url">{{ t['services']['group_management'].name }}</a></li>
                         <li><a href="{{ t['services']['digital_object_identifiers'].link }}" class="dropdown-item">{{ t['services']['digital_object_identifiers'].name }}</a></li>
                         <li><a href="{{ t['services']['openstack_cloud_portal'].link }}" class="dropdown-item">{{ t['services']['openstack_cloud_portal'].name }}</a></li>
                         <li><a href="{{ t['services']['science_portal'].link }}" class="dropdown-item">{{ t['services']['science_portal'].name }}</a></li>
-                        <li><a href="{{ cadc_url }}{{ t['services']['caom_query_service'].link }}" class="dropdown-item">{{ t['services']['caom_query_service'].name }}</a></li>
+                        <li><a href="#" class="dropdown-item advanced-search-url">{{ t['services']['caom_query_service'].name }}</a></li>
                     </ul>
                 </li>
 
@@ -103,6 +103,7 @@
 
 <!-- todo: use min version when deploying - need to check link below however -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+<script src="{{ '/js/site-env.js' | prepend: site.baseurl }}"></script>
 
 <!-- Located in canfar-root.war, deployed in tomcat(-canfar)/webapps/ROOT -->
 <script type="text/javascript" src="/cadcJS/javascript/org.opencadc.js"></script>
@@ -139,9 +140,11 @@
 
 <script>
     $(document).ready(function() {
-        // Change the user-related menu items to point to
-        // URLs provided via /reg/applications
-        var redirectUtil = new ca.nrc.cadc.RedirectUtil()
-        redirectUtil.setHrefToUri(ca.nrc.cadc.accountURI.gmui, ['gmui_redirect'])
+        if (window.CANFAR_ADVANCED_SEARCH_URL) {
+            $('.advanced-search-url').attr('href', window.CANFAR_ADVANCED_SEARCH_URL)
+        }
+        if (window.CANFAR_GROUP_MANAGEMENT_URL) {
+            $('.group-management-url').attr('href', window.CANFAR_GROUP_MANAGEMENT_URL)
+        }
     })
 </script>

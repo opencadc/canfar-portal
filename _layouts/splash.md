@@ -31,7 +31,7 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-              <a href="{{ cadc_url }}/en/groups/" target="_blank" id="gmui_link" class="text-secondary">
+              <a href="#" target="_blank" class="text-secondary group-management-url">
                 <i class="fas fa-users service-link" data-toggle="tooltip" data-placement="top" title="Manage your CADC groups"></i>
               </a>
               <div>
@@ -58,7 +58,7 @@ layout: default
               </div>
             </div>
             <div class="mx-1 col">
-                <a href="{{ cadc_url }}/en/search/" class="text-secondary">
+                <a href="#" class="text-secondary advanced-search-url">
                   <i class="fas fa-star service-link" data-toggle="tooltip" data-placement="right" title="Search data collections at the Canadian Astronomy Data Centre"></i>
                 </a>
                 <div>
@@ -123,12 +123,4 @@ layout: default
   </footer>
   {% include _page_footer.html %}
 </div>
-<script>
-  $(document).ready(function() {
-    // Change the user-related menu items to point to
-    // URLs provided via /reg/applications
-    var redirectUtil = new ca.nrc.cadc.RedirectUtil()
-    redirectUtil.setHrefToUri(ca.nrc.cadc.accountURI.gmui, ['gmui_link'])
-  })
-</script>
 <script src="https://canfar.statuspage.io/embed/script.js"></script>
