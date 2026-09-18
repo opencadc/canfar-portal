@@ -11,7 +11,7 @@ image:
   # This sets the pull policy for images.
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "1.0.2-20260805T201908"
+  tag: "1.0.3-20260918T212838"
 
 # Service URLs injected at runtime.
 advancedSearchUrl: "https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/"
