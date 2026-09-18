@@ -5,10 +5,11 @@ echo "Starting development servers..."
 
 mkdir -p ${HOME}/.bundle
 
-if [ -n "${ADVANCED_SEARCH_URL}" ] || [ -n "${GROUP_MANAGEMENT_URL}" ]; then
+if [ -n "${ADVANCED_SEARCH_URL}" ] || [ -n "${GROUP_MANAGEMENT_URL}" ] || [ -n "${CERTIFICATE_URL}" ]; then
   cat > js/site-env.js <<EOF
 window.CANFAR_ADVANCED_SEARCH_URL = '${ADVANCED_SEARCH_URL:-https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/}';
 window.CANFAR_GROUP_MANAGEMENT_URL = '${GROUP_MANAGEMENT_URL:-https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/groups/}';
+window.CANFAR_CERTIFICATE_URL = '${CERTIFICATE_URL:-https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/cred/generate?daysValid=30}';
 EOF
 fi
 

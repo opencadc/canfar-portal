@@ -45,6 +45,8 @@ spec:
               value: {{ .Values.advancedSearchUrl | quote }}
             - name: GROUP_MANAGEMENT_URL
               value: {{ .Values.groupManagementUrl | quote }}
+            - name: CERTIFICATE_URL
+              value: {{ .Values.certificateUrl | quote }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}

@@ -67,8 +67,7 @@
                     <ul class="dropdown-menu dropdown-menu-right">
                         <li><a href="" class="dropdown-item account_access_info" tabindex="2" id="updateProfile">Update profile</a></li>
                         <li><a href="" class="dropdown-item account_access_info" tabindex="3" id="changePassword">Reset password</a></li>
-                        <li><a href="https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/cred/generate?daysValid=30"
-                               class="dropdown-item account_access_info" tabindex="4" id="obtainCertificate">Obtain a certificate</a></li>
+                        <li><a href="#" class="dropdown-item account_access_info certificate-url" tabindex="4" id="obtainCertificate">Obtain a certificate</a></li>
                         <li><a id="logout" class="dropdown-item account_access_info" tabindex="5" href="/access/logout">
                             <span class="fas fa-sign-out-alt"></span> Logout</a></li>
                     </ul>
@@ -145,6 +144,9 @@
         }
         if (window.CANFAR_GROUP_MANAGEMENT_URL) {
             $('.group-management-url').attr('href', window.CANFAR_GROUP_MANAGEMENT_URL)
+        }
+        if (window.CANFAR_CERTIFICATE_URL) {
+            $('.certificate-url').attr('href', window.CANFAR_CERTIFICATE_URL)
         }
     })
 </script>

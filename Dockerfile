@@ -28,5 +28,6 @@ USER nginx
 
 ENV ADVANCED_SEARCH_URL=https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/
 ENV GROUP_MANAGEMENT_URL=https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/groups/
+ENV CERTIFICATE_URL=https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/cred/generate?daysValid=30
 EXPOSE 8000
 ENTRYPOINT ["/entrypoint.sh"]

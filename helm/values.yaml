@@ -13,9 +13,10 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "1.0.2-20260805T201908"
 
-# Service URLs injected at runtime (see ADVANCED_SEARCH_URL / GROUP_MANAGEMENT_URL).
+# Service URLs injected at runtime.
 advancedSearchUrl: "https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/"
 groupManagementUrl: "https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/groups/"
+certificateUrl: "https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/cred/generate?daysValid=30"
 
 # This is for the secrets for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: []
