@@ -1,0 +1,22 @@
+---
+sitemap: false
+lang: en
+permalink: /en/maintenance/
+redirect_to: /maintenance/
+---
+
+{% assign redirect_endpoint = page.redirect_to | prepend: site.baseurl %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="canonical" href="{{ redirect_endpoint }}"/>
+  <meta http-equiv="refresh" content="0;url={{ redirect_endpoint }}" />
+  <title>CANFAR is offline</title>
+</head>
+<body>
+  <p><a href="{{ redirect_endpoint }}">CANFAR is offline. Continue to the service notice.</a></p>
+  <script>location.replace('{{ redirect_endpoint }}')</script>
+</body>
+</html>
