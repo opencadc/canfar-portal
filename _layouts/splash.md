@@ -50,7 +50,7 @@ layout: default
           <br />
           <div class="row text-center mb-3">
             <div class="mx-1 col">
-              <a href="https://arbutus.alliancecan.ca/" class="text-secondary" rel="external">
+              <a href="https://arbutus.alliancecan.ca/project" class="text-secondary" rel="external">
                 <i class="fas fa-power-off service-link" data-toggle="tooltip" data-placement="top" title="Interactive Virtual Machines"></i>
               </a>
               <div>
