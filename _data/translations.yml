@@ -109,7 +109,7 @@ en:
       description: 'Cloud user sessions'
     openstack_cloud_portal:
       name: 'Cloud Services'
-      link: 'https://arbutus-canfar.cloud.computecanada.ca'
+      link: 'https://arbutus.alliancecan.ca/'
       description: 'Run your own virtual machines on DRAC cloud'
       capacity: 'Default is 10 VMs sharing 20 CPUs, 50GB RAM, 1TB disk and 1 public IP'
     caom_query_service:
