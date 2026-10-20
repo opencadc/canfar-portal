@@ -1,0 +1,28 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+apiVersion: v2
+appVersion: 1.0.5
+description: A Helm chart for Kubernetes for the CANFAR web portal
+name: canfar-web-portal
+type: application
+version: 0.2.5
+
+...
+files:
+  canfar-web-portal-0.2.5.tgz: sha256:6ded89c35d4e855c6c8a4624404b0f440e747e6135c1cd5d6fb73fc615f3f08a
+
+-----BEGIN PGP SIGNATURE-----
+
+wsE5BAEBCgBtBYJq18ZQCRBq0sqFWPBBQkUUAAAAAAAcACBzYWx0QG5vdGF0aW9u
+cy5vcGVucGdwanMub3JnhAJUqS92Sm444qYtCrQJfS6iUOUuGaPfbVSLXI+S/XIW
+IQRnCt//ciqIdJ17VAJq0sqFWPBBQgAAqOUMALmubrgTEGi6GE/MrmE6MViGQlHW
+2mONbT11syj9JhJcM7wr0P0UiL0KcLlibylkXkyQJvnxPspyPXKI3FzGVe4wTtN8
+iB0lqNZhHlw0/AZtWbMvfPsanmpsWnk+kFRy3ZGqAcCodYLaR9dLn643vAZAXxwl
+U/lDcKqrL/YW/4fvmQPKICR/ibDPpLD5LadR/7QH5BlUDDNFZz9JZJMf+iZ7KfA9
+fHAMN1DkjWQmuqAciwm8Oiv1N6G6bUswoqm5n2yLTcS6anqSnlTElXCN2oEdQj+9
+UqNl+B/jeZcA8jmzjOTcODwj+24p16OmGQm/AcoitHjvfZyiHpiWhXCuHSZT6sba
+YLzvk/aU05I0bO8IFUwCSIg9SEER+p+Wn+wOIZ1hRKRP/SSXX1YeCIYnbAqPJgeJ
+lj8xuWRhMGoe4i5RT2nLoiQAUhved5Z0ganA8rhl4UATAKghfQoVGIDwnejYRbaI
+gBODIHxsySMY3LCT7kmTP5jt1dCjRTSPAwgXAg==
+-----END PGP SIGNATURE-----
