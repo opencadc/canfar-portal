@@ -4,7 +4,7 @@ COPY . /app
 WORKDIR /app
 RUN bundle install && bundle exec jekyll build
 
-FROM nginx:alpine AS production
+FROM nginx:1.31-trixie AS production
 
 # Non-root: no "user" directive (ignored without root and noisy), listen on high port,
 # pre-create paths from nginx -V so workers do not need to mkdir under /var/cache/nginx.
