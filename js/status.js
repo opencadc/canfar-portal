@@ -77,7 +77,7 @@
      * document.
      *
      * param: serviceURL - a URL containing the name of the service
-     *        e.g. http://ws-cadc.canfar.net/ac/capabilities
+     *        e.g. https://cadc-west-01.canfar.net/ac/capabilities
      * @private
      */
     this._extractServiceName = function(serviceURL) {
