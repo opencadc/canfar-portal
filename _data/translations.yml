@@ -94,7 +94,7 @@ en:
     group_management:
       name: 'Group Management'
       link: '/gmui/'
-      api_link: 'https://ws-cadc.canfar.net/ac/'
+      api_link: 'https://cadc-west-01.canfar.net/ac/'
       description: 'Manage access permissions to your managed Storage'
     digital_object_identifiers:
       disabled: true
